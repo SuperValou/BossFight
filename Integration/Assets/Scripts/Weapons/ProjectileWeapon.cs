@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weapons.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapons
@@ -25,8 +26,8 @@ namespace Assets.Scripts.Weapons
         
 
         [Header("Parts")]
-        public Projectile projectilePrefab;
-        public Projectile chargedProjectilePrefab;
+        public AbstractProjectile projectilePrefab;
+        public AbstractProjectile chargedProjectilePrefab;
 
         [Header("Anims")]
         public GameObject chargeAnimationPrefab;
