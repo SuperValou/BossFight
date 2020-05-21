@@ -1,2 +1,2 @@
-# FpsTemplate
-Simple FPS template for Unity.
+# BossFight
+Experimental boss fight in Unity
