@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Foes;
+﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Foes;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapons.Projectiles
@@ -9,12 +10,12 @@ namespace Assets.Scripts.Weapons.Projectiles
         {
             var impactScript = Instantiate(projectileImpactAnimationScriptPrefab, contactPoint, contactOrientation);
 
-            var foe = collidedGameObject.GetComponent<Foe>();
-            if (foe != null)
+            var damageable = collidedGameObject.GetComponent<Damageable>();
+            
+            if (damageable != null)
             {
-                foe.TakeDamage(baseDamage);
-
-                impactScript.ImpactFoe();
+                damageable.TakeDamage(damager: this);
+                impactScript.ImpactDamageable();
             }
             else
             {

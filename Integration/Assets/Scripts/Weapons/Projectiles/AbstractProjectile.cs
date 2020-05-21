@@ -1,25 +1,30 @@
-﻿using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Weapons.Projectiles
 {
-    public abstract class AbstractProjectile : MonoBehaviour
+    public abstract class AbstractProjectile : MonoBehaviour, IDamager
     {
+        public float baseDamage;
+
         [Tooltip("Time in second")]
         public float lifetime = 1;
 
         [Tooltip("Speed in m/s")]
-        public float speed = 1;
+        public float speed = 10;
         
-        public float baseDamage = 5;
-
         public ProjectileImpactAnimationScript projectileImpactAnimationScriptPrefab;
 
         // ---
         private Rigidbody _rigidbody;
 
+        public float BaseDamage { get; private set; }
+
         void Start()
         {
+            BaseDamage = baseDamage;
+
             _rigidbody = this.GetOrThrow<Rigidbody>();
             _rigidbody.AddForce(_rigidbody.transform.forward * speed, ForceMode.Impulse);
 
