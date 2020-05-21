@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Weapons
+namespace Assets.Scripts.Utilities
 {
     public class AimAssistanceManager : MonoBehaviour
     {
