@@ -58,3 +58,12 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Factory folder
+*.blend1
+Factory/Models/**/*.fbx
+
+Factory/AssetStoreRefiner/Library/
+Factory/AssetStoreRefiner/Temp/
+Factory/AssetStoreRefiner/Assets/*
+!Factory/AssetStoreRefiner/Assets/Output/
+
