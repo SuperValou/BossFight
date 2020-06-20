@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
 {
-    public abstract class StrikerBehaviour : StateMachineBehaviour, IBehaviour<StrikerStateMachine>
+    public abstract class StrikerBehaviour : StateMachineBehaviour, IBehaviour<Striker>
     {
-        protected StrikerStateMachine StateMachine;
+        protected Striker Striker;
         
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            StateMachine.SetCurrentBehaviour(this);
+            Striker.SetCurrentBehaviour(this);
         }
 
-        public void Initialize(StrikerStateMachine stateMachine)
+        public void Initialize(Striker stateMachine)
         {
-            StateMachine = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
+            Striker = stateMachine ?? throw new ArgumentNullException(nameof(stateMachine));
         }
     }
 }

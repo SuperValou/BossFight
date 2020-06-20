@@ -3,8 +3,15 @@ using UnityEngine;
 
 namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
 {
-    public class StrikerStateMachine : MonoBehaviour, IStateMachine<StrikerBehaviour>
+    public class Striker : MonoBehaviour, IStateMachine<StrikerBehaviour>
     {
+        [Header("Parts")]
+        public Transform leftCanon;
+        public Transform rightCanon;
+
+        [Header("References")]
+        public Transform target;
+
         private Animator _animator;
         private StrikerBehaviour[] _behaviours;
         
@@ -18,7 +25,25 @@ namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
                 strikerBehaviour.Initialize(this);
             }
         }
-        
+
+        void Update()
+        {
+            FaceTarget();
+        }
+
+        private void FaceTarget()
+        {
+            if (target == null)
+            {
+                return;
+            }
+
+            leftCanon.LookAt(target);
+            leftCanon.Rotate(leftCanon.up, 90, Space.World);
+            rightCanon.LookAt(target);
+            rightCanon.Rotate(rightCanon.up, 90, Space.World);
+        }
+
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
         {
             Debug.Log($"Current behaviour: {behaviour.GetType().Name}");

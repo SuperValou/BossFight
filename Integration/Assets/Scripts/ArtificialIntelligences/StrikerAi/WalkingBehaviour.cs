@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
 {
-    public class StrikerWalkingBehaviour : StrikerBehaviour
+    public class WalkingBehaviour : StrikerBehaviour
     {
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
