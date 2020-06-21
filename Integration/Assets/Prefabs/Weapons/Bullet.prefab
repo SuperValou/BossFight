@@ -63,10 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5390917c437d6ad468a80876a08507bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 1
-  speed: 1
   baseDamage: 5
-  projectileImpactAnimationScriptPrefab: {fileID: 0}
+  lifetime: 1
+  speed: 10
+  projectileImpactAnimationScriptPrefab: {fileID: 448896976865894071, guid: 3edd640f7f119fb4caa89b4f9613d586,
+    type: 3}
 --- !u!108 &612203340
 Light:
   m_ObjectHideFlags: 0

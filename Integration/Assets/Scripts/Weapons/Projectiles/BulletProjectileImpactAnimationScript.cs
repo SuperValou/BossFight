@@ -23,10 +23,10 @@ namespace Assets.Scripts.Weapons.Projectiles
             
             //_renderer.materials.First().DOFade(0, attenuationTime);
 
-            ImpactFoe();
+            ImpactDamageable();
         }
 
-        public override void ImpactFoe()
+        public override void ImpactDamageable()
         {
             DieOut();
         }
