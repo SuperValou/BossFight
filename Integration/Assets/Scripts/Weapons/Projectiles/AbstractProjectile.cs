@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weapons.Projectiles
 {
+    [RequireComponent(typeof(Rigidbody))]
     public abstract class AbstractProjectile : MonoBehaviour, IDamager
     {
-        public float baseDamage;
+        public float baseDamage = 1;
 
         [Tooltip("Time in second")]
-        public float lifetime = 1;
+        public float maxLifetime = 1;
 
         [Tooltip("Speed in m/s")]
         public float speed = 10;
@@ -28,7 +29,7 @@ namespace Assets.Scripts.Weapons.Projectiles
             _rigidbody = this.GetOrThrow<Rigidbody>();
             _rigidbody.AddForce(_rigidbody.transform.forward * speed, ForceMode.Impulse);
 
-            Invoke(nameof(DieOut), lifetime);
+            Invoke(nameof(DieOut), maxLifetime);
         }
 
         void OnCollisionEnter(Collision collision)
@@ -42,9 +43,8 @@ namespace Assets.Scripts.Weapons.Projectiles
         }
 
         protected abstract void HandleContact(Vector3 contactPoint, Quaternion contactOrientation, GameObject collidedGameObject);
-
-
-        void DieOut()
+        
+        private void DieOut()
         {
             if (!gameObject)
             {

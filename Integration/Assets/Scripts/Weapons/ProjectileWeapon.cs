@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weapons
 {
+    [RequireComponent(typeof(AudioSource))]
     public class ProjectileWeapon : AbstractWeapon
     {
         [Header("Self")]
