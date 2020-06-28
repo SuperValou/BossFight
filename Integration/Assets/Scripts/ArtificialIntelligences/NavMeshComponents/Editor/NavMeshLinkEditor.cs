@@ -1,9 +1,8 @@
-using Assets.Scripts.NavMeshComponents.Scripts;
 using UnityEditor;
 using UnityEditor.AI;
 using UnityEngine;
 
-namespace Assets.Scripts.NavMeshComponents.Editor
+namespace Assets.Scripts.ArtificialIntelligences.NavMeshComponents.Editor
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshLink))]

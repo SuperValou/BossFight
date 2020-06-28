@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using Assets.Scripts.Utilities;
-using Assets.Scripts.Weapons.Projectiles;
+using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
-namespace Assets.Scripts.Weapons
+namespace Assets.Scripts.Weaponry.Weapons
 {
     [RequireComponent(typeof(AudioSource))]
     public class ProjectileWeapon : AbstractWeapon

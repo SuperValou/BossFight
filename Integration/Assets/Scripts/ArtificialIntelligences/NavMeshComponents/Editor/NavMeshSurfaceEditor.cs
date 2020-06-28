@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Assets.Scripts.NavMeshComponents.Scripts;
 using UnityEditor;
 using UnityEditor.AI;
 using UnityEditor.IMGUI.Controls;
@@ -10,7 +9,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.NavMeshComponents.Editor
+namespace Assets.Scripts.ArtificialIntelligences.NavMeshComponents.Editor
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(NavMeshSurface))]

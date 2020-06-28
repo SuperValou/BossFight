@@ -3,7 +3,7 @@ using UnityEngine;
 
 //using DG.Tweening;
 
-namespace Assets.Scripts.Weapons.Projectiles
+namespace Assets.Scripts.Weaponry.Projectiles
 {
     public class BulletProjectileImpactAnimationScript : ProjectileImpactAnimationScript
     {

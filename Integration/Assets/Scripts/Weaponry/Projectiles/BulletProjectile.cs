@@ -1,8 +1,7 @@
 ﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Foes;
 using UnityEngine;
 
-namespace Assets.Scripts.Weapons.Projectiles
+namespace Assets.Scripts.Weaponry.Projectiles
 {
     public class BulletProjectile : AbstractProjectile
     {

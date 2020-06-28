@@ -2,7 +2,7 @@
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
-namespace Assets.Scripts.Weapons.Projectiles
+namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(Rigidbody))]
     public abstract class AbstractProjectile : MonoBehaviour, IDamager

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.NavMeshComponents.Scripts
+namespace Assets.Scripts.ArtificialIntelligences.NavMeshComponents
 {
     [ExecuteInEditMode]
     [DefaultExecutionOrder(-101)]
