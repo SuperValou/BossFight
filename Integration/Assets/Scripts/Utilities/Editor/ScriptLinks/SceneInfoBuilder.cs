@@ -25,7 +25,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             return sceneInfo;
         }
 
-        public static GameObjectInfo Build(GameObject gameObject)
+        private static GameObjectInfo Build(GameObject gameObject)
         {
             GameObjectInfo objectInfo = new GameObjectInfo()
             {
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             return objectInfo;
         }
 
-        public static ScriptInfo Build(MonoBehaviour monoBehaviour)
+        private static ScriptInfo Build(MonoBehaviour monoBehaviour)
         {
             var scriptInfo = new ScriptInfo() {Name = monoBehaviour.GetType().Name};
             return scriptInfo;
