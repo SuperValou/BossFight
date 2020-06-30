@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Utilities.Editor.ScriptLinks
 {
-    public class SceneInfoManager : MonoBehaviour, ISceneInfoManager
+    public class SceneInfoManager : ISceneInfoManager
     {
         private const string SclFileExtension = ".scl";
 
