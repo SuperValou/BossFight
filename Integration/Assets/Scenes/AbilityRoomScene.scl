@@ -211,24 +211,20 @@
                                                 "Name": "WeaponManager",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "<MISSING SCRIPT>"
+                                                        "Name": "WeaponManager"
                                                     }
                                                 ],
                                                 "Children": [
                                                     {
                                                         "Name": "PowerGun",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "<MISSING SCRIPT>"
-                                                            }
-                                                        ],
+                                                        "Scripts": [],
                                                         "Children": []
                                                     },
                                                     {
                                                         "Name": "BeamGun",
                                                         "Scripts": [
                                                             {
-                                                                "Name": "<MISSING SCRIPT>"
+                                                                "Name": "BeamGun"
                                                             }
                                                         ],
                                                         "Children": []
@@ -290,11 +286,6 @@
                                 "Name": "AimAssistanceManager"
                             }
                         ],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Weapons",
-                        "Scripts": [],
                         "Children": []
                     }
                 ]

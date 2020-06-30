@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7202461743070347406}
   - component: {fileID: 3577152684898777059}
-  - component: {fileID: 2718679272154064452}
   - component: {fileID: 612203340}
   - component: {fileID: 7207826232590959652}
+  - component: {fileID: 1077280629543535655}
   m_Layer: 13
-  m_Name: Bullet
+  m_Name: PowerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,23 +51,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2718679272154064452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3832837131439270616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5390917c437d6ad468a80876a08507bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDamage: 5
-  lifetime: 1
-  speed: 10
-  projectileImpactAnimationScriptPrefab: {fileID: 448896976865894071, guid: 3edd640f7f119fb4caa89b4f9613d586,
-    type: 3}
 --- !u!108 &612203340
 Light:
   m_ObjectHideFlags: 0
@@ -141,6 +124,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1077280629543535655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832837131439270616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6fb07c79c60574ebf87a0c6068e366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 1
+  maxLifetime: 10
+  speed: 60
+  impactPrefab: {fileID: 0}
 --- !u!1 &7919506009480759383
 GameObject:
   m_ObjectHideFlags: 0

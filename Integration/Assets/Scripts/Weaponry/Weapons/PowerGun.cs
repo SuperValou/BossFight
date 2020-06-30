@@ -20,7 +20,7 @@ namespace Assets.Scripts.Weaponry.Weapons
 
 
         [Header("Parts")]
-        public AbstractProjectile chargedProjectilePrefab;
+        public Projectile chargedProjectilePrefab;
 
         [Header("Sounds")]
         public AudioClip _chargedShotSound;

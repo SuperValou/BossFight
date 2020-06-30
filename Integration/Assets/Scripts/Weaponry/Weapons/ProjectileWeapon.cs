@@ -10,7 +10,7 @@ namespace Assets.Scripts.Weaponry.Weapons
     {
         // -- Editor 
 
-        public AbstractProjectile projectilePrefab;
+        public Projectile projectilePrefab;
         
         public AudioClip _shotSound;
         
@@ -23,9 +23,9 @@ namespace Assets.Scripts.Weaponry.Weapons
             AudioSource = this.GetOrThrow<AudioSource>();
         }
 
-        protected AbstractProjectile ShootProjectile()
+        protected Projectile ShootProjectile()
         {
-            AbstractProjectile projectile = Instantiate(projectilePrefab, this.transform.position, this.transform.rotation);
+            Projectile projectile = Instantiate(projectilePrefab, this.transform.position, this.transform.rotation);
             AudioSource.PlayOneShot(_shotSound);
 
             return projectile;

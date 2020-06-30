@@ -5,29 +5,34 @@ using UnityEngine;
 namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(Rigidbody))]
-    public abstract class AbstractProjectile : MonoBehaviour, IDamager
+    public abstract class Projectile : MonoBehaviour, IDamager
     {
+        // -- Editor
+
+        [Tooltip("Base damage inflicted by the projectile")]
         public float baseDamage = 1;
 
-        [Tooltip("Time in second")]
-        public float maxLifetime = 1;
+        [Tooltip("Max lifetime of the projectile in second")]
+        public float maxLifetime = 10;
 
-        [Tooltip("Speed in m/s")]
-        public float speed = 10;
-        
-        public ProjectileImpactAnimationScript projectileImpactAnimationScriptPrefab;
+        [Tooltip("Forward speed in m/s")]
+        public float speed = 30;
 
-        // ---
-        private Rigidbody _rigidbody;
+        [Tooltip("GameObject to spawn if the projectile hit some hard surface")]
+        public Impact impactPrefab;
+
+        // -- Class
+
+        protected Rigidbody Rigidbody { get; private set; }
 
         public float BaseDamage { get; private set; }
 
-        void Start()
+        protected virtual void Start()
         {
             BaseDamage = baseDamage;
 
-            _rigidbody = this.GetOrThrow<Rigidbody>();
-            _rigidbody.AddForce(_rigidbody.transform.forward * speed, ForceMode.Impulse);
+            Rigidbody = this.GetOrThrow<Rigidbody>();
+            Rigidbody.AddForce(Rigidbody.transform.forward * speed, ForceMode.Impulse);
 
             Invoke(nameof(DieOut), maxLifetime);
         }
@@ -43,18 +48,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
         }
 
         protected abstract void HandleContact(Vector3 contactPoint, Quaternion contactOrientation, GameObject collidedGameObject);
-        
-        private void DieOut()
-        {
-            if (!gameObject)
-            {
-                return;
-            }
 
-            var impactScript = Instantiate(projectileImpactAnimationScriptPrefab, this.transform.position, this.transform.rotation);
-            impactScript.DieOut();
-
-            Destroy(gameObject);
-        }
+        protected abstract void DieOut();
     }
 }
