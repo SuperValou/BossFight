@@ -1,0 +1,330 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler"
+                    },
+                    {
+                        "Name": "GraphicRaycaster"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "Image",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem"
+                    },
+                    {
+                        "Name": "StandaloneInputModule"
+                    }
+                ],
+                "Children": []
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Directional Light",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (10)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (11)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (12)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (13)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (14)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (15)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Platforms",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Player",
+                        "Scripts": [
+                            {
+                                "Name": "FirstPersonController"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "UpperBody",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Head",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Sphere",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Camera",
+                                                "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Arm",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Cylinder",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "WeaponManager",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "<MISSING SCRIPT>"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "PowerGun",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "<MISSING SCRIPT>"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
+                                                        "Name": "BeamGun",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "<MISSING SCRIPT>"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Body",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Cubes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Cube (1)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Foe",
+                        "Scripts": [
+                            {
+                                "Name": "Foe"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Capsule",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Sphere",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "GameplayManagers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "AimAssistanceManager",
+                        "Scripts": [
+                            {
+                                "Name": "AimAssistanceManager"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Weapons",
+                        "Scripts": [],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "SystemManagers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "UnityInputManager",
+                        "Scripts": [
+                            {
+                                "Name": "MouseKeyboardInputManager"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Interactables",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Switch",
+                        "Scripts": [],
+                        "Children": []
+                    }
+                ]
+            }
+        ]
+    }
+}
