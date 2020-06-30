@@ -24,7 +24,7 @@ namespace Assets.Scripts.Weaponry.Weapons
         {
             if (inputManager.FireButtonDown())
             {
-                _mainWeapon.Fire();
+                _mainWeapon.InitFire();
             }
 
             if (inputManager.FireButtonUp())

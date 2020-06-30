@@ -6716,8 +6716,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207353943}
-  - component: {fileID: 1207353944}
   - component: {fileID: 1207353945}
+  - component: {fileID: 1207353944}
   m_Layer: 12
   m_Name: BeamGun
   m_TagString: Untagged
@@ -6748,20 +6748,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207353942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9120e6706928747870cb0ac6477a30, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e69fa1d7688061408e106c2363b09db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canCharge: 1
-  timeToCharge: 3
-  chargeThreshold: 0.5
-  chargedProjectileCount: 10
-  timeBetweenChargedShot: 0.1
-  projectilePrefab: {fileID: 3823168540394358479, guid: a9e32f3e65f7c3d4ea16c8afbc4ed68b,
-    type: 3}
-  chargedProjectilePrefab: {fileID: 0}
-  chargeAnimationPrefab: {fileID: 0}
-  _shotSound: {fileID: 8300000, guid: 85997c9555b0e0146ae4d83460162c16, type: 3}
-  _chargedShotSound: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  _shotSound: {fileID: 0}
 --- !u!82 &1207353945
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7365,12 +7356,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1592410775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feae3a967f44bb1469a8da98ab19f3c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 91b42791a8670c04b95da512805beb71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 1207353944}
-  - {fileID: 1900394168}
+  weapons: []
   inputManager: {fileID: 221488863}
 --- !u!1001 &1594496627
 PrefabInstance:
@@ -8021,7 +8010,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1900394167}
   - component: {fileID: 1900394168}
-  - component: {fileID: 1900394169}
   m_Layer: 0
   m_Name: PowerGun
   m_TagString: Untagged
@@ -8043,32 +8031,7 @@ Transform:
   m_Father: {fileID: 1592410776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1900394168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900394166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9120e6706928747870cb0ac6477a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canCharge: 1
-  timeToCharge: 3
-  chargeThreshold: 0.5
-  chargedProjectileCount: 10
-  timeBetweenChargedShot: 0.1
-  projectilePrefab: {fileID: 2718679272154064452, guid: a017440a02baad745bc0f1e00b33dc11,
-    type: 3}
-  chargedProjectilePrefab: {fileID: 1399485563405142106, guid: 66f5ffc812df28441b090d558557be5f,
-    type: 3}
-  chargeAnimationPrefab: {fileID: 2671722285859205778, guid: 48ab0946b33b86c419c4760a6791c7f7,
-    type: 3}
-  _shotSound: {fileID: 8300000, guid: 85997c9555b0e0146ae4d83460162c16, type: 3}
-  _chargedShotSound: {fileID: 8300000, guid: c70bc49a17ced6e479e1233952d2a447, type: 3}
---- !u!82 &1900394169
+--- !u!82 &1900394168
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
