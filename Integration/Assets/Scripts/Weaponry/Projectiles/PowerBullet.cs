@@ -15,7 +15,8 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
             if (impactPrefab != null)
             {
-                Instantiate(impactPrefab, contactPoint, contactOrientation);
+                var impact = Instantiate(impactPrefab, contactPoint, contactOrientation);
+                impact.transform.SetParent(collidedGameObject.transform);
             }
 
             Destroy(gameObject);
