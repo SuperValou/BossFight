@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(Rigidbody))]
-    public abstract class Projectile : MonoBehaviour, IDamager
+    public class Projectile : MonoBehaviour, IDamager
     {
         // -- Editor
 
@@ -47,8 +47,31 @@ namespace Assets.Scripts.Weaponry.Projectiles
             HandleContact(contactPoint, contactOrientation, collision.gameObject);
         }
 
-        protected abstract void HandleContact(Vector3 contactPoint, Quaternion contactOrientation, GameObject collidedGameObject);
+        private void HandleContact(Vector3 contactPoint, Quaternion contactOrientation, GameObject collidedGameObject)
+        {
+            Damageable damageable = collidedGameObject.GetComponent<Damageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(damager: this);
+            }
 
-        protected abstract void DieOut();
+            if (impactPrefab != null)
+            {
+                var impact = Instantiate(impactPrefab, contactPoint, contactOrientation);
+                impact.transform.SetParent(collidedGameObject.transform);
+            }
+
+            AfterContact();
+        }
+
+        protected virtual void AfterContact()
+        {
+            Destroy(gameObject);
+        }
+
+        protected virtual void DieOut()
+        {
+            Destroy(gameObject);
+        }
     }
 }
