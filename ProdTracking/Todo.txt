@@ -1,0 +1,17 @@
+Issues
+	Gameplay
+	- Beam gun impact is not on screen center
+
+	Polish 
+	- Beam of beam gun is not straight
+	- Impacts are tangent to surface, even corners
+	- Impacts hover in the air if close to an edge (should be clipped)
+
+Features
+	Movement
+	- Straf
+	- Impulse jump
+	
+	UI
+	- Health bar
+	- Foe Health bar
