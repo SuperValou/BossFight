@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
@@ -6,8 +7,9 @@ namespace Assets.Scripts.Controllers
     {
         [Header("Mouse")]
         public CursorLockMode cursorLockMode = CursorLockMode.Locked;
-        public float mouseSensitivity = 12;
-        
+        public float mouseSensitivity = 12f;
+        public float scrollSensitivity = 1f;
+
         [Header("Keyboard")]
         public float keyboardSensitivity = 1f;
 
@@ -80,6 +82,25 @@ namespace Assets.Scripts.Controllers
         public override bool JumpButtonDown()
         {
             return Input.GetButtonDown(KeyboardJumpButtonName);
+        }
+
+        public override bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection)
+        {
+            float scroll = Input.mouseScrollDelta.y * scrollSensitivity;
+            if (scroll >= 1)
+            {
+                weaponSwitchDirection = WeaponSwitchDirection.Next;
+                return true;
+            }
+
+            if (scroll <= -1)
+            {
+                weaponSwitchDirection = WeaponSwitchDirection.Previous;
+                return true;
+            }
+
+            weaponSwitchDirection = WeaponSwitchDirection.None;
+            return false;
         }
     }
 }

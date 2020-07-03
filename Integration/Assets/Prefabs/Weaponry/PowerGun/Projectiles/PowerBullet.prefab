@@ -139,7 +139,8 @@ MonoBehaviour:
   baseDamage: 1
   maxLifetime: 10
   speed: 60
-  impactPrefab: {fileID: 0}
+  impactPrefab: {fileID: 142623178631805547, guid: 3edd640f7f119fb4caa89b4f9613d586,
+    type: 3}
 --- !u!1 &7919506009480759383
 GameObject:
   m_ObjectHideFlags: 0

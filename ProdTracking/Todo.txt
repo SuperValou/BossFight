@@ -1,17 +1,35 @@
 Issues
 	Gameplay
-	- Beam gun impact is not on screen center
-
-	Polish 
-	- Beam of beam gun is not straight
-	- Impacts are tangent to surface, even corners
-	- Impacts hover in the air if close to an edge (should be clipped)
+		Weapons
+		- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
 
 Features
 	Movement
 	- Straf
 	- Impulse jump
 	
-	UI
+	UI	
 	- Health bar
 	- Foe Health bar
+	
+Polish
+	Weapons
+	- [BeamGun] Beam of beam gun is not straight
+	- Impacts are tangent to surface, especially corners, instead of lying on the surface
+	- Impacts hover in the air if close to an edge (should be clipped)
+	- Impacts are stretched when occuring very close to an edge
+	- Particles emitted on impact are stretched and barely visible 
+	- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
+	
+	Collisions
+	- Arm goes through wall when player gets too close
+	
+	UI
+	- Reticle is a placeholder
+	
+	
+=== DONE ===
+Issues
+	Gameplay
+		Weapons
+		- 2020-07-03 - [BeamGun] impact is not on screen center
