@@ -22,6 +22,30 @@
                             }
                         ],
                         "Children": []
+                    },
+                    {
+                        "Name": "Weaponry",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "SelectedWeaponLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "SelectedWeaponIndex",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
                     }
                 ]
             },
@@ -53,88 +77,178 @@
                         ]
                     },
                     {
-                        "Name": "Ground",
+                        "Name": "Ground&Walls",
                         "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Floor_20x20",
+                                "Name": "Square",
                                 "Scripts": [],
-                                "Children": []
+                                "Children": [
+                                    {
+                                        "Name": "Floor_20x20",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (4)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (5)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (6)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (7)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (8)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (9)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (10)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (11)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (12)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (13)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (14)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (15)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
                             },
                             {
-                                "Name": "Floor_20x20 (1)",
+                                "Name": "Corridor",
                                 "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (2)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (3)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (4)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (5)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (6)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (7)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (8)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (9)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (10)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (11)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (12)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (13)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (14)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Floor_20x20 (15)",
-                                "Scripts": [],
-                                "Children": []
+                                "Children": [
+                                    {
+                                        "Name": "Chunk",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Floor_20x20 (16)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20 (1)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Ceilling_20x20 (17)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Chunk (1)",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Floor_20x20 (16)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20 (1)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Ceilling_20x20 (17)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Chunk (2)",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Floor_20x20 (16)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Wall_20x20 (1)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "Ceilling_20x20 (17)",
+                                                "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -163,6 +277,17 @@
                                 "Children": []
                             }
                         ]
+                    },
+                    {
+                        "Name": "Interactables",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Switch",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
                     }
                 ]
             },
@@ -180,7 +305,11 @@
                         "Children": [
                             {
                                 "Name": "UpperBody",
-                                "Scripts": [],
+                                "Scripts": [
+                                    {
+                                        "Name": "AimAssistanceManager"
+                                    }
+                                ],
                                 "Children": [
                                     {
                                         "Name": "Head",
@@ -217,7 +346,14 @@
                                                 "Children": [
                                                     {
                                                         "Name": "PowerGun",
-                                                        "Scripts": [],
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "PowerGun"
+                                                            },
+                                                            {
+                                                                "Name": "WeaponCharge"
+                                                            }
+                                                        ],
                                                         "Children": []
                                                     },
                                                     {
@@ -250,6 +386,15 @@
                                 "Name": "Cube (1)",
                                 "Scripts": [],
                                 "Children": []
+                            },
+                            {
+                                "Name": "Moving Cube",
+                                "Scripts": [
+                                    {
+                                        "Name": "SineMove"
+                                    }
+                                ],
+                                "Children": []
                             }
                         ]
                     },
@@ -278,17 +423,7 @@
             {
                 "Name": "GameplayManagers",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "AimAssistanceManager",
-                        "Scripts": [
-                            {
-                                "Name": "AimAssistanceManager"
-                            }
-                        ],
-                        "Children": []
-                    }
-                ]
+                "Children": []
             },
             {
                 "Name": "SystemManagers",
@@ -301,17 +436,6 @@
                                 "Name": "MouseKeyboardInputManager"
                             }
                         ],
-                        "Children": []
-                    }
-                ]
-            },
-            {
-                "Name": "Interactables",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Switch",
-                        "Scripts": [],
                         "Children": []
                     }
                 ]
