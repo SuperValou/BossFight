@@ -29,9 +29,29 @@ namespace Assets.Scripts.Controllers
         /// </summary>
         public abstract bool FireButtonUp();
 
+        /// <summary>
+        /// Returns true during the frame where the Run button is pressed.
+        /// </summary>
         public abstract bool RunButtonDown();
+
+        /// <summary>
+        /// Returns wheter or not the Run button is held down.
+        /// </summary>
         public abstract bool RunButton();
+
+        /// <summary>
+        /// Returns wheter or not the Jump button is held down.
+        /// </summary>
         public abstract bool JumpButton();
+
+        /// <summary>
+        /// Returns true during the frame where the Jump button is pressed.
+        /// </summary>
         public abstract bool JumpButtonDown();
+        
+        /// <summary>
+        /// Returns true during the frame where the Switch Weapon button is pressed.
+        /// </summary>
+        public abstract bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
     }
 }
