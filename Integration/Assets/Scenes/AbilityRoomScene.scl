@@ -15,20 +15,15 @@
                 ],
                 "Children": [
                     {
-                        "Name": "Image",
+                        "Name": "WeaponryDisplay",
                         "Scripts": [
                             {
-                                "Name": "Image"
+                                "Name": "WeaponryDisplay"
                             }
                         ],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Weaponry",
-                        "Scripts": [],
                         "Children": [
                             {
-                                "Name": "SelectedWeaponLabel",
+                                "Name": "'Weapon'",
                                 "Scripts": [
                                     {
                                         "Name": "Text"
@@ -37,7 +32,98 @@
                                 "Children": []
                             },
                             {
-                                "Name": "SelectedWeaponIndex",
+                                "Name": "CurrentWeaponLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "HealthDisplay",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Reticle",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "HealthDisplay"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "HealthBar",
+                                "Scripts": [
+                                    {
+                                        "Name": "Slider"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Background",
+                                        "Scripts": [
+                                            {
+                                                "Name": "Image"
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Fill Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Fill",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Handle Slide Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Handle",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "FoeHealthPointLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "FoeNameLabel",
                                 "Scripts": [
                                     {
                                         "Name": "Text"
@@ -392,6 +478,9 @@
                                 "Scripts": [
                                     {
                                         "Name": "SineMove"
+                                    },
+                                    {
+                                        "Name": "Foe"
                                     }
                                 ],
                                 "Children": []

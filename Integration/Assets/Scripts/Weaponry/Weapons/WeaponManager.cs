@@ -12,21 +12,19 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         [Header("Parts")]
         public AbstractWeapon[] weapons;
-
-        [Header("UI")]
-        public Text text;
-
+        
         [Header("References")]
         public AbstractInputManager inputManager;
 
         // -- Class
-
-        private AbstractWeapon _currentWeapon;
+        
         private int _currentWeaponIndex;
+
+        public AbstractWeapon CurrentWeapon { get; private set; }
 
         void Start()
         {
-            _currentWeapon = weapons.First();
+            CurrentWeapon = weapons.First();
             _currentWeaponIndex = 0;
         }
 
@@ -34,12 +32,12 @@ namespace Assets.Scripts.Weaponry.Weapons
         {
             if (inputManager.FireButtonDown())
             {
-                _currentWeapon.InitFire();
+                CurrentWeapon.InitFire();
             }
 
             if (inputManager.FireButtonUp())
             {
-                _currentWeapon.ReleaseFire();
+                CurrentWeapon.ReleaseFire();
             }
 
             if (!inputManager.FireButton() && inputManager.SwitchWeaponDown(out WeaponSwitchDirection direction))
@@ -55,8 +53,7 @@ namespace Assets.Scripts.Weaponry.Weapons
                 }
             }
 
-            _currentWeapon = weapons[_currentWeaponIndex];
-            text.text = _currentWeapon.name;
+            CurrentWeapon = weapons[_currentWeaponIndex];
         }
     }
 }
