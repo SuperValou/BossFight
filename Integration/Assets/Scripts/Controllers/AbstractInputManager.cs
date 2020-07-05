@@ -30,16 +30,6 @@ namespace Assets.Scripts.Controllers
         public abstract bool FireButtonUp();
 
         /// <summary>
-        /// Returns true during the frame where the Run button is pressed.
-        /// </summary>
-        public abstract bool RunButtonDown();
-
-        /// <summary>
-        /// Returns wheter or not the Run button is held down.
-        /// </summary>
-        public abstract bool RunButton();
-
-        /// <summary>
         /// Returns wheter or not the Jump button is held down.
         /// </summary>
         public abstract bool JumpButton();
@@ -48,7 +38,17 @@ namespace Assets.Scripts.Controllers
         /// Returns true during the frame where the Jump button is pressed.
         /// </summary>
         public abstract bool JumpButtonDown();
-        
+
+        /// <summary>
+        /// Returns true during the frame where the Booster button is pressed.
+        /// </summary>
+        public abstract bool BoosterButtonDown();
+
+        /// <summary>
+        /// Returns true during the frame where the Dash button is pressed.
+        /// </summary>
+        public abstract bool DashButtonDown();
+
         /// <summary>
         /// Returns true during the frame where the Switch Weapon button is pressed.
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Utilities;
+﻿using System;
+using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Controllers
@@ -6,18 +7,23 @@ namespace Assets.Scripts.Controllers
     [RequireComponent(typeof(CharacterController))]
     public class FirstPersonController : MonoBehaviour
     {
+        // -- Editor
+
         [Header("Values")]
-        [Tooltip("How fast the player moves.")]
-        public float walkSpeedFactor = 10f;
+        [Tooltip("Speed of the player when moving (m/s).")]
+        public float walkSpeed = 10f;
+		
+		[Tooltip("Speed of the player when dashing (m/s).")]
+        public float dashSpeed = 30f;
 
-        [Tooltip("How high the player jumps when hitting the jump button.")]
+        [Tooltip("Vertical speed of the player when hitting the booster button (m/s).")]
+        public float boosterSpeed = 40;
+
+        [Tooltip("Vertical speed of the player when hitting the jump button (m/s).")]
         public float jumpSpeed = 11f;
-
-        [Tooltip("How fast the player falls after jumping.")]
-        public float jumpGravity = 25f;
-
-        [Tooltip("How fast the player falls when not standing on anything.")]
-        public float fallGravity = 8f;
+        
+        [Tooltip("Gravity pull applied on the player (m/s²).")]
+        public float gravity = 9.81f;
         
         [Tooltip("Units that player can fall before a falling function is run.")]
         [SerializeField]
@@ -26,22 +32,26 @@ namespace Assets.Scripts.Controllers
         [Header("Parts")]
         public Transform headTransform;
 
-        [Tooltip("How far up can you look?")]
+        [Tooltip("How far up can you look? (degrees)")]
         public float maxUpPitchAngle = 60;
 
-        [Tooltip("How far down can you look?")]
+        [Tooltip("How far down can you look? (degrees)")]
         public float maxDownPitchAngle = -60;
 
-        [Header("External")]
+        [Header("References")]
         public AbstractInputManager inputManager;
 
+        // -- Class
 
         private Transform _transform;
         private CharacterController _controller;
 
         private bool _isGrounded;
         private bool _isJumping;
-        private bool _isFalling;
+		
+		private bool _canUseBooster;
+		
+        private bool _isFalling;		
         private float _fallStartHeigth;
         
         private Vector3 _velocityVector = Vector3.zero;
@@ -84,6 +94,8 @@ namespace Assets.Scripts.Controllers
 
             if (_isGrounded)
             {
+                _velocityVector.y = 0;
+
                 // If we were falling, and we fell a vertical distance greater than the threshold, run a falling damage routine
                 if (_isFalling)
                 {
@@ -94,13 +106,16 @@ namespace Assets.Scripts.Controllers
                     }
                 }
 
+				// Booster
+				_canUseBooster = true;
+				
                 // Jump
                 _isJumping = false;
-                if (inputManager.JumpButtonDown())
-                {
-                    _velocityVector.y = jumpSpeed;
-                    _isJumping = true;
-                }
+				if (inputManager.JumpButtonDown())
+				{
+					_velocityVector.y = jumpSpeed;
+					_isJumping = true;
+				}
             }
             else
             {
@@ -112,15 +127,21 @@ namespace Assets.Scripts.Controllers
                 }
             }
 
+			if (_canUseBooster && inputManager.BoosterButtonDown())
+			{
+				_velocityVector.y = boosterSpeed;
+				_isJumping = true;
+			    _canUseBooster = false;
+			}
+
             Vector3 localInputSpeedVector = new Vector3(x: inputMovement.x, y: 0, z: inputMovement.y);
             Vector3 globalInputSpeedVector = _transform.TransformDirection(localInputSpeedVector);
-            Vector3 inputSpeedVector = globalInputSpeedVector * walkSpeedFactor;
+            Vector3 inputSpeedVector = globalInputSpeedVector * walkSpeed;
 
             _velocityVector.x = inputSpeedVector.x;
             _velocityVector.z = inputSpeedVector.z;
 
             // Apply gravity
-            float gravity = _isJumping ? jumpGravity : fallGravity;
             _velocityVector.y -= gravity * Time.deltaTime;
 
             // Check ceilling
