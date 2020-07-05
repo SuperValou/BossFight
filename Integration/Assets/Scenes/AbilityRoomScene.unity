@@ -6218,7 +6218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  dashSpeed: 30
+  dashSpeed: 15
   boosterSpeed: 30
   jumpSpeed: 15
   gravity: 35

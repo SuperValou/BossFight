@@ -12,7 +12,7 @@ namespace Assets.Scripts.Controllers
         /// <summary>
         /// Returns the input vector for moving around.
         /// </summary>
-        public abstract Vector2 GetMoveVector();
+        public abstract Vector3 GetMoveVector();
 
         /// <summary>
         /// Returns true during the frame where the Fire button is pressed.

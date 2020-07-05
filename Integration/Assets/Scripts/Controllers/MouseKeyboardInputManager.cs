@@ -44,12 +44,12 @@ namespace Assets.Scripts.Controllers
             return mouseMovement * mouseSensitivity;
         }
 
-        public override Vector2 GetMoveVector()
+        public override Vector3 GetMoveVector()
         {
-            float x = Input.GetAxis(KeyboardHorizontalAxisName);
-            float y = Input.GetAxis(KeyboardVerticalAxisName);
+            float leftRight = Input.GetAxis(KeyboardHorizontalAxisName);
+            float forwardBackward = Input.GetAxis(KeyboardVerticalAxisName);
 
-            return keyboardSensitivity * new Vector2(x, y);
+            return keyboardSensitivity * new Vector3(x: leftRight, y: 0, z: forwardBackward);
         }
 
         public override bool FireButtonDown()
