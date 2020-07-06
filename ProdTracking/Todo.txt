@@ -1,16 +1,21 @@
-Issues
-	Gameplay
-		Weapons
-		- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
+=== ISSUES ===
+--- Active ---
+Bug
 
-Features
-	Movement
-	- Straf
-	- Impulse jump
+Improvement
+	Abilities
+	- Dash is bound to Alt key
 	
-	UI	
-	- Health bar
-	- Foe Health bar
+	Collisions	
+	- Player bumps upwards when hit by turret projectile
+	
+	UI
+	- Reticle is a placeholder
+	- Foe health bar is placeholder
+	- Selected weapon is placeholder
+	
+	Sound
+	- There is no sound
 	
 Polish
 	Weapons
@@ -23,13 +28,32 @@ Polish
 	
 	Collisions
 	- Arm goes through wall when player gets too close
-	
-	UI
-	- Reticle is a placeholder
-	
-	
-=== DONE ===
-Issues
+
+
+--- Done ---
+Bug
 	Gameplay
 		Weapons
 		- 2020-07-03 - [BeamGun] impact is not on screen center
+		
+
+=== FEATURES ===
+Missing
+	UI	
+	- Player Health bar
+	
+Usable
+	Movement
+	- Dash
+	- Impulse jump (booster)
+	
+	UI		
+	- Foe Health bar
+	
+	
+=== SYSTEMS ===
+Missing
+	Localization
+	Keys binding
+	
+	

@@ -249,6 +249,66 @@
                                         "Name": "Floor_20x20 (15)",
                                         "Scripts": [],
                                         "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (16)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (17)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (18)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (19)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (20)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (21)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (22)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (23)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (24)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (25)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (26)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (27)",
+                                        "Scripts": [],
+                                        "Children": []
                                     }
                                 ]
                             },
@@ -370,12 +430,32 @@
                         ]
                     },
                     {
+                        "Name": "Cubes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Cube (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Cube (2)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
                         "Name": "Interactables",
                         "Scripts": [],
                         "Children": [
                             {
                                 "Name": "Switch",
-                                "Scripts": [],
+                                "Scripts": [
+                                    {
+                                        "Name": "Switch"
+                                    }
+                                ],
                                 "Children": []
                             }
                         ]
@@ -470,45 +550,77 @@
                         ]
                     },
                     {
-                        "Name": "Cubes",
+                        "Name": "Foes",
                         "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Cube (1)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Moving Cube",
+                                "Name": "Foe",
                                 "Scripts": [
-                                    {
-                                        "Name": "SineMove"
-                                    },
                                     {
                                         "Name": "Foe"
                                     }
                                 ],
-                                "Children": []
+                                "Children": [
+                                    {
+                                        "Name": "Capsule",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Moving Foe",
+                                "Scripts": [
+                                    {
+                                        "Name": "Foe"
+                                    },
+                                    {
+                                        "Name": "SineMove"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Capsule",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "Name": "Foe",
+                        "Name": "Turret",
                         "Scripts": [
                             {
-                                "Name": "Foe"
+                                "Name": "TrainingTurret"
                             }
                         ],
                         "Children": [
                             {
-                                "Name": "Capsule",
+                                "Name": "Base",
                                 "Scripts": [],
                                 "Children": []
                             },
                             {
-                                "Name": "Sphere",
+                                "Name": "Cannon",
                                 "Scripts": [],
-                                "Children": []
+                                "Children": [
+                                    {
+                                        "Name": "Cylinder",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     }
