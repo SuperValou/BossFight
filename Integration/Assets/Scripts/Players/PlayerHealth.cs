@@ -1,0 +1,17 @@
+﻿using Assets.Scripts.Damages;
+
+namespace Assets.Scripts.Players
+{
+    public class PlayerHealth : Damageable
+    {
+        protected override void OnDamageTaken()
+        {
+            // TODO: say ouch
+        }
+
+        protected override void Die()
+        {
+            // TODO: game over
+        }
+    }
+}

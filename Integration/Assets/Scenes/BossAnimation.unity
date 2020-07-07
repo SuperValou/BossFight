@@ -346,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorLockMode: 1
   mouseSensitivity: 12
+  scrollSensitivity: 1
   keyboardSensitivity: 1
 --- !u!4 &221488864
 Transform:
@@ -959,12 +960,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f30baa090e582a4e82285802c00233e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeedFactor: 10
+  walkSpeed: 10
+  dashSpeed: 30
+  boosterSpeed: 40
   jumpSpeed: 11
-  jumpGravity: 25
-  fallGravity: 8
+  gravity: 9.81
   fallingThreshold: 10
-  headTransform: {fileID: 350737311}
+  headTransform: {fileID: 1050427341}
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
   inputManager: {fileID: 221488863}

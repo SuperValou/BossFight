@@ -1,21 +1,41 @@
 === ISSUES ===
 --- Active ---
 Bug
-
+	Abilities
+	
+	
+	Weapons
+	
+	
+	Collisions
+	- Turret bullets don't always collide with the player controller 
+	
+	
+	UI
+	
+	
+	Sound
+	
+	
+	
 Improvement
 	Abilities
 	- Dash is bound to Alt key
 	
+	
 	Collisions	
 	- Player bumps upwards when hit by turret projectile
+	
 	
 	UI
 	- Reticle is a placeholder
 	- Foe health bar is placeholder
 	- Selected weapon is placeholder
-	
+		
+		
 	Sound
-	- There is no sound
+	
+	
 	
 Polish
 	Weapons
@@ -26,34 +46,61 @@ Polish
 	- Particles emitted on impact are stretched and barely visible 
 	- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
 	
+	
 	Collisions
 	- Arm goes through wall when player gets too close
 
 
+
 --- Done ---
 Bug
-	Gameplay
-		Weapons
-		- 2020-07-03 - [BeamGun] impact is not on screen center
+	Weapons
+	- 2020-07-03 - [BeamGun] impact is not on screen center
 		
 
-=== FEATURES ===
+
+=== GAMEPLAY ===
 Missing
 	UI	
-	- Player Health bar
+		
+		
+	Sound
+	- There is no sound
+	
 	
 Usable
-	Movement
+	Abilities
 	- Dash
 	- Impulse jump (booster)
 	
+	
 	UI		
 	- Foe Health bar
+	- Player Health bar
+	
 	
 	
 === SYSTEMS ===
 Missing
 	Localization
-	Keys binding
 	
+	
+	Constrols
+	- Keyboard VS controller
+	- Customizable keys binding
+	
+	
+	Door loading
+	- Explore Gameplay and assets scene separation: https://youtu.be/zObWVOv1GlE
+
+
+	Cutscenes
+
+
+
+=== LEVEL DESIGN ===
+Missing
+	Wake-up Room
+	Training Room
+	Boss Room
 	

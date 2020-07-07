@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Assets.Scripts.Controllers;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace Assets.Scripts.Players
 {
     [RequireComponent(typeof(CharacterController))]
     public class FirstPersonController : MonoBehaviour
