@@ -1,16 +1,41 @@
-Issues
-	Gameplay
-		Weapons
-		- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
-
-Features
-	Movement
-	- Straf
-	- Impulse jump
+=== ISSUES ===
+--- Active ---
+Bug
+	Abilities
 	
-	UI	
-	- Health bar
-	- Foe Health bar
+	
+	Weapons
+	
+	
+	Collisions
+	- Turret bullets don't always collide with the player controller 
+	
+	
+	UI
+	
+	
+	Sound
+	
+	
+	
+Improvement
+	Abilities
+	- Dash is bound to Alt key
+	
+	
+	Collisions	
+	- Player bumps upwards when hit by turret projectile
+	
+	
+	UI
+	- Reticle is a placeholder
+	- Foe health bar is placeholder
+	- Selected weapon is placeholder
+		
+		
+	Sound
+	
+	
 	
 Polish
 	Weapons
@@ -21,15 +46,61 @@ Polish
 	- Particles emitted on impact are stretched and barely visible 
 	- [AimAssistance] Arm movement could be smoother when suddenly looking at something close
 	
+	
 	Collisions
 	- Arm goes through wall when player gets too close
+
+
+
+--- Done ---
+Bug
+	Weapons
+	- 2020-07-03 - [BeamGun] impact is not on screen center
+		
+
+
+=== GAMEPLAY ===
+Missing
+	UI	
+		
+		
+	Sound
+	- There is no sound
 	
-	UI
-	- Reticle is a placeholder
+	
+Usable
+	Abilities
+	- Dash
+	- Impulse jump (booster)
 	
 	
-=== DONE ===
-Issues
-	Gameplay
-		Weapons
-		- 2020-07-03 - [BeamGun] impact is not on screen center
+	UI		
+	- Foe Health bar
+	- Player Health bar
+	
+	
+	
+=== SYSTEMS ===
+Missing
+	Localization
+	
+	
+	Constrols
+	- Keyboard VS controller
+	- Customizable keys binding
+	
+	
+	Door loading
+	- Explore Gameplay and assets scene separation: https://youtu.be/zObWVOv1GlE
+
+
+	Cutscenes
+
+
+
+=== LEVEL DESIGN ===
+Missing
+	Wake-up Room
+	Training Room
+	Boss Room
+	
