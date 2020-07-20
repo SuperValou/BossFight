@@ -4,150 +4,6 @@
         "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
         "RootGameObjectInfos": [
             {
-                "Name": "Canvas",
-                "Scripts": [
-                    {
-                        "Name": "CanvasScaler"
-                    },
-                    {
-                        "Name": "GraphicRaycaster"
-                    }
-                ],
-                "Children": [
-                    {
-                        "Name": "WeaponryDisplay",
-                        "Scripts": [
-                            {
-                                "Name": "WeaponryDisplay"
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "Name": "'Weapon'",
-                                "Scripts": [
-                                    {
-                                        "Name": "Text"
-                                    }
-                                ],
-                                "Children": []
-                            },
-                            {
-                                "Name": "CurrentWeaponLabel",
-                                "Scripts": [
-                                    {
-                                        "Name": "Text"
-                                    }
-                                ],
-                                "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "HealthDisplay",
-                        "Scripts": [],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Reticle",
-                        "Scripts": [
-                            {
-                                "Name": "Image"
-                            }
-                        ],
-                        "Children": []
-                    },
-                    {
-                        "Name": "FoeHealthDisplay",
-                        "Scripts": [
-                            {
-                                "Name": "HealthDisplay"
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "Name": "HealthBar",
-                                "Scripts": [
-                                    {
-                                        "Name": "Slider"
-                                    }
-                                ],
-                                "Children": [
-                                    {
-                                        "Name": "Background",
-                                        "Scripts": [
-                                            {
-                                                "Name": "Image"
-                                            }
-                                        ],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Fill Area",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Fill",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "Image"
-                                                    }
-                                                ],
-                                                "Children": []
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Handle Slide Area",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Handle",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "Image"
-                                                    }
-                                                ],
-                                                "Children": []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "Name": "FoeHealthPointLabel",
-                                "Scripts": [
-                                    {
-                                        "Name": "Text"
-                                    }
-                                ],
-                                "Children": []
-                            },
-                            {
-                                "Name": "FoeNameLabel",
-                                "Scripts": [
-                                    {
-                                        "Name": "Text"
-                                    }
-                                ],
-                                "Children": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Name": "EventSystem",
-                "Scripts": [
-                    {
-                        "Name": "EventSystem"
-                    },
-                    {
-                        "Name": "StandaloneInputModule"
-                    }
-                ],
-                "Children": []
-            },
-            {
                 "Name": "Environment",
                 "Scripts": [],
                 "Children": [
@@ -247,6 +103,66 @@
                                     },
                                     {
                                         "Name": "Floor_20x20 (15)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (16)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (17)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (18)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (19)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (20)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (21)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (22)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (23)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (24)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (25)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (26)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_20x20 (27)",
                                         "Scripts": [],
                                         "Children": []
                                     }
@@ -358,107 +274,12 @@
                                 "Children": []
                             },
                             {
-                                "Name": "Floor_20x20 (3)",
+                                "Name": "Floor_20x20 (4)",
                                 "Scripts": [],
                                 "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Interactables",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Switch",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "Name": "Entities",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Player",
-                        "Scripts": [
-                            {
-                                "Name": "FirstPersonController"
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "Name": "UpperBody",
-                                "Scripts": [
-                                    {
-                                        "Name": "AimAssistanceManager"
-                                    }
-                                ],
-                                "Children": [
-                                    {
-                                        "Name": "Head",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Sphere",
-                                                "Scripts": [],
-                                                "Children": []
-                                            },
-                                            {
-                                                "Name": "Camera",
-                                                "Scripts": [],
-                                                "Children": []
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Arm",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Cylinder",
-                                                "Scripts": [],
-                                                "Children": []
-                                            },
-                                            {
-                                                "Name": "WeaponManager",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "WeaponManager"
-                                                    }
-                                                ],
-                                                "Children": [
-                                                    {
-                                                        "Name": "PowerGun",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "PowerGun"
-                                                            },
-                                                            {
-                                                                "Name": "WeaponCharge"
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "BeamGun",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "BeamGun"
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
                             },
                             {
-                                "Name": "Body",
+                                "Name": "Floor_20x20 (5)",
                                 "Scripts": [],
                                 "Children": []
                             }
@@ -474,35 +295,23 @@
                                 "Children": []
                             },
                             {
-                                "Name": "Moving Cube",
-                                "Scripts": [
-                                    {
-                                        "Name": "SineMove"
-                                    },
-                                    {
-                                        "Name": "Foe"
-                                    }
-                                ],
+                                "Name": "Cube (2)",
+                                "Scripts": [],
                                 "Children": []
                             }
                         ]
                     },
                     {
-                        "Name": "Foe",
-                        "Scripts": [
-                            {
-                                "Name": "Foe"
-                            }
-                        ],
+                        "Name": "Interactables",
+                        "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Capsule",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Sphere",
-                                "Scripts": [],
+                                "Name": "Switch",
+                                "Scripts": [
+                                    {
+                                        "Name": "Switch"
+                                    }
+                                ],
                                 "Children": []
                             }
                         ]
@@ -510,19 +319,95 @@
                 ]
             },
             {
-                "Name": "GameplayManagers",
-                "Scripts": [],
-                "Children": []
-            },
-            {
-                "Name": "SystemManagers",
+                "Name": "Entities",
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "UnityInputManager",
+                        "Name": "Foes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Foe",
+                                "Scripts": [
+                                    {
+                                        "Name": "Foe"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Capsule",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Moving Foe",
+                                "Scripts": [
+                                    {
+                                        "Name": "Foe"
+                                    },
+                                    {
+                                        "Name": "SineMove"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Capsule",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Turret",
                         "Scripts": [
                             {
-                                "Name": "MouseKeyboardInputManager"
+                                "Name": "TrainingTurret"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Base",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Cannon",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Cylinder",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Systems",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy"
                             }
                         ],
                         "Children": []
