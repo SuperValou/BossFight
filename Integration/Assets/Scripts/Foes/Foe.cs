@@ -1,51 +1,43 @@
-﻿using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Huds;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Assets.Scripts.Foes
 {
-    public class Foe : MonoBehaviour
+    public class Foe : Damageable
     {
-        public float maxHealth = 20;
+        // -- Editor
 
+        [Header("Parts")]
         public GameObject deathAnimation;
-
-        private NavMeshAgent _navMeshAgent;
         
-        public float CurrentHealth { get; private set; }
+        [Header("References")]
+        [Tooltip("Can be null")]
+        public FoeHealthDisplayProxy foeHealthDisplayProxy;
 
-        public bool IsAlive => CurrentHealth > 0;
-
-        void Start()
-        {
-            CurrentHealth = maxHealth;
-            
-            _navMeshAgent = this.GetOrThrow<NavMeshAgent>();
-            if (_navMeshAgent.enabled)
-            {
-                _navMeshAgent.SetDestination(Vector3.zero);
-            }
-        }
+        // -- Class
         
-        public void TakeDamage(float damages)
+        protected override void OnDamageTaken()
         {
-            CurrentHealth -= damages;
-            if (CurrentHealth < 0)
+            if (foeHealthDisplayProxy != null)
             {
-                CurrentHealth = 0;
-                Die();
+                foeHealthDisplayProxy.Show((Damageable) this);
             }
         }
 
-        private void Die()
+        protected override void Die()
         {
-            Instantiate(deathAnimation, this.transform.position, this.transform.rotation);
+            if (foeHealthDisplayProxy != null)
+            {
+                foeHealthDisplayProxy.Show((Damageable) this);
+            }
+
+            if (deathAnimation != null)
+            {
+                Instantiate(deathAnimation, this.transform.position, this.transform.rotation);
+            }
+
             Destroy(gameObject);
-        }
-
-        public void Kill()
-        {
-            TakeDamage(maxHealth);
         }
     }
 }

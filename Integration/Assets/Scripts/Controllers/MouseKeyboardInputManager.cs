@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Controllers
 {
     public class MouseKeyboardInputManager : AbstractInputManager
     {
+        // -- Editor
+
         [Header("Mouse")]
         public CursorLockMode cursorLockMode = CursorLockMode.Locked;
-        public float mouseSensitivity = 12;
-        
+        public float mouseSensitivity = 12f;
+        public float scrollSensitivity = 1f;
+
         [Header("Keyboard")]
         public float keyboardSensitivity = 1f;
+
+        // -- Class
 
         // Mouse
         private const string MouseHorizontalAxisName = "Mouse X";
@@ -19,11 +25,10 @@ namespace Assets.Scripts.Controllers
         // Keyboard
         private const string KeyboardHorizontalAxisName = "Horizontal";
         private const string KeyboardVerticalAxisName = "Vertical";
-
-        private const string KeyboardRunButtonName = "Run";
-        private const string KeyboardJumpButtonName = "Jump";
-
-
+        
+        private readonly KeyCode _keyboardJumpButtonKey = KeyCode.Space;
+        private readonly KeyCode _keyboardBoosterButtonKey = KeyCode.LeftShift;
+        
         void Start()
         {
             Cursor.lockState = cursorLockMode;
@@ -39,12 +44,12 @@ namespace Assets.Scripts.Controllers
             return mouseMovement * mouseSensitivity;
         }
 
-        public override Vector2 GetMoveVector()
+        public override Vector3 GetMoveVector()
         {
-            float x = Input.GetAxis(KeyboardHorizontalAxisName);
-            float y = Input.GetAxis(KeyboardVerticalAxisName);
+            float leftRight = Input.GetAxis(KeyboardHorizontalAxisName);
+            float forwardBackward = Input.GetAxis(KeyboardVerticalAxisName);
 
-            return keyboardSensitivity * new Vector2(x, y);
+            return keyboardSensitivity * new Vector3(x: leftRight, y: 0, z: forwardBackward);
         }
 
         public override bool FireButtonDown()
@@ -62,24 +67,43 @@ namespace Assets.Scripts.Controllers
             return Input.GetMouseButtonUp(MouseFireButton);
         }
 
-        public override bool RunButtonDown()
-        {
-            return Input.GetButtonDown(KeyboardRunButtonName);
-        }
-
-        public override bool RunButton()
-        {
-            return Input.GetButton(KeyboardRunButtonName);
-        }
-
         public override bool JumpButton()
         {
-            return Input.GetButton(KeyboardJumpButtonName);
+            return Input.GetKeyDown(_keyboardJumpButtonKey);
         }
 
         public override bool JumpButtonDown()
         {
-            return Input.GetButtonDown(KeyboardJumpButtonName);
+            return Input.GetKeyDown(_keyboardJumpButtonKey);
+        }
+
+        public override bool BoosterButtonDown()
+        {
+            return Input.GetKeyDown(_keyboardBoosterButtonKey);
+        }
+
+        public override bool DashButtonDown()
+        {
+            return Input.GetKeyDown(KeyCode.LeftAlt); // TODO
+        }
+
+        public override bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection)
+        {
+            float scroll = Input.mouseScrollDelta.y * scrollSensitivity;
+            if (scroll >= 1)
+            {
+                weaponSwitchDirection = WeaponSwitchDirection.Next;
+                return true;
+            }
+
+            if (scroll <= -1)
+            {
+                weaponSwitchDirection = WeaponSwitchDirection.Previous;
+                return true;
+            }
+
+            weaponSwitchDirection = WeaponSwitchDirection.None;
+            return false;
         }
     }
 }

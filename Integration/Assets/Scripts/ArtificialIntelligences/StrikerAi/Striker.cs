@@ -1,19 +1,18 @@
 ﻿using Assets.Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
 {
     public class Striker : MonoBehaviour, IStateMachine<StrikerBehaviour>
     {
-        [Header("Parts")]
-        public Transform leftCanon;
-        public Transform rightCanon;
-
         [Header("References")]
         public Transform target;
 
         private Animator _animator;
         private StrikerBehaviour[] _behaviours;
+
+        private NavMeshAgent _navMeshAgent;
         
         void Start()
         {
@@ -24,6 +23,8 @@ namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
             {
                 strikerBehaviour.Initialize(this);
             }
+
+            _navMeshAgent = this.GetOrThrow<NavMeshAgent>();
         }
 
         void Update()
@@ -38,10 +39,7 @@ namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
                 return;
             }
 
-            leftCanon.LookAt(target);
-            leftCanon.Rotate(leftCanon.up, 90, Space.World);
-            rightCanon.LookAt(target);
-            rightCanon.Rotate(rightCanon.up, 90, Space.World);
+            _navMeshAgent.SetDestination(target.position);
         }
 
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
