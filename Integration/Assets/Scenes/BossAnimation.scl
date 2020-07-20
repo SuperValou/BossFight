@@ -4,40 +4,6 @@
         "ScenePath": "Assets/Scenes/BossAnimation.unity",
         "RootGameObjectInfos": [
             {
-                "Name": "Canvas",
-                "Scripts": [
-                    {
-                        "Name": "CanvasScaler"
-                    },
-                    {
-                        "Name": "GraphicRaycaster"
-                    }
-                ],
-                "Children": [
-                    {
-                        "Name": "Image",
-                        "Scripts": [
-                            {
-                                "Name": "Image"
-                            }
-                        ],
-                        "Children": []
-                    }
-                ]
-            },
-            {
-                "Name": "EventSystem",
-                "Scripts": [
-                    {
-                        "Name": "EventSystem"
-                    },
-                    {
-                        "Name": "StandaloneInputModule"
-                    }
-                ],
-                "Children": []
-            },
-            {
                 "Name": "Environment",
                 "Scripts": [],
                 "Children": [
@@ -170,63 +136,6 @@
                 "Name": "Entities",
                 "Scripts": [],
                 "Children": [
-                    {
-                        "Name": "Player",
-                        "Scripts": [
-                            {
-                                "Name": "FirstPersonController"
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "Name": "AimAssistanceManager",
-                                "Scripts": [
-                                    {
-                                        "Name": "AimAssistanceManager"
-                                    }
-                                ],
-                                "Children": []
-                            },
-                            {
-                                "Name": "UpperBody",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Head",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Sphere",
-                                                "Scripts": [],
-                                                "Children": []
-                                            },
-                                            {
-                                                "Name": "Camera",
-                                                "Scripts": [],
-                                                "Children": []
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Arm",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Weapon",
-                                                "Scripts": [],
-                                                "Children": []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "Name": "Body",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
                     {
                         "Name": "Cubes",
                         "Scripts": [],
@@ -364,21 +273,6 @@
                         "Scripts": [
                             {
                                 "Name": "NavMeshSurface"
-                            }
-                        ],
-                        "Children": []
-                    }
-                ]
-            },
-            {
-                "Name": "SystemManagers",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "UnityInputManager",
-                        "Scripts": [
-                            {
-                                "Name": "MouseKeyboardInputManager"
                             }
                         ],
                         "Children": []

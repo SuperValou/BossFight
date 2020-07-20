@@ -13,23 +13,23 @@ namespace Assets.Scripts.Foes
         
         [Header("References")]
         [Tooltip("Can be null")]
-        public FoeHealthDisplay FoeHealthDisplay;
+        public FoeHealthDisplayProxy foeHealthDisplayProxy;
 
         // -- Class
         
         protected override void OnDamageTaken()
         {
-            if (FoeHealthDisplay != null)
+            if (foeHealthDisplayProxy != null)
             {
-                FoeHealthDisplay.Show((Damageable) this);
+                foeHealthDisplayProxy.Show((Damageable) this);
             }
         }
 
         protected override void Die()
         {
-            if (FoeHealthDisplay != null)
+            if (foeHealthDisplayProxy != null)
             {
-                FoeHealthDisplay.Show((Damageable) this);
+                foeHealthDisplayProxy.Show((Damageable) this);
             }
 
             if (deathAnimation != null)
