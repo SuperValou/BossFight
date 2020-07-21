@@ -12,6 +12,9 @@ namespace Assets.Scripts.Foes.Strikers
     public class Striker : Damageable, IStateMachine<StrikerBehaviour>
     {
         // -- Editor
+        [Header("Parts")]
+        public ParticleSystem stompingParticleSystem;
+
         [Header("References")]
         [Tooltip("Target of the " + nameof(Striker) + ". Can be null.")]
         public Transform target;
@@ -47,7 +50,12 @@ namespace Assets.Scripts.Foes.Strikers
 
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
         {
-            Debug.Log($"Current behaviour: {behaviour.GetType().Name}");
+            //Debug.Log($"Current behaviour: {behaviour.GetType().Name}");
+        }
+
+        public void OnStomping()
+        {
+            stompingParticleSystem.Emit(300);
         }
 
         protected override void OnDamageTaken()
