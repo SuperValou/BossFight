@@ -1,10 +1,13 @@
-﻿using Assets.Scripts.Damages;
+﻿using Assets.Scripts.ArtificialIntelligences;
+using Assets.Scripts.Damages;
+using Assets.Scripts.Foes.Strikers.StrikerAi;
 using Assets.Scripts.Huds;
+using Assets.Scripts.Proxies;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
+namespace Assets.Scripts.Foes.Strikers
 {
     public class Striker : Damageable, IStateMachine<StrikerBehaviour>
     {
@@ -18,37 +21,28 @@ namespace Assets.Scripts.ArtificialIntelligences.StrikerAi
 
         // -- Class
 
-        private Animator _animator;
         private StrikerBehaviour[] _behaviours;
 
-        private NavMeshAgent _navMeshAgent;
-        
+        internal Transform Target => target;
+        internal Animator Animator { get; private set; }
+        internal NavMeshAgent NavMeshAgent { get; private set; }
+
         void Start()
         {
-            _animator = this.GetOrThrow<Animator>();
-            _behaviours = _animator.GetBehaviours<StrikerBehaviour>();
+            Animator = this.GetOrThrow<Animator>();
+            NavMeshAgent = this.GetOrThrow<NavMeshAgent>();
+
+            _behaviours = Animator.GetBehaviours<StrikerBehaviour>();
 
             foreach (var strikerBehaviour in _behaviours)
             {
-                strikerBehaviour.Initialize(this);
+                strikerBehaviour.Initialize(stateMachine: this);
             }
-
-            _navMeshAgent = this.GetOrThrow<NavMeshAgent>();
         }
 
         void Update()
         {
-            FaceTarget();
-        }
-
-        private void FaceTarget()
-        {
-            if (target == null)
-            {
-                return;
-            }
-
-            _navMeshAgent.SetDestination(target.position);
+            // Do not put anything in here, use "OnStateUpdate" method in StrikerBehaviours instead.
         }
 
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
