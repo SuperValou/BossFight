@@ -1,4 +1,4 @@
-namespace Assets.Scripts.ArtificialIntelligences.NavMeshComponents
+namespace Assets.Scripts.Foes.ArtificialIntelligences.NavMeshComponents
 {
     public enum CollectObjects
     {

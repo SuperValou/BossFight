@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace Assets.Scripts.Players.Inputs
 {
     public class MouseKeyboardInputManager : AbstractInputManager
     {

@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using System.Net;
-using Assets.Scripts.Controllers;
+using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Weaponry.Weapons;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Assets.Scripts.Weaponry.Weapons
+namespace Assets.Scripts.Players
 {
     public class WeaponManager : MonoBehaviour
     {

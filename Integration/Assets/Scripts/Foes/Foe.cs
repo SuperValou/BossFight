@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Damages;
 using Assets.Scripts.Huds;
-using Assets.Scripts.Proxies;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes

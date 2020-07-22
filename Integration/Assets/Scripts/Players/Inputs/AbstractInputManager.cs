@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Controllers
+namespace Assets.Scripts.Players.Inputs
 {
     public abstract class AbstractInputManager : MonoBehaviour
     {

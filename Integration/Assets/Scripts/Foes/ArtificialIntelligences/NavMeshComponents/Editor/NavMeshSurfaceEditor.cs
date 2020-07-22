@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Assets.Scripts.Foes.ArtificialIntelligences.NavMeshComponents;
 using UnityEditor;
 using UnityEditor.AI;
 using UnityEditor.IMGUI.Controls;

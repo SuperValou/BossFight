@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.ArtificialIntelligences;
-using Assets.Scripts.Damages;
+﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
-using Assets.Scripts.Proxies;
+using Assets.Scripts.Huds;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.AI;

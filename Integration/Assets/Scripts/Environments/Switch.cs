@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
-namespace Assets.Scripts.Switches
+namespace Assets.Scripts.Environments
 {
     public class Switch : MonoBehaviour
     {

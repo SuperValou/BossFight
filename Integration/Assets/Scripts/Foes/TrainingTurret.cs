@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Switches;
+﻿using Assets.Scripts.Environments;
 using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;

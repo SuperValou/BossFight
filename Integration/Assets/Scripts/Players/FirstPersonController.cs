@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Controllers;
+﻿using Assets.Scripts.Players.Inputs;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 

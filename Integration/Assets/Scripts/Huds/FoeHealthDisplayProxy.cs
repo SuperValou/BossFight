@@ -1,8 +1,7 @@
 ﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Huds;
 using UnityEngine;
 
-namespace Assets.Scripts.Proxies
+namespace Assets.Scripts.Huds
 {
     public class FoeHealthDisplayProxy : MonoBehaviour
     {

@@ -1,7 +1,6 @@
-﻿using Assets.Scripts.Players;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Proxies
+namespace Assets.Scripts.Players
 {
     public class PlayerProxy : MonoBehaviour
     {

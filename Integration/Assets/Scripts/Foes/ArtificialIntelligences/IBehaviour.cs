@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.ArtificialIntelligences
+﻿namespace Assets.Scripts.Foes.ArtificialIntelligences
 {
     /// <summary>
     /// The behaviour of some State-Machine, in a specific state.
