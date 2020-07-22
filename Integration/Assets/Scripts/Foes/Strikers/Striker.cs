@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.ArtificialIntelligences;
 using Assets.Scripts.Damages;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
-using Assets.Scripts.Huds;
 using Assets.Scripts.Proxies;
 using Assets.Scripts.Utilities;
 using UnityEngine;
@@ -12,8 +11,9 @@ namespace Assets.Scripts.Foes.Strikers
     public class Striker : Damageable, IStateMachine<StrikerBehaviour>
     {
         // -- Editor
+
         [Header("Parts")]
-        public ParticleSystem stompingParticleSystem;
+        public DamagingParticleSystem stompingAttack;
 
         [Header("References")]
         [Tooltip("Target of the " + nameof(Striker) + ". Can be null.")]
@@ -55,7 +55,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         public void OnStomping()
         {
-            stompingParticleSystem.Emit(300);
+            stompingAttack.Execute();
         }
 
         protected override void OnDamageTaken()

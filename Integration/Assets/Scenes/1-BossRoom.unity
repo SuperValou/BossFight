@@ -830,10 +830,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407241277}
-  - component: {fileID: 407241279}
+  - component: {fileID: 407241280}
   - component: {fileID: 407241278}
+  - component: {fileID: 407241279}
   m_Layer: 11
-  m_Name: Stomping
+  m_Name: StompingAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4501,8 +4502,8 @@ ParticleSystem:
     type: 1
     collisionMode: 0
     colliderForce: 0
-    multiplyColliderForceByParticleSize: 0
-    multiplyColliderForceByParticleSpeed: 0
+    multiplyColliderForceByParticleSize: 1
+    multiplyColliderForceByParticleSpeed: 1
     multiplyColliderForceByCollisionAngle: 1
     plane0: {fileID: 0}
     plane1: {fileID: 0}
@@ -4678,7 +4679,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -5632,6 +5633,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &407241280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407241276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f870cb3c07d191f4bb46085f26b3649b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagePerParticle: 2
 --- !u!1 &410855325
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,7 +7134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1341732272}
   m_Layer: 11
-  m_Name: Particles
+  m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8066,6 +8080,11 @@ PrefabInstance:
       propertyPath: stompingParticleSystem
       value: 
       objectReference: {fileID: 407241279}
+    - target: {fileID: 582917954982587833, guid: 8549fbf9adbdc2146b7b6c74ec41d768,
+        type: 3}
+      propertyPath: stompingAttack
+      value: 
+      objectReference: {fileID: 407241280}
     - target: {fileID: 1697682565818660341, guid: 8549fbf9adbdc2146b7b6c74ec41d768,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8515,6 +8534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1702211643029690333, guid: 8549fbf9adbdc2146b7b6c74ec41d768,
+        type: 3}
+      propertyPath: m_Speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8549fbf9adbdc2146b7b6c74ec41d768, type: 3}
