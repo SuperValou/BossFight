@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Utilities
+namespace Assets.Scripts.Players
 {
-    public class AimAssistanceManager : MonoBehaviour
+    public class AimAssist : MonoBehaviour
     {
         public Camera eye;
         public Transform arm;
