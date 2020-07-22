@@ -21,6 +21,11 @@ namespace Assets.Scripts.Damages
 
         public void TakeDamage(IDamager damager)
         {
+            if (!IsAlive)
+            {
+                return;
+            }
+
             CurrentHealth -= damager.BaseDamage;
             if (CurrentHealth <= 0)
             {

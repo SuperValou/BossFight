@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Damages;
+using UnityEngine;
 
 namespace Assets.Scripts.Players
 {
@@ -12,6 +13,7 @@ namespace Assets.Scripts.Players
         protected override void Die()
         {
             // TODO: game over
+            Debug.LogWarning("Game over");
         }
     }
 }
