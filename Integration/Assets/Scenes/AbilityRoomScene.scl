@@ -4,6 +4,21 @@
         "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
         "RootGameObjectInfos": [
             {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
                 "Name": "Environment",
                 "Scripts": [],
                 "Children": [
@@ -396,21 +411,6 @@
                                 ]
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "Name": "Systems",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "FoeHealthDisplayProxy",
-                        "Scripts": [
-                            {
-                                "Name": "FoeHealthDisplayProxy"
-                            }
-                        ],
-                        "Children": []
                     }
                 ]
             }

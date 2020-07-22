@@ -226,17 +226,16 @@
                         "Name": "FirstPersonController"
                     },
                     {
+                        "Name": "AimAssist"
+                    },
+                    {
                         "Name": "PlayerHealth"
                     }
                 ],
                 "Children": [
                     {
                         "Name": "UpperBody",
-                        "Scripts": [
-                            {
-                                "Name": "AimAssistanceManager"
-                            }
-                        ],
+                        "Scripts": [],
                         "Children": [
                             {
                                 "Name": "Head",
@@ -306,13 +305,19 @@
                 ]
             },
             {
-                "Name": "UnityInputManager",
-                "Scripts": [
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
                     {
-                        "Name": "MouseKeyboardInputManager"
+                        "Name": "UnityInputManager",
+                        "Scripts": [
+                            {
+                                "Name": "MouseKeyboardInputManager"
+                            }
+                        ],
+                        "Children": []
                     }
-                ],
-                "Children": []
+                ]
             }
         ]
     }

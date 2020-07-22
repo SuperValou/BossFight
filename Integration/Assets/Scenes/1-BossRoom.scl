@@ -1,7 +1,7 @@
 {
     "SerializationMajorVersion": 1,
     "SceneInfo": {
-        "ScenePath": "Assets/Scenes/BossAnimation.unity",
+        "ScenePath": "Assets/Scenes/1-BossRoom.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "Managers",
@@ -17,19 +17,19 @@
                         "Children": []
                     },
                     {
-                        "Name": "PlayerProxy",
+                        "Name": "FoeHealthDisplayProxy",
                         "Scripts": [
                             {
-                                "Name": "PlayerProxy"
+                                "Name": "FoeHealthDisplayProxy"
                             }
                         ],
                         "Children": []
                     },
                     {
-                        "Name": "FoeHealthDisplayProxy",
+                        "Name": "PlayerProxy",
                         "Scripts": [
                             {
-                                "Name": "FoeHealthDisplayProxy"
+                                "Name": "PlayerProxy"
                             }
                         ],
                         "Children": []
@@ -140,24 +140,89 @@
                     {
                         "Name": "Pillars",
                         "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Pillar",
+                                "Name": "Floor_20x20 (16)",
                                 "Scripts": [],
                                 "Children": []
                             },
                             {
-                                "Name": "Pillar (1)",
+                                "Name": "Floor_20x20 (17)",
                                 "Scripts": [],
                                 "Children": []
                             },
                             {
-                                "Name": "Pillar (2)",
+                                "Name": "Floor_20x20 (18)",
                                 "Scripts": [],
                                 "Children": []
                             },
                             {
-                                "Name": "Pillar (3)",
+                                "Name": "Floor_20x20 (19)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (20)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (21)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (22)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (23)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (24)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (25)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (26)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (27)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (28)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (29)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (30)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_20x20 (31)",
                                 "Scripts": [],
                                 "Children": []
                             }
@@ -169,22 +234,6 @@
                 "Name": "Entities",
                 "Scripts": [],
                 "Children": [
-                    {
-                        "Name": "Cubes",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Cube",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Cube (1)",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
                     {
                         "Name": "Foes",
                         "Scripts": [],
@@ -287,6 +336,21 @@
                                             {
                                                 "Name": "ArmRight",
                                                 "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Attacks",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "StompingAttack",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "DamagingParticleSystem"
+                                                    }
+                                                ],
                                                 "Children": []
                                             }
                                         ]

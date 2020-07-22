@@ -1,0 +1,104 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/MainMenu.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Directional Light",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20 (30)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Camera",
+                        "Scripts": [],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler"
+                    },
+                    {
+                        "Name": "GraphicRaycaster"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "Button",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            },
+                            {
+                                "Name": "Button"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem"
+                    },
+                    {
+                        "Name": "StandaloneInputModule"
+                    }
+                ],
+                "Children": []
+            }
+        ]
+    }
+}
