@@ -17,14 +17,14 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
 
         public IEnumerator LoadMainSceneAsync(SceneId sceneId)
         {
-            _sceneLoadingSystem.LoadSingle(sceneId);
+            _sceneLoadingSystem.LoadSingle(sceneId, activateWhenReady: false);
 
-            while (!_sceneLoadingSystem.IsLoaded(sceneId))
+            while (!_sceneLoadingSystem.IsReadyToActivate(sceneId))
             {
                 yield return null;
             }
 
-            Debug.Log("C'EST BON WESH");
+            _sceneLoadingSystem.Activate(sceneId);
         }
 
         public IEnumerator LoadSubSenesAsync(SceneId sceneId)
@@ -36,14 +36,19 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
         {
             foreach (var sceneId in sceneIds)
             {
-                _sceneLoadingSystem.LoadAdditive(sceneId);
+                _sceneLoadingSystem.LoadAdditive(sceneId, activateWhenReady: false);
             }
 
-            bool done = false;
-            while (!done)
+            bool ready = false;
+            while (!ready)
             {
                 yield return null;
-                done = sceneIds.All(si => _sceneLoadingSystem.IsLoaded(si));
+                ready = sceneIds.All(si => _sceneLoadingSystem.IsReadyToActivate(si));
+            }
+
+            foreach (var sceneId in sceneIds)
+            {
+                _sceneLoadingSystem.Activate(sceneId);
             }
         }
 
