@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -43,8 +43,13 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                 _loadedScenes.Add(sceneInfo);
             }
         }
-        
+
         public void Load(SceneId sceneId)
+        {
+            Load(sceneId, activateWhenReady: true);
+        }
+
+        public void Load(SceneId sceneId, bool activateWhenReady)
         {
             SceneInfo sceneInfo = GetOrThrowSceneInfo(sceneId);
 
@@ -67,8 +72,28 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                                                     $"Add it to the Build Settings.");
             }
 
+            asyncOperation.allowSceneActivation = activateWhenReady;
             asyncOperation.completed += OnLoadingCompletedCallback;
             _loadingScenes.Add(sceneInfo, asyncOperation);
+        }
+
+        public void Activate(SceneId sceneId)
+        {
+            SceneInfo sceneInfo = GetOrThrowSceneInfo(sceneId);
+            if (!_loadingScenes.ContainsKey(sceneInfo))
+            {
+                if (_loadedScenes.Contains(sceneInfo))
+                {
+                    // Scene is already loaded and ready
+                    return;
+                }
+
+                throw new InvalidOperationException($"Cannot activate '{sceneInfo}' because it's not loading. " +
+                                                    $"Did you forget to call the {nameof(Load)} method?");
+            }
+
+            AsyncOperation asyncOperation = _loadingScenes[sceneInfo];
+            asyncOperation.allowSceneActivation = true;
         }
 
         public bool IsLoading(SceneId sceneId)
@@ -86,8 +111,8 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                 return false;
             }
 
-            var tracker = _loadingScenes[sceneInfo];
-            progress = tracker.progress;
+            AsyncOperation asyncOperation = _loadingScenes[sceneInfo];
+            progress = asyncOperation.progress;
             return true;
         }
 
@@ -135,6 +160,5 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
 
             return _sceneIdToSceneInfo[sceneId];
         }
-
     }
 }
