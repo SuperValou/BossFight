@@ -13,10 +13,10 @@ namespace Assets.Scripts.LoadingSystems.Doors
         // -- Editor
 
         [Tooltip("Load the gameplay scene?")]
-        public bool loadGameplay = true;
+        public SceneId gameplay = SceneId.GameplayScene;
 
         [Tooltip("First room to spawn")]
-        public SceneId initialRoom;
+        public SceneId initialRoom = SceneId.BossRoomScene;
 
         [Tooltip("Max number of rooms loaded at the same")]
         public int maxLoadedRooms = 2;
@@ -34,12 +34,8 @@ namespace Assets.Scripts.LoadingSystems.Doors
 
         IEnumerator Start()
         {
-            if (loadGameplay)
-            {
-                yield return sceneLoadingManager.LoadSceneAsync(SceneId.GameplayScene);
-            }
-
-            yield return sceneLoadingManager.LoadSceneAsync(initialRoom);
+            yield return sceneLoadingManager.LoadSubSenesAsync(new[] {gameplay, initialRoom});
+            
             EnqueueRoom(initialRoom);
             _playerCurrentRoomId = initialRoom;
         }
@@ -97,7 +93,7 @@ namespace Assets.Scripts.LoadingSystems.Doors
                     }
                     else
                     {
-                        StartCoroutine(sceneLoadingManager.LoadSceneAsync(door.RoomOnTheOtherSide));
+                        StartCoroutine(sceneLoadingManager.LoadSubSenesAsync(door.RoomOnTheOtherSide));
                     }
                 }
 

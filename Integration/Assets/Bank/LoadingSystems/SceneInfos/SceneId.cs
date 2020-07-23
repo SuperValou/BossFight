@@ -2,8 +2,11 @@
 {
     public enum SceneId
     {
+        [SceneInfo("MainMenu", SceneType.Screen)]
+        MainMenu,
+
         [SceneInfo("MasterScene", SceneType.Master)]
-        MasterScene = 0,
+        MasterScene,
 
         [SceneInfo("0-Gameplay", SceneType.Gameplay)]
         GameplayScene,

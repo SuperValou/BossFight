@@ -22,7 +22,7 @@ namespace Assets.Scripts.Menus
                 return;
             }
 
-            StartCoroutine(sceneLoadingManager.LoadSceneAsync(SceneId.MasterScene));
+            StartCoroutine(sceneLoadingManager.LoadMainSceneAsync(SceneId.MasterScene));
             _isLoading = true;
         }
     }

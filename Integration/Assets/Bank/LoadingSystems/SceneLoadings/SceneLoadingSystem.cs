@@ -44,13 +44,23 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
             }
         }
 
-        public void Load(SceneId sceneId)
+        public void LoadSingle(SceneId sceneId)
         {
-            Load(sceneId, activateWhenReady: true);
+            Load(sceneId, LoadSceneMode.Single, activateWhenReady: true);
         }
 
-        public void Load(SceneId sceneId, bool activateWhenReady)
+        public void LoadAdditive(SceneId sceneId)
         {
+            Load(sceneId, LoadSceneMode.Additive, activateWhenReady: true);
+        }
+
+        public void Load(SceneId sceneId, LoadSceneMode mode, bool activateWhenReady)
+        {
+            if (!Enum.IsDefined(typeof(LoadSceneMode), mode))
+            {
+                throw new InvalidEnumArgumentException(nameof(mode), (int)mode, typeof(LoadSceneMode));
+            }
+
             SceneInfo sceneInfo = GetOrThrowSceneInfo(sceneId);
 
             if (_loadedScenes.Contains(sceneInfo))
@@ -65,7 +75,7 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                 return;
             }
 
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneInfo.Name, LoadSceneMode.Additive);
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneInfo.Name, mode);
             if (asyncOperation == null)
             {
                 throw new InvalidOperationException($"Scene '{sceneInfo.Name}' doesn't have a Build Index. " +
@@ -89,7 +99,7 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                 }
 
                 throw new InvalidOperationException($"Cannot activate '{sceneInfo}' because it's not loading. " +
-                                                    $"Did you forget to call the {nameof(Load)} method?");
+                                                    $"Did you forget to call the {nameof(LoadAdditive)} method?");
             }
 
             AsyncOperation asyncOperation = _loadingScenes[sceneInfo];

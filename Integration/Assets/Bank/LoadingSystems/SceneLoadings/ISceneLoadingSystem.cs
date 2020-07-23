@@ -7,9 +7,14 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
         void Initialize();
 
         /// <summary>
+        /// Loads the given scene and unload everything else.
+        /// </summary>
+        void LoadSingle(SceneId sceneId);
+
+        /// <summary>
         /// Loads the given scene if needed.
         /// </summary>
-        void Load(SceneId sceneId);
+        void LoadAdditive(SceneId sceneId);
 
         /// <summary>
         /// Returns wether or not the given scene is fully loaded.

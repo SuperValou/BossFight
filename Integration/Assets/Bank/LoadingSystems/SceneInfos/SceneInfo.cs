@@ -98,7 +98,7 @@ namespace Assets.Scripts.LoadingSystems.SceneInfos
             if (list.Count != uniqueSceneNames.Count)
             {
                 throw new InvalidOperationException($"At least two scenes share the same case-insensitive name in the {nameof(SceneId)} enumeration.");
-            }
+            } 
 
             _cache = list;
 
