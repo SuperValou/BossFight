@@ -8,15 +8,15 @@ namespace Assets.Scripts.Players
 
         void Start()
         {
-            var playerHealth = Object.FindObjectOfType<PlayerHealth>();
-            if (playerHealth == null)
+            var player = Object.FindObjectOfType<Player>();
+            if (player == null)
             {
-                Debug.LogError($"Unable to find {nameof(PlayerHealth)} in hierarchy. " +
+                Debug.LogError($"Unable to find {nameof(Player)} in hierarchy. " +
                                $"Tracking the position of the player will not work.");
                 return;
             }
 
-            _player = playerHealth.transform;
+            _player = player.transform;
         }
 
         void Update()
