@@ -5,6 +5,9 @@
         [SceneInfo("MainMenu", SceneType.Screen)]
         MainMenu,
 
+        [SceneInfo("GameOverMenu", SceneType.Screen)]
+        GameOverMenu,
+
         [SceneInfo("MasterScene", SceneType.Master)]
         MasterScene,
 

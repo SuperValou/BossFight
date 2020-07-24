@@ -113,6 +113,12 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
         {
             SceneInfo sceneInfo = GetOrThrowSceneInfo(sceneId);
 
+            if (_loadedScenes.Contains(sceneInfo))
+            {
+                // Scene is actually already loaded and activated
+                return true;
+            }
+
             if (!_loadingScenes.ContainsKey(sceneInfo))
             {
                 throw new InvalidOperationException($"'{sceneInfo}' is not ready for activation because it is not loading. Did you forget to call the {nameof(Load)} method?");

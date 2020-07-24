@@ -4,26 +4,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Menus
 {
-    public class MainMenu : MonoBehaviour
+    public class MainMenu : Menu
     {
-        // -- Editor
-
-        [Header("References")]
-        public SceneLoadingManager sceneLoadingManager;
-
-        // -- Class
-
-        private bool _isLoading;
-
-        public void Load()
+        public void Play()
         {
-            if (_isLoading)
-            {
-                return;
-            }
-
-            StartCoroutine(sceneLoadingManager.LoadMainSceneAsync(SceneId.MasterScene));
-            _isLoading = true;
+            base.LoadMainScene(SceneId.MasterScene);
         }
     }
 }
