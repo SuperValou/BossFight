@@ -33,6 +33,11 @@ namespace Assets.Scripts.Players.Inputs
             Cursor.lockState = cursorLockMode;
         }
 
+        void OnDestroy()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         public override Vector2 GetLookVector()
         {
             float x = Input.GetAxis(MouseHorizontalAxisName) * mouseSensitivity * Time.deltaTime;
