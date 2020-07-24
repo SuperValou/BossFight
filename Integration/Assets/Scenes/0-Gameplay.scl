@@ -229,7 +229,7 @@
                         "Name": "AimAssist"
                     },
                     {
-                        "Name": "PlayerHealth"
+                        "Name": "Player"
                     }
                 ],
                 "Children": [

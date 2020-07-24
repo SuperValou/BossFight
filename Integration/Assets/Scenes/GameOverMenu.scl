@@ -1,7 +1,7 @@
 {
     "SerializationMajorVersion": 1,
     "SceneInfo": {
-        "ScenePath": "Assets/Scenes/MainMenu.unity",
+        "ScenePath": "Assets/Scenes/GameOverMenu.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "Managers",
@@ -74,16 +74,38 @@
                 ],
                 "Children": [
                     {
-                        "Name": "MainMenu",
+                        "Name": "GameOverMenu",
                         "Scripts": [
                             {
-                                "Name": "MainMenu"
+                                "Name": "GameOverMenu"
                             }
                         ],
                         "Children": []
                     },
                     {
-                        "Name": "PlayButton",
+                        "Name": "RetryButton",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            },
+                            {
+                                "Name": "Button"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "QuitButton",
                         "Scripts": [
                             {
                                 "Name": "Image"

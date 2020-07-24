@@ -25,13 +25,7 @@
                     {
                         "Name": "Lights",
                         "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Directional Light",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
+                        "Children": []
                     },
                     {
                         "Name": "Ground&Walls",
