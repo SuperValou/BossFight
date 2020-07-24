@@ -36,13 +36,15 @@ namespace Assets.Scripts.Players
 
         private IEnumerator DieAsync()
         {
-            // TODO: game over
-            Debug.LogWarning("Game over");
-            
-            Time.timeScale = 1f / 10;
-            yield return new WaitForSeconds(0.5f);
+            // slow time effect
+            Time.timeScale = 0.10f;
+            yield return new WaitForSeconds(0.25f);
 
-            yield return sceneLoadingManagerProxy.LoadMainSceneAsync(SceneId.GameOverMenu);
+            SceneId gameOverScreen = SceneId.GameOverMenu;
+            yield return sceneLoadingManagerProxy.PreloadMainSceneAsync(gameOverScreen);
+
+            Time.timeScale = 1;
+            sceneLoadingManagerProxy.Activate(gameOverScreen);
         }
     }
 }

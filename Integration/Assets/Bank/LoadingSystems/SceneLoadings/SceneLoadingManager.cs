@@ -14,22 +14,14 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
         {
             _sceneLoadingSystem.Initialize();
         }
-
-        public IEnumerator LoadMainSceneAsync(SceneId sceneId)
+        
+        public IEnumerator LoadSubSenesAsync(SceneId sceneId)
         {
-            _sceneLoadingSystem.LoadSingle(sceneId, activateWhenReady: false);
-
-            while (!_sceneLoadingSystem.IsReadyToActivate(sceneId))
+            _sceneLoadingSystem.LoadAdditive(sceneId, activateWhenReady: true);
+            while (!_sceneLoadingSystem.IsLoaded(sceneId))
             {
                 yield return null;
             }
-
-            _sceneLoadingSystem.Activate(sceneId);
-        }
-
-        public IEnumerator LoadSubSenesAsync(SceneId sceneId)
-        {
-            return LoadSubSenesAsync(new[] {sceneId});
         }
 
         public IEnumerator LoadSubSenesAsync(ICollection<SceneId> sceneIds)
@@ -46,6 +38,49 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
                 ready = sceneIds.All(si => _sceneLoadingSystem.IsReadyToActivate(si));
             }
 
+            foreach (var sceneId in sceneIds)
+            {
+                _sceneLoadingSystem.Activate(sceneId);
+            }
+        }
+
+        public IEnumerator PreloadMainSceneAsync(SceneId sceneId)
+        {
+            _sceneLoadingSystem.LoadSingle(sceneId, activateWhenReady: false);
+
+            while (!_sceneLoadingSystem.IsReadyToActivate(sceneId))
+            {
+                yield return null;
+            }
+        }
+
+        public IEnumerator PreloadSubSenesAsync(SceneId sceneId)
+        {
+            return PreloadSubSenesAsync(new[] {sceneId});
+        }
+
+        public IEnumerator PreloadSubSenesAsync(ICollection<SceneId> sceneIds)
+        {
+            foreach (var sceneId in sceneIds)
+            {
+                _sceneLoadingSystem.LoadAdditive(sceneId, activateWhenReady: false);
+            }
+
+            bool ready = false;
+            while (!ready)
+            {
+                yield return null;
+                ready = sceneIds.All(si => _sceneLoadingSystem.IsReadyToActivate(si));
+            }
+        }
+
+        public void Activate(SceneId sceneId)
+        {
+            _sceneLoadingSystem.Activate(sceneId);
+        }
+
+        public void Activate(ICollection<SceneId> sceneIds)
+        {
             foreach (var sceneId in sceneIds)
             {
                 _sceneLoadingSystem.Activate(sceneId);

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.LoadingSystems.SceneInfos;
+﻿using System.Collections;
+using Assets.Scripts.LoadingSystems.SceneInfos;
 using Assets.Scripts.LoadingSystems.SceneLoadings;
 using UnityEngine;
 
@@ -15,13 +16,21 @@ namespace Assets.Scripts.Menus
 
         public void LoadMainScene(SceneId sceneId)
         {
+            StartCoroutine(LoadMainSceneAsync(sceneId));
+        }
+
+        private IEnumerator LoadMainSceneAsync(SceneId sceneId)
+        {
             if (IsLoading)
             {
-                return;
+                yield break;
             }
 
-            StartCoroutine(sceneLoadingManager.LoadMainSceneAsync(sceneId));
             IsLoading = true;
+            yield return sceneLoadingManager.PreloadMainSceneAsync(sceneId);
+
+            IsLoading = false;
+            sceneLoadingManager.Activate(sceneId);
         }
     }
 }

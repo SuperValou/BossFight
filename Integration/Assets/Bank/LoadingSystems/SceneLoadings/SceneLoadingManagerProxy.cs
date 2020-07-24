@@ -17,14 +17,14 @@ namespace Assets.Scripts.LoadingSystems.SceneLoadings
             }
         }
 
-        public IEnumerator LoadMainSceneAsync(SceneId sceneId)
+        public IEnumerator PreloadMainSceneAsync(SceneId sceneId)
         {
-            if (_sceneLoadingManager == null)
-            {
-                yield break;
-            }
+            yield return _sceneLoadingManager?.PreloadMainSceneAsync(sceneId);
+        }
 
-            yield return _sceneLoadingManager.LoadMainSceneAsync(sceneId);
+        public void Activate(SceneId sceneId)
+        {
+            _sceneLoadingManager?.Activate(sceneId);
         }
     }
 }
