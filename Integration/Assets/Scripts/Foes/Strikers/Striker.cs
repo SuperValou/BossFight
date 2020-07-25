@@ -1,7 +1,9 @@
-﻿using Assets.Scripts.Damages;
+﻿using Assets.Scripts.Cutscenes;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
 using Assets.Scripts.Huds;
+using Assets.Scripts.Players;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,6 +20,9 @@ namespace Assets.Scripts.Foes.Strikers
         [Header("References")]
         [Tooltip("Target of the " + nameof(Striker) + ". Can be null.")]
         public Transform target;
+
+        [Tooltip("What to do when the " + nameof(Striker) + " dies.")]
+        public BossDeath death;
 
         [Tooltip("System displaying the "+ nameof(Striker) + "'s health on screen. Can be null.")]
         public FoeHealthDisplayProxy foeHealthDisplayProxy;
@@ -68,8 +73,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         protected override void Die()
         {
-            // Victory
-            Debug.LogWarning("Victory!");
+            death?.Activate();
         }
     }
 }

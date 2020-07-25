@@ -7,6 +7,7 @@ namespace Assets.Scripts.Damages
         // -- Editor
 
         public float maxHealth = 20;
+        public bool isInvulnerable = false;
 
         // -- Class
 
@@ -22,6 +23,11 @@ namespace Assets.Scripts.Damages
         public void TakeDamage(IDamager damager)
         {
             if (!IsAlive)
+            {
+                return;
+            }
+
+            if (isInvulnerable)
             {
                 return;
             }

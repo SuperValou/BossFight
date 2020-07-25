@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6469,6 +6469,7 @@ Transform:
   - {fileID: 353292399}
   - {fileID: 1341596871}
   - {fileID: 410855326}
+  - {fileID: 2058210082}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7684,6 +7685,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1838337124}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2058210081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2058210082}
+  - component: {fileID: 2058210083}
+  m_Layer: 0
+  m_Name: BossDeath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2058210082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058210081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 914285320}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2058210083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058210081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69ea3658dbbe6d468a75267b6c2b216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerProxy: {fileID: 410855327}
 --- !u!1 &2109346002
 GameObject:
   m_ObjectHideFlags: 0
@@ -7993,6 +8038,11 @@ PrefabInstance:
       propertyPath: stompingAttack
       value: 
       objectReference: {fileID: 407241280}
+    - target: {fileID: 582917954982587833, guid: 8549fbf9adbdc2146b7b6c74ec41d768,
+        type: 3}
+      propertyPath: death
+      value: 
+      objectReference: {fileID: 2058210083}
     - target: {fileID: 1697682565818660341, guid: 8549fbf9adbdc2146b7b6c74ec41d768,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
