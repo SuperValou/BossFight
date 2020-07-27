@@ -73,6 +73,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         protected override void Die()
         {
+            Animator.SetTrigger(StrikerTriggers.DeathTrigger);
             death?.Activate();
         }
     }
