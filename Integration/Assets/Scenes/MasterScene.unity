@@ -164,8 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71bbfb59e41bdf4fbc00f15db8be1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplay: 3
-  initialRoom: 4
   maxLoadedRooms: 2
   sceneLoadingManager: {fileID: 946106972}
 --- !u!1 &508439171
@@ -513,8 +511,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125828724}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 4, z: 75.2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2069558901}
@@ -532,3 +530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 537809dee21068e4e8906469b87bf247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplay: 3
+  initialRoom: 4
+  sceneLoadingManager: {fileID: 946106972}

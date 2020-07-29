@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/0-Gameplay.unity
     guid: 54ae33d4776b782469ac7be1198649a6
   - enabled: 1
+    path: Assets/Scenes/1-FirstRoom.unity
+    guid: 761f9777933d5434d8d76a92d613562e
+  - enabled: 1
+    path: Assets/Scenes/1-Corridor.unity
+    guid: f5e96caf19397df49aec52280a0a9731
+  - enabled: 1
     path: Assets/Scenes/1-BossRoom.unity
     guid: 480b4e8af665b1c41a5a6dc37e71e99b
   - enabled: 1

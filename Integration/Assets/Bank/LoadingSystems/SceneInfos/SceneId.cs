@@ -14,6 +14,12 @@
         [SceneInfo("0-Gameplay", SceneType.Gameplay)]
         GameplayScene,
 
+        [SceneInfo("1-FirstRoom", SceneType.Room)]
+        FirstRoomScene,
+
+        [SceneInfo("1-Corridor", SceneType.Room)]
+        CorridorRoomScene,
+
         [SceneInfo("1-BossRoom", SceneType.Room)]
         BossRoomScene,
     }

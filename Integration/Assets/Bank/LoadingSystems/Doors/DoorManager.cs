@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +11,6 @@ namespace Assets.Scripts.LoadingSystems.Doors
     public class DoorManager : MonoBehaviour
     {
         // -- Editor
-
-        [Tooltip("Load the gameplay scene?")]
-        public SceneId gameplay = SceneId.GameplayScene;
-
-        [Tooltip("First room to spawn")]
-        public SceneId initialRoom = SceneId.BossRoomScene;
 
         [Tooltip("Max number of rooms loaded at the same")]
         public int maxLoadedRooms = 2;
@@ -31,14 +25,6 @@ namespace Assets.Scripts.LoadingSystems.Doors
 
         private readonly Queue<SceneId> _roomsQueue = new Queue<SceneId>();
         private SceneId _playerCurrentRoomId;
-
-        IEnumerator Start()
-        {
-            yield return sceneLoadingManager.LoadSubSenesAsync(new[] {gameplay, initialRoom});
-            
-            EnqueueRoom(initialRoom);
-            _playerCurrentRoomId = initialRoom;
-        }
 
         void Update()
         {
