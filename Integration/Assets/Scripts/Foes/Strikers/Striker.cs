@@ -50,7 +50,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         void Update()
         {
-            // Do not put anything in here, use "OnStateUpdate" method in StrikerBehaviours instead.
+            
         }
 
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
@@ -69,11 +69,13 @@ namespace Assets.Scripts.Foes.Strikers
             {
                 foeHealthDisplayProxy.Show((Damageable) this);
             }
+
+            this.Animator.SetBool(StrikerAnimatorConstants.TargetIsInSightBool, true);
         }
 
         protected override void Die()
         {
-            Animator.SetTrigger(StrikerTriggers.DeathTrigger);
+            Animator.SetTrigger(StrikerAnimatorConstants.DeathTrigger);
             death?.Activate();
         }
     }

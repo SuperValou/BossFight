@@ -41,7 +41,7 @@ namespace Assets.Scripts.Foes.Strikers.StrikerAi
             float squaredDistanceToTarget = (_target.transform.position - Striker.transform.position).sqrMagnitude;
             if (squaredDistanceToTarget < _minSquaredDistanceToTarget)
             {
-                Animator.SetTrigger(StrikerTriggers.StompTrigger);
+                Animator.SetTrigger(StrikerAnimatorConstants.StompTrigger);
             }
         }
     }
