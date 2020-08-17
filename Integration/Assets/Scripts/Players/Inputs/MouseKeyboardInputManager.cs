@@ -88,7 +88,7 @@ namespace Assets.Scripts.Players.Inputs
 
         public override bool DashButtonDown()
         {
-            return Input.GetKeyDown(KeyCode.LeftAlt); // TODO
+            return Input.GetKeyDown(KeyCode.Space);
         }
 
         public override bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection)

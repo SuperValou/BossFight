@@ -7,6 +7,10 @@ Bug
 	Weapons
 	
 	
+	Room loading
+	- Proxies initialization order is unmanaged
+	
+	
 	Collisions
 	- Turret bullets don't always collide with the player controller 
 	

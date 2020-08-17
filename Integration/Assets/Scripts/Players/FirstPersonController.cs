@@ -12,9 +12,12 @@ namespace Assets.Scripts.Players
         [Header("Values")]
         [Tooltip("Speed of the player when moving (m/s).")]
         public float walkSpeed = 10f;
-		
-		[Tooltip("Speed of the player when dashing (m/s).")]
-        public float dashSpeed = 30f;
+
+        [Tooltip("Forward speed of the player when dashing (m/s).")]
+        public float forwardDashSpeed = 30f;
+
+        [Tooltip("Upward speed of the player when dashing (m/s).")]
+        public float upwardDashSpeed = 2f;
 
         [Tooltip("Vertical speed of the player when hitting the booster button (m/s).")]
         public float boosterSpeed = 40;
@@ -127,6 +130,31 @@ namespace Assets.Scripts.Players
                     _isFalling = true;
                     _fallStartHeigth = _transform.position.y;
                 }
+
+                // Mid-air dash
+                if (_canDash && inputManager.DashButtonDown())
+                {
+                    Vector3 dashVelocity;
+                    if (globalInputDirection == Vector3.zero)
+                    {
+                        // If the player is not willing to move in any specific direction, then dash forward
+                        dashVelocity = this.transform.forward * forwardDashSpeed;
+                    }
+                    else
+                    {
+                        dashVelocity = globalInputDirection.normalized * forwardDashSpeed;
+                    }
+
+                    // Jump a little bit when dashing
+                    dashVelocity.y = upwardDashSpeed;
+
+                    // Apply dash
+                    _externalVelocityVector.x = dashVelocity.x;
+                    _externalVelocityVector.y = dashVelocity.y;
+                    _externalVelocityVector.z = dashVelocity.z;
+
+                    _canDash = false;
+                }
             }
 
 			if (_canUseBooster && inputManager.BoosterButtonDown())
@@ -136,29 +164,7 @@ namespace Assets.Scripts.Players
 			    _canUseBooster = false;
 			}
 			
-			if (_canDash && inputManager.DashButtonDown())
-			{
-			    Vector3 dashVelocity;
-			    if (globalInputDirection == Vector3.zero)
-			    {
-                    // If the player is not willing to move in any specific direction, then dash forward
-			        dashVelocity = this.transform.forward * dashSpeed; 
-			    }
-			    else
-			    {
-			        dashVelocity = globalInputDirection.normalized * dashSpeed;
-                }
-
-                // Jump a little bit when dashing
-			    dashVelocity.y = jumpSpeed / 2f;							
-				
-			    // Apply dash
-			    _externalVelocityVector.x = dashVelocity.x;
-			    _externalVelocityVector.y = dashVelocity.y;
-			    _externalVelocityVector.z = dashVelocity.z;
-
-			    _canDash = false;
-            }
+			
             
             // Apply gravity
             _externalVelocityVector.y -= gravity * Time.deltaTime;

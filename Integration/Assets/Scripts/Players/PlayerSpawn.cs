@@ -29,7 +29,7 @@ namespace Assets.Scripts.Players
             _player = GameObject.FindObjectOfType<Player>();
             if (_player == null)
             {
-                Debug.LogWarning($"{nameof(Player)} was not found in hierarchy. It won't be spawned at '{this.transform.position}'.");
+                Debug.LogWarning($"{nameof(Player)} was not found in hierarchy. It won't be put at '{this.transform.position}'.");
                 yield break;
             }
 
