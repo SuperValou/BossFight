@@ -1,10 +1,14 @@
-﻿namespace Assets.Scripts.Weaponry.Weapons
+﻿using Assets.Scripts.Weaponry.Projectiles;
+
+namespace Assets.Scripts.Weaponry.Weapons
 {
     public class BeamGun : Gun
     {
+        public BeamEmitter beamEmitter;
+
         public override void InitFire()
         {
-            //Shoot();
+            beamEmitter.EmitProjectile();
         }
 
         public override void ReleaseFire()

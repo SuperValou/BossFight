@@ -1,25 +1,25 @@
-﻿using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(ParticleSystem))]
-    public class ProjectileEmitter : MonoBehaviour
+    public class BombEmitter : MonoBehaviour
     {
         // -- Editor
-
-        public int projectilePerEmission = 1;
-        public ProjectileImpact projectileImpact;
+        
+        public BombImpact bombImpact;
         
         // -- Class
 
         private ParticleSystem _particleSystem;
-
+        
         void Start()
         {
-            if (projectileImpact == null)
+            if (bombImpact == null)
             {
-                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null '{nameof(projectileImpact)}'.");
+                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null '{nameof(bombImpact)}'.");
             }
 
             _particleSystem = this.GetOrThrow<ParticleSystem>();
@@ -27,12 +27,12 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         public void EmitProjectile()
         {
-            _particleSystem.Emit(projectilePerEmission);
+            _particleSystem.Emit(1);
         }
 
         void OnParticleCollision(GameObject other)
         {
-            if (projectileImpact == null)
+            if (bombImpact == null)
             {
                 return;
             }
@@ -41,7 +41,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
             foreach (var collisionEvent in collisionEvents)
             {
-                projectileImpact.OccurAt(collisionEvent);
+                bombImpact.OccurAt(collisionEvent);
             }
         }
     }
