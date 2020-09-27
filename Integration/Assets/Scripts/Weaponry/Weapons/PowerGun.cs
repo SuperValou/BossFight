@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Weapons
 {
-    public class PowerGun : ProjectileWeapon
+    public class PowerGun : Gun
     {
         // -- Editor
         [Header("Self")]
@@ -36,9 +36,8 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         private GameObject _chargeAnimationObject;
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
             _charge = this.GetOrThrow<WeaponCharge>();
         }
 
@@ -49,7 +48,7 @@ namespace Assets.Scripts.Weaponry.Weapons
                 return;
             }
 
-            ShootProjectile();
+            //Shoot();
 
             // begin charge
             _charge.Begin();
@@ -74,7 +73,7 @@ namespace Assets.Scripts.Weaponry.Weapons
             if (_charge.Value > chargeThreshold)
             {
                 _isChargeRafaleShooting = true;
-                AudioSource.Stop();
+                //AudioSource.Stop();
                 StartCoroutine(ShootChargedRafale());
             }
             else
@@ -91,7 +90,7 @@ namespace Assets.Scripts.Weaponry.Weapons
                 int projectileCount = (int)(chargedProjectileCount * _charge.Value);
                 for (int i = 0; i < projectileCount; i++)
                 {
-                    ShootProjectile();
+                    //Shoot();
                     yield return wait;
                 }
             }
@@ -114,7 +113,7 @@ namespace Assets.Scripts.Weaponry.Weapons
         {
             Instantiate(chargedProjectilePrefab, this.transform.position, this.transform.rotation);
 
-            AudioSource.PlayOneShot(_chargedShotSound);
+            //AudioSource.PlayOneShot(_chargedShotSound);
 
             //Sequence s = DOTween.Sequence();
             //s.Append(cannonModel.DOPunchPosition(new Vector3(0, 0, -punchStrenght), punchDuration, punchVibrato, punchElasticity));
