@@ -916,8 +916,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 371997296}
-  - component: {fileID: 371997298}
   - component: {fileID: 371997297}
+  - component: {fileID: 371997298}
   m_Layer: 0
   m_Name: BombGun
   m_TagString: Untagged
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acf9dcae343ecf40aabacf2e8c33166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombEmitter: {fileID: 639849827}
+  projectileEmitter: {fileID: 639849827}
 --- !u!82 &371997298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15922,7 +15922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombImpact: {fileID: 1538557628}
+  projectileImpact: {fileID: 1538557628}
 --- !u!1 &658544472
 GameObject:
   m_ObjectHideFlags: 0
@@ -16569,6 +16569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207353943}
   - component: {fileID: 1207353944}
+  - component: {fileID: 1207353945}
   m_Layer: 12
   m_Name: BeamGun
   m_TagString: Untagged
@@ -16603,7 +16604,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e69fa1d7688061408e106c2363b09db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beamEmitter: {fileID: 2096454551}
+  projectileEmitter: {fileID: 2096454551}
+--- !u!82 &1207353945
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207353942}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1273672192
 GameObject:
   m_ObjectHideFlags: 0
@@ -17568,9 +17665,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096454548}
-  - component: {fileID: 2096454550}
-  - component: {fileID: 2096454549}
   - component: {fileID: 2096454551}
+  - component: {fileID: 2096454549}
+  - component: {fileID: 2096454550}
   m_Layer: 12
   m_Name: BeamEmitter
   m_TagString: Untagged
@@ -22399,9 +22496,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2096454547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79973585fab96fd4795c72f632e231c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileImpact: {fileID: 1538557628}
 --- !u!1001 &136038264371726676
 PrefabInstance:
   m_ObjectHideFlags: 0

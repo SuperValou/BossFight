@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Weaponry.Projectiles
 {
-    public class BombImpact : MonoBehaviour
+    public class BombImpact : ProjectileImpact
     {
         public ParticleSystem bombExplosionEmitter;
         public ParticleSystem decalEmitter;
@@ -20,7 +20,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
             }
         }
 
-        public void OccurAt(ParticleCollisionEvent collisionEvent)
+        public override void OccurAt(ParticleCollisionEvent collisionEvent)
         {
             bombExplosionEmitter.transform.position = collisionEvent.intersection;
             bombExplosionEmitter.transform.rotation = Quaternion.LookRotation(collisionEvent.normal);

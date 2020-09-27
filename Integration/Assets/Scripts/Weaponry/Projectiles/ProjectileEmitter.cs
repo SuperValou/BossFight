@@ -5,11 +5,11 @@ using UnityEngine;
 namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(ParticleSystem))]
-    public class BombEmitter : MonoBehaviour
+    public class ProjectileEmitter : MonoBehaviour
     {
         // -- Editor
         
-        public BombImpact bombImpact;
+        public ProjectileImpact projectileImpact;
         
         // -- Class
 
@@ -17,9 +17,9 @@ namespace Assets.Scripts.Weaponry.Projectiles
         
         void Start()
         {
-            if (bombImpact == null)
+            if (projectileImpact == null)
             {
-                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null '{nameof(bombImpact)}'.");
+                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null '{nameof(projectileImpact)}'.");
             }
 
             _particleSystem = this.GetOrThrow<ParticleSystem>();
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         void OnParticleCollision(GameObject other)
         {
-            if (bombImpact == null)
+            if (projectileImpact == null)
             {
                 return;
             }
@@ -41,7 +41,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
             foreach (var collisionEvent in collisionEvents)
             {
-                bombImpact.OccurAt(collisionEvent);
+                projectileImpact.OccurAt(collisionEvent);
             }
         }
     }
