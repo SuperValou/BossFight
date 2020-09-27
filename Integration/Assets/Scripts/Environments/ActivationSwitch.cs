@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Environments
 {
-    public class Switch : MonoBehaviour
+    public class ActivationSwitch : MonoBehaviour
     {
         // -- Editor
 
@@ -13,23 +13,14 @@ namespace Assets.Scripts.Environments
 
         public bool IsTurnedOn { get; private set; }
         public bool IsTurnedOff => !IsTurnedOn;
-
+        
         void Start()
         {
             IsTurnedOn = turnedOnOnStart;
         }
 
-        void OnCollisionEnter(Collision collision)
+        public void Flip()
         {
-            var collidedGameObject = collision.gameObject;
-            var projectile = collidedGameObject.GetComponent<Projectile>();
-
-            if (projectile == null)
-            {
-                return;
-            }
-
-            // invert switch state
             IsTurnedOn = !IsTurnedOn;
         }
     }

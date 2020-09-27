@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Environments;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
@@ -32,6 +33,14 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         void OnParticleCollision(GameObject other)
         {
+            // Switches
+            var activableSwitch = other.GetComponent<ActivationSwitch>();
+            if (activableSwitch != null)
+            {
+                activableSwitch.Flip();
+            }
+
+            // Impact
             if (projectileImpact == null)
             {
                 return;
