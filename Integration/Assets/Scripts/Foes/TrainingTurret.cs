@@ -48,6 +48,7 @@ namespace Assets.Scripts.Foes
             }
 
             projectileEmitter.EmitProjectile();
+            //_lastShotTime = Time.time; // comment for flame-thrower
         }
     }
 }
