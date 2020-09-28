@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Environments;
-using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
@@ -15,19 +14,27 @@ namespace Assets.Scripts.Foes
 
         [Header("Parts")]
         public Transform cannon;
-        public Projectile projectilePrefab;
+        public ProjectileEmitter projectileEmitter;
+        public ActivationSwitch activationActivationSwitch;
 
         [Header("References")]
-        public Switch activationSwitch;
         public Transform target;
 
         // -- Class
 
         private float _lastShotTime;
-        
+
+        void Start()
+        {
+            if (target == null)
+            {
+                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null {nameof(target)}.");
+            }
+        }
+
         void Update()
         {
-            if (activationSwitch.IsTurnedOff || target == null)
+            if (activationActivationSwitch.IsTurnedOff || target == null)
             {
                 _lastShotTime = Time.time;
                 return;
@@ -39,9 +46,9 @@ namespace Assets.Scripts.Foes
             {
                 return;
             }
-            
-            Instantiate(projectilePrefab, cannon.transform.position, cannon.transform.rotation);
-            _lastShotTime = Time.time;
+
+            projectileEmitter.EmitProjectile();
+            //_lastShotTime = Time.time; // comment for flame-thrower
         }
     }
 }

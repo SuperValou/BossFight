@@ -4,6 +4,218 @@
         "ScenePath": "Assets/Scenes/0-Gameplay.unity",
         "RootGameObjectInfos": [
             {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "UnityInputManager",
+                        "Scripts": [
+                            {
+                                "Name": "MouseKeyboardInputManager"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Player",
+                "Scripts": [
+                    {
+                        "Name": "FirstPersonController"
+                    },
+                    {
+                        "Name": "AimAssist"
+                    },
+                    {
+                        "Name": "Player"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "UpperBody",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Head",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Camera",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Arm",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Cylinder",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "WeaponManager",
+                                        "Scripts": [
+                                            {
+                                                "Name": "WeaponManager"
+                                            }
+                                        ],
+                                        "Children": [
+                                            {
+                                                "Name": "PowerGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "PowerGun"
+                                                    },
+                                                    {
+                                                        "Name": "WeaponCharge"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "ProjectileEmitters",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "PowerEmitter"
+                                                            },
+                                                            {
+                                                                "Name": "ChargedPowerEmitter"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "Name": "ChargeEffect",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "ChargeEmitter"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BeamGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BeamGun"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BeamEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BombGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BombGun"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BombEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Body",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Torso",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Belly",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Pelvis",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Leg_left",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Leg_right",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "ImpactEmitters",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "BombImpact",
+                        "Scripts": [
+                            {
+                                "Name": "BombImpact"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "BombExplosionEmitter",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "BombDecalEmitter",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "Name": "Canvas",
                 "Scripts": [
                     {
@@ -220,104 +432,9 @@
                 "Children": []
             },
             {
-                "Name": "Player",
-                "Scripts": [
-                    {
-                        "Name": "FirstPersonController"
-                    },
-                    {
-                        "Name": "AimAssist"
-                    },
-                    {
-                        "Name": "Player"
-                    }
-                ],
-                "Children": [
-                    {
-                        "Name": "UpperBody",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Head",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Sphere",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Camera",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
-                            },
-                            {
-                                "Name": "Arm",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Cylinder",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "WeaponManager",
-                                        "Scripts": [
-                                            {
-                                                "Name": "WeaponManager"
-                                            }
-                                        ],
-                                        "Children": [
-                                            {
-                                                "Name": "PowerGun",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "PowerGun"
-                                                    },
-                                                    {
-                                                        "Name": "WeaponCharge"
-                                                    }
-                                                ],
-                                                "Children": []
-                                            },
-                                            {
-                                                "Name": "BeamGun",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "BeamGun"
-                                                    }
-                                                ],
-                                                "Children": []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Body",
-                        "Scripts": [],
-                        "Children": []
-                    }
-                ]
-            },
-            {
-                "Name": "Managers",
+                "Name": "GameObject",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "UnityInputManager",
-                        "Scripts": [
-                            {
-                                "Name": "MouseKeyboardInputManager"
-                            }
-                        ],
-                        "Children": []
-                    }
-                ]
+                "Children": []
             }
         ]
     }

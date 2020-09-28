@@ -1,0 +1,183 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/1-Corridor.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (15)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (16)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (17)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (18)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (19)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (20)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ceiling",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorToFirstRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Cube",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "DoorToBossRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Cube",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

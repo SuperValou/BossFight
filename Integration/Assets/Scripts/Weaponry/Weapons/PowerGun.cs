@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Weapons
 {
-    public class PowerGun : ProjectileWeapon
+    public class PowerGun : Gun
     {
         // -- Editor
         [Header("Self")]
         [Tooltip("Minimum charge to shoot a charged blast")]
-        public float chargeThreshold = 0.5f;
+        public float chargeThreshold = 0.2f;
 
         [Tooltip("How many projectiles in a fully charged shot?")]
         public int chargedProjectileCount = 10;
@@ -20,13 +20,13 @@ namespace Assets.Scripts.Weaponry.Weapons
 
 
         [Header("Parts")]
-        public Projectile chargedProjectilePrefab;
+        public ProjectileEmitter chargedProjectileEmitter;
 
         [Header("Sounds")]
         public AudioClip _chargedShotSound;
 
         [Header("Anims")]
-        public GameObject chargeAnimationPrefab;
+        public ParticleSystem chargeEmitter;
 
         // -- Class
 
@@ -36,9 +36,8 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         private GameObject _chargeAnimationObject;
 
-        protected override void Start()
+        protected void Start()
         {
-            base.Start();
             _charge = this.GetOrThrow<WeaponCharge>();
         }
 
@@ -49,13 +48,11 @@ namespace Assets.Scripts.Weaponry.Weapons
                 return;
             }
 
-            ShootProjectile();
+            projectileEmitter.EmitProjectile();
 
             // begin charge
             _charge.Begin();
-            
-            _chargeAnimationObject = Instantiate(chargeAnimationPrefab, this.transform.position, this.transform.rotation);
-            _chargeAnimationObject.transform.SetParent(this.transform);
+            chargeEmitter.Play();
         }
 
         public override void ReleaseFire()
@@ -67,14 +64,13 @@ namespace Assets.Scripts.Weaponry.Weapons
 
             // end charge
             _charge.Stop();
-
-            Destroy(_chargeAnimationObject);
-            _chargeAnimationObject = null;
+            chargeEmitter.Stop();
+            chargeEmitter.Clear();
 
             if (_charge.Value > chargeThreshold)
             {
                 _isChargeRafaleShooting = true;
-                AudioSource.Stop();
+                //AudioSource.Stop();
                 StartCoroutine(ShootChargedRafale());
             }
             else
@@ -88,17 +84,17 @@ namespace Assets.Scripts.Weaponry.Weapons
             if (_charge.Value < 1)
             {
                 var wait = new WaitForSeconds(timeBetweenChargedShot);
-                int projectileCount = (int)(chargedProjectileCount * _charge.Value);
+                int projectileCount = (int) (chargedProjectileCount * _charge.Value);
                 for (int i = 0; i < projectileCount; i++)
                 {
-                    ShootProjectile();
+                    projectileEmitter.EmitProjectile();
                     yield return wait;
                 }
             }
             else
             {
                 var wait = new WaitForSeconds(timeBetweenChargedShot / 2f);
-                int projectileCout = chargedProjectileCount * 2;
+                int projectileCout = chargedProjectileCount;
                 for (int j = 0; j < projectileCout; j++)
                 {
                     ShootChargedProjectile();
@@ -112,9 +108,9 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         private void ShootChargedProjectile()
         {
-            Instantiate(chargedProjectilePrefab, this.transform.position, this.transform.rotation);
+            chargedProjectileEmitter.EmitProjectile();
 
-            AudioSource.PlayOneShot(_chargedShotSound);
+            //AudioSource.PlayOneShot(_chargedShotSound);
 
             //Sequence s = DOTween.Sequence();
             //s.Append(cannonModel.DOPunchPosition(new Vector3(0, 0, -punchStrenght), punchDuration, punchVibrato, punchElasticity));

@@ -45,7 +45,28 @@
                             {
                                 "Name": "Floor_20x20 (30)",
                                 "Scripts": [],
-                                "Children": []
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     }
