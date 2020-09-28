@@ -8,6 +8,15 @@
                 "Scripts": [],
                 "Children": [
                     {
+                        "Name": "PlayerSpawn",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerSpawn"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
                         "Name": "DoorManager",
                         "Scripts": [
                             {

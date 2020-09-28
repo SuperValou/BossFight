@@ -1,0 +1,238 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/1-FirstRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (10)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (11)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (12)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (13)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (14)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ceiling",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_10x10 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Floor_10x10 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorToCorridor",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Cube",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}
