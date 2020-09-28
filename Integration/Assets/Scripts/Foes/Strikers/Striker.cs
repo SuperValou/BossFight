@@ -15,7 +15,7 @@ namespace Assets.Scripts.Foes.Strikers
         // -- Editor
 
         [Header("Parts")]
-        public DamagingParticleSystem stompingAttack;
+        public ShockWaveEmitter stompingAttack;
 
         [Header("References")]
         [Tooltip("Target of the " + nameof(Striker) + ". Can be null.")]
@@ -60,7 +60,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         public void OnStomping()
         {
-            stompingAttack.Execute();
+            stompingAttack.EmitShockWave();
         }
 
         protected override void OnDamageTaken()

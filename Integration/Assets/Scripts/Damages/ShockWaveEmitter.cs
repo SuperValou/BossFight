@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Damages
 {
-    public class DamagingParticleSystem : MonoBehaviour, IDamager
+    public class ShockWaveEmitter : MonoBehaviour, IDamager
     {
         // -- Editor
 
         [Header("Values")]
-        public int damagePerParticle = 2;
+        public int particlesToEmit = 30;
+        public int damagePerParticle = 1;
 
         // -- Class
 
         private ParticleSystem _particleSystem;
-
-        private List<ParticleCollisionEvent> _collisionEvents = new List<ParticleCollisionEvent>();
-
+        
         public float BaseDamage { get; private set; }
 
         void Start()
@@ -41,22 +39,15 @@ namespace Assets.Scripts.Damages
 
             var collisionEvents = _particleSystem.GetCollisionsWith(collidingGameObject);
 
-            foreach (var particleCollisionEvent in collisionEvents)
+            foreach (var collisionEvent in collisionEvents)
             {
-                //var collisionPoint = particleCollisionEvent.intersection;
-                //var impactVelocity = particleCollisionEvent.velocity;
-                //var impactNormal = particleCollisionEvent.normal;
-
-                damageable.TakeDamage(this);
+                damageable.TakeDamage(damager: this);
             }
         }
 
-        public void Execute()
+        public void EmitShockWave()
         {
-            _particleSystem.Emit(300);
+            _particleSystem.Emit(particlesToEmit);
         }
-
-
-        
     }
 }
