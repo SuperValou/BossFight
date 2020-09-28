@@ -845,7 +845,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 80
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5437,6 +5437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 1
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &183323850
 GameObject:
@@ -25591,6 +25592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 1
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &658544472
 GameObject:
@@ -26261,7 +26263,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 80
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -30917,6 +30919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 1
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &1050427340
 GameObject:
@@ -37056,6 +37059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 1
   projectileImpact: {fileID: 1538557628}
 --- !u!114 &3583301413128621514
 MonoBehaviour:
