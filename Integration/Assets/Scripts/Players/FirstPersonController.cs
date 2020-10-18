@@ -14,19 +14,19 @@ namespace Assets.Scripts.Players
         public float walkSpeed = 10f;
 
         [Tooltip("Forward speed of the player when dashing (m/s).")]
-        public float forwardDashSpeed = 30f;
+        public float forwardDashSpeed = 15f;
 
         [Tooltip("Upward speed of the player when dashing (m/s).")]
         public float upwardDashSpeed = 2f;
 
         [Tooltip("Vertical speed of the player when hitting the booster button (m/s).")]
-        public float boosterSpeed = 40;
+        public float boosterSpeed = 30f;
 
         [Tooltip("Vertical speed of the player when hitting the jump button (m/s).")]
-        public float jumpSpeed = 11f;
+        public float jumpSpeed = 15f;
         
         [Tooltip("Gravity pull applied on the player (m/s²).")]
-        public float gravity = 9.81f;
+        public float gravity = 35f;
         
         [Tooltip("Units that player can fall before a falling function is run.")]
         [SerializeField]

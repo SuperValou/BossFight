@@ -15751,7 +15751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 10
-  forwardDashSpeed: 30
+  forwardDashSpeed: 15
   upwardDashSpeed: 2
   boosterSpeed: 30
   jumpSpeed: 15
