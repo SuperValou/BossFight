@@ -19,9 +19,12 @@ namespace Assets.Scripts.Players
         [Tooltip("Upward speed of the player when dashing (m/s).")]
         public float upwardDashSpeed = 2f;
 
-        [Tooltip("Vertical speed of the player when hitting the booster button (m/s).")]
-        public float boosterSpeed = 30f;
+        [Tooltip("Forward speed of the player when hitting the booster button (m/s).")]
+        public float forwardBoosterSpeed = 4f;
 
+        [Tooltip("Upward speed of the player when hitting the booster button (m/s).")]
+        public float upwardBoosterSpeed = 28f;
+        
         [Tooltip("Vertical speed of the player when hitting the jump button (m/s).")]
         public float jumpSpeed = 15f;
         
@@ -159,8 +162,8 @@ namespace Assets.Scripts.Players
 
 			if (_canUseBooster && inputManager.BoosterButtonDown())
 			{
-				_externalVelocityVector.y = boosterSpeed;
-				_externalVelocityVector += this.transform.forward * walkSpeed; // move a bit forward when using booster
+				_externalVelocityVector.y = upwardBoosterSpeed;
+				_externalVelocityVector += this.transform.forward * forwardBoosterSpeed;
 			    _canUseBooster = false;
 			}
 			
