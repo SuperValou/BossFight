@@ -15774,7 +15774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: {fileID: 963194227}
-  arm: {fileID: 853464991}
+  arm: {fileID: 1592410776}
   maxDistance: 100
   applicableLayers:
     serializedVersion: 2
@@ -32480,7 +32480,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 80
       minScalar: 5
       maxCurve:
         serializedVersion: 2
