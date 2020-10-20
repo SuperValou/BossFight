@@ -5504,12 +5504,12 @@ GameObject:
   - component: {fileID: 221488864}
   - component: {fileID: 221488863}
   m_Layer: 0
-  m_Name: UnityInputManager
+  m_Name: MouseKeyboardInputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &221488863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15761,7 +15761,7 @@ MonoBehaviour:
   headTransform: {fileID: 350737311}
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
-  inputManager: {fileID: 1278003062}
+  inputManager: {fileID: 221488863}
 --- !u!114 &479099069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31265,7 +31265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1278003061
 Transform:
   m_ObjectHideFlags: 0
@@ -31796,7 +31796,7 @@ MonoBehaviour:
   - {fileID: 3583301413128621514}
   - {fileID: 1207353944}
   - {fileID: 371997297}
-  inputManager: {fileID: 1278003062}
+  inputManager: {fileID: 221488863}
 --- !u!1 &1767602245
 GameObject:
   m_ObjectHideFlags: 0
