@@ -5525,7 +5525,7 @@ MonoBehaviour:
   cursorLockMode: 1
   mouseSensitivity: 12
   scrollSensitivity: 1
-  keyboardSensitivity: 1
+  keyboardSensitivity: 0.75
 --- !u!4 &221488864
 Transform:
   m_ObjectHideFlags: 0
