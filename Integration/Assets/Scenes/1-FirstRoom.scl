@@ -1,0 +1,1383 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/1-FirstRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Deck_Floor_01_snaps002",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (10)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (11)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (12)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (13)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (14)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (15)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (16)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (17)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (18)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (19)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (20)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (21)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (22)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (23)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (24)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (25)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (26)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (27)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (28)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (29)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (30)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (31)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (32)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (33)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (34)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (35)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (36)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (37)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (38)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (39)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (40)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (41)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (42)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (43)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (44)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (45)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (46)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (47)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (48)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (49)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (50)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (51)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (52)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (53)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (54)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (55)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (56)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (57)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (58)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (59)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (60)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (61)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (62)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (63)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (64)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (65)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (66)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (67)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (68)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (69)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (70)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Floor_01_snaps002 (71)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Quart_Wall_snaps002",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (10)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (11)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (12)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (13)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (14)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (15)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (16)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (17)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (18)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (19)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (20)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (21)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (22)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (23)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (24)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (25)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (27)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (28)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (29)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (26)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (31)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (30)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (32)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (33)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (35)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (36)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (37)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (38)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (39)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (40)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (41)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (42)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (43)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (44)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (45)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (46)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (47)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (48)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (49)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (50)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (51)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (52)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (34)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (53)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (54)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (55)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (56)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (57)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (59)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (60)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (61)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (62)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (63)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (64)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (65)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (66)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (67)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (68)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (69)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (70)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (58)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (71)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (72)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (73)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (74)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (75)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (76)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (77)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (78)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (79)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (80)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (81)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (82)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (83)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (84)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (85)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (86)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (87)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (88)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (89)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (90)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (91)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (92)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (93)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (95)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (96)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (97)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (94)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (98)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (99)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (100)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (101)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (102)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (103)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (104)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (105)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (106)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (107)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (108)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (109)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (110)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (111)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (112)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (113)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (114)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (115)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (116)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Wall_snaps002 (117)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ceiling",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (1)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (2)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (3)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (4)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (5)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (6)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (7)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (8)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (9)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (10)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (11)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (12)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (13)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (14)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (17)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (20)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (108)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (109)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (110)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (111)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (112)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (113)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (114)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (115)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (116)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (117)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (118)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (119)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (120)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (121)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (122)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (123)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (124)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (125)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (126)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (127)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (128)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (129)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (130)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (131)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (132)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (133)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (134)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (135)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (136)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (137)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Deck_Ceiling_01_snaps002 (138)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (23)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (24)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (25)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (26)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (27)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (28)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (29)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (30)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (31)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (32)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (33)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (34)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (35)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (36)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (37)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (39)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (40)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (42)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (43)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (38)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (41)",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Quart_Ceiling_01_snaps002 (44)",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Doors",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Door",
+                                "Scripts": [
+                                    {
+                                        "Name": "BasicDoor"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Cube",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

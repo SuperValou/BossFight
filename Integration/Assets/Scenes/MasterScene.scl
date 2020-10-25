@@ -1,0 +1,73 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/MasterScene.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "PlayerSpawn",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerSpawn"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManager",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManager"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Directional Light",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

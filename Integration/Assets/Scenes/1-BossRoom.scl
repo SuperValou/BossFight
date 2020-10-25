@@ -1,0 +1,1092 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/1-BossRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "NavMeshSurface",
+                        "Scripts": [
+                            {
+                                "Name": "NavMeshSurface"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "PlayerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerProxy"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "BossDeath",
+                        "Scripts": [
+                            {
+                                "Name": "BossDeath"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (1)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (2)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (3)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (4)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (5)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (6)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (7)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (8)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (9)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (10)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (11)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (12)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (13)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (14)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (15)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20 (16)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (17)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (18)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (19)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (20)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (21)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (22)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (23)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (24)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (27)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (28)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (29)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (30)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (31)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (25)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (26)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Floor_20x20 (32)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorToCorridor",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Cube",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Foes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Striker",
+                                "Scripts": [
+                                    {
+                                        "Name": "Striker"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Root",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "LowerLegTarget_L",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "LowerLegTarget_R",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "LowerTorso",
+                                                "Scripts": [],
+                                                "Children": [
+                                                    {
+                                                        "Name": "UpperLeg_L",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "LowerLeg_L"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "Name": "UpperLeg_R",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "LowerLeg_R"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "Name": "UpperTorso",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "Shoulder_L"
+                                                            },
+                                                            {
+                                                                "Name": "Shoulder_R"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechMGBarrel"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechSRMRackX2"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechLRMRackX5"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechLRMRackX5 (2)"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechMGBarrel (1)"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechSRMRackX2 (1)"
+                                                            },
+                                                            {
+                                                                "Name": "ScifiMechSRMRackX2 (2)"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Skinning",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Chassis",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "ArmLeft",
+                                                "Scripts": [],
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "ArmRight",
+                                                "Scripts": [],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Attacks",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "StompingAttack",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "ShockWaveEmitter"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

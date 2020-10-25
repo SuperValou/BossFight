@@ -1,0 +1,166 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/GameOverMenu.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Lights",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Directional Light",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Ground",
+                        "Scripts": [],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Walls",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Floor_20x20 (30)",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Floor_10x10",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (1)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (2)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Floor_10x10 (3)",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Camera",
+                        "Scripts": [],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler"
+                    },
+                    {
+                        "Name": "GraphicRaycaster"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "GameOverMenu",
+                        "Scripts": [
+                            {
+                                "Name": "GameOverMenu"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "RetryButton",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            },
+                            {
+                                "Name": "Button"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "QuitButton",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            },
+                            {
+                                "Name": "Button"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem"
+                    },
+                    {
+                        "Name": "StandaloneInputModule"
+                    }
+                ],
+                "Children": []
+            }
+        ]
+    }
+}

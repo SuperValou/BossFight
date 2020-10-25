@@ -1,0 +1,15 @@
+# Made using Asset Forge (1.3)
+
+:models
+Primitives/block_default[(0, 0, 0);(0.0, 0.0, 0.0);(1.0, 1.0, 1.0);block_default_15;_defaultMat]
+Primitives/cylinder_cone[(0, 0.5, 1.5);(90.0, 0.0, 0.0);(1.0, 1.0, 1.0);cylinder_cone_16;_defaultMat]
+Primitives/cylinder_half[(2, 0, 0.5);(90.0, 180.0, 0.0);(1.0, 1.0, 1.0);cylinder_half_19;_defaultMat]
+Primitives/sphere_dome[(0, 2, 0);(0.0, 0.0, 0.0);(1.0, 1.0, 1.0);sphere_dome_22;_defaultMat]
+Primitives/cylinder_cone[(0, 0.5, 2.5);(90.0, 0.0, 0.0);(1.0, 1.0, 1.0);cylinder_cone_25;_defaultMat]
+
+:materials
+_defaultMat[RGBA(1.000, 1.000, 1.000, 1.000);]
+
+:textures
+
+:extra

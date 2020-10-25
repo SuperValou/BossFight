@@ -1,0 +1,441 @@
+{
+    "SerializationMajorVersion": 1,
+    "SceneInfo": {
+        "ScenePath": "Assets/Scenes/0-Gameplay.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "UnityInputManager",
+                        "Scripts": [
+                            {
+                                "Name": "MouseKeyboardInputManager"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManagerProxy"
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Player",
+                "Scripts": [
+                    {
+                        "Name": "Player"
+                    },
+                    {
+                        "Name": "FirstPersonController"
+                    },
+                    {
+                        "Name": "WeaponManager"
+                    },
+                    {
+                        "Name": "AimAssist"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "UpperBody",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Head",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Sphere",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Camera",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "Arm",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Cylinder",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Guns",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "PowerGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "PowerGun"
+                                                    },
+                                                    {
+                                                        "Name": "WeaponCharge"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "ProjectileEmitters",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "PowerEmitter"
+                                                            },
+                                                            {
+                                                                "Name": "ChargedPowerEmitter"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "Name": "ChargeEffect",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "ChargeEmitter"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BeamGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BeamGun"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BeamEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BombGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BombGun"
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BombEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter"
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Body",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Torso",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Belly",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Pelvis",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Leg_left",
+                                "Scripts": [],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Leg_right",
+                                "Scripts": [],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Emitters",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "WeaponImpactEmitters",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "BombImpact",
+                                "Scripts": [
+                                    {
+                                        "Name": "BombImpact"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "BombExplosionEmitter",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "BombDecalEmitter",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler"
+                    },
+                    {
+                        "Name": "GraphicRaycaster"
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "WeaponryDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "WeaponryDisplay"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "'Weapon'",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "CurrentWeaponLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Reticle",
+                        "Scripts": [
+                            {
+                                "Name": "Image"
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplay"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "FoeNameLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "FoeHealthBar",
+                                "Scripts": [
+                                    {
+                                        "Name": "Slider"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Background",
+                                        "Scripts": [
+                                            {
+                                                "Name": "Image"
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Fill Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Fill",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Handle Slide Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Handle",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "FoeHealthPointLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "HealthDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "HealthDisplay"
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "'Health'",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "HealthBar",
+                                "Scripts": [
+                                    {
+                                        "Name": "Slider"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Background",
+                                        "Scripts": [
+                                            {
+                                                "Name": "Image"
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Fill Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Fill",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Handle Slide Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Handle",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image"
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "HealthPointLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text"
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem"
+                    },
+                    {
+                        "Name": "StandaloneInputModule"
+                    }
+                ],
+                "Children": []
+            }
+        ]
+    }
+}

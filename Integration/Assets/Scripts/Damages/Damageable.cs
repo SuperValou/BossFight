@@ -4,9 +4,12 @@ namespace Assets.Scripts.Damages
 {
     public abstract class Damageable : MonoBehaviour
     {
-        public float maxHealth = 20;
+        // -- Editor
 
-        // --
+        public float maxHealth = 20;
+        public bool isInvulnerable = false;
+
+        // -- Class
 
         public float CurrentHealth { get; private set; }
 
@@ -19,19 +22,35 @@ namespace Assets.Scripts.Damages
 
         public void TakeDamage(IDamager damager)
         {
+            if (!IsAlive)
+            {
+                return;
+            }
+
+            if (isInvulnerable)
+            {
+                return;
+            }
+
             CurrentHealth -= damager.BaseDamage;
             if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
                 Die();
             }
+            else
+            {
+                OnDamageTaken();
+            }
         }
-
+        
         public void InstaKill()
         {
             CurrentHealth = 0;
             Die();
         }
+
+        protected abstract void OnDamageTaken();
 
         protected abstract void Die();
     }
