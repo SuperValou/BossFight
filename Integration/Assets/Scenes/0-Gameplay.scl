@@ -31,13 +31,16 @@
                 "Name": "Player",
                 "Scripts": [
                     {
+                        "Name": "Player"
+                    },
+                    {
                         "Name": "FirstPersonController"
                     },
                     {
-                        "Name": "AimAssist"
+                        "Name": "WeaponManager"
                     },
                     {
-                        "Name": "Player"
+                        "Name": "AimAssist"
                     }
                 ],
                 "Children": [
@@ -71,12 +74,8 @@
                                         "Children": []
                                     },
                                     {
-                                        "Name": "WeaponManager",
-                                        "Scripts": [
-                                            {
-                                                "Name": "WeaponManager"
-                                            }
-                                        ],
+                                        "Name": "Guns",
+                                        "Scripts": [],
                                         "Children": [
                                             {
                                                 "Name": "PowerGun",
@@ -190,26 +189,32 @@
                 ]
             },
             {
-                "Name": "ImpactEmitters",
+                "Name": "Emitters",
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "BombImpact",
-                        "Scripts": [
-                            {
-                                "Name": "BombImpact"
-                            }
-                        ],
+                        "Name": "WeaponImpactEmitters",
+                        "Scripts": [],
                         "Children": [
                             {
-                                "Name": "BombExplosionEmitter",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "BombDecalEmitter",
-                                "Scripts": [],
-                                "Children": []
+                                "Name": "BombImpact",
+                                "Scripts": [
+                                    {
+                                        "Name": "BombImpact"
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "BombExplosionEmitter",
+                                        "Scripts": [],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "BombDecalEmitter",
+                                        "Scripts": [],
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -429,11 +434,6 @@
                         "Name": "StandaloneInputModule"
                     }
                 ],
-                "Children": []
-            },
-            {
-                "Name": "GameObject",
-                "Scripts": [],
                 "Children": []
             }
         ]
