@@ -5645,7 +5645,7 @@ Transform:
   m_GameObject: {fileID: 262247143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.2399999, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.15335, y: 0.15335, z: 0.15335}
   m_Children: []
   m_Father: {fileID: 2063213349}
   m_RootOrder: 1
@@ -5701,7 +5701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeaponLabel: {fileID: 1273672194}
-  weaponManager: {fileID: 1592410777}
+  weaponManager: {fileID: 479099071}
 --- !u!1 &350737310
 GameObject:
   m_ObjectHideFlags: 0
@@ -15697,9 +15697,10 @@ GameObject:
   m_Component:
   - component: {fileID: 479099067}
   - component: {fileID: 479099070}
-  - component: {fileID: 479099068}
-  - component: {fileID: 479099069}
   - component: {fileID: 479099066}
+  - component: {fileID: 479099068}
+  - component: {fileID: 479099071}
+  - component: {fileID: 479099069}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -15762,6 +15763,9 @@ MonoBehaviour:
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
   inputManager: {fileID: 221488863}
+  hasJumpAbility: 0
+  hasDashAbility: 0
+  hasBoosterAbility: 0
 --- !u!114 &479099069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15798,6 +15802,23 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &479099071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479099065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b42791a8670c04b95da512805beb71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 3583301413128621514}
+  - {fileID: 1207353944}
+  - {fileID: 371997297}
+  inputManager: {fileID: 221488863}
 --- !u!1 &495587285
 GameObject:
   m_ObjectHideFlags: 0
@@ -15871,8 +15892,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495587285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.391, z: 0}
-  m_LocalScale: {x: 0.43915, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0, y: 1.445, z: 0}
+  m_LocalScale: {x: 0.34684068, y: 0.19745, z: 0.19745}
   m_Children: []
   m_Father: {fileID: 2063213349}
   m_RootOrder: 0
@@ -31028,36 +31049,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050733758}
   m_CullTransparentMesh: 0
---- !u!1 &1163720913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1163720914}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1163720914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163720913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 4.7, z: 14.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207353942
 GameObject:
   m_ObjectHideFlags: 0
@@ -31686,9 +31677,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1592410776}
-  - component: {fileID: 1592410777}
   m_Layer: 0
-  m_Name: WeaponManager
+  m_Name: Guns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31711,23 +31701,6 @@ Transform:
   m_Father: {fileID: 853464991}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1592410777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592410775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b42791a8670c04b95da512805beb71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 3583301413128621514}
-  - {fileID: 1207353944}
-  - {fileID: 371997297}
-  inputManager: {fileID: 221488863}
 --- !u!1 &1767602245
 GameObject:
   m_ObjectHideFlags: 0

@@ -22234,7 +22234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4922272387448978, guid: 2b49cf6b0e2134c4a81f3474c005ca8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.25
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4922272387448978, guid: 2b49cf6b0e2134c4a81f3474c005ca8a, type: 3}
       propertyPath: m_LocalRotation.x
@@ -23963,6 +23963,7 @@ GameObject:
   - component: {fileID: 1207656877}
   - component: {fileID: 1207656879}
   - component: {fileID: 1207656878}
+  - component: {fileID: 1207656880}
   m_Layer: 0
   m_Name: Powerup
   m_TagString: Untagged
@@ -23993,7 +23994,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207656875}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.75
   m_Height: 2.2
@@ -28730,6 +28731,21 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1207656880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207656875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ae308b9d0aecd4ea177adcbe9872f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grantJump: 1
+  grantDash: 0
+  grantBooster: 0
 --- !u!1001 &1207944098
 PrefabInstance:
   m_ObjectHideFlags: 0

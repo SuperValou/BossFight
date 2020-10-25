@@ -47,6 +47,12 @@ namespace Assets.Scripts.Players
         [Header("References")]
         public AbstractInputManager inputManager;
 
+        [Header("Abilities")]
+        public bool hasJumpAbility;
+        public bool hasDashAbility;
+        public bool hasBoosterAbility;
+
+
         // -- Class
 
         private Transform _transform;
@@ -120,7 +126,7 @@ namespace Assets.Scripts.Players
 				_canDash = true;
 				
                 // Jump
-				if (inputManager.JumpButtonDown())
+				if (hasJumpAbility && inputManager.JumpButtonDown())
 				{
 					_externalVelocityVector.y = jumpSpeed;			
 				}
@@ -135,7 +141,7 @@ namespace Assets.Scripts.Players
                 }
 
                 // Mid-air dash
-                if (_canDash && inputManager.DashButtonDown())
+                if (hasDashAbility && _canDash && inputManager.DashButtonDown())
                 {
                     Vector3 dashVelocity;
                     if (globalInputDirection == Vector3.zero)
@@ -160,7 +166,7 @@ namespace Assets.Scripts.Players
                 }
             }
 
-			if (_canUseBooster && inputManager.BoosterButtonDown())
+			if (hasBoosterAbility && _canUseBooster && inputManager.BoosterButtonDown())
 			{
 				_externalVelocityVector.y = upwardBoosterSpeed;
 				_externalVelocityVector += this.transform.forward * forwardBoosterSpeed;

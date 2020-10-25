@@ -17,11 +17,15 @@ namespace Assets.Scripts.Players
         public SceneLoadingManagerProxy sceneLoadingManagerProxy;
 
         // -- Class
-        private FirstPersonController _firstPersonController;
-        
+
+        public FirstPersonController FirstPersonController { get; private set; }
+        public WeaponManager WeaponManager { get; private set; }
+
+
         void Start()
         {
-            _firstPersonController = this.GetOrThrow<FirstPersonController>();
+            FirstPersonController = this.GetOrThrow<FirstPersonController>();
+            WeaponManager = this.GetOrThrow<WeaponManager>();
         }
 
         protected override void OnDamageTaken()
