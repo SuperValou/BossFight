@@ -1,6 +1,7 @@
 {
-    "SerializationMajorVersion": 1,
+    "SerializationMajorVersion": 2,
     "SceneInfo": {
+        "SceneName": "MasterScene",
         "ScenePath": "Assets/Scenes/MasterScene.unity",
         "RootGameObjectInfos": [
             {
@@ -11,7 +12,9 @@
                         "Name": "PlayerSpawn",
                         "Scripts": [
                             {
-                                "Name": "PlayerSpawn"
+                                "Name": "PlayerSpawn",
+                                "FullName": "Assets.Scripts.Players.PlayerSpawn",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -20,7 +23,9 @@
                         "Name": "DoorManager",
                         "Scripts": [
                             {
-                                "Name": "DoorManager"
+                                "Name": "DoorManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManager",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -29,7 +34,9 @@
                         "Name": "SceneLoadingManager",
                         "Scripts": [
                             {
-                                "Name": "SceneLoadingManager"
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -37,34 +44,12 @@
                 ]
             },
             {
-                "Name": "Environment",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Lights",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Directional Light",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Ground",
-                        "Scripts": [],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Walls",
-                        "Scripts": [],
-                        "Children": []
-                    }
-                ]
+                "Children": []
             },
             {
-                "Name": "Entities",
+                "Name": "",
                 "Scripts": [],
                 "Children": []
             }

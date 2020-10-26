@@ -1,5 +1,5 @@
 {
-    "SerializationMajorVersion": 1,
+    "SerializationMajorVersion": 2,
     "SceneInfo": {
         "SceneName": "AbilityRoomScene",
         "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",

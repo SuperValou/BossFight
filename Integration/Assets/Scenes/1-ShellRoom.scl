@@ -1,8 +1,8 @@
 {
     "SerializationMajorVersion": 2,
     "SceneInfo": {
-        "SceneName": "1-BossRoom",
-        "ScenePath": "Assets/Scenes/1-BossRoom.unity",
+        "SceneName": "1-ShellRoom",
+        "ScenePath": "Assets/Scenes/1-ShellRoom.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "Managers",
@@ -71,62 +71,9 @@
                 "Children": []
             },
             {
-                "Name": "Doors",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "DoorToCorridor",
-                        "Scripts": [
-                            {
-                                "Name": "BasicDoor",
-                                "FullName": "Assets.Scripts.Environments.BasicDoor",
-                                "Index": 1
-                            }
-                        ],
-                        "Children": []
-                    }
-                ]
-            },
-            {
-                "Name": "Entities",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Foes",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Striker",
-                                "Scripts": [
-                                    {
-                                        "Name": "Striker",
-                                        "FullName": "Assets.Scripts.Foes.Strikers.Striker",
-                                        "Index": 3
-                                    }
-                                ],
-                                "Children": [
-                                    {
-                                        "Name": "Attacks",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "StompingAttack",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "ShockWaveEmitter",
-                                                        "FullName": "Assets.Scripts.Damages.ShockWaveEmitter",
-                                                        "Index": 1
-                                                    }
-                                                ],
-                                                "Children": []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+                "Children": []
             }
         ]
     }

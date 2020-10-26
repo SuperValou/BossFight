@@ -1,5 +1,5 @@
 {
-    "SerializationMajorVersion": 1,
+    "SerializationMajorVersion": 2,
     "SceneInfo": {
         "SceneName": "0-Gameplay",
         "ScenePath": "Assets/Scenes/0-Gameplay.unity",
