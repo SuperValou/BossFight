@@ -1,6 +1,7 @@
 {
     "SerializationMajorVersion": 1,
     "SceneInfo": {
+        "SceneName": "0-Gameplay",
         "ScenePath": "Assets/Scenes/0-Gameplay.unity",
         "RootGameObjectInfos": [
             {
@@ -11,7 +12,9 @@
                         "Name": "UnityInputManager",
                         "Scripts": [
                             {
-                                "Name": "MouseKeyboardInputManager"
+                                "Name": "MouseKeyboardInputManager",
+                                "FullName": "Assets.Scripts.Players.Inputs.MouseKeyboardInputManager",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -20,7 +23,9 @@
                         "Name": "SceneLoadingManagerProxy",
                         "Scripts": [
                             {
-                                "Name": "SceneLoadingManagerProxy"
+                                "Name": "SceneLoadingManagerProxy",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManagerProxy",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -31,16 +36,24 @@
                 "Name": "Player",
                 "Scripts": [
                     {
-                        "Name": "Player"
+                        "Name": "Player",
+                        "FullName": "Assets.Scripts.Players.Player",
+                        "Index": 2
                     },
                     {
-                        "Name": "FirstPersonController"
+                        "Name": "FirstPersonController",
+                        "FullName": "Assets.Scripts.Players.FirstPersonController",
+                        "Index": 3
                     },
                     {
-                        "Name": "WeaponManager"
+                        "Name": "WeaponManager",
+                        "FullName": "Assets.Scripts.Players.WeaponManager",
+                        "Index": 4
                     },
                     {
-                        "Name": "AimAssist"
+                        "Name": "AimAssist",
+                        "FullName": "Assets.Scripts.Players.AimAssist",
+                        "Index": 5
                     }
                 ],
                 "Children": [
@@ -49,30 +62,9 @@
                         "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Head",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Sphere",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Camera",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
-                            },
-                            {
                                 "Name": "Arm",
                                 "Scripts": [],
                                 "Children": [
-                                    {
-                                        "Name": "Cylinder",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
                                     {
                                         "Name": "Guns",
                                         "Scripts": [],
@@ -81,10 +73,14 @@
                                                 "Name": "PowerGun",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "PowerGun"
+                                                        "Name": "PowerGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.PowerGun",
+                                                        "Index": 2
                                                     },
                                                     {
-                                                        "Name": "WeaponCharge"
+                                                        "Name": "WeaponCharge",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.WeaponCharge",
+                                                        "Index": 3
                                                     }
                                                 ],
                                                 "Children": [
@@ -99,15 +95,6 @@
                                                                 "Name": "ChargedPowerEmitter"
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "Name": "ChargeEffect",
-                                                        "Scripts": [],
-                                                        "Children": [
-                                                            {
-                                                                "Name": "ChargeEmitter"
-                                                            }
-                                                        ]
                                                     }
                                                 ]
                                             },
@@ -115,7 +102,9 @@
                                                 "Name": "BeamGun",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "BeamGun"
+                                                        "Name": "BeamGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.BeamGun",
+                                                        "Index": 1
                                                     }
                                                 ],
                                                 "Children": [
@@ -123,7 +112,9 @@
                                                         "Name": "BeamEmitter",
                                                         "Scripts": [
                                                             {
-                                                                "Name": "ProjectileEmitter"
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
                                                             }
                                                         ],
                                                         "Children": []
@@ -134,7 +125,9 @@
                                                 "Name": "BombGun",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "BombGun"
+                                                        "Name": "BombGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.BombGun",
+                                                        "Index": 1
                                                     }
                                                 ],
                                                 "Children": [
@@ -142,7 +135,9 @@
                                                         "Name": "BombEmitter",
                                                         "Scripts": [
                                                             {
-                                                                "Name": "ProjectileEmitter"
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
                                                             }
                                                         ],
                                                         "Children": []
@@ -152,37 +147,6 @@
                                         ]
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Body",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Torso",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Belly",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Pelvis",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Leg_left",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Leg_right",
-                                "Scripts": [],
-                                "Children": []
                             }
                         ]
                     }
@@ -200,21 +164,12 @@
                                 "Name": "BombImpact",
                                 "Scripts": [
                                     {
-                                        "Name": "BombImpact"
+                                        "Name": "BombImpact",
+                                        "FullName": "Assets.Scripts.Weaponry.Projectiles.BombImpact",
+                                        "Index": 1
                                     }
                                 ],
-                                "Children": [
-                                    {
-                                        "Name": "BombExplosionEmitter",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "BombDecalEmitter",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
+                                "Children": []
                             }
                         ]
                     }
@@ -224,10 +179,14 @@
                 "Name": "Canvas",
                 "Scripts": [
                     {
-                        "Name": "CanvasScaler"
+                        "Name": "CanvasScaler",
+                        "FullName": "UnityEngine.UI.CanvasScaler",
+                        "Index": 2
                     },
                     {
-                        "Name": "GraphicRaycaster"
+                        "Name": "GraphicRaycaster",
+                        "FullName": "UnityEngine.UI.GraphicRaycaster",
+                        "Index": 3
                     }
                 ],
                 "Children": [
@@ -235,7 +194,9 @@
                         "Name": "WeaponryDisplay",
                         "Scripts": [
                             {
-                                "Name": "WeaponryDisplay"
+                                "Name": "WeaponryDisplay",
+                                "FullName": "Assets.Scripts.Huds.WeaponryDisplay",
+                                "Index": 1
                             }
                         ],
                         "Children": [
@@ -243,7 +204,9 @@
                                 "Name": "'Weapon'",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -252,7 +215,9 @@
                                 "Name": "CurrentWeaponLabel",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -263,7 +228,9 @@
                         "Name": "Reticle",
                         "Scripts": [
                             {
-                                "Name": "Image"
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
                             }
                         ],
                         "Children": []
@@ -272,7 +239,9 @@
                         "Name": "FoeHealthDisplay",
                         "Scripts": [
                             {
-                                "Name": "FoeHealthDisplay"
+                                "Name": "FoeHealthDisplay",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplay",
+                                "Index": 1
                             }
                         ],
                         "Children": [
@@ -280,7 +249,9 @@
                                 "Name": "FoeNameLabel",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -289,7 +260,9 @@
                                 "Name": "FoeHealthBar",
                                 "Scripts": [
                                     {
-                                        "Name": "Slider"
+                                        "Name": "Slider",
+                                        "FullName": "UnityEngine.UI.Slider",
+                                        "Index": 1
                                     }
                                 ],
                                 "Children": [
@@ -297,7 +270,9 @@
                                         "Name": "Background",
                                         "Scripts": [
                                             {
-                                                "Name": "Image"
+                                                "Name": "Image",
+                                                "FullName": "UnityEngine.UI.Image",
+                                                "Index": 2
                                             }
                                         ],
                                         "Children": []
@@ -310,7 +285,9 @@
                                                 "Name": "Fill",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "Image"
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
                                                     }
                                                 ],
                                                 "Children": []
@@ -325,7 +302,9 @@
                                                 "Name": "Handle",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "Image"
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
                                                     }
                                                 ],
                                                 "Children": []
@@ -338,7 +317,9 @@
                                 "Name": "FoeHealthPointLabel",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -349,7 +330,9 @@
                         "Name": "HealthDisplay",
                         "Scripts": [
                             {
-                                "Name": "HealthDisplay"
+                                "Name": "HealthDisplay",
+                                "FullName": "Assets.Scripts.Huds.HealthDisplay",
+                                "Index": 1
                             }
                         ],
                         "Children": [
@@ -357,7 +340,9 @@
                                 "Name": "'Health'",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -366,7 +351,9 @@
                                 "Name": "HealthBar",
                                 "Scripts": [
                                     {
-                                        "Name": "Slider"
+                                        "Name": "Slider",
+                                        "FullName": "UnityEngine.UI.Slider",
+                                        "Index": 1
                                     }
                                 ],
                                 "Children": [
@@ -374,7 +361,9 @@
                                         "Name": "Background",
                                         "Scripts": [
                                             {
-                                                "Name": "Image"
+                                                "Name": "Image",
+                                                "FullName": "UnityEngine.UI.Image",
+                                                "Index": 2
                                             }
                                         ],
                                         "Children": []
@@ -387,7 +376,9 @@
                                                 "Name": "Fill",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "Image"
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
                                                     }
                                                 ],
                                                 "Children": []
@@ -402,7 +393,9 @@
                                                 "Name": "Handle",
                                                 "Scripts": [
                                                     {
-                                                        "Name": "Image"
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
                                                     }
                                                 ],
                                                 "Children": []
@@ -415,7 +408,9 @@
                                 "Name": "HealthPointLabel",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -428,10 +423,14 @@
                 "Name": "EventSystem",
                 "Scripts": [
                     {
-                        "Name": "EventSystem"
+                        "Name": "EventSystem",
+                        "FullName": "UnityEngine.EventSystems.EventSystem",
+                        "Index": 1
                     },
                     {
-                        "Name": "StandaloneInputModule"
+                        "Name": "StandaloneInputModule",
+                        "FullName": "UnityEngine.EventSystems.StandaloneInputModule",
+                        "Index": 2
                     }
                 ],
                 "Children": []
