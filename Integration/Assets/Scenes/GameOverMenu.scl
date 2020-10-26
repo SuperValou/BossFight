@@ -1,6 +1,7 @@
 {
-    "SerializationMajorVersion": 1,
+    "SerializationMajorVersion": 2,
     "SceneInfo": {
+        "SceneName": "GameOverMenu",
         "ScenePath": "Assets/Scenes/GameOverMenu.unity",
         "RootGameObjectInfos": [
             {
@@ -11,7 +12,9 @@
                         "Name": "SceneLoadingManager",
                         "Scripts": [
                             {
-                                "Name": "SceneLoadingManager"
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -19,78 +22,27 @@
                 ]
             },
             {
-                "Name": "Environment",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Lights",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Directional Light",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Ground",
-                        "Scripts": [],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Walls",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Floor_20x20 (30)",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Floor_10x10",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Floor_10x10 (1)",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Floor_10x10 (2)",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Floor_10x10 (3)",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+                "Children": []
             },
             {
-                "Name": "Entities",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Camera",
-                        "Scripts": [],
-                        "Children": []
-                    }
-                ]
+                "Children": []
             },
             {
                 "Name": "Canvas",
                 "Scripts": [
                     {
-                        "Name": "CanvasScaler"
+                        "Name": "CanvasScaler",
+                        "FullName": "UnityEngine.UI.CanvasScaler",
+                        "Index": 2
                     },
                     {
-                        "Name": "GraphicRaycaster"
+                        "Name": "GraphicRaycaster",
+                        "FullName": "UnityEngine.UI.GraphicRaycaster",
+                        "Index": 3
                     }
                 ],
                 "Children": [
@@ -98,7 +50,9 @@
                         "Name": "GameOverMenu",
                         "Scripts": [
                             {
-                                "Name": "GameOverMenu"
+                                "Name": "GameOverMenu",
+                                "FullName": "Assets.Scripts.Menus.GameOverMenu",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -107,10 +61,14 @@
                         "Name": "RetryButton",
                         "Scripts": [
                             {
-                                "Name": "Image"
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
                             },
                             {
-                                "Name": "Button"
+                                "Name": "Button",
+                                "FullName": "UnityEngine.UI.Button",
+                                "Index": 3
                             }
                         ],
                         "Children": [
@@ -118,7 +76,9 @@
                                 "Name": "Text",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -129,10 +89,14 @@
                         "Name": "QuitButton",
                         "Scripts": [
                             {
-                                "Name": "Image"
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
                             },
                             {
-                                "Name": "Button"
+                                "Name": "Button",
+                                "FullName": "UnityEngine.UI.Button",
+                                "Index": 3
                             }
                         ],
                         "Children": [
@@ -140,7 +104,9 @@
                                 "Name": "Text",
                                 "Scripts": [
                                     {
-                                        "Name": "Text"
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
                                     }
                                 ],
                                 "Children": []
@@ -153,10 +119,14 @@
                 "Name": "EventSystem",
                 "Scripts": [
                     {
-                        "Name": "EventSystem"
+                        "Name": "EventSystem",
+                        "FullName": "UnityEngine.EventSystems.EventSystem",
+                        "Index": 1
                     },
                     {
-                        "Name": "StandaloneInputModule"
+                        "Name": "StandaloneInputModule",
+                        "FullName": "UnityEngine.EventSystems.StandaloneInputModule",
+                        "Index": 2
                     }
                 ],
                 "Children": []

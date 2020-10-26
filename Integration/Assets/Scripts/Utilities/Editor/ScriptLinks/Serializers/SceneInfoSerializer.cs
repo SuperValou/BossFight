@@ -8,7 +8,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers
 {
     public class SceneInfoSerializer
     {
-        private const int Version = 1;
+        private const int Version = 2;
 
         public SceneInfo ReadFromFile(string filePath)
         {
@@ -16,7 +16,8 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers
             SceneLinkFile linkFile = JsonUtility.FromJson<SceneLinkFile>(serializedInfo);
             if (linkFile.SerializationMajorVersion != Version)
             {
-                throw new ArgumentException("Incorrect version");
+                throw new ArgumentException($"Incorrect version {linkFile.SerializationMajorVersion}. " +
+                                            $"Only version {Version} is handled.");
             }
 
             return linkFile.SceneInfo;
