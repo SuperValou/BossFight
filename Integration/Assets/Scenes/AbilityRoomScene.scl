@@ -1,6 +1,7 @@
 {
     "SerializationMajorVersion": 1,
     "SceneInfo": {
+        "SceneName": "AbilityRoomScene",
         "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
         "RootGameObjectInfos": [
             {
@@ -11,7 +12,9 @@
                         "Name": "FoeHealthDisplayProxy",
                         "Scripts": [
                             {
-                                "Name": "FoeHealthDisplayProxy"
+                                "Name": "FoeHealthDisplayProxy",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplayProxy",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -20,7 +23,9 @@
                         "Name": "PlayerProxy",
                         "Scripts": [
                             {
-                                "Name": "PlayerProxy"
+                                "Name": "PlayerProxy",
+                                "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
                             }
                         ],
                         "Children": []
@@ -32,1862 +37,6 @@
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "Lights",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Directional Light",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Ground&Walls",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Square",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Walls",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Wall_20x20 (2)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (3)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (4)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (5)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (6)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (7)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (8)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (9)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (10)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (11)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (12)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (13)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (14)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (15)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (16)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (17)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (18)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (19)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (20)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (21)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (22)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Ground",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Floor_20x20",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (1)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (2)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (3)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (4)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (5)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (6)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (7)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (8)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (9)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (10)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (11)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (12)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (13)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (14)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (15)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (16)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (17)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (18)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (19)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (20)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (21)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (22)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (23)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (24)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (25)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (26)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Floor_20x20 (27)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "Name": "Corridor",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Chunk",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Floor_20x20 (16)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (1)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Ceilling_20x20 (17)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Chunk (1)",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Floor_20x20 (16)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (1)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Ceilling_20x20 (17)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Name": "Chunk (2)",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "Floor_20x20 (16)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Wall_20x20 (1)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Ceilling_20x20 (17)",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Floor_10x10",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (1)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (2)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "Floor_10x10 (3)",
-                                                        "Scripts": [],
-                                                        "Children": []
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Platforms",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Gen_Ramp_01_snaps002",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (1)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (2)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (3)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (4)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (5)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (6)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (7)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (9)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (10)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (11)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (12)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (13)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (16)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (17)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (18)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (23)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (24)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (22)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (26)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (27)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (28)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (29)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (30)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (31)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (32)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Gen_Ramp_01_snaps002 (1)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (33)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (34)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (35)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (36)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (37)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (38)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (39)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (41)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (42)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (43)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (44)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (45)",
-                                "Scripts": [],
-                                "Children": []
-                            },
-                            {
-                                "Name": "Deck_FloorCeiling_01_snaps002 (46)",
-                                "Scripts": [],
-                                "Children": []
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Cubes",
-                        "Scripts": [],
-                        "Children": []
-                    },
-                    {
                         "Name": "TurretZone",
                         "Scripts": [],
                         "Children": [
@@ -1896,18 +45,17 @@
                                 "Scripts": [],
                                 "Children": [
                                     {
-                                        "Name": "Gen_Wall_snaps002",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
                                         "Name": "TurretStateLabel",
                                         "Scripts": [
                                             {
-                                                "Name": "SwitchLabel"
+                                                "Name": "SwitchLabel",
+                                                "FullName": "Assets.Scripts.Environments.SwitchLabel",
+                                                "Index": 1
                                             },
                                             {
-                                                "Name": "TextMeshPro"
+                                                "Name": "TextMeshPro",
+                                                "FullName": "TMPro.TextMeshPro",
+                                                "Index": 4
                                             }
                                         ],
                                         "Children": []
@@ -1916,16 +64,12 @@
                                         "Name": "Switch",
                                         "Scripts": [
                                             {
-                                                "Name": "ActivationSwitch"
+                                                "Name": "ActivationSwitch",
+                                                "FullName": "Assets.Scripts.Environments.ActivationSwitch",
+                                                "Index": 2
                                             }
                                         ],
-                                        "Children": [
-                                            {
-                                                "Name": "Cube",
-                                                "Scripts": [],
-                                                "Children": []
-                                            }
-                                        ]
+                                        "Children": []
                                     }
                                 ]
                             }
@@ -1945,44 +89,28 @@
                                 "Name": "Foe",
                                 "Scripts": [
                                     {
-                                        "Name": "Foe"
+                                        "Name": "Foe",
+                                        "FullName": "Assets.Scripts.Foes.Foe",
+                                        "Index": 1
                                     }
                                 ],
-                                "Children": [
-                                    {
-                                        "Name": "Capsule",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Sphere",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
+                                "Children": []
                             },
                             {
                                 "Name": "MovingFoe",
                                 "Scripts": [
                                     {
-                                        "Name": "Foe"
+                                        "Name": "Foe",
+                                        "FullName": "Assets.Scripts.Foes.Foe",
+                                        "Index": 1
                                     },
                                     {
-                                        "Name": "SineMove"
+                                        "Name": "SineMove",
+                                        "FullName": "Assets.Scripts.ScriptedAnimations.SineMove",
+                                        "Index": 3
                                     }
                                 ],
-                                "Children": [
-                                    {
-                                        "Name": "Capsule",
-                                        "Scripts": [],
-                                        "Children": []
-                                    },
-                                    {
-                                        "Name": "Sphere",
-                                        "Scripts": [],
-                                        "Children": []
-                                    }
-                                ]
+                                "Children": []
                             }
                         ]
                     },
@@ -1990,7 +118,9 @@
                         "Name": "Turret",
                         "Scripts": [
                             {
-                                "Name": "TrainingTurret"
+                                "Name": "TrainingTurret",
+                                "FullName": "Assets.Scripts.Foes.TrainingTurret",
+                                "Index": 1
                             }
                         ],
                         "Children": [
@@ -1998,7 +128,9 @@
                                 "Name": "Core",
                                 "Scripts": [
                                     {
-                                        "Name": "ActivationSwitch"
+                                        "Name": "ActivationSwitch",
+                                        "FullName": "Assets.Scripts.Environments.ActivationSwitch",
+                                        "Index": 6
                                     }
                                 ],
                                 "Children": []
@@ -2011,37 +143,23 @@
                                         "Name": "TurretProjectileEmitter",
                                         "Scripts": [
                                             {
-                                                "Name": "ProjectileEmitter"
+                                                "Name": "ProjectileEmitter",
+                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                "Index": 3
                                             }
                                         ],
                                         "Children": []
-                                    },
-                                    {
-                                        "Name": "Cylinder",
-                                        "Scripts": [],
-                                        "Children": []
                                     }
                                 ]
-                            },
-                            {
-                                "Name": "Base",
-                                "Scripts": [],
-                                "Children": []
                             }
                         ]
                     }
                 ]
             },
             {
-                "Name": "Emitters",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "FoeDeathEmitter",
-                        "Scripts": [],
-                        "Children": []
-                    }
-                ]
+                "Children": []
             },
             {
                 "Name": "Labels",
@@ -2055,7 +173,9 @@
                                 "Name": "3m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2064,7 +184,9 @@
                                 "Name": "6m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2073,7 +195,9 @@
                                 "Name": "9m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2088,7 +212,9 @@
                                 "Name": "+2m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2097,7 +223,9 @@
                                 "Name": "+3m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2106,7 +234,9 @@
                                 "Name": "+4m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2121,7 +251,9 @@
                                 "Name": "1m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2130,7 +262,9 @@
                                 "Name": "2m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2139,7 +273,9 @@
                                 "Name": "3m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2148,7 +284,9 @@
                                 "Name": "6m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2157,7 +295,9 @@
                                 "Name": "7m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2166,7 +306,9 @@
                                 "Name": "8m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2175,7 +317,9 @@
                                 "Name": "9m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2184,7 +328,9 @@
                                 "Name": "10m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []
@@ -2193,7 +339,9 @@
                                 "Name": "11m",
                                 "Scripts": [
                                     {
-                                        "Name": "TextMeshPro"
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
                                     }
                                 ],
                                 "Children": []

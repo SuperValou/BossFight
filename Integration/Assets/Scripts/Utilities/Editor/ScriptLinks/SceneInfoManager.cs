@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers;
 using Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers.DTOs;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,31 +13,59 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
     {
         private const string SclFileExtension = ".scl";
 
-        private SceneInfo _sceneInfo;
+        public bool IsInitialized { get; private set; } = false;
 
-        public bool IsInitialized => _sceneInfo != null;
+        public ICollection<SceneReport> Reports { get; } = new List<SceneReport>();
 
-        public void InitializeWithCurrentScene()
+        public void Initialize()
         {
-            Scene scene = SceneManager.GetActiveScene();
-            _sceneInfo = SceneInfoBuilder.Build(scene);
-        }
-
-        public void SnapshotSceneInfo()
-        {
-            if (_sceneInfo == null)
+            for (int i = 0; i < SceneManager.sceneCount; i++)
             {
-                throw new InvalidOperationException($"Nothing to snapshot yet. Call {nameof(InitializeWithCurrentScene)} before.");
+                Scene scene = SceneManager.GetSceneAt(i);
+                SceneReport builder = new SceneReport(scene);
+
+                Reports.Add(builder);
             }
 
-            string sclFileRelativePath = Path.ChangeExtension(_sceneInfo.ScenePath, SclFileExtension);
-            string projectFolder = Application.dataPath.Remove(Application.dataPath.Length - "/Assets".Length);
-            string sclFileAbsolutePath = Path.Combine(projectFolder, sclFileRelativePath);
+            foreach (var report in Reports)
+            {
+                report.Build();
+            }
 
-            SceneInfoSerializer serializer = new SceneInfoSerializer();
-            serializer.WriteToFile(_sceneInfo, sclFileAbsolutePath);
+            IsInitialized = true;
+        }
 
-            Debug.Log($"Snapshot available at '{sclFileAbsolutePath}'.");
+        public void TakeSnapshot()
+        {
+            if (Reports.Count == 0)
+            {
+                throw new InvalidOperationException($"Nothing to snapshot yet. Call {nameof(Initialize)} before.");
+            }
+
+            foreach (var report in Reports)
+            {
+                if (report.MissingScriptPaths.Count > 0)
+                {
+                    Debug.LogWarning($"Skipping '{report.SceneName}' because it has missing scripts.");
+                    continue;
+                }
+
+                var sceneInfo = report.SceneInfo;
+                if (sceneInfo == null)
+                {
+                    Debug.LogError($"Skipping '{report.SceneName}' because it has a null {nameof(report.SceneInfo)} property.");
+                    continue;
+                }
+
+                string sclFileRelativePath = Path.ChangeExtension(sceneInfo.ScenePath, SclFileExtension);
+                string projectFolder = Application.dataPath.Remove(Application.dataPath.Length - "/Assets".Length);
+                string sclFileAbsolutePath = Path.Combine(projectFolder, sclFileRelativePath);
+
+                SceneInfoSerializer serializer = new SceneInfoSerializer();
+                serializer.WriteToFile(sceneInfo, sclFileAbsolutePath);
+
+                Debug.Log($"Snapshot available at '{sclFileAbsolutePath}'.");
+            }
         }
     }
 }

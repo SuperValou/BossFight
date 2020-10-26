@@ -1,11 +1,16 @@
-﻿namespace Assets.Scripts.Utilities.Editor.ScriptLinks
+﻿using System.Collections.Generic;
+using Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers.DTOs;
+
+namespace Assets.Scripts.Utilities.Editor.ScriptLinks
 {
     public interface ISceneInfoManager
     {
         bool IsInitialized { get; }
 
-        void InitializeWithCurrentScene();
+        ICollection<SceneReport> Reports { get; }
 
-        void SnapshotSceneInfo();
+        void Initialize();
+
+        void TakeSnapshot();
     }
 }

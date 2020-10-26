@@ -9,5 +9,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers.DTOs
         public string Name;
         public List<ScriptInfo> Scripts;
         public List<GameObjectInfo> Children;
+
+        public static GameObjectInfo Empty { get; } = new GameObjectInfo();
     }
 }
