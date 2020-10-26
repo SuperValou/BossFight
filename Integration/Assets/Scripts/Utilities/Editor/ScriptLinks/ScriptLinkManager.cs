@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers;
-using Assets.Scripts.Utilities.Editor.ScriptLinks.Serializers.DTOs;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Utilities.Editor.ScriptLinks
 {
-    public class SceneInfoManager : ISceneInfoManager
+    public class ScriptLinkManager
     {
         private const string SclFileExtension = ".scl";
 
@@ -19,12 +17,26 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
 
         public void Initialize()
         {
+            if (IsInitialized)
+            {
+                return;
+            }
+
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
                 Scene scene = SceneManager.GetSceneAt(i);
-                SceneReport builder = new SceneReport(scene);
+                if (!scene.IsValid())
+                {
+                    throw new ArgumentException($"Scene '{scene.name}' is invalid.");
+                }
 
-                Reports.Add(builder);
+                if (scene.isDirty)
+                {
+                    throw new ArgumentException($"Scene '{scene.name}' must be saved first.");
+                }
+
+                SceneReport report = new SceneReport(scene);
+                Reports.Add(report);
             }
 
             foreach (var report in Reports)
@@ -33,6 +45,12 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             }
 
             IsInitialized = true;
+        }
+
+        public void Clear()
+        {
+            this.Reports.Clear();
+            IsInitialized = false;
         }
 
         public void TakeSnapshot()

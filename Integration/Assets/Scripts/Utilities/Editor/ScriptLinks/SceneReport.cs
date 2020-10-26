@@ -10,12 +10,14 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
     {
         private const string MissingTag = "<MISSING>";
 
+        private static GameObjectInfo EmptyObject { get; } = new GameObjectInfo();
+
         private readonly Scene _scene;
 
         public string SceneName { get; }
 
+        public bool IsReady { get; private set; }
         public SceneInfo SceneInfo { get; private set; }
-
         public ICollection<string> ScriptNames { get; } = new List<string>();
         public ICollection<string> MissingScriptPaths { get; } = new List<string>();
         
@@ -27,6 +29,11 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
 
         public void Build()
         {
+            if (IsReady)
+            {
+                return;
+            }
+            
             var sceneInfo = new SceneInfo
             {
                 SceneName = _scene.name,
@@ -42,6 +49,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             }
             
             SceneInfo = sceneInfo;
+            IsReady = true;
         }
 
         private GameObjectInfo Build(GameObject gameObject, string hierarchyPath)
@@ -94,7 +102,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             {
                 // if this child is the empty instance, we skip it
                 GameObjectInfo childInfo = Build(child.gameObject, hierarchyPath: parentHierarchy);
-                if (childInfo == GameObjectInfo.Empty)
+                if (childInfo == EmptyObject)
                 {
                     continue;
                 }
@@ -105,7 +113,7 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks
             // if this gameobject has no script and no children, we don't care about it and return the empty instance
             if (objectInfo.Scripts.Count == 0 && objectInfo.Children.Count == 0)
             {
-                return GameObjectInfo.Empty;
+                return EmptyObject;
             }
 
             return objectInfo;

@@ -1,19 +1,19 @@
-﻿using System.Linq;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.Utilities.Editor.ScriptLinks.GUIs
 {
     public class ScriptLinkWindow : EditorWindow
     {
-        private ISceneInfoManager _manager;
+        private ScriptLinkManager _manager;
 
         void Awake()
         {
             this.titleContent = new GUIContent("Script Link");
-            _manager = new SceneInfoManager();
+            _manager = new ScriptLinkManager();
             _manager.Initialize();
         }
+        
 
         void OnGUI()
         {
@@ -25,7 +25,11 @@ namespace Assets.Scripts.Utilities.Editor.ScriptLinks.GUIs
 
             foreach (var report in _manager.Reports)
             {
-                if (report.MissingScriptPaths.Count == 0)
+                if (!report.IsReady)
+                {
+                    GUILayout.Label($"{report.SceneName} - not ready");
+                }
+                else if (report.MissingScriptPaths.Count == 0)
                 {
                     GUILayout.Label($"{report.SceneName} - {report.ScriptNames.Count} script(s)");
                 }
