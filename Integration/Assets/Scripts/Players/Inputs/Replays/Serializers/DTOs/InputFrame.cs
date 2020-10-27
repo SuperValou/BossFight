@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Players.Inputs.ToCheck.Serializers.DTOs
+namespace Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs
 {
     [Serializable]
     public struct InputFrame

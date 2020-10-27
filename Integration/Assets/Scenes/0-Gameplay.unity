@@ -162,11 +162,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3596456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c753524efc9bfbf4880de02ea76e272b, type: 3}
+  m_Script: {fileID: 11500000, guid: f28ddbeafac15c64aa3beea633f1a45d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManagerToRecord: {fileID: 221488863}
-  filePath: C:\Users\Aya\GarbageDay\inputs.json
+  inputToRecord: {fileID: 221488863}
+  filePath: <to set>
 --- !u!1 &22560080
 GameObject:
   m_ObjectHideFlags: 0
@@ -15807,7 +15807,7 @@ MonoBehaviour:
   headTransform: {fileID: 350737311}
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
-  inputManager: {fileID: 1090251351}
+  input: {fileID: 221488863}
   hasJumpAbility: 0
   hasDashAbility: 0
   hasBoosterAbility: 0
@@ -15863,7 +15863,7 @@ MonoBehaviour:
   - {fileID: 3583301413128621514}
   - {fileID: 1207353944}
   - {fileID: 371997297}
-  inputManager: {fileID: 1090251351}
+  input: {fileID: 221488863}
 --- !u!1 &495587285
 GameObject:
   m_ObjectHideFlags: 0
@@ -31110,7 +31110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1090251350
 Transform:
   m_ObjectHideFlags: 0
@@ -31134,10 +31134,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1090251349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d84ab865134e8b48b1d03c41ede7943, type: 3}
+  m_Script: {fileID: 11500000, guid: f4b56568606409f46a6a6dce14c591fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: C:\Users\Aya\GarbageDay\inputs.json
+  inputFile: <to set>
 --- !u!1 &1207353942
 GameObject:
   m_ObjectHideFlags: 0

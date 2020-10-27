@@ -1,15 +1,14 @@
-﻿using System;
-using System.IO;
-using Assets.Scripts.Players.Inputs.ToCheck.Serializers;
-using Assets.Scripts.Players.Inputs.ToCheck.Serializers.DTOs;
+﻿using System.IO;
+using Assets.Scripts.Players.Inputs.Replays.Serializers;
+using Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs;
 using UnityEngine;
 
-namespace Assets.Scripts.Players.Inputs.ToCheck
+namespace Assets.Scripts.Players.Inputs.Replays
 {
     public class InputRecorder : MonoBehaviour
     {
         // -- Editor
-        public AbstractInputManager inputManagerToRecord;
+        public AbstractInput inputToRecord;
 
         public string filePath = "<to set>";
 
@@ -56,21 +55,21 @@ namespace Assets.Scripts.Players.Inputs.ToCheck
 
             frame.Time = Time.time;
 
-            frame.LookVector = inputManagerToRecord.GetLookVector();
-            frame.MoveVector = inputManagerToRecord.GetMoveVector();
+            frame.LookVector = inputToRecord.GetLookVector();
+            frame.MoveVector = inputToRecord.GetMoveVector();
 
-            frame.FireDown = inputManagerToRecord.FireButtonDown();
-            frame.Fire = inputManagerToRecord.FireButton();
-            frame.FireUp = inputManagerToRecord.FireButtonUp();
+            frame.FireDown = inputToRecord.FireButtonDown();
+            frame.Fire = inputToRecord.FireButton();
+            frame.FireUp = inputToRecord.FireButtonUp();
 
-            frame.JumpDown = inputManagerToRecord.JumpButtonDown();
-            frame.Jump = inputManagerToRecord.JumpButton();
+            frame.JumpDown = inputToRecord.JumpButtonDown();
+            frame.Jump = inputToRecord.JumpButton();
 
-            frame.BoosterDown = inputManagerToRecord.BoosterButtonDown();
+            frame.BoosterDown = inputToRecord.BoosterButtonDown();
 
-            frame.DashDown = inputManagerToRecord.DashButtonDown();
+            frame.DashDown = inputToRecord.DashButtonDown();
 
-            frame.SwitchWeaponDown = inputManagerToRecord.SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
+            frame.SwitchWeaponDown = inputToRecord.SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
             frame.WeaponSwitchDirection = (int) weaponSwitchDirection;
 
             _writer.WriteFrame(frame);

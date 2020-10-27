@@ -1,12 +1,11 @@
-﻿using System;
-using System.IO;
-using Assets.Scripts.Players.Inputs.ToCheck.Serializers;
-using Assets.Scripts.Players.Inputs.ToCheck.Serializers.DTOs;
+﻿using System.IO;
+using Assets.Scripts.Players.Inputs.Replays.Serializers;
+using Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs;
 using UnityEngine;
 
-namespace Assets.Scripts.Players.Inputs.ToCheck
+namespace Assets.Scripts.Players.Inputs.Replays
 {
-    public class InputReplayer : AbstractInputManager
+    public class InputReplayer : AbstractInput
     {
         // -- Editor
 

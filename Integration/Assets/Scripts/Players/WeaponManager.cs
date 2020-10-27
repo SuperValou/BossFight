@@ -13,7 +13,7 @@ namespace Assets.Scripts.Players
         public AbstractWeapon[] weapons;
         
         [Header("References")]
-        public AbstractInputManager inputManager;
+        public AbstractInput input;
 
         // -- Class
         
@@ -29,17 +29,17 @@ namespace Assets.Scripts.Players
 
         void Update()
         {
-            if (inputManager.FireButtonDown())
+            if (input.FireButtonDown())
             {
                 CurrentWeapon.InitFire();
             }
 
-            if (inputManager.FireButtonUp())
+            if (input.FireButtonUp())
             {
                 CurrentWeapon.ReleaseFire();
             }
 
-            if (!inputManager.FireButton() && inputManager.SwitchWeaponDown(out WeaponSwitchDirection direction))
+            if (!input.FireButton() && input.SwitchWeaponDown(out WeaponSwitchDirection direction))
             {
                 if (direction == WeaponSwitchDirection.Next)
                 {

@@ -45,7 +45,7 @@ namespace Assets.Scripts.Players
         public float maxDownPitchAngle = -60;
 
         [Header("References")]
-        public AbstractInputManager inputManager;
+        public AbstractInput input;
 
         [Header("Abilities")]
         public bool hasJumpAbility;
@@ -92,7 +92,7 @@ namespace Assets.Scripts.Players
         private void UpdateLookAround()
         {
             // horizontal look
-            Vector2 lookMovement = inputManager.GetLookVector();
+            Vector2 lookMovement = input.GetLookVector();
             _transform.Rotate(Vector3.up, lookMovement.x);
             
             // vertical look
@@ -103,7 +103,7 @@ namespace Assets.Scripts.Players
         private void UpdateMove()
         {
 			// Movement
-            Vector3 localInputDirection = inputManager.GetMoveVector();
+            Vector3 localInputDirection = input.GetMoveVector();
             Vector3 globalInputDirection = _transform.TransformDirection(localInputDirection);
             Vector3 inputVelocityVector = globalInputDirection * walkSpeed;
             
@@ -126,7 +126,7 @@ namespace Assets.Scripts.Players
 				_canDash = true;
 				
                 // Jump
-				if (hasJumpAbility && inputManager.JumpButtonDown())
+				if (hasJumpAbility && input.JumpButtonDown())
 				{
 					_externalVelocityVector.y = jumpSpeed;			
 				}
@@ -141,7 +141,7 @@ namespace Assets.Scripts.Players
                 }
 
                 // Mid-air dash
-                if (hasDashAbility && _canDash && inputManager.DashButtonDown())
+                if (hasDashAbility && _canDash && input.DashButtonDown())
                 {
                     Vector3 dashVelocity;
                     if (globalInputDirection == Vector3.zero)
@@ -166,7 +166,7 @@ namespace Assets.Scripts.Players
                 }
             }
 
-			if (hasBoosterAbility && _canUseBooster && inputManager.BoosterButtonDown())
+			if (hasBoosterAbility && _canUseBooster && input.BoosterButtonDown())
 			{
 				_externalVelocityVector.y = upwardBoosterSpeed;
 				_externalVelocityVector += this.transform.forward * forwardBoosterSpeed;

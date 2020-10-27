@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Players.Inputs
 {
-    public class MouseKeyboardInputManager : AbstractInputManager
+    public class MouseKeyboardInput : AbstractInput
     {
         // -- Editor
 

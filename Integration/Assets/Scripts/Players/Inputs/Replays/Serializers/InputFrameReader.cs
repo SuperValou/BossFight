@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using Assets.Scripts.Players.Inputs.ToCheck.Serializers.DTOs;
+using Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs;
 using UnityEngine;
 
-namespace Assets.Scripts.Players.Inputs.ToCheck.Serializers
+namespace Assets.Scripts.Players.Inputs.Replays.Serializers
 {
     public class InputFrameReader
     {
