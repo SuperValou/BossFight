@@ -31,7 +31,7 @@ public class ScreenshotCaptureManager : MonoBehaviour
 
 		if (!Directory.Exists(outputFolder))
 		{
-		    throw new FileNotFoundException($"Screenshot folder not found at '{outputFolder}'. Capture won't work.");
+		    throw new DirectoryNotFoundException($"Screenshot folder not found at '{outputFolder}'. Capture won't work.");
 		}
 
 		_outputFolder = outputFolder; // TODO: append build number
