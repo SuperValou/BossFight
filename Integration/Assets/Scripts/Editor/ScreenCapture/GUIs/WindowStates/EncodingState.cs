@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
+using System.Threading.Tasks;
+using UnityEditor;
 using UnityEditor.Media;
 using UnityEngine;
 
@@ -10,17 +10,22 @@ namespace Assets.Scripts.Editor.ScreenCapture.GUIs.WindowStates
 {
     public class EncodingState : IWindowState
     {
-        private bool _isInitialized;
         private readonly string _imageSequenceFolder;
         private readonly int _fps;
 
+        private readonly object _lock = new object();
+
+        private bool _isInitialized = false;
         private VideoTrackAttributes _videoAttributes;
+        
+        private Task _encodingTask;
+        private string _encodingMessage;
 
         public WindowStateName Name => WindowStateName.Encoding;
 
         public EncodingState(string imageSequenceFolder, int fps)
         {
-            if (Directory.Exists(imageSequenceFolder))
+            if (!Directory.Exists(imageSequenceFolder))
             {
                 throw new ArgumentException($"Directory '{nameof(imageSequenceFolder)}' doesn't exist at '{imageSequenceFolder}'.");
             }
@@ -43,12 +48,21 @@ namespace Assets.Scripts.Editor.ScreenCapture.GUIs.WindowStates
                 return this;
             }
 
-            throw new System.NotImplementedException();
+            lock (_lock)
+            {
+                EditorGUILayout.LabelField(_encodingMessage);
+            }
+            
+            return this;
         }
 
         private void Initialize()
         {
-            string imagePath = Directory.EnumerateFiles(_imageSequenceFolder).First();
+            string imagePath = Directory.EnumerateFiles(_imageSequenceFolder).FirstOrDefault();
+            if (imagePath == null)
+            {
+                throw new ArgumentException($"Frames folder is empty: {_imageSequenceFolder}");
+            }
 
             byte[] imageBytes = File.ReadAllBytes(imagePath);
             Texture2D texture = new Texture2D(2, 2);
@@ -63,14 +77,52 @@ namespace Assets.Scripts.Editor.ScreenCapture.GUIs.WindowStates
                 bitRateMode = UnityEditor.VideoBitrateMode.High
             };
 
-            //EditorCoroutineUtility.StartCoroutine(CountEditorUpdates(), this);
-            //_isInitialized = true;
-            //using (var encoder = new MediaEncoder(filePathMP4, videoAttr))
-            //{
-            //    IEnumerable<Texture2D> textures = new List<Texture2D>();
-            //    foreach (var tex in textures)
-            //        encoder.AddFrame(tex);
-            //}
+            _encodingTask = Task.Run((Action) Encode);
+            _isInitialized = true;
+        }
+
+        private void Encode()
+        {
+            lock (_lock)
+            {
+                _encodingMessage = "Checking output...";
+            }
+
+            string outputFilePath = Path.Combine(_imageSequenceFolder, "gameplay.mp4");
+            if (File.Exists(outputFilePath))
+            {
+                File.Delete(outputFilePath);
+            }
+
+            lock (_lock)
+            {
+                _encodingMessage = "Counting frames...";
+            }
+
+            var framePaths = Directory.GetFiles(_imageSequenceFolder);
+            
+            using (var encoder = new MediaEncoder(outputFilePath, _videoAttributes))
+            {
+                for (int i = 0; i < framePaths.Length; i++)
+                {
+                    lock (_lock)
+                    {
+                        _encodingMessage = $"Encoding frame {i}/{framePaths.Length}...";
+                    }
+
+                    string framePath = framePaths[i];
+                    byte[] imageBytes = File.ReadAllBytes(framePath);
+                    Texture2D texture = new Texture2D(2, 2);
+                    texture.LoadImage(imageBytes);
+
+                    encoder.AddFrame(texture);
+                }
+            }
+
+            lock (_lock)
+            {
+                _encodingMessage = $"Done: {outputFilePath}";
+            }
         }
     }
 }

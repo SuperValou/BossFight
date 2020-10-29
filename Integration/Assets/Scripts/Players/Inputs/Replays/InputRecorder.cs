@@ -8,15 +8,16 @@ namespace Assets.Scripts.Players.Inputs.Replays
     public class InputRecorder : MonoBehaviour
     {
         // -- Editor
+
         public AbstractInput inputToRecord;
 
         public string filePath = "<to set>";
 
+        private bool record = true;
+
         // -- Class
 
         private InputFrameWriter _writer;
-
-        private bool _isRecording;
 
         void Start()
         {
@@ -26,13 +27,12 @@ namespace Assets.Scripts.Players.Inputs.Replays
             }
 
             _writer = new InputFrameWriter(filePath);
-
-            StartRecording();
+            _writer.Open();
         }
 
         void Update()
         {
-            if (_isRecording)
+            if (record)
             {
                 RecordFrame();
             }
@@ -40,13 +40,8 @@ namespace Assets.Scripts.Players.Inputs.Replays
         
         void OnDestroy()
         {
-            StopRecording();
-        }
-
-        private void StartRecording()
-        {
-            _writer.Open();
-            _isRecording = true;
+            _writer?.Close();
+            record = false;
         }
 
         private void RecordFrame()
@@ -74,12 +69,5 @@ namespace Assets.Scripts.Players.Inputs.Replays
 
             _writer.WriteFrame(frame);
         }
-
-        private void StopRecording()
-        {
-            _writer?.Close();
-            _isRecording = false;
-        }
-
     }
 }

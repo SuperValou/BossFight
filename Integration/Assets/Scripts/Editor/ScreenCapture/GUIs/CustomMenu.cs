@@ -7,7 +7,7 @@ namespace Assets.Scripts.Editor.ScreenCapture.GUIs
         [MenuItem("Tools/Screen Capture")]
         public static void ShowMissingScriptsWindow()
         {
-            //EditorWindow.GetWindow<ScreenCaptureWindow>();
+            EditorWindow.GetWindow<ScreenCaptureWindow>();
         }
     }
 }

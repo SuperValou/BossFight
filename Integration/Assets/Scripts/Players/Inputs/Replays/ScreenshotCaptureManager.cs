@@ -72,28 +72,7 @@ public class ScreenshotCaptureManager : MonoBehaviour
 
 		CaptureScreenshot();
 	}
-
-#if UNITY_EDITOR
-    void OnApplicationQuit()
-    {
-        // TODO: generate video
-        //VideoTrackAttributes videoAttr = new VideoTrackAttributes
-        //{
-        //    frameRate = new MediaRational(1, fps),
-        //    width = (uint) Width,
-        //    height = (uint) Height,
-        //    includeAlpha = false,
-        //    bitRateMode = UnityEditor.VideoBitrateMode.High
-        //};
-
-        //using (var encoder = new MediaEncoder(filePathMP4, videoAttr))
-        //    foreach (var tex in textures)
-        //        encoder.AddFrame(tex);
-        
-    }
-#endif
     
-
     private void CaptureScreenshot()
     {
         string screenshotFilename = $"frame_{Time.frameCount:D04}.png";
