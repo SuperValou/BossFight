@@ -26,36 +26,30 @@ namespace Assets.Scripts.Players.Inputs.Replays
 
             _reader = new InputFrameReader(inputFile);
             _reader.Open();
+
+            // read first frame
+            _currentFrame = _reader.ReadFrame();
+            Time.captureDeltaTime = _currentFrame.Time;
         }
 
-        void Update()
+        void LateUpdate()
         {
             if (!_reader.CanRead())
             {
+                Time.captureDeltaTime = 0;
                 return;
             }
             
-            float time = Time.time;
-            var frame = _reader.ReadFrame();
+            var nextFrame = _reader.ReadFrame();
 
-            while (frame.Time < time)
-            {
-                if (!_reader.CanRead())
-                {
-                    return;
-                }
-
-                frame = _reader.ReadFrame();
-            }
-
-            _currentFrame = frame;
+            Time.captureDeltaTime = nextFrame.Time - _currentFrame.Time;
+            _currentFrame = nextFrame;
         }
 
         void OnDestroy()
         {
             _reader?.Close();
         }
-
 
         // -- Input overrides 
 
