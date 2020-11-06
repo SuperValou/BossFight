@@ -4709,7 +4709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23087a79857907448ae3c1a21d307baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 2
+  volleyDelay: 2
+  bulletsPerVolley: 3
+  bulletDelay: 0.15
+  imprecisionRadius: 0.5
+  targetMovementAnticipation: 15
   cannon: {fileID: 1489928315}
   projectileEmitter: {fileID: 1093185085}
   activationActivationSwitch: {fileID: 287244989}
@@ -7116,9 +7120,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1093185084}
-  - component: {fileID: 1093185087}
-  - component: {fileID: 1093185086}
   - component: {fileID: 1093185085}
+  - component: {fileID: 1093185086}
+  - component: {fileID: 1093185087}
   m_Layer: 11
   m_Name: TurretProjectileEmitter
   m_TagString: Untagged
@@ -10974,7 +10978,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 0
-    radiusScale: 0.5
+    radiusScale: 1
     collidesWith:
       serializedVersion: 2
       m_Bits: 37888
