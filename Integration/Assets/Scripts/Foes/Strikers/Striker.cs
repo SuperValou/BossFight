@@ -3,8 +3,8 @@ using Assets.Scripts.Damages;
 using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
 using Assets.Scripts.Huds;
-using Assets.Scripts.Players;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 using UnityEngine.AI;
 

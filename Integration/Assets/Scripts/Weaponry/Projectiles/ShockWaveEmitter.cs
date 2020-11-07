@@ -1,8 +1,9 @@
 ﻿using System;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
-namespace Assets.Scripts.Damages
+namespace Assets.Scripts.Weaponry.Projectiles
 {
     public class ShockWaveEmitter : MonoBehaviour, IDamager
     {
