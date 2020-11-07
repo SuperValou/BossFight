@@ -1,0 +1,355 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "AbilityRoomScene",
+        "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplayProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "PlayerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerProxy",
+                                "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Environment",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "TurretZone",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Wall",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "TurretStateLabel",
+                                        "Scripts": [
+                                            {
+                                                "Name": "SwitchLabel",
+                                                "FullName": "Assets.Scripts.Environments.SwitchLabel",
+                                                "Index": 1
+                                            },
+                                            {
+                                                "Name": "TextMeshPro",
+                                                "FullName": "TMPro.TextMeshPro",
+                                                "Index": 4
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Switch",
+                                        "Scripts": [
+                                            {
+                                                "Name": "ActivationSwitch",
+                                                "FullName": "Assets.Scripts.Environments.ActivationSwitch",
+                                                "Index": 2
+                                            }
+                                        ],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Foes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Foe",
+                                "Scripts": [
+                                    {
+                                        "Name": "Foe",
+                                        "FullName": "Assets.Scripts.Foes.Foe",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "MovingFoe",
+                                "Scripts": [
+                                    {
+                                        "Name": "Foe",
+                                        "FullName": "Assets.Scripts.Foes.Foe",
+                                        "Index": 1
+                                    },
+                                    {
+                                        "Name": "SineMove",
+                                        "FullName": "Assets.Scripts.ScriptedAnimations.SineMove",
+                                        "Index": 3
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Turret",
+                        "Scripts": [
+                            {
+                                "Name": "TrainingTurret",
+                                "FullName": "Assets.Scripts.Foes.TrainingTurret",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Core",
+                                "Scripts": [
+                                    {
+                                        "Name": "ActivationSwitch",
+                                        "FullName": "Assets.Scripts.Environments.ActivationSwitch",
+                                        "Index": 6
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Cannon",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "TurretProjectileEmitter",
+                                        "Scripts": [
+                                            {
+                                                "Name": "ProjectileEmitter",
+                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                "Index": 3
+                                            }
+                                        ],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Labels",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "GapWidths",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "3m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "6m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "9m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "JumpHeigths",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "+2m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "+3m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "+4m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "TestHeigths",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "1m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "2m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "3m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "6m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "7m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "8m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "9m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "10m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "11m",
+                                "Scripts": [
+                                    {
+                                        "Name": "TextMeshPro",
+                                        "FullName": "TMPro.TextMeshPro",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

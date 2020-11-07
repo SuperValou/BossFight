@@ -1,0 +1,440 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "0-Gameplay",
+        "ScenePath": "Assets/Scenes/0-Gameplay.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "UnityInputManager",
+                        "Scripts": [
+                            {
+                                "Name": "MouseKeyboardInputManager",
+                                "FullName": "Assets.Scripts.Players.Inputs.MouseKeyboardInputManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManagerProxy",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManagerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Player",
+                "Scripts": [
+                    {
+                        "Name": "Player",
+                        "FullName": "Assets.Scripts.Players.Player",
+                        "Index": 2
+                    },
+                    {
+                        "Name": "FirstPersonController",
+                        "FullName": "Assets.Scripts.Players.FirstPersonController",
+                        "Index": 3
+                    },
+                    {
+                        "Name": "WeaponManager",
+                        "FullName": "Assets.Scripts.Players.WeaponManager",
+                        "Index": 4
+                    },
+                    {
+                        "Name": "AimAssist",
+                        "FullName": "Assets.Scripts.Players.AimAssist",
+                        "Index": 5
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "UpperBody",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Arm",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Guns",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "PowerGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "PowerGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.PowerGun",
+                                                        "Index": 2
+                                                    },
+                                                    {
+                                                        "Name": "WeaponCharge",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.WeaponCharge",
+                                                        "Index": 3
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "ProjectileEmitters",
+                                                        "Scripts": [],
+                                                        "Children": [
+                                                            {
+                                                                "Name": "PowerEmitter"
+                                                            },
+                                                            {
+                                                                "Name": "ChargedPowerEmitter"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BeamGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BeamGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.BeamGun",
+                                                        "Index": 1
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BeamEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "BombGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "BombGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.BombGun",
+                                                        "Index": 1
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "BombEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Emitters",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "WeaponImpactEmitters",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "BombImpact",
+                                "Scripts": [
+                                    {
+                                        "Name": "BombImpact",
+                                        "FullName": "Assets.Scripts.Weaponry.Projectiles.BombImpact",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler",
+                        "FullName": "UnityEngine.UI.CanvasScaler",
+                        "Index": 2
+                    },
+                    {
+                        "Name": "GraphicRaycaster",
+                        "FullName": "UnityEngine.UI.GraphicRaycaster",
+                        "Index": 3
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "WeaponryDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "WeaponryDisplay",
+                                "FullName": "Assets.Scripts.Huds.WeaponryDisplay",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "'Weapon'",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "CurrentWeaponLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Reticle",
+                        "Scripts": [
+                            {
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplay",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplay",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "FoeNameLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "FoeHealthBar",
+                                "Scripts": [
+                                    {
+                                        "Name": "Slider",
+                                        "FullName": "UnityEngine.UI.Slider",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Background",
+                                        "Scripts": [
+                                            {
+                                                "Name": "Image",
+                                                "FullName": "UnityEngine.UI.Image",
+                                                "Index": 2
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Fill Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Fill",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Handle Slide Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Handle",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "FoeHealthPointLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "HealthDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "HealthDisplay",
+                                "FullName": "Assets.Scripts.Huds.HealthDisplay",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "'Health'",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "HealthBar",
+                                "Scripts": [
+                                    {
+                                        "Name": "Slider",
+                                        "FullName": "UnityEngine.UI.Slider",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Background",
+                                        "Scripts": [
+                                            {
+                                                "Name": "Image",
+                                                "FullName": "UnityEngine.UI.Image",
+                                                "Index": 2
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Fill Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Fill",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "Handle Slide Area",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "Handle",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "Image",
+                                                        "FullName": "UnityEngine.UI.Image",
+                                                        "Index": 2
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "HealthPointLabel",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem",
+                        "FullName": "UnityEngine.EventSystems.EventSystem",
+                        "Index": 1
+                    },
+                    {
+                        "Name": "StandaloneInputModule",
+                        "FullName": "UnityEngine.EventSystems.StandaloneInputModule",
+                        "Index": 2
+                    }
+                ],
+                "Children": []
+            }
+        ]
+    }
+}

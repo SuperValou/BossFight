@@ -1,0 +1,136 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "GameOverMenu",
+        "ScenePath": "Assets/Scenes/GameOverMenu.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Canvas",
+                "Scripts": [
+                    {
+                        "Name": "CanvasScaler",
+                        "FullName": "UnityEngine.UI.CanvasScaler",
+                        "Index": 2
+                    },
+                    {
+                        "Name": "GraphicRaycaster",
+                        "FullName": "UnityEngine.UI.GraphicRaycaster",
+                        "Index": 3
+                    }
+                ],
+                "Children": [
+                    {
+                        "Name": "GameOverMenu",
+                        "Scripts": [
+                            {
+                                "Name": "GameOverMenu",
+                                "FullName": "Assets.Scripts.Menus.GameOverMenu",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "RetryButton",
+                        "Scripts": [
+                            {
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
+                            },
+                            {
+                                "Name": "Button",
+                                "FullName": "UnityEngine.UI.Button",
+                                "Index": 3
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "QuitButton",
+                        "Scripts": [
+                            {
+                                "Name": "Image",
+                                "FullName": "UnityEngine.UI.Image",
+                                "Index": 2
+                            },
+                            {
+                                "Name": "Button",
+                                "FullName": "UnityEngine.UI.Button",
+                                "Index": 3
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "Text",
+                                "Scripts": [
+                                    {
+                                        "Name": "Text",
+                                        "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "EventSystem",
+                "Scripts": [
+                    {
+                        "Name": "EventSystem",
+                        "FullName": "UnityEngine.EventSystems.EventSystem",
+                        "Index": 1
+                    },
+                    {
+                        "Name": "StandaloneInputModule",
+                        "FullName": "UnityEngine.EventSystems.StandaloneInputModule",
+                        "Index": 2
+                    }
+                ],
+                "Children": []
+            }
+        ]
+    }
+}

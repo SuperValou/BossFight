@@ -1,0 +1,58 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "MasterScene",
+        "ScenePath": "Assets/Scenes/MasterScene.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "PlayerSpawn",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerSpawn",
+                                "FullName": "Assets.Scripts.Players.PlayerSpawn",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManager",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

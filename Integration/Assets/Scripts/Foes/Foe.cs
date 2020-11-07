@@ -1,22 +1,42 @@
 ﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Utilities;
+using Assets.Scripts.Huds;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Assets.Scripts.Foes
 {
     public class Foe : Damageable
     {
+        // -- Editor
+
+        [Header("Parts")]
         public GameObject deathAnimation;
         
-        void Start()
-        {
-            
-        }
+        [Header("References")]
+        [Tooltip("Can be null")]
+        public FoeHealthDisplayProxy foeHealthDisplayProxy;
+
+        // -- Class
         
+        protected override void OnDamageTaken()
+        {
+            if (foeHealthDisplayProxy != null)
+            {
+                foeHealthDisplayProxy.Show((Damageable) this);
+            }
+        }
+
         protected override void Die()
         {
-            //Instantiate(deathAnimation, this.transform.position, this.transform.rotation);
+            if (foeHealthDisplayProxy != null)
+            {
+                foeHealthDisplayProxy.Show((Damageable) this);
+            }
+
+            if (deathAnimation != null)
+            {
+                Instantiate(deathAnimation, this.transform.position, this.transform.rotation);
+            }
+
             Destroy(gameObject);
         }
     }
