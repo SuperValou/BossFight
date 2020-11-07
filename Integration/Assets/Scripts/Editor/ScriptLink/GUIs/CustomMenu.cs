@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Utilities.Editor.ScriptLinks.GUIs
 {
-    public static class CustomMenus
+    public static class CustomMenu
     {
         [MenuItem("Tools/Script Link")]
         public static void ShowMissingScriptsWindow()

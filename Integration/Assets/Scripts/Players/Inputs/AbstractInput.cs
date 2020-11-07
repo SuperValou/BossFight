@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Players.Inputs
 {
-    public abstract class AbstractInputManager : MonoBehaviour
+    public abstract class AbstractInput : MonoBehaviour
     {
         /// <summary>
         /// Returns the input vector for looking around.
