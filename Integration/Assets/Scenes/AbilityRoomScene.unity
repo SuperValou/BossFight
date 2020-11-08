@@ -4724,9 +4724,9 @@ MonoBehaviour:
   maxHealth: 20
   isInvulnerable: 0
   onDamageReceived: []
-  volleyDelay: 2
+  volleyDelay: 3.5
   bulletsPerVolley: 20
-  bulletDelay: 0.1
+  bulletDelay: 0.05
   imprecisionRadius: 0.5
   targetMovementAnticipation: 15
   cannon: {fileID: 1489928315}
@@ -7374,7 +7374,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 40
       minScalar: 5
       maxCurve:
         serializedVersion: 2

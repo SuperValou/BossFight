@@ -62,7 +62,6 @@ namespace Assets.Scripts.Foes
             if (activationActivationSwitch.IsTurnedOff)
             {
                 _targetLastKnownPosition = Vector3.zero;
-                _lastVolleyTime = Time.time;
                 return;
             }
             
