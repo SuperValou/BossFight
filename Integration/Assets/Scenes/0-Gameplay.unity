@@ -15813,6 +15813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   isInvulnerable: 0
+  onDamageReceived: []
   sceneLoadingManagerProxy: {fileID: 797672982}
 --- !u!4 &479099067
 Transform:

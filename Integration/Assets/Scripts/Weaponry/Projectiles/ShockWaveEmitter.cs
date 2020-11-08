@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Projectiles
 {
-    public class ShockWaveEmitter : MonoBehaviour, IDamager
+    public class ShockWaveEmitter : MonoBehaviour
     {
         // -- Editor
 
@@ -17,12 +17,9 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         private ParticleSystem _particleSystem;
         
-        public float BaseDamage { get; private set; }
-
         void Start()
         {
             _particleSystem = this.GetOrThrow<ParticleSystem>();
-            BaseDamage = damagePerParticle;
         }
 
         void OnParticleCollision(GameObject collidingGameObject)
@@ -40,10 +37,9 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
             var collisionEvents = _particleSystem.GetCollisionsWith(collidingGameObject);
 
-            foreach (var collisionEvent in collisionEvents)
-            {
-                damageable.TakeDamage(damager: this);
-            }
+            float damageAmount = damagePerParticle * collisionEvents.Count;
+            DamageData damageData = new DamageData(damageAmount);
+            damageable.TakeDamage(damageData, damager: this);
         }
 
         public void EmitShockWave()

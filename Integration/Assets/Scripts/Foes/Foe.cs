@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Huds;
+using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes
@@ -8,35 +8,22 @@ namespace Assets.Scripts.Foes
     {
         // -- Editor
 
-        [Header("Parts")]
-        public GameObject deathAnimation;
-        
-        [Header("References")]
-        [Tooltip("Can be null")]
-        public FoeHealthDisplayProxy foeHealthDisplayProxy;
-
         // -- Class
-        
-        protected override void OnDamageTaken()
+
+        private DamageFeedback _damageFeedback;
+
+        void Start()
         {
-            if (foeHealthDisplayProxy != null)
-            {
-                foeHealthDisplayProxy.Show((Damageable) this);
-            }
+            _damageFeedback = this.GetOrThrow<DamageFeedback>();
         }
 
-        protected override void Die()
+        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
         {
-            if (foeHealthDisplayProxy != null)
-            {
-                foeHealthDisplayProxy.Show((Damageable) this);
-            }
+            _damageFeedback.Blink();
+        }
 
-            if (deathAnimation != null)
-            {
-                Instantiate(deathAnimation, this.transform.position, this.transform.rotation);
-            }
-
+        protected override void OnDeath()
+        {
             Destroy(gameObject);
         }
     }

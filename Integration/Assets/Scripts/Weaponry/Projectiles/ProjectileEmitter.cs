@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Assets.Scripts.Weaponry.Projectiles
 {
     [RequireComponent(typeof(ParticleSystem))]
-    public class ProjectileEmitter : MonoBehaviour, IDamager
+    public class ProjectileEmitter : MonoBehaviour
     {
         // -- Editor
 
@@ -20,9 +20,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
         // -- Class
 
         private ParticleSystem _particleSystem;
-
-        public float BaseDamage { get; private set; }
-
+        
         void Start()
         {
             if (projectileImpact == null)
@@ -31,7 +29,6 @@ namespace Assets.Scripts.Weaponry.Projectiles
             }
 
             _particleSystem = this.GetOrThrow<ParticleSystem>();
-            BaseDamage = baseDamage;
         }
 
         public void EmitProjectile()
@@ -52,7 +49,8 @@ namespace Assets.Scripts.Weaponry.Projectiles
             var damageable = other.GetComponent<Damageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(damager: this);
+                DamageData damageData = new DamageData(baseDamage);
+                damageable.TakeDamage(damageData, damager: this);
             }
 
             // Impact

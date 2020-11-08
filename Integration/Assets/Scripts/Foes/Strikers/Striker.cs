@@ -23,10 +23,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         [Tooltip("What to do when the " + nameof(Striker) + " dies.")]
         public BossDeath death;
-
-        [Tooltip("System displaying the "+ nameof(Striker) + "'s health on screen. Can be null.")]
-        public FoeHealthDisplayProxy foeHealthDisplayProxy;
-
+        
         // -- Class
 
         private StrikerBehaviour[] _behaviours;
@@ -63,17 +60,12 @@ namespace Assets.Scripts.Foes.Strikers
             stompingAttack.EmitShockWave();
         }
 
-        protected override void OnDamageTaken()
+        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
         {
-            if (foeHealthDisplayProxy != null)
-            {
-                foeHealthDisplayProxy.Show((Damageable) this);
-            }
-
             this.Animator.SetBool(StrikerAnimatorConstants.TargetIsInSightBool, true);
         }
 
-        protected override void Die()
+        protected override void OnDeath()
         {
             Animator.SetTrigger(StrikerAnimatorConstants.DeathTrigger);
             death?.Activate();

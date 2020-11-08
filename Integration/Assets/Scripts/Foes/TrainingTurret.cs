@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Environments;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes
 {
-    public class TrainingTurret : MonoBehaviour
+    public class TrainingTurret : Damageable
     {
         // -- Editor
 
@@ -101,6 +102,16 @@ namespace Assets.Scripts.Foes
                 projectileEmitter.EmitProjectile();
                 yield return _waitForNextBullet;
             }
+        }
+
+        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
+        {
+            // do nothin
+        }
+
+        protected override void OnDeath()
+        {
+            Destroy(gameObject);
         }
     }
 }
