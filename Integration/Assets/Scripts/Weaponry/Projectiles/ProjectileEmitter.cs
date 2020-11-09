@@ -46,13 +46,13 @@ namespace Assets.Scripts.Weaponry.Projectiles
             }
 
             // Damageables
-            var damageable = other.GetComponent<Damageable>();
-            if (damageable != null)
+            var vulnerableCollider = other.GetComponent<VulnerableCollider>();
+            if (vulnerableCollider != null)
             {
                 DamageData damageData = new DamageData(baseDamage);
-                damageable.TakeDamage(damageData, damager: this);
+                vulnerableCollider.OnHit(damageData, damager: this);
             }
-
+            
             // Impact
             if (projectileImpact == null)
             {

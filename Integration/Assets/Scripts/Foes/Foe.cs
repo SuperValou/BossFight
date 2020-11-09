@@ -17,9 +17,16 @@ namespace Assets.Scripts.Foes
             _damageFeedback = this.GetOrThrow<DamageFeedback>();
         }
 
-        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
-            _damageFeedback.Blink();
+            if (hitCollider.damageMultiplier > 1)
+            {
+                _damageFeedback.BlinkCritical();
+            }
+            else
+            {
+                _damageFeedback.Blink();
+            }
         }
 
         protected override void OnDeath()

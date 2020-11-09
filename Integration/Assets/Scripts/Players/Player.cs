@@ -28,7 +28,7 @@ namespace Assets.Scripts.Players
             WeaponManager = this.GetOrThrow<WeaponManager>();
         }
 
-        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
             // TODO: say ouch
         }

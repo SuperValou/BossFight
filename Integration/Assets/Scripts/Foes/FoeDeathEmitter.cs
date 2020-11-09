@@ -17,12 +17,12 @@ namespace Assets.Scripts.Foes
             _emitter = this.GetComponent<ParticleSystem>();
         }
 
-        public void OnDamage(Damageable damageable, DamageData damageData, MonoBehaviour damager)
+        public void OnDamageNotification(Damageable damageable, DamageData damageData, MonoBehaviour damager)
         {
             // do nothing
         }
 
-        public void OnDeath(Damageable damageable)
+        public void OnDeathNotification(Damageable damageable)
         {
             if (damageable == null)
             {

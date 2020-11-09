@@ -2,11 +2,11 @@
 {
     public struct DamageData
     {
-        public float BaseDamage { get; }
+        public float Amount { get; }
 
-        public DamageData(float baseDamage)
+        public DamageData(float amount)
         {
-            BaseDamage = baseDamage;
+            Amount = amount;
         }
     }
 }

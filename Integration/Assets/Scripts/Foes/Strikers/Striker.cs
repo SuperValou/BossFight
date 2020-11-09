@@ -60,7 +60,7 @@ namespace Assets.Scripts.Foes.Strikers
             stompingAttack.EmitShockWave();
         }
 
-        protected override void OnDamage(DamageData damageData, MonoBehaviour damager)
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
             this.Animator.SetBool(StrikerAnimatorConstants.TargetIsInSightBool, true);
         }

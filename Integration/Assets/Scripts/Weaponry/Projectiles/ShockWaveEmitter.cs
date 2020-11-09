@@ -29,8 +29,8 @@ namespace Assets.Scripts.Weaponry.Projectiles
                 throw new ArgumentNullException(nameof(collidingGameObject));
             }
 
-            var damageable = collidingGameObject.GetComponent<Damageable>();
-            if (damageable == null)
+            var vulnerableCollider = collidingGameObject.GetComponent<VulnerableCollider>();
+            if (vulnerableCollider == null)
             {
                 return;
             }
@@ -39,7 +39,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
             float damageAmount = damagePerParticle * collisionEvents.Count;
             DamageData damageData = new DamageData(damageAmount);
-            damageable.TakeDamage(damageData, damager: this);
+            vulnerableCollider.OnHit(damageData, damager: this);
         }
 
         public void EmitShockWave()

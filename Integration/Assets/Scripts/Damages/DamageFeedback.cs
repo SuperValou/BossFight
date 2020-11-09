@@ -12,8 +12,10 @@ namespace Assets.Scripts.Damages
         public MeshRenderer[] meshRenderers;
 
         [Tooltip("Global color of the mesh when taking damage.")]
-        [ColorUsage(showAlpha: true, hdr: true)]
-        public Color highlightColor;
+        public Color blinkColor = Color.yellow;
+
+        [Tooltip("Global color of the mesh when taking critical damages.")]
+        public Color blinkColorCritical = Color.red;
 
         [Tooltip("Duration of the damage effect (seconds).")]
         public float highlightDuration = 0.1f;
@@ -22,13 +24,23 @@ namespace Assets.Scripts.Damages
 
         public void Blink()
         {
-            //foreach (var meshRenderer in meshRenderers)
-            //{
-            //    var materialColor = meshRenderer.material.color;
+            Blink(blinkColor);
+        }
 
-            //    var tweener = meshRenderer.material.DOColor(endValue: highlightColor, highlightDuration);
-            //    tweener.OnComplete(() => meshRenderer.material.DOColor(endValue: materialColor, highlightDuration));
-            //}
+        public void BlinkCritical()
+        {
+            Blink(blinkColorCritical);
+        }
+
+        private void Blink(Color highlightColor)
+        {
+            foreach (var meshRenderer in meshRenderers)
+            {
+                var materialColor = meshRenderer.material.color;
+
+                var tweener = meshRenderer.material.DOColor(endValue: highlightColor, highlightDuration);
+                tweener.OnComplete(() => meshRenderer.material.DOColor(endValue: materialColor, highlightDuration));
+            }
         }
     }
 }

@@ -17,12 +17,12 @@ namespace Assets.Scripts.Huds
             }
         }
         
-        public void OnDamage(Damageable damageable, DamageData damageData, MonoBehaviour damager)
+        public void OnDamageNotification(Damageable damageable, DamageData damageData, MonoBehaviour damager)
         {
             _foeHealthDisplay?.Show(damageable);
         }
 
-        public void OnDeath(Damageable damageable)
+        public void OnDeathNotification(Damageable damageable)
         {
             _foeHealthDisplay?.Show(damageable);
         }

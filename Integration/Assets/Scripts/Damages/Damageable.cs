@@ -34,7 +34,7 @@ namespace Assets.Scripts.Damages
             }
         }
 
-        public void TakeDamage(DamageData damageData, MonoBehaviour damager)
+        public void TakeDamage(VulnerableCollider vulnerableCollider, DamageData damageData, MonoBehaviour damager)
         {
             if (!IsAlive)
             {
@@ -46,14 +46,14 @@ namespace Assets.Scripts.Damages
                 return;
             }
 
-            CurrentHealth -= damageData.BaseDamage;
+            CurrentHealth -= damageData.Amount;
             if (CurrentHealth > 0)
             {
-                OnDamage(damageData, damager);
+                OnDamage(vulnerableCollider, damageData, damager);
 
                 foreach (var damageNotifiable in _damageNotifiables)
                 {
-                    damageNotifiable.OnDamage(this, damageData, damager);
+                    damageNotifiable.OnDamageNotification(this, damageData, damager);
                 }
             }
             else
@@ -73,7 +73,7 @@ namespace Assets.Scripts.Damages
             Die();
         }
 
-        protected abstract void OnDamage(DamageData damageData, MonoBehaviour damager);
+        protected abstract void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager);
         protected abstract void OnDeath();
 
         private void Die()
@@ -84,7 +84,7 @@ namespace Assets.Scripts.Damages
 
             foreach (var damageNotifiable in _damageNotifiables)
             {
-                damageNotifiable.OnDeath(this);
+                damageNotifiable.OnDeathNotification(this);
             }
         }
     }
