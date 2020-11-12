@@ -28,12 +28,12 @@ namespace Assets.Scripts.Players
             WeaponManager = this.GetOrThrow<WeaponManager>();
         }
 
-        protected override void OnDamageTaken()
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
             // TODO: say ouch
         }
 
-        protected override void Die()
+        protected override void OnDeath()
         {
             StartCoroutine(DieAsync());
         }

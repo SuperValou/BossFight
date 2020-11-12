@@ -1,10 +1,11 @@
 ﻿using System;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
-namespace Assets.Scripts.Damages
+namespace Assets.Scripts.Weaponry.Projectiles
 {
-    public class ShockWaveEmitter : MonoBehaviour, IDamager
+    public class ShockWaveEmitter : MonoBehaviour
     {
         // -- Editor
 
@@ -16,12 +17,9 @@ namespace Assets.Scripts.Damages
 
         private ParticleSystem _particleSystem;
         
-        public float BaseDamage { get; private set; }
-
         void Start()
         {
             _particleSystem = this.GetOrThrow<ParticleSystem>();
-            BaseDamage = damagePerParticle;
         }
 
         void OnParticleCollision(GameObject collidingGameObject)
@@ -31,18 +29,17 @@ namespace Assets.Scripts.Damages
                 throw new ArgumentNullException(nameof(collidingGameObject));
             }
 
-            var damageable = collidingGameObject.GetComponent<Damageable>();
-            if (damageable == null)
+            var vulnerableCollider = collidingGameObject.GetComponent<VulnerableCollider>();
+            if (vulnerableCollider == null)
             {
                 return;
             }
 
             var collisionEvents = _particleSystem.GetCollisionsWith(collidingGameObject);
 
-            foreach (var collisionEvent in collisionEvents)
-            {
-                damageable.TakeDamage(damager: this);
-            }
+            float damageAmount = damagePerParticle * collisionEvents.Count;
+            DamageData damageData = new DamageData(damageAmount);
+            vulnerableCollider.OnHit(damageData, damager: this);
         }
 
         public void EmitShockWave()

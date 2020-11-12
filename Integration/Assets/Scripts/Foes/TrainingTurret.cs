@@ -1,11 +1,13 @@
 ﻿using System.Collections;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Environments;
+using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes
 {
-    public class TrainingTurret : MonoBehaviour
+    public class TrainingTurret : Damageable
     {
         // -- Editor
 
@@ -41,6 +43,8 @@ namespace Assets.Scripts.Foes
 
         private Vector3 _targetLastKnownPosition = Vector3.zero;
 
+        private DamageFeedback _damageFeedback;
+
         void Start()
         {
             if (target == null)
@@ -49,6 +53,8 @@ namespace Assets.Scripts.Foes
             }
 
             _waitForNextBullet = new WaitForSeconds(bulletDelay);
+
+            _damageFeedback = this.GetOrThrow<DamageFeedback>();
         }
 
         void Update()
@@ -61,7 +67,6 @@ namespace Assets.Scripts.Foes
             if (activationActivationSwitch.IsTurnedOff)
             {
                 _targetLastKnownPosition = Vector3.zero;
-                _lastVolleyTime = Time.time;
                 return;
             }
             
@@ -101,6 +106,16 @@ namespace Assets.Scripts.Foes
                 projectileEmitter.EmitProjectile();
                 yield return _waitForNextBullet;
             }
+        }
+
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
+        {
+            _damageFeedback.Blink();
+        }
+
+        protected override void OnDeath()
+        {
+            Destroy(gameObject);
         }
     }
 }
