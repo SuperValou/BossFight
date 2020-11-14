@@ -1,6 +1,7 @@
 using Assets.Scripts.Damages;
 using Assets.Scripts.Environments;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weaponry.Impacts;
 using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Projectiles

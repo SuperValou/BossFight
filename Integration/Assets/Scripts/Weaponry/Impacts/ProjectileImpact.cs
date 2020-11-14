@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Weaponry.Projectiles
+namespace Assets.Scripts.Weaponry.Impacts
 {
     public abstract class ProjectileImpact : MonoBehaviour
     {
