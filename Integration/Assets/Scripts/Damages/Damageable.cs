@@ -79,13 +79,13 @@ namespace Assets.Scripts.Damages
         private void Die()
         {
             CurrentHealth = 0;
-
-            OnDeath();
-
+            
             foreach (var damageNotifiable in _damageNotifiables)
             {
                 damageNotifiable.OnDeathNotification(this);
             }
+
+            OnDeath();
         }
     }
 }
