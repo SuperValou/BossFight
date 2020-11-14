@@ -1,6 +1,4 @@
-﻿using System.Linq;
-using Assets.Scripts.Utilities;
-using DG.Tweening;
+﻿using DG.Tweening;
 using UnityEngine;
 
 namespace Assets.Scripts.Damages
@@ -9,8 +7,6 @@ namespace Assets.Scripts.Damages
     {
         // -- Editor
         
-        public MeshRenderer[] meshRenderers;
-
         [Tooltip("Global color of the mesh when taking damage.")]
         public Color blinkColor = Color.yellow;
 
@@ -18,9 +14,22 @@ namespace Assets.Scripts.Damages
         public Color blinkColorCritical = Color.red;
 
         [Tooltip("Duration of the damage effect (seconds).")]
-        public float highlightDuration = 0.1f;
+        public float blinkDuration = 0.1f;
 
         // -- Class
+
+        private MeshRenderer[] _meshRenderers;
+        private Color[] _originalColors;
+
+        void Start()
+        {
+            _meshRenderers = this.GetComponentsInChildren<MeshRenderer>();
+            _originalColors = new Color[_meshRenderers.Length];
+            for (int i = 0; i < _meshRenderers.Length; i++)
+            {
+                _originalColors[i] = _meshRenderers[i].material.color;
+            }
+        }
 
         public void Blink()
         {
@@ -34,12 +43,12 @@ namespace Assets.Scripts.Damages
 
         private void Blink(Color highlightColor)
         {
-            foreach (var meshRenderer in meshRenderers)
+            for (int i = 0; i < _meshRenderers.Length; i++)
             {
-                var materialColor = meshRenderer.material.color;
-
-                var tweener = meshRenderer.material.DOColor(endValue: highlightColor, highlightDuration);
-                tweener.OnComplete(() => meshRenderer.material.DOColor(endValue: materialColor, highlightDuration));
+                var meshRenderer = _meshRenderers[i];
+                var originalColor = _originalColors[i];
+                var tweener = meshRenderer.material.DOColor(endValue: highlightColor, blinkDuration);
+                tweener.OnComplete(() => meshRenderer.material.DOColor(endValue: originalColor, blinkDuration));
             }
         }
     }
