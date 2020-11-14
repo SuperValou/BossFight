@@ -4,6 +4,8 @@ namespace Assets.Scripts.Players
 {
     public class AimAssist : MonoBehaviour
     {
+        // -- Editor
+
         public Camera eye;
         public Transform arm;
 
@@ -11,7 +13,8 @@ namespace Assets.Scripts.Players
 
         public LayerMask applicableLayers;
 
-        // --
+        // -- Class
+
         private readonly Vector3 _rayVector = new Vector3(0.5f, 0.5f, 0);
 
         void Update()
@@ -26,6 +29,9 @@ namespace Assets.Scripts.Players
             {
                 arm.transform.LookAt(arm.transform.position + eye.transform.forward);
             }
+
+            //Debug.DrawRay(eye.transform.position, maxDistance * eye.transform.forward, Color.blue);
+            //Debug.DrawRay(arm.transform.position, maxDistance * arm.transform.forward, Color.red);
         }
     }
 }

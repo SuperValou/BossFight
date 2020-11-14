@@ -60,8 +60,6 @@ namespace Assets.Scripts.Foes
             {
                 _targetLastKnownPosition = _target.position;
             }
-
-            Debug.Log($"on {other} - target is {_target}");
         }
 
         private void OnTriggerExit(Collider other)
