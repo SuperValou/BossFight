@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Damages;
+using Assets.Scripts.Damages;
 using Assets.Scripts.Environments;
 using Assets.Scripts.Utilities;
 using UnityEngine;

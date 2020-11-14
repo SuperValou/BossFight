@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Foes
 {
-    public class TrainingTurret : Damageable
+    public class Turret : Damageable
     {
         // -- Editor
 
