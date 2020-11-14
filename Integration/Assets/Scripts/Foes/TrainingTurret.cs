@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Assets.Scripts.Damages;
 using Assets.Scripts.Environments;
+using Assets.Scripts.Players;
 using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
@@ -29,14 +30,13 @@ namespace Assets.Scripts.Foes
         public float targetMovementAnticipation = 15;
         
         [Header("Parts")]
-        public Transform cannon;
+        public Transform pivot;
         public ProjectileEmitter projectileEmitter;
-        public ActivationSwitch activationActivationSwitch;
-
-        [Header("References")]
-        public Transform target;
-
+        
         // -- Class
+
+        private Transform _target;
+        private bool _isAlignedToTarget = false;
 
         private float _lastVolleyTime;
         private WaitForSeconds _waitForNextBullet;
@@ -47,49 +47,54 @@ namespace Assets.Scripts.Foes
 
         void Start()
         {
-            if (target == null)
-            {
-                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null {nameof(target)}.");
-            }
-
             _waitForNextBullet = new WaitForSeconds(bulletDelay);
 
             _damageFeedback = this.GetOrThrow<DamageFeedback>();
         }
 
-        void Update()
+        void OnTriggerEnter(Collider other)
         {
-            if (target == null)
+            _target = other?.GetComponent<PlayerProxy>()?.transform;
+            
+            if (_target != null)
             {
-                return;
+                _targetLastKnownPosition = _target.position;
             }
 
-            if (activationActivationSwitch.IsTurnedOff)
+            Debug.Log($"on {other} - target is {_target}");
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            _target = null;
+            _targetLastKnownPosition = Vector3.zero;
+        }
+
+        void Update()
+        {
+            if (_target == null)
             {
-                _targetLastKnownPosition = Vector3.zero;
                 return;
             }
             
             // Aim
-
-            cannon.LookAt(target);
+            pivot.LookAt(_target);
             
             if (_targetLastKnownPosition == Vector3.zero)
             {
-                _targetLastKnownPosition = target.position;
+                _targetLastKnownPosition = _target.position;
             }
             
-            Vector3 targetExpectedDirection = (target.position - _targetLastKnownPosition) * targetMovementAnticipation;
-            Vector3 predictedTargetPosition = target.position + targetExpectedDirection;
+            Vector3 targetExpectedDirection = (_target.position - _targetLastKnownPosition) * targetMovementAnticipation;
+            Vector3 predictedTargetPosition = _target.position + targetExpectedDirection;
 
             Vector3 imprecision = Random.insideUnitCircle * imprecisionRadius; // TODO: Random can't be replayed
             projectileEmitter.transform.LookAt(predictedTargetPosition + imprecision);
 
-            _targetLastKnownPosition = target.position;
+            _targetLastKnownPosition = _target.position;
 
 
             // Fire
-
             if (Time.time < _lastVolleyTime + volleyDelay)
             {
                 return;
