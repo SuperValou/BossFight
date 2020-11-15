@@ -36,8 +36,7 @@ namespace Assets.Scripts.Foes
         // -- Class
 
         private Transform _target;
-        private bool _isAlignedToTarget = false;
-
+        
         private float _lastVolleyTime;
         private WaitForSeconds _waitForNextBullet;
 
@@ -62,7 +61,7 @@ namespace Assets.Scripts.Foes
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        void OnTriggerExit(Collider other)
         {
             _target = null;
             _targetLastKnownPosition = Vector3.zero;
