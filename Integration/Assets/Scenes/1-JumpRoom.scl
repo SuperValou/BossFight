@@ -1,8 +1,8 @@
 {
     "SerializationMajorVersion": 2,
     "SceneInfo": {
-        "SceneName": "1-Corridor",
-        "ScenePath": "Assets/Scenes/1-Corridor.unity",
+        "SceneName": "1-JumpRoom",
+        "ScenePath": "Assets/Scenes/1-JumpRoom.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "Managers",
