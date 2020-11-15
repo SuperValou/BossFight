@@ -20,6 +20,9 @@
         [SceneInfo("1-JumpRoom", SceneType.Room)]
         JumpRoomScene,
 
+        [SceneInfo("1-SaveStationRoom", SceneType.Room)]
+        SaveStationRoomScene,
+
         [SceneInfo("1-BossRoom", SceneType.Room)]
         BossRoomScene,
     }

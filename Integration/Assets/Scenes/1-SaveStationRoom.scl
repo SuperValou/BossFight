@@ -1,8 +1,8 @@
 {
     "SerializationMajorVersion": 2,
     "SceneInfo": {
-        "SceneName": "1-FirstRoom",
-        "ScenePath": "Assets/Scenes/1-FirstRoom.unity",
+        "SceneName": "1-SaveStationRoom",
+        "ScenePath": "Assets/Scenes/1-SaveStationRoom.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "Managers",
@@ -31,18 +31,7 @@
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "Door-to-JumpRoom",
-                        "Scripts": [
-                            {
-                                "Name": "BasicDoor",
-                                "FullName": "Assets.Scripts.Environments.BasicDoor",
-                                "Index": 1
-                            }
-                        ],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Door-to-TurretTestRoom",
+                        "Name": "Door-to-FirstRoom",
                         "Scripts": [
                             {
                                 "Name": "BasicDoor",
@@ -54,17 +43,6 @@
                     },
                     {
                         "Name": "Door-to-AmmunitionRoom",
-                        "Scripts": [
-                            {
-                                "Name": "BasicDoor",
-                                "FullName": "Assets.Scripts.Environments.BasicDoor",
-                                "Index": 1
-                            }
-                        ],
-                        "Children": []
-                    },
-                    {
-                        "Name": "Door-to-SaveStationRoom",
                         "Scripts": [
                             {
                                 "Name": "BasicDoor",
