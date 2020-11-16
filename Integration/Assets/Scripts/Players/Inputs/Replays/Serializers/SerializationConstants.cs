@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs
+﻿namespace Assets.Scripts.Players.Inputs.Replays.Serializers
 {
     public class SerializationConstants
     {

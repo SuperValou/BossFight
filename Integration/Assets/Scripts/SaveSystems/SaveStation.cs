@@ -9,7 +9,14 @@ namespace Assets.Scripts.SaveSystems
         public string triggeringTag = "Player";
         
         // -- Class
-        
+
+        private SaveManager _saveManager;
+
+        void Start()
+        {
+            _saveManager = GameObject.FindObjectOfType<SaveManager>();
+        }
+
         void OnTriggerEnter(Collider collidingObject)
         {
             if (collidingObject.tag != triggeringTag)
@@ -18,6 +25,7 @@ namespace Assets.Scripts.SaveSystems
             }
 
             // save
+            _saveManager.SaveGame();
         }
 
         void OnTriggerExit(Collider collidingObject)
