@@ -25,7 +25,7 @@ namespace Assets.Scripts.SaveSystems
             }
 
             // save
-            _saveManager.SaveGame();
+            _saveManager.RequestToSaveGame();
         }
 
         void OnTriggerExit(Collider collidingObject)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Assets.Scripts.LoadingSystems.SceneInfos;
 using Assets.Scripts.LoadingSystems.SceneLoadings;
 using Assets.Scripts.Players;
@@ -10,13 +11,13 @@ namespace Assets.Scripts.SaveSystems
     {
         public SceneLoadingManager sceneLoadingManager;
 
-        private ISaveSystem _saveSystem = null;
+        private ISaveSystem _saveSystem;
 
-        void Start()
+        void Awake()
         {
-            int saveSlot = PlayerPrefs.GetInt("SaveSlot");
-            
-            
+            var saveSystem = new SaveSystem();
+            saveSystem.Initialize();
+            _saveSystem = saveSystem;
         }
 
         public void LoadGame(int saveSlot)
@@ -36,7 +37,7 @@ namespace Assets.Scripts.SaveSystems
             player.FirstPersonController.hasJumpAbility = save.powerUps.jump;
         }
 
-        public void SaveGame()
+        public void RequestToSaveGame()
         {
             int saveSlot = PlayerPrefs.GetInt("SaveSlot");
         }
@@ -45,5 +46,6 @@ namespace Assets.Scripts.SaveSystems
         {
             throw new NotImplementedException();
         }
+
     }
 }

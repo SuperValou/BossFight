@@ -13,6 +13,6 @@ namespace Assets.Scripts.SaveSystems
 
         void SaveData(SaveData saveData, int slotIndex, bool overwrite);
 
-        int GetMostRecentlyUsedSlot();
+        bool TryGetMostRecentlyUsedSlot(out int slotIndex);
     }
 }

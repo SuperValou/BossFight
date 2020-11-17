@@ -7,8 +7,6 @@ namespace Assets.Scripts.SaveSystems.Serializers.DTOs
     {
         public int serializationVersion;
 
-        public int saveSlotIndex;
-
         public SaveData data;
     }
 }
