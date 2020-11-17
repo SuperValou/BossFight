@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Assets.Scripts.SaveSystems.Serializers.DTOs;
+﻿using Assets.Scripts.SaveSystems.Serializers.DTOs;
 
 namespace Assets.Scripts.SaveSystems
 {

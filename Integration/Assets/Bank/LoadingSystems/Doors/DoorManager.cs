@@ -24,7 +24,8 @@ namespace Assets.Scripts.LoadingSystems.Doors
         private readonly object _lock = new object();
 
         private readonly Queue<SceneId> _roomsQueue = new Queue<SceneId>();
-        private SceneId _playerCurrentRoomId;
+
+        public SceneId PlayerCurrentRoomId { get; private set; }
 
         void Update()
         {
@@ -49,9 +50,9 @@ namespace Assets.Scripts.LoadingSystems.Doors
                 IDoor doorOnTheOtherSide = kvp.Value; // can be null
 
                 // Track the room the player is in
-                if (door.PlayerIsAround && door.Room != _playerCurrentRoomId)
+                if (door.PlayerIsAround && door.Room != PlayerCurrentRoomId)
                 {
-                    _playerCurrentRoomId = door.Room;
+                    PlayerCurrentRoomId = door.Room;
                 }
 
                 // Opening door
@@ -105,7 +106,7 @@ namespace Assets.Scripts.LoadingSystems.Doors
             if (_roomsQueue.Count > maxLoadedRooms)
             {
                 SceneId roomToUnload = _roomsQueue.Dequeue();
-                if (roomToUnload == _playerCurrentRoomId)
+                if (roomToUnload == PlayerCurrentRoomId)
                 {
                     EnqueueRoom(roomToUnload);
                 }
