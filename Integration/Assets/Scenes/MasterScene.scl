@@ -9,11 +9,22 @@
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "PlayerSpawn",
+                        "Name": "MasterSceneScript",
                         "Scripts": [
                             {
-                                "Name": "PlayerSpawn",
-                                "FullName": "Assets.Scripts.Players.PlayerSpawn",
+                                "Name": "MasterSceneScript",
+                                "FullName": "Assets.Scripts.MainScenesScripts.MasterSceneScript",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SaveManager",
+                        "Scripts": [
+                            {
+                                "Name": "SaveManager",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveManager",
                                 "Index": 1
                             }
                         ],
