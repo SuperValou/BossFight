@@ -15,6 +15,10 @@ namespace Assets.Scripts.SaveSystems
         void Start()
         {
             _saveManager = GameObject.FindObjectOfType<SaveManager>();
+            if (_saveManager == null)
+            {
+                Debug.LogError($"Unable to find {nameof(SaveManager)} in hierarchy. {nameof(SaveStation)} won't work.");
+            }
         }
 
         void OnTriggerEnter(Collider collidingObject)
