@@ -114,7 +114,7 @@
                                                 "Scripts": [
                                                     {
                                                         "Name": "ShockWaveEmitter",
-                                                        "FullName": "Assets.Scripts.Damages.ShockWaveEmitter",
+                                                        "FullName": "Assets.Scripts.Weaponry.Projectiles.ShockWaveEmitter",
                                                         "Index": 1
                                                     }
                                                 ],

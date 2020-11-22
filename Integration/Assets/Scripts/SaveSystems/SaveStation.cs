@@ -9,7 +9,18 @@ namespace Assets.Scripts.SaveSystems
         public string triggeringTag = "Player";
         
         // -- Class
-        
+
+        private SaveManager _saveManager;
+
+        void Start()
+        {
+            _saveManager = GameObject.FindObjectOfType<SaveManager>();
+            if (_saveManager == null)
+            {
+                Debug.LogError($"Unable to find {nameof(SaveManager)} in hierarchy. {nameof(SaveStation)} won't work.");
+            }
+        }
+
         void OnTriggerEnter(Collider collidingObject)
         {
             if (collidingObject.tag != triggeringTag)
@@ -18,6 +29,7 @@ namespace Assets.Scripts.SaveSystems
             }
 
             // save
+            _saveManager.RequestToSaveGame();
         }
 
         void OnTriggerExit(Collider collidingObject)
