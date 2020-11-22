@@ -16,7 +16,10 @@ namespace Assets.Scripts.MainScenesScripts
 
         IEnumerator Start()
         {
-            yield return sceneLoadingManager.LoadSubSenesAsync(SceneId.GameplayScene);
+            if (!sceneLoadingManager.IsLoaded(SceneId.GameplayScene))
+            {
+                yield return sceneLoadingManager.LoadSubSenesAsync(SceneId.GameplayScene);
+            }
         }
     }
 }
