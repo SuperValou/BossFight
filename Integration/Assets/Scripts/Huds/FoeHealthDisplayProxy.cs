@@ -7,7 +7,7 @@ namespace Assets.Scripts.Huds
     {
         private FoeHealthDisplay _foeHealthDisplay;
 
-        void Start()
+        void Awake()
         {
             _foeHealthDisplay = Object.FindObjectOfType<FoeHealthDisplay>();
             if (_foeHealthDisplay == null)

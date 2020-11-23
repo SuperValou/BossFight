@@ -25,5 +25,8 @@
 
         [SceneInfo("1-BossRoom", SceneType.Room)]
         BossRoomScene,
+
+        [SceneInfo("AbilityRoomScene", SceneType.TestRoom)]
+        AbilityRoomScene
     }
 }
