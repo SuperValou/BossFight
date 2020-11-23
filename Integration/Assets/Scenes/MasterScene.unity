@@ -577,5 +577,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df434a25edd3a44b8abff0942d514a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSaveSlotToLoadFrom: 0
-  saveManager: {fileID: 1616178984}
+  sceneLoadingManager: {fileID: 946106972}

@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using Assets.Scripts.LoadingSystems.SceneInfos;
+using Assets.Scripts.LoadingSystems.SceneLoadings;
 using Assets.Scripts.Players;
 using Assets.Scripts.SaveSystems;
 using UnityEngine;
@@ -9,23 +11,21 @@ namespace Assets.Scripts.MainScenesScripts
     {
         // -- Editor
 
-        public int defaultSaveSlotToLoadFrom;
-
         [Header("References")]
-        public SaveManager saveManager;
+        public SceneLoadingManager sceneLoadingManager;
 
         // -- Class
 
-        private Player _player;
-
-        void Awake()
-        {
-            saveManager.PreferedSaveSlot = defaultSaveSlotToLoadFrom;
-        }
-
         IEnumerator Start()
         {
-            yield return saveManager.LoadGame();
+            yield return sceneLoadingManager.LoadSubSenesAsync(SceneId.GameplayScene);
+
+            var player = GameObject.FindObjectOfType<Player>();
+            player.gameObject.SetActive(false);
+
+            yield return sceneLoadingManager.LoadSubSenesAsync(SceneId.FirstRoomScene);
+
+            player.gameObject.SetActive(true);
         }
     }
 }
