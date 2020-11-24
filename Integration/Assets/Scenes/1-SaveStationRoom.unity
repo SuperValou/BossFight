@@ -3684,7 +3684,7 @@ PrefabInstance:
     - target: {fileID: 7596392582645291026, guid: 5df1343f19f1ebb438ccb134acd7ebed,
         type: 3}
       propertyPath: roomOnTheOtherSide
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7596392582645291028, guid: 5df1343f19f1ebb438ccb134acd7ebed,
         type: 3}
