@@ -23,6 +23,9 @@
         [SceneInfo("1-SaveStationRoom", SceneType.Room)]
         SaveStationRoomScene,
 
+        [SceneInfo("1-AmmunitionRoom", SceneType.Room)]
+        AmmunitionRoomScene,
+
         [SceneInfo("1-BossRoom", SceneType.Room)]
         BossRoomScene,
 

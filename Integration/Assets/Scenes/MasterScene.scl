@@ -5,20 +5,20 @@
         "ScenePath": "Assets/Scenes/MasterScene.unity",
         "RootGameObjectInfos": [
             {
+                "Name": "MasterSceneScript",
+                "Scripts": [
+                    {
+                        "Name": "MasterSceneScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.MasterSceneScript",
+                        "Index": 1
+                    }
+                ],
+                "Children": []
+            },
+            {
                 "Name": "Managers",
                 "Scripts": [],
                 "Children": [
-                    {
-                        "Name": "MasterSceneScript",
-                        "Scripts": [
-                            {
-                                "Name": "MasterSceneScript",
-                                "FullName": "Assets.Scripts.MainScenesScripts.MasterSceneScript",
-                                "Index": 1
-                            }
-                        ],
-                        "Children": []
-                    },
                     {
                         "Name": "SaveManager",
                         "Scripts": [
