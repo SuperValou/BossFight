@@ -23,14 +23,32 @@ namespace Assets.Scripts.Players.LockOns
         [Header("References")]
         public Camera eye;
 
+        [Tooltip(nameof(ILockOnNotifiable) + " that should be notified when lock/unlock events are occurring.")]
+        public MonoBehaviour[] onLockOnEvents;
+
         // -- Class
 
         private readonly HashSet<LockOnTarget> _lockableTargets = new HashSet<LockOnTarget>();
         
-        private LockOnTarget _target;
+        private ICollection<ILockOnNotifiable> _lockOnNotifiables = new HashSet<ILockOnNotifiable>();
 
-        public bool IsLocked => _target != null;
+        private LockOnTarget _target;
         
+        public bool IsLocked => _target != null;
+
+        /// <summary>
+        /// Distance to the target (negative value if there is no target)
+        /// </summary>
+        public float TargetDistance { get; private set; }
+
+        void Start()
+        {
+            foreach (var monoBehaviour in onLockOnEvents)
+            {
+                _lockOnNotifiables.Add((ILockOnNotifiable) monoBehaviour);
+            }
+        }
+
         void Update()
         {
             if (_target == null)
@@ -39,6 +57,8 @@ namespace Assets.Scripts.Players.LockOns
             }
 
             Vector3 targetViewportPosition = eye.WorldToViewportPoint(_target.transform.position);
+            TargetDistance = targetViewportPosition.z;
+
             if (IsOutOfRange(targetViewportPosition))
             {
                 BreakLock();
@@ -79,7 +99,24 @@ namespace Assets.Scripts.Players.LockOns
                 }
             }
             
-            return _target != null;
+            if (_target == null)
+            {
+                return false;
+            }
+
+            foreach (var lockOnNotifiable in _lockOnNotifiables)
+            {
+                try
+                {
+                    lockOnNotifiable.OnLockOn();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
+            }
+
+            return true;
         }
 
         public LockOnTarget GetTarget()
@@ -91,9 +128,10 @@ namespace Assets.Scripts.Players.LockOns
 
             return _target;
         }
-
+        
         public void Unlock()
         {
+            _target = null;
             Unlock(isIntended: true);
         }
 
