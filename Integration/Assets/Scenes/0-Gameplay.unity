@@ -15853,9 +15853,9 @@ MonoBehaviour:
   jumpSpeed: 15
   gravity: 35
   fallingThreshold: 10
-  headTransform: {fileID: 350737311}
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
+  headTransform: {fileID: 350737311}
   input: {fileID: 221488863}
   hasJumpAbility: 1
   hasDashAbility: 1
@@ -15939,7 +15939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77018ddff5eb31a4a9f986d6811f41fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLockRange: 0
+  bottomMargin: 0.2
+  topMargin: 0.8
+  maxLockRange: 20
   eye: {fileID: 963194227}
 --- !u!1 &495587285
 GameObject:

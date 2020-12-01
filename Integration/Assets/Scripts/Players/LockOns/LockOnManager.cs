@@ -7,8 +7,18 @@ namespace Assets.Scripts.Players.LockOns
     public class LockOnManager : MonoBehaviour
     {
         // -- Editor
+ 
+        [Header("Values")]
+        [Tooltip("Viewport dead zone starting from the bottom (percentage between 0 and 0.5).")]
+        [Range(0f, 0.5f)]
+        public float bottomMargin = 0.2f;
 
-        public float maxLockRange;
+        [Tooltip("Viewport dead zone going to the top (percentage between 0.5 and 1).")]
+        [Range(0.5f, 1f)]
+        public float topMargin = 0.8f;
+
+        [Tooltip("Maximum distance of the target before breaking lock-on (meters).")]
+        public float maxLockRange = 20;
 
         [Header("References")]
         public Camera eye;
@@ -16,11 +26,25 @@ namespace Assets.Scripts.Players.LockOns
         // -- Class
 
         private readonly HashSet<LockOnTarget> _lockableTargets = new HashSet<LockOnTarget>();
-
+        
         private LockOnTarget _target;
 
         public bool IsLocked => _target != null;
         
+        void Update()
+        {
+            if (_target == null)
+            {
+                return;
+            }
+
+            Vector3 targetViewportPosition = eye.WorldToViewportPoint(_target.transform.position);
+            if (IsOutOfRange(targetViewportPosition))
+            {
+                BreakLock();
+            }
+        }
+
         public bool TryLockOnTarget()
         {
             Vector3 viewportCenter = new Vector3(0.5f, 0.5f, 0);
@@ -38,8 +62,14 @@ namespace Assets.Scripts.Players.LockOns
                     continue;
                 }
 
-                // lock target closest to viewport center
                 Vector3 viewportPosition = eye.WorldToViewportPoint(lockableTarget.transform.position);
+
+                if (IsOutOfRange(viewportPosition))
+                {
+                    continue;
+                }
+
+                // lock target closest to viewport center
                 Vector2 positionFromViewPortCenter = new Vector2(viewportPosition.x - viewportCenter.x, viewportPosition.y - viewportCenter.y);
                 float squaredDistance = Vector2.SqrMagnitude(positionFromViewPortCenter);
                 if (squaredDistance < minSquaredDistance)
@@ -63,6 +93,16 @@ namespace Assets.Scripts.Players.LockOns
         }
 
         public void Unlock()
+        {
+            Unlock(isIntended: true);
+        }
+
+        public void BreakLock()
+        {
+            Unlock(isIntended: false);
+        }
+
+        private void Unlock(bool isIntended)
         {
             _target = null;
         }
@@ -93,6 +133,29 @@ namespace Assets.Scripts.Players.LockOns
             {
                 Debug.LogWarning($"{lockOnTarget} ({nameof(LockOnTarget)}) was not registered in {nameof(LockOnManager)} in the first place.");
             }
+        }
+
+        /// <summary>
+        /// Returns true if the target is either too far away, or too far in the eye periphery
+        /// </summary>
+        private bool IsOutOfRange(Vector3 viewportPosition)
+        {
+            if (viewportPosition.y > topMargin)
+            {
+                return true;
+            }
+
+            if (viewportPosition.y < bottomMargin)
+            {
+                return true;
+            }
+
+            if (viewportPosition.z > maxLockRange)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
