@@ -132,19 +132,35 @@ namespace Assets.Scripts.Players.LockOns
         public void Unlock()
         {
             _target = null;
-            Unlock(isIntended: true);
+            foreach (var lockOnNotifiable in _lockOnNotifiables)
+            {
+                try
+                {
+                    lockOnNotifiable.OnUnlock();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
+            }
         }
 
         public void BreakLock()
         {
-            Unlock(isIntended: false);
-        }
-
-        private void Unlock(bool isIntended)
-        {
             _target = null;
+            foreach (var lockOnNotifiable in _lockOnNotifiables)
+            {
+                try
+                {
+                    lockOnNotifiable.OnLockBreak();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
+            }
         }
-
+        
         public void Register(LockOnTarget lockOnTarget)
         {
             if (lockOnTarget == null)
