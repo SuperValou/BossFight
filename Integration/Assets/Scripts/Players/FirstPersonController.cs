@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Players.LockOns;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
@@ -57,6 +58,7 @@ namespace Assets.Scripts.Players
 
         private Transform _transform;
         private CharacterController _controller;
+        private LockOnManager _lockOnManager;
 
         private bool _isGrounded;
 
@@ -70,11 +72,13 @@ namespace Assets.Scripts.Players
         
         private float _headPitch = 0; // rotation to look up or down
 
+        private bool _targetLocked;
 
         void Start()
         {
             _transform = this.GetOrThrow<Transform>();
             _controller = this.GetOrThrow<CharacterController>();
+            _lockOnManager = this.GetOrThrow<LockOnManager>();
         }
 
 
@@ -91,13 +95,48 @@ namespace Assets.Scripts.Players
         
         private void UpdateLookAround()
         {
-            // horizontal look
-            Vector2 lookMovement = input.GetLookVector();
-            _transform.Rotate(Vector3.up, lookMovement.x);
+            if (input.LockOnButtonDown())
+            {
+                if (_lockOnManager.IsLocked)
+                {
+                    _lockOnManager.Unlock();
+                }
+                else
+                {
+                    _lockOnManager.TryLockOnTarget();
+                }
+            }
             
-            // vertical look
-            _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
-            headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            if (_lockOnManager.IsLocked)
+            {
+                Transform lockOnTarget = _lockOnManager.GetTarget().transform;
+
+                // body lock-on
+                var targetDirectionFromBody = lockOnTarget.position - _transform.position;
+                var targetDirectionOnHorizontalPlane = new Vector3(targetDirectionFromBody.x, 0, targetDirectionFromBody.z);
+
+                Quaternion bodyRotation = Quaternion.FromToRotation(_transform.forward, targetDirectionOnHorizontalPlane);
+                _transform.Rotate(_transform.up, bodyRotation.eulerAngles.y);
+
+                // head lock-on
+                var targetDirectionFromHead = lockOnTarget.position - headTransform.position;
+                var targetDirectionOnLocalVerticalZPlane = Vector3.ProjectOnPlane(targetDirectionFromHead, headTransform.right);
+
+                var pitchAngle = Vector3.SignedAngle(headTransform.forward, targetDirectionOnLocalVerticalZPlane, headTransform.right);
+
+                _headPitch = Mathf.Clamp(_headPitch + pitchAngle, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
+            else
+            {
+                // horizontal look
+                Vector2 lookMovement = input.GetLookVector();
+                _transform.Rotate(Vector3.up, lookMovement.x);
+
+                // vertical look
+                _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
         }
 
         private void UpdateMove()

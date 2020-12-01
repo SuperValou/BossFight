@@ -15791,6 +15791,7 @@ GameObject:
   - component: {fileID: 479099066}
   - component: {fileID: 479099068}
   - component: {fileID: 479099071}
+  - component: {fileID: 479099073}
   - component: {fileID: 479099069}
   - component: {fileID: 479099072}
   m_Layer: 12
@@ -15856,9 +15857,9 @@ MonoBehaviour:
   maxUpPitchAngle: 60
   maxDownPitchAngle: -60
   input: {fileID: 221488863}
-  hasJumpAbility: 0
-  hasDashAbility: 0
-  hasBoosterAbility: 0
+  hasJumpAbility: 1
+  hasDashAbility: 1
+  hasBoosterAbility: 1
 --- !u!114 &479099069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15926,6 +15927,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentDamageable: {fileID: 479099066}
   damageMultiplier: 1
+--- !u!114 &479099073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479099065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77018ddff5eb31a4a9f986d6811f41fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLockRange: 0
+  eye: {fileID: 963194227}
 --- !u!1 &495587285
 GameObject:
   m_ObjectHideFlags: 0
