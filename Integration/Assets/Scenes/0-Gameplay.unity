@@ -6017,9 +6017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083212302aa8ca7429868fb2be6035f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angularSpeed: 0
-  lockOnFadeIn: 0.1
-  lockBreakFadeOut: 0.1
+  angularSpeed: 2
+  circleTweenTime: 0.25
+  circleScaleMultiplier: 1.5
+  breakCircleTweenTime: 1
+  breakCircleShakeStrength: 100
+  breakCircleShakeFrequency: 30
   lockCircle: {fileID: 1986330158}
   lockOnManager: {fileID: 479099073}
 --- !u!1 &392473714
@@ -32381,13 +32384,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29410394a59ef0e46a879f954686e5fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ba261b16077c63419976fbeb375b7e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
