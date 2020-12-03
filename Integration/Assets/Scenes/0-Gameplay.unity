@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 88744334}
   - component: {fileID: 88744333}
   m_Layer: 5
-  m_Name: NearestTargetCircle
+  m_Name: HintCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ba261b16077c63419976fbeb375b7e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9890f8a010f450f45b8240997d220b9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6092,15 +6092,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083212302aa8ca7429868fb2be6035f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedAngularSpeed: 2
-  circleTweenTime: 0.25
-  circleScaleMultiplier: 1.5
-  breakCircleTweenTime: 1
-  breakCircleShakeStrength: 100
-  breakCircleShakeFrequency: 30
   inSightAngularSpeed: 1.25
+  lockedAngularSpeed: 2
+  fadeDuration: 0.25
+  scaleMultiplier: 1.5
+  breakFadeOutDuration: 1
+  breakShakeStrength: 100
+  breakShakeFrequency: 30
   lockCircle: {fileID: 1986330158}
-  nearestTargetCircle: {fileID: 88744333}
+  hintCircle: {fileID: 88744333}
   lockOnManager: {fileID: 479099073}
 --- !u!1 &392473714
 GameObject:

@@ -67,9 +67,11 @@ namespace Assets.Scripts.Players.LockOns
 
         private void ClosestTargetUpdate()
         {
+            LockOnTarget previousNearestTarget = _nearestTarget;
             _nearestTarget = null;
             NearestTargetViewportPosition = Vector3.zero;
-            float minTargetSquaredDistance = float.MaxValue;
+
+            float minSquaredDistanceToCenter = float.MaxValue;
 
             foreach (var lockableTarget in _lockableTargets)
             {
@@ -92,12 +94,61 @@ namespace Assets.Scripts.Players.LockOns
 
                 Vector2 positionFromViewPortCenter = new Vector2(lockableTargetViewportPosition.x - _viewportCenter.x, lockableTargetViewportPosition.y - _viewportCenter.y);
                 float squaredDistance = Vector2.SqrMagnitude(positionFromViewPortCenter);
-                if (squaredDistance < minTargetSquaredDistance)
+                if (squaredDistance < minSquaredDistanceToCenter)
                 {
-                    minTargetSquaredDistance = squaredDistance;
+                    minSquaredDistanceToCenter = squaredDistance;
                     _nearestTarget = lockableTarget;
                     NearestTargetViewportPosition = lockableTargetViewportPosition;
                 }
+            }
+
+            // Notifications
+            if (_nearestTarget == previousNearestTarget)
+            {
+                // no change
+                return;
+            }
+
+            if (_nearestTarget != null && previousNearestTarget != null)
+            {
+                // the nearest target is now another target
+                return;
+            }
+
+            if (previousNearestTarget == null)
+            {
+                // a new target appeared
+                foreach (var lockOnNotifiable in _lockOnNotifiables)
+                {
+                    try
+                    {
+                        lockOnNotifiable.OnLockableInSight();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
+                }
+
+                return;
+            }
+
+            if (_nearestTarget == null)
+            {
+                // target disappeared
+                foreach (var lockOnNotifiable in _lockOnNotifiables)
+                {
+                    try
+                    {
+                        lockOnNotifiable.OnLockableOutOfSight();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
+                }
+
+                return;
             }
         }
 
@@ -115,7 +166,6 @@ namespace Assets.Scripts.Players.LockOns
                 BreakLock();
             }
         }
-
 
         public bool TryLockOnTarget()
         {

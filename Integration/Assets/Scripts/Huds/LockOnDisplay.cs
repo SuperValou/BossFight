@@ -9,61 +9,50 @@ namespace Assets.Scripts.Huds
     {
         // -- Editor
 
-        [Header("Values - Locked Target")]
+        [Header("Values")]
+        [Tooltip("Angular speed of the hint circle (degree per second).")]
+        public float inSightAngularSpeed = 1.25f;
+
         [Tooltip("Angular speed of the lock circle (degree per second).")]
         public float lockedAngularSpeed = 2f;
         
-        [Tooltip("Time to fade in/fade out when lock-in/locking-out (second).")]
-        public float circleTweenTime = 0.25f;
+        [Tooltip("Time to fade in/fade out (second).")]
+        public float fadeDuration = 0.25f;
 
         [Tooltip("Multiplier applied on the object scale for the transition (scalar).")]
-        public float circleScaleMultiplier = 1.5f;
+        public float scaleMultiplier = 1.5f;
 
         [Tooltip("Time to fade out on lock break (second).")]
-        public float breakCircleTweenTime = 1f;
+        public float breakFadeOutDuration = 1f;
 
         [Tooltip("Strength of the shaking effect on lock break (unknown unit).")]
-        public float breakCircleShakeStrength = 100f;
+        public float breakShakeStrength = 100f;
 
         [Tooltip("Number of time per second the shake effect will occur on lock break (hertz).")]
-        public int breakCircleShakeFrequency = 30;
-
-
-        [Header("Values - Target in sight")]
-        public float inSightAngularSpeed = 1.25f;
+        public int breakShakeFrequency = 30;
 
 
         [Header("Parts")]
         public Image lockCircle;
-        public Image nearestTargetCircle;
+        public Image hintCircle;
+
 
         [Header("References")]
         public LockOnManager lockOnManager;
 
         // -- Class
 
-        private Vector3 _lockCircleInitialPosition;
-        private Vector3 _lockCircleInitialScale;
-        private Color _lockCircleInitialColor;
-
-        private Color _fadedOutLockCircleColor;
-        private Vector3 _fadedOutLockCircleScale;
-
-        
-
-
-        private Tween _runningTween;
+        // lock
+        private ShakeOutFadeTransition _lockCircleTransition;
+        private FadeTransition _hintCircleTransition;
 
         void Start()
         {
-            _lockCircleInitialPosition = lockCircle.transform.position;
-            _lockCircleInitialScale = lockCircle.transform.localScale;
-            _lockCircleInitialColor = lockCircle.color;
-            
-            _fadedOutLockCircleColor = new Color(_lockCircleInitialColor.r, _lockCircleInitialColor.g, _lockCircleInitialColor.b, a: 0);
-            _fadedOutLockCircleScale = lockCircle.transform.localScale * circleScaleMultiplier;
+            _lockCircleTransition = new ShakeOutFadeTransition(lockCircle, scaleMultiplier, fadeDuration, breakFadeOutDuration, breakShakeStrength, breakShakeFrequency);
+            _hintCircleTransition = new FadeTransition(hintCircle, scaleMultiplier, fadeDuration);
 
-            lockCircle.gameObject.SetActive(false);
+            _lockCircleTransition.Initialize();
+            _hintCircleTransition.Initialize();
         }
 
         void Update()
@@ -75,48 +64,107 @@ namespace Assets.Scripts.Huds
 
             if (lockOnManager.HasAnyTargetInSight)
             {
-                nearestTargetCircle.gameObject.SetActive(true);
-
                 Vector2 viewportPosition = lockOnManager.NearestTargetViewportPosition;
                 Vector2 screenPosition = new Vector2(viewportPosition.x * Screen.width, viewportPosition.y * Screen.height);
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(nearestTargetCircle.rectTransform.parent as RectTransform, screenPosition, cam:null, out Vector2 localPosition);
-                nearestTargetCircle.transform.localPosition = localPosition;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(hintCircle.rectTransform.parent as RectTransform, screenPosition, cam:null, out Vector2 localPosition);
+                hintCircle.transform.localPosition = localPosition;
 
-                nearestTargetCircle.transform.Rotate(nearestTargetCircle.transform.forward, inSightAngularSpeed);
-            }
-            else
-            {
-                nearestTargetCircle.gameObject.SetActive(false);
+                hintCircle.transform.Rotate(hintCircle.transform.forward, inSightAngularSpeed);
             }
         }
 
         public void OnLockOn()
         {
-            _runningTween?.Kill();
-
-            lockCircle.transform.position = _lockCircleInitialPosition;
-            lockCircle.transform.localScale = _fadedOutLockCircleScale;
-            lockCircle.color = _fadedOutLockCircleColor;
-            
-            lockCircle.gameObject.SetActive(true);
-            
-            var colorTween = lockCircle.DOColor(_lockCircleInitialColor, circleTweenTime);
-            var scaleTween = lockCircle.transform.DOScale(_lockCircleInitialScale, circleTweenTime);
-
-            Sequence tweenSequence = DOTween.Sequence();
-            tweenSequence.Insert(0, colorTween);
-            tweenSequence.Insert(0, scaleTween);
-            tweenSequence.OnComplete(() => _runningTween = null);
-
-            _runningTween = tweenSequence;
+            hintCircle.gameObject.SetActive(false);
+            _lockCircleTransition.FadeIn();
         }
 
         public void OnUnlock()
         {
-            _runningTween?.Kill();
+            hintCircle.gameObject.SetActive(true);
+            _lockCircleTransition.FadeOut();
+        }
+        
+        public void OnLockBreak()
+        {
+            hintCircle.gameObject.SetActive(true);
+            _lockCircleTransition.ShakeOut();
+        }
 
-            var colorTween = lockCircle.DOColor(_fadedOutLockCircleColor, circleTweenTime);
-            var scaleTween = lockCircle.transform.DOScale(_fadedOutLockCircleScale, circleTweenTime);
+        public void OnLockableInSight()
+        {
+            _hintCircleTransition.FadeIn();
+        }
+
+        public void OnLockableOutOfSight()
+        {
+            _hintCircleTransition.FadeOut();
+        }
+    }
+
+    internal class FadeTransition
+    {
+        private readonly float _fadeDuration;
+        private readonly float _scaleMultiplier;
+
+        private Vector3 _initialPosition;
+        private Vector3 _initialScale;
+        private Color _initialColor;
+
+        protected Image Image { get; }
+
+        protected Color OutColor { get; private set; }
+        protected Vector3 OutScale { get; private set; }
+
+        protected Tween RunningTween { get; set; }
+
+        public FadeTransition(Image image, float scaleMultiplier, float fadeDuration)
+        {
+            Image = image;
+
+            _scaleMultiplier = scaleMultiplier;
+            _fadeDuration = fadeDuration;
+        }
+
+        public void Initialize()
+        {
+            _initialPosition = Image.transform.position;
+            _initialScale = Image.transform.localScale;
+            _initialColor = Image.color;
+
+            OutColor = new Color(_initialColor.r, _initialColor.g, _initialColor.b, a: 0);
+            OutScale = Image.transform.localScale * _scaleMultiplier;
+
+            Image.gameObject.SetActive(false);
+        }
+
+        public void FadeIn()
+        {
+            RunningTween?.Kill();
+
+            Image.transform.position = _initialPosition;
+            Image.transform.localScale = OutScale;
+            Image.color = OutColor;
+
+            Image.gameObject.SetActive(true);
+
+            var colorTween = Image.DOColor(_initialColor, _fadeDuration);
+            var scaleTween = Image.transform.DOScale(_initialScale, _fadeDuration);
+
+            Sequence tweenSequence = DOTween.Sequence();
+            tweenSequence.Insert(0, colorTween);
+            tweenSequence.Insert(0, scaleTween);
+            tweenSequence.OnComplete(() => RunningTween = null);
+
+            RunningTween = tweenSequence;
+        }
+
+        public void FadeOut()
+        {
+            RunningTween?.Kill();
+
+            var colorTween = Image.DOColor(OutColor, _fadeDuration);
+            var scaleTween = Image.transform.DOScale(OutScale, _fadeDuration);
 
             Sequence tweenSequence = DOTween.Sequence();
             tweenSequence.Insert(0, colorTween);
@@ -124,19 +172,34 @@ namespace Assets.Scripts.Huds
 
             tweenSequence.OnComplete(() =>
             {
-                lockCircle.gameObject.SetActive(false);
-                _runningTween = null;
+                Image.gameObject.SetActive(false);
+                RunningTween = null;
             });
 
-            _runningTween = tweenSequence;
+            RunningTween = tweenSequence;
+        }
+    }
+
+    internal class ShakeOutFadeTransition : FadeTransition
+    {
+        private readonly float _shakeTime;
+        private readonly float _shakeStrength;
+        private readonly int _shakeFrequency;
+
+        public ShakeOutFadeTransition(Image image, float scaleMultiplier, float fadeDuration, float shakeTime, float shakeStrength, int shakeFrequency) 
+            : base(image, scaleMultiplier, fadeDuration)
+        {
+            _shakeTime = shakeTime;
+            _shakeStrength = shakeStrength;
+            _shakeFrequency = shakeFrequency;
         }
 
-        public void OnLockBreak()
+        public void ShakeOut()
         {
-            _runningTween?.Kill();
+            RunningTween?.Kill();
 
-            var colorTween = lockCircle.DOColor(_fadedOutLockCircleColor, breakCircleTweenTime);
-            var shakeTween = lockCircle.transform.DOShakePosition(breakCircleTweenTime,  strength: breakCircleShakeStrength, vibrato: breakCircleShakeFrequency);
+            var colorTween = Image.DOColor(OutColor, _shakeTime);
+            var shakeTween = Image.transform.DOShakePosition(_shakeTime, strength: _shakeStrength, vibrato: _shakeFrequency);
 
             Sequence tweenSequence = DOTween.Sequence();
             tweenSequence.Insert(0, colorTween);
@@ -144,13 +207,11 @@ namespace Assets.Scripts.Huds
 
             tweenSequence.OnComplete(() =>
             {
-                lockCircle.gameObject.SetActive(false);
-                _runningTween = null;
+                Image.gameObject.SetActive(false);
+                RunningTween = null;
             });
 
-            _runningTween = tweenSequence;
+            RunningTween = tweenSequence;
         }
-
-        
     }
 }
