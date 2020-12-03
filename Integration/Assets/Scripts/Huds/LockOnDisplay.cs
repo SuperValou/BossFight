@@ -9,10 +9,10 @@ namespace Assets.Scripts.Huds
     {
         // -- Editor
 
-        [Header("Values")]
+        [Header("Values - Locked Target")]
         [Tooltip("Angular speed of the lock circle (degree per second).")]
-        public float angularSpeed = 2f;
-
+        public float lockedAngularSpeed = 2f;
+        
         [Tooltip("Time to fade in/fade out when lock-in/locking-out (second).")]
         public float circleTweenTime = 0.25f;
 
@@ -28,8 +28,14 @@ namespace Assets.Scripts.Huds
         [Tooltip("Number of time per second the shake effect will occur on lock break (hertz).")]
         public int breakCircleShakeFrequency = 30;
 
+
+        [Header("Values - Target in sight")]
+        public float inSightAngularSpeed = 1.25f;
+
+
         [Header("Parts")]
         public Image lockCircle;
+        public Image nearestTargetCircle;
 
         [Header("References")]
         public LockOnManager lockOnManager;
@@ -62,9 +68,25 @@ namespace Assets.Scripts.Huds
 
         void Update()
         {
-            if (lockOnManager.IsLocked)
+            if (lockOnManager.HasTargetLocked)
             {
-                lockCircle.transform.Rotate(lockCircle.transform.forward, angularSpeed);
+                lockCircle.transform.Rotate(lockCircle.transform.forward, lockedAngularSpeed);
+            }
+
+            if (lockOnManager.HasAnyTargetInSight)
+            {
+                nearestTargetCircle.gameObject.SetActive(true);
+
+                Vector2 viewportPosition = lockOnManager.NearestTargetViewportPosition;
+                Vector2 screenPosition = new Vector2(viewportPosition.x * Screen.width, viewportPosition.y * Screen.height);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(nearestTargetCircle.rectTransform.parent as RectTransform, screenPosition, cam:null, out Vector2 localPosition);
+                nearestTargetCircle.transform.localPosition = localPosition;
+
+                nearestTargetCircle.transform.Rotate(nearestTargetCircle.transform.forward, inSightAngularSpeed);
+            }
+            else
+            {
+                nearestTargetCircle.gameObject.SetActive(false);
             }
         }
 

@@ -78,7 +78,6 @@ namespace Assets.Scripts.Players
         
         private float _headPitch = 0; // rotation to look up or down
 
-        private bool _targetLocked;
 
         void Start()
         {
@@ -103,7 +102,7 @@ namespace Assets.Scripts.Players
         {
             if (input.LockOnButtonDown())
             {
-                if (_lockOnManager.IsLocked)
+                if (_lockOnManager.HasTargetLocked)
                 {
                     _lockOnManager.Unlock();
                 }
@@ -113,9 +112,9 @@ namespace Assets.Scripts.Players
                 }
             }
             
-            if (_lockOnManager.IsLocked)
+            if (_lockOnManager.HasTargetLocked)
             {
-                Transform lockOnTarget = _lockOnManager.GetTarget().transform;
+                Transform lockOnTarget = _lockOnManager.GetLockedTarget().transform;
 
                 // body lock-on
                 var targetDirectionFromBody = lockOnTarget.position - _transform.position;

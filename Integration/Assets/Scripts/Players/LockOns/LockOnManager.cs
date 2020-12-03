@@ -7,7 +7,7 @@ namespace Assets.Scripts.Players.LockOns
     public class LockOnManager : MonoBehaviour
     {
         // -- Editor
- 
+
         [Header("Values")]
         [Tooltip("Viewport dead zone starting from the bottom (percentage between 0 and 0.5).")]
         [Range(0f, 0.5f)]
@@ -28,81 +28,105 @@ namespace Assets.Scripts.Players.LockOns
 
         // -- Class
 
-        private readonly HashSet<LockOnTarget> _lockableTargets = new HashSet<LockOnTarget>();
-        
-        private ICollection<ILockOnNotifiable> _lockOnNotifiables = new HashSet<ILockOnNotifiable>();
+        private readonly Vector3 _viewportCenter = new Vector3(0.5f, 0.5f, 0);
 
-        private LockOnTarget _target;
-        
-        public bool IsLocked => _target != null;
+        private readonly HashSet<LockOnTarget> _lockableTargets = new HashSet<LockOnTarget>();
+
+        private readonly ICollection<ILockOnNotifiable> _lockOnNotifiables = new HashSet<ILockOnNotifiable>();
+
+        private LockOnTarget _nearestTarget;
+        private LockOnTarget _lockedTarget;
+
+        public bool HasAnyTargetInSight => _nearestTarget != null;
+        public bool HasTargetLocked => _lockedTarget != null;
+
 
         /// <summary>
-        /// Distance to the target (negative value if there is no target)
+        /// Position of the nearest target in viewport space (Vector3.zero if no target in sight).
         /// </summary>
-        public float TargetDistance { get; private set; }
+        public Vector3 NearestTargetViewportPosition { get; private set; }
+
+        /// <summary>
+        /// Position of the currently locked target in viewport space (Vector3.zero if no target locked).
+        /// </summary>
+        public Vector3 LockedTargetViewportPosition { get; private set; }
 
         void Start()
         {
             foreach (var monoBehaviour in onLockOnEvents)
             {
-                _lockOnNotifiables.Add((ILockOnNotifiable) monoBehaviour);
+                _lockOnNotifiables.Add((ILockOnNotifiable)monoBehaviour);
             }
         }
 
         void Update()
         {
-            if (_target == null)
+            ClosestTargetUpdate();
+            CurrentTargetUpdate();
+        }
+
+        private void ClosestTargetUpdate()
+        {
+            _nearestTarget = null;
+            NearestTargetViewportPosition = Vector3.zero;
+            float minTargetSquaredDistance = float.MaxValue;
+
+            foreach (var lockableTarget in _lockableTargets)
+            {
+                if (lockableTarget == _lockedTarget)
+                {
+                    continue;
+                }
+
+                Vector3 lockableTargetViewportPosition = eye.WorldToViewportPoint(lockableTarget.transform.position);
+                if (lockableTargetViewportPosition == Vector3.zero)
+                {
+                    // target is outside of viewport
+                    continue;
+                }
+
+                if (IsOutOfRange(lockableTargetViewportPosition))
+                {
+                    continue;
+                }
+
+                Vector2 positionFromViewPortCenter = new Vector2(lockableTargetViewportPosition.x - _viewportCenter.x, lockableTargetViewportPosition.y - _viewportCenter.y);
+                float squaredDistance = Vector2.SqrMagnitude(positionFromViewPortCenter);
+                if (squaredDistance < minTargetSquaredDistance)
+                {
+                    minTargetSquaredDistance = squaredDistance;
+                    _nearestTarget = lockableTarget;
+                    NearestTargetViewportPosition = lockableTargetViewportPosition;
+                }
+            }
+        }
+
+        private void CurrentTargetUpdate()
+        {
+            if (_lockedTarget == null)
             {
                 return;
             }
 
-            Vector3 targetViewportPosition = eye.WorldToViewportPoint(_target.transform.position);
-            TargetDistance = targetViewportPosition.z;
+            LockedTargetViewportPosition = eye.WorldToViewportPoint(_lockedTarget.transform.position);
 
-            if (IsOutOfRange(targetViewportPosition))
+            if (IsOutOfRange(LockedTargetViewportPosition))
             {
                 BreakLock();
             }
         }
 
+
         public bool TryLockOnTarget()
         {
-            Vector3 viewportCenter = new Vector3(0.5f, 0.5f, 0);
-
-            float minSquaredDistance = float.MaxValue;
-            
-            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(eye);
-            
-            foreach (var lockableTarget in _lockableTargets)
+            if (_nearestTarget == null)
             {
-                Bounds targetBounds = lockableTarget.GetBounds();
-                if (!GeometryUtility.TestPlanesAABB(planes, targetBounds))
-                {
-                    // target is outside of eye frustrum
-                    continue;
-                }
-
-                Vector3 viewportPosition = eye.WorldToViewportPoint(lockableTarget.transform.position);
-
-                if (IsOutOfRange(viewportPosition))
-                {
-                    continue;
-                }
-
-                // lock target closest to viewport center
-                Vector2 positionFromViewPortCenter = new Vector2(viewportPosition.x - viewportCenter.x, viewportPosition.y - viewportCenter.y);
-                float squaredDistance = Vector2.SqrMagnitude(positionFromViewPortCenter);
-                if (squaredDistance < minSquaredDistance)
-                {
-                    minSquaredDistance = squaredDistance;
-                    _target = lockableTarget;
-                }
-            }
-            
-            if (_target == null)
-            {
+                // no target in sight
                 return false;
             }
+
+            _lockedTarget = _nearestTarget;
+            LockedTargetViewportPosition = NearestTargetViewportPosition;
 
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {
@@ -119,19 +143,20 @@ namespace Assets.Scripts.Players.LockOns
             return true;
         }
 
-        public LockOnTarget GetTarget()
+        public LockOnTarget GetLockedTarget()
         {
-            if (_target == null)
+            if (_lockedTarget == null)
             {
                 throw new InvalidOperationException("Unable to get lock-on target because no target is locked.");
             }
 
-            return _target;
+            return _lockedTarget;
         }
-        
+
         public void Unlock()
         {
-            _target = null;
+            _lockedTarget = null;
+            LockedTargetViewportPosition = Vector3.zero;
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {
                 try
@@ -147,7 +172,8 @@ namespace Assets.Scripts.Players.LockOns
 
         public void BreakLock()
         {
-            _target = null;
+            _lockedTarget = null;
+            LockedTargetViewportPosition = Vector3.zero;
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {
                 try
@@ -160,7 +186,7 @@ namespace Assets.Scripts.Players.LockOns
                 }
             }
         }
-        
+
         public void Register(LockOnTarget lockOnTarget)
         {
             if (lockOnTarget == null)
