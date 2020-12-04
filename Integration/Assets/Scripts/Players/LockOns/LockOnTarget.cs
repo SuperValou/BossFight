@@ -11,23 +11,14 @@ namespace Assets.Scripts.Players.LockOns
 
         // -- Class
 
-        private Renderer _renderer;
-
         void Start()
         {
-            _renderer = this.GetOrThrow<Renderer>();
-
             lockOnManagerProxy.Register(this);
         }
 
         void OnDestroy()
         {
             lockOnManagerProxy.Unregister(this);
-        }
-
-        public Bounds GetBounds()
-        {
-            return _renderer.bounds;
         }
     }
 }

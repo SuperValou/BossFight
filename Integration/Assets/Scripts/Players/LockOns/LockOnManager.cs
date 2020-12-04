@@ -39,23 +39,23 @@ namespace Assets.Scripts.Players.LockOns
 
         private readonly ICollection<ILockOnNotifiable> _lockOnNotifiables = new HashSet<ILockOnNotifiable>();
 
-        public bool HasTargetLocked { get; private set; }
-
-        public bool HasAnyTargetInSight => Target != null;
-
-        public LockOnTarget Target { get; private set; }
-
-        public Vector2 TargetViewportPosition { get; private set; }
-        
+        private LockOnTarget _target;
 
         /// <summary>
-        /// Position of the nearest target in viewport space (Vector3.zero if no target in sight).
+        /// True if anything is in sight (locked or not)
         /// </summary>
-        //public Vector3 NearestTargetViewportPosition { get; private set; }
+        public bool HasAnyTargetInSight => _target != null;
+
+        /// <summary>
+        /// True if a target is locked.
+        /// </summary>
+        public bool HasTargetLocked { get; private set; }
+
         /// <summary>
         /// Position of the currently locked target in viewport space (Vector3.zero if no target locked).
         /// </summary>
-        //public Vector3 LockedTargetViewportPosition { get; private set; }
+        public Vector2 TargetViewportPosition { get; private set; }
+        
         void Start()
         {
             foreach (var monoBehaviour in onLockOnEvents)
@@ -78,8 +78,8 @@ namespace Assets.Scripts.Players.LockOns
 
         private void NearestTargetUpdate()
         {
-            LockOnTarget previousTarget = Target;
-            Target = null;
+            LockOnTarget previousTarget = _target;
+            _target = null;
             TargetViewportPosition = Vector2.zero;
 
             float minSquaredDistanceToCenter = float.MaxValue;
@@ -100,19 +100,19 @@ namespace Assets.Scripts.Players.LockOns
                 if (squaredDistanceToCenter < minSquaredDistanceToCenter)
                 {
                     minSquaredDistanceToCenter = squaredDistanceToCenter;
-                    Target = lockableTarget;
+                    _target = lockableTarget;
                     TargetViewportPosition = targetViewportPosition;
                 }
             }
 
             // Notifications
-            if (Target == previousTarget)
+            if (_target == previousTarget)
             {
                 // no change
                 return;
             }
 
-            if (Target != null && previousTarget != null)
+            if (_target != null && previousTarget != null)
             {
                 // the nearest target is now another target
                 return;
@@ -136,7 +136,7 @@ namespace Assets.Scripts.Players.LockOns
                 return;
             }
 
-            if (Target == null)
+            if (_target == null)
             {
                 // target disappeared
                 foreach (var lockOnNotifiable in _lockOnNotifiables)
@@ -157,16 +157,17 @@ namespace Assets.Scripts.Players.LockOns
 
         private void LockedTargetUpdate()
         {
-            if (Target == null)
+            if (_target == null)
             {
-                Debug.LogError($"Attempted to run {nameof(LockedTargetUpdate)}, but {nameof(Target)} was null.");
+                // TODO: unlock when target gets destroyed
+                Debug.LogError($"Attempted to run {nameof(LockedTargetUpdate)}, but {nameof(_target)} was null.");
                 return;
             }
 
             // check if target gets out of range
-            var targetPosition = Target.transform.position - this.transform.position;
+            var targetPosition = _target.transform.position - this.transform.position;
             float targetSquaredDistance = Vector3.SqrMagnitude(targetPosition);
-            Vector2 targetViewportPosition = eye.WorldToViewportPoint(Target.transform.position);
+            Vector2 targetViewportPosition = eye.WorldToViewportPoint(_target.transform.position);
             if (IsOutOfRange(targetViewportPosition, targetSquaredDistance))
             {
                 BreakLock();
@@ -177,9 +178,12 @@ namespace Assets.Scripts.Players.LockOns
             }
         }
 
+        /// <summary>
+        /// Attempt to lock the nearest target. Returns wether or not some target got locked.
+        /// </summary>
         public bool TryLockOnTarget()
         {
-            if (Target == null)
+            if (_target == null)
             {
                 // no target in sight
                 return false;
@@ -202,16 +206,23 @@ namespace Assets.Scripts.Players.LockOns
             return true;
         }
 
+        /// <summary>
+        /// Get the currently locked-on target. Throws if nothing is locked (use <see cref="HasTargetLocked"/> beforehand).
+        /// </summary>
+        /// <returns></returns>
         public LockOnTarget GetLockedTarget()
         {
-            if (Target == null)
+            if (_target == null)
             {
                 throw new InvalidOperationException("Unable to get lock-on target because no target is locked.");
             }
 
-            return Target;
+            return _target;
         }
 
+        /// <summary>
+        /// Release the currently locked target (intended by the player).
+        /// </summary>
         public void Unlock()
         {
             HasTargetLocked = false;
@@ -229,6 +240,9 @@ namespace Assets.Scripts.Players.LockOns
             }
         }
 
+        /// <summary>
+        /// Release the currently locked target (not intended by the player).
+        /// </summary>
         public void BreakLock()
         {
             HasTargetLocked = false;
@@ -245,35 +259,7 @@ namespace Assets.Scripts.Players.LockOns
                 }
             }
         }
-
-        public void Register(LockOnTarget lockOnTarget)
-        {
-            if (lockOnTarget == null)
-            {
-                throw new ArgumentNullException(nameof(lockOnTarget));
-            }
-
-            bool added = _lockableTargets.Add(lockOnTarget);
-            if (!added)
-            {
-                Debug.LogWarning($"{lockOnTarget} ({nameof(LockOnTarget)}) is already registered in {nameof(LockOnManager)}.");
-            }
-        }
-
-        public void Unregister(LockOnTarget lockOnTarget)
-        {
-            if (lockOnTarget == null)
-            {
-                throw new ArgumentNullException(nameof(lockOnTarget));
-            }
-
-            bool removed = _lockableTargets.Remove(lockOnTarget);
-            if (!removed)
-            {
-                Debug.LogWarning($"{lockOnTarget} ({nameof(LockOnTarget)}) was not registered in {nameof(LockOnManager)} in the first place.");
-            }
-        }
-
+        
         /// <summary>
         /// Returns true if the target is either out of sight, too far away or to close to periphery
         /// </summary>
@@ -301,6 +287,40 @@ namespace Assets.Scripts.Players.LockOns
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Register a <see cref="LockOnTarget"/> into the system (should only be used during <see cref="LockOnTarget"/> initialization)
+        /// </summary>
+        public void Register(LockOnTarget lockOnTarget)
+        {
+            if (lockOnTarget == null)
+            {
+                throw new ArgumentNullException(nameof(lockOnTarget));
+            }
+
+            bool added = _lockableTargets.Add(lockOnTarget);
+            if (!added)
+            {
+                Debug.LogWarning($"{lockOnTarget} ({nameof(LockOnTarget)}) is already registered in {nameof(LockOnManager)}.");
+            }
+        }
+
+        /// <summary>
+        /// Unregister a <see cref="LockOnTarget"/> out of the system (should only be used during <see cref="LockOnTarget"/> end of life)
+        /// </summary>
+        public void Unregister(LockOnTarget lockOnTarget)
+        {
+            if (lockOnTarget == null)
+            {
+                throw new ArgumentNullException(nameof(lockOnTarget));
+            }
+
+            bool removed = _lockableTargets.Remove(lockOnTarget);
+            if (!removed)
+            {
+                Debug.LogWarning($"{lockOnTarget} ({nameof(LockOnTarget)}) was not registered in {nameof(LockOnManager)} in the first place.");
+            }
         }
     }
 }

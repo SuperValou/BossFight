@@ -35,8 +35,6 @@ namespace Assets.Scripts.Huds
         [Header("Parts")]
         public Image lockCircle;
         public Image hintCircle;
-
-        public Text targetLabel;
         
         [Header("References")]
         public LockOnManager lockOnManager;
@@ -58,8 +56,6 @@ namespace Assets.Scripts.Huds
 
         void Update()
         {
-            targetLabel.text = $"{lockOnManager.Target?.gameObject.name ?? "Nothing"} - Coordinates: {lockOnManager.TargetViewportPosition}";
-            
             if (lockOnManager.HasTargetLocked)
             {
                 lockCircle.transform.Rotate(lockCircle.transform.forward, lockedAngularSpeed);

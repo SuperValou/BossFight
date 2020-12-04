@@ -1117,7 +1117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &99494154
 Transform:
   m_ObjectHideFlags: 0
@@ -17987,6 +17987,7 @@ MonoBehaviour:
   roomManagers: {fileID: 1330272826}
   roomStart:
   - {fileID: 99494153}
+  - {fileID: 1442358335}
 --- !u!1001 &1356053833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18585,6 +18586,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1442358336}
     m_Modifications:
+    - target: {fileID: 181327985223831673, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
+        type: 3}
+      propertyPath: lockOnManagerProxy
+      value: 
+      objectReference: {fileID: 1850727527}
     - target: {fileID: 8320038239365632149, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
         type: 3}
       propertyPath: onDamageReceived.Array.size
@@ -18888,7 +18894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1442358336
 Transform:
   m_ObjectHideFlags: 0
@@ -30065,6 +30071,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1442358336}
     m_Modifications:
+    - target: {fileID: 181327985223831673, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
+        type: 3}
+      propertyPath: lockOnManagerProxy
+      value: 
+      objectReference: {fileID: 1850727527}
+    - target: {fileID: 845307183789138886, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320038238646165062, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8320038239033638037, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8320038239365632149, guid: 35f5d90c1bca3d94e9d6272d13567a5a,
         type: 3}
       propertyPath: onDamageReceived.Array.size
