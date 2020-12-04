@@ -36,7 +36,8 @@ namespace Assets.Scripts.Huds
         public Image lockCircle;
         public Image hintCircle;
 
-
+        public Text targetLabel;
+        
         [Header("References")]
         public LockOnManager lockOnManager;
 
@@ -57,14 +58,25 @@ namespace Assets.Scripts.Huds
 
         void Update()
         {
+            targetLabel.text = $"{lockOnManager.Target?.gameObject.name ?? "Nothing"} - Coordinates: {lockOnManager.TargetViewportPosition}";
+            
             if (lockOnManager.HasTargetLocked)
             {
                 lockCircle.transform.Rotate(lockCircle.transform.forward, lockedAngularSpeed);
-            }
 
-            if (lockOnManager.HasAnyTargetInSight)
+                Vector2 viewportPosition = lockOnManager.TargetViewportPosition;
+                if (viewportPosition.x == 0.5f && viewportPosition.y == 0.5f)
+                {
+                    return;
+                }
+
+                Vector2 screenPosition = new Vector2(viewportPosition.x * Screen.width, viewportPosition.y * Screen.height);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(lockCircle.rectTransform.parent as RectTransform, screenPosition, cam: null, out Vector2 localPosition);
+                lockCircle.transform.localPosition = localPosition;
+            }
+            else if (lockOnManager.HasAnyTargetInSight)
             {
-                Vector2 viewportPosition = lockOnManager.NearestTargetViewportPosition;
+                Vector2 viewportPosition = lockOnManager.TargetViewportPosition;
                 Vector2 screenPosition = new Vector2(viewportPosition.x * Screen.width, viewportPosition.y * Screen.height);
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(hintCircle.rectTransform.parent as RectTransform, screenPosition, cam:null, out Vector2 localPosition);
                 hintCircle.transform.localPosition = localPosition;
