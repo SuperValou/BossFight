@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Players.LockOns;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Players
     {
         // -- Editor
 
-        [Header("Values")]
+        [Header("Values - movement")]
         [Tooltip("Speed of the player when moving (m/s).")]
         public float walkSpeed = 10f;
 
@@ -32,20 +33,26 @@ namespace Assets.Scripts.Players
         public float gravity = 35f;
         
         [Tooltip("Units that player can fall before a falling function is run.")]
-        [SerializeField]
-        private float fallingThreshold = 10.0f;
+        public float fallingThreshold = 10.0f;
 
-        [Header("Parts")]
-        public Transform headTransform;
 
+        [Header("Values - vision")]
         [Tooltip("How far up can you look? (degrees)")]
+        [Range(0, 90)]
         public float maxUpPitchAngle = 60;
 
         [Tooltip("How far down can you look? (degrees)")]
+        [Range(-90, 0)]
         public float maxDownPitchAngle = -60;
+
+
+        [Header("Parts")]
+        public Transform headTransform;
+        
 
         [Header("References")]
         public AbstractInput input;
+
 
         [Header("Abilities")]
         public bool hasJumpAbility;
@@ -57,6 +64,7 @@ namespace Assets.Scripts.Players
 
         private Transform _transform;
         private CharacterController _controller;
+        private LockOnManager _lockOnManager;
 
         private bool _isGrounded;
 
@@ -75,6 +83,7 @@ namespace Assets.Scripts.Players
         {
             _transform = this.GetOrThrow<Transform>();
             _controller = this.GetOrThrow<CharacterController>();
+            _lockOnManager = this.GetOrThrow<LockOnManager>();
         }
 
 
@@ -91,13 +100,48 @@ namespace Assets.Scripts.Players
         
         private void UpdateLookAround()
         {
-            // horizontal look
-            Vector2 lookMovement = input.GetLookVector();
-            _transform.Rotate(Vector3.up, lookMovement.x);
+            if (input.LockOnButtonDown())
+            {
+                if (_lockOnManager.HasTargetLocked)
+                {
+                    _lockOnManager.Unlock();
+                }
+                else
+                {
+                    _lockOnManager.TryLockOnTarget();
+                }
+            }
             
-            // vertical look
-            _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
-            headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            if (_lockOnManager.HasTargetLocked)
+            {
+                Transform lockOnTarget = _lockOnManager.GetLockedTarget().transform;
+
+                // body lock-on
+                var targetDirectionFromBody = lockOnTarget.position - _transform.position;
+                var targetDirectionOnHorizontalPlane = new Vector3(targetDirectionFromBody.x, 0, targetDirectionFromBody.z);
+
+                Quaternion bodyRotation = Quaternion.FromToRotation(_transform.forward, targetDirectionOnHorizontalPlane);
+                _transform.Rotate(_transform.up, bodyRotation.eulerAngles.y);
+
+                // head lock-on
+                var targetDirectionFromHead = lockOnTarget.position - headTransform.position;
+                var targetDirectionOnLocalVerticalZPlane = Vector3.ProjectOnPlane(targetDirectionFromHead, headTransform.right);
+
+                var pitchAngle = Vector3.SignedAngle(headTransform.forward, targetDirectionOnLocalVerticalZPlane, headTransform.right);
+
+                _headPitch = Mathf.Clamp(_headPitch + pitchAngle, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
+            else
+            {
+                // horizontal look
+                Vector2 lookMovement = input.GetLookVector();
+                _transform.Rotate(Vector3.up, lookMovement.x);
+
+                // vertical look
+                _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
         }
 
         private void UpdateMove()

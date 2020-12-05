@@ -24,7 +24,7 @@ namespace Assets.Scripts.Weaponry.Impacts
         {
             bombExplosionEmitter.transform.position = collisionEvent.intersection;
             bombExplosionEmitter.transform.rotation = Quaternion.LookRotation(collisionEvent.normal);
-            bombExplosionEmitter.Emit(30);
+            bombExplosionEmitter.Emit(10);
             
             ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
             emitParams.position = collisionEvent.intersection;

@@ -5,7 +5,57 @@
         "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
         "RootGameObjectInfos": [
             {
-                "Name": "Managers",
+                "Name": "AbilityRoomSceneScript",
+                "Scripts": [
+                    {
+                        "Name": "AbilityRoomSceneScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.AbilityRoomSceneScript",
+                        "Index": 1
+                    }
+                ],
+                "Children": []
+            },
+            {
+                "Name": "MasterManagers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "SaveManager",
+                        "Scripts": [
+                            {
+                                "Name": "SaveManager",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManager",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "RoomManagers",
                 "Scripts": [],
                 "Children": [
                     {
@@ -25,6 +75,28 @@
                             {
                                 "Name": "PlayerProxy",
                                 "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SaveManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "SaveManagerProxy",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveManagerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "LockOnManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "LockOnManagerProxy",
+                                "FullName": "Assets.Scripts.Players.LockOns.LockOnManagerProxy",
                                 "Index": 1
                             }
                         ],
@@ -126,6 +198,17 @@
                                             }
                                         ],
                                         "Children": []
+                                    },
+                                    {
+                                        "Name": "LockOn",
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
                                     }
                                 ]
                             },
@@ -150,6 +233,17 @@
                                 ],
                                 "Children": [
                                     {
+                                        "Name": "LockOn",
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
                                         "Name": "Sphere",
                                         "Scripts": [
                                             {
@@ -172,119 +266,74 @@
                                         "Children": []
                                     }
                                 ]
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Turret",
-                        "Scripts": [
-                            {
-                                "Name": "Turret",
-                                "FullName": "Assets.Scripts.Foes.Turret",
-                                "Index": 1
                             },
                             {
-                                "Name": "DamageFeedback",
-                                "FullName": "Assets.Scripts.Damages.DamageFeedback",
-                                "Index": 2
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "Name": "Pivot",
-                                "Scripts": [],
+                                "Name": "Turret",
+                                "Scripts": [
+                                    {
+                                        "Name": "Turret",
+                                        "FullName": "Assets.Scripts.Foes.Turret",
+                                        "Index": 1
+                                    },
+                                    {
+                                        "Name": "DamageFeedback",
+                                        "FullName": "Assets.Scripts.Damages.DamageFeedback",
+                                        "Index": 2
+                                    }
+                                ],
                                 "Children": [
                                     {
-                                        "Name": "Weapon",
+                                        "Name": "Pivot",
                                         "Scripts": [],
                                         "Children": [
                                             {
-                                                "Name": "Cannon",
+                                                "Name": "Weapon",
                                                 "Scripts": [],
                                                 "Children": [
                                                     {
-                                                        "Name": "ProjectileSpawnPoint (1)",
+                                                        "Name": "Cannon",
                                                         "Scripts": [],
                                                         "Children": [
                                                             {
-                                                                "Name": "TurretProjectileEmitter"
+                                                                "Name": "ProjectileSpawnPoint (1)"
+                                                            },
+                                                            {
+                                                                "Name": "engine_high_26"
+                                                            },
+                                                            {
+                                                                "Name": "engine_high_26 (1)"
                                                             }
                                                         ]
                                                     },
                                                     {
-                                                        "Name": "engine_high_26",
-                                                        "Scripts": [
+                                                        "Name": "EngineBloc",
+                                                        "Scripts": [],
+                                                        "Children": [
                                                             {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "engine_high_26 (1)",
-                                                        "Scripts": [
+                                                                "Name": "detail_airLarge_153"
+                                                            },
                                                             {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
+                                                                "Name": "detail_airLarge_153 (1)"
+                                                            },
+                                                            {
+                                                                "Name": "detail_airLarge_153 (2)"
+                                                            },
+                                                            {
+                                                                "Name": "detail_airLarge_153 (3)"
+                                                            },
+                                                            {
+                                                                "Name": "wall_borderCornerDiagonal_135"
                                                             }
-                                                        ],
-                                                        "Children": []
+                                                        ]
                                                     }
                                                 ]
                                             },
                                             {
-                                                "Name": "EngineBloc",
+                                                "Name": "Head",
                                                 "Scripts": [],
                                                 "Children": [
                                                     {
-                                                        "Name": "detail_airLarge_153",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "detail_airLarge_153 (1)",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "detail_airLarge_153 (2)",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "detail_airLarge_153 (3)",
-                                                        "Scripts": [
-                                                            {
-                                                                "Name": "VulnerableCollider",
-                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                                "Index": 4
-                                                            }
-                                                        ],
-                                                        "Children": []
-                                                    },
-                                                    {
-                                                        "Name": "wall_borderCornerDiagonal_135",
+                                                        "Name": "engine_large_29",
                                                         "Scripts": [
                                                             {
                                                                 "Name": "VulnerableCollider",
@@ -297,25 +346,58 @@
                                                 ]
                                             }
                                         ]
-                                    },
-                                    {
-                                        "Name": "Head",
-                                        "Scripts": [],
-                                        "Children": [
-                                            {
-                                                "Name": "engine_large_29",
-                                                "Scripts": [
-                                                    {
-                                                        "Name": "VulnerableCollider",
-                                                        "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                                                        "Index": 4
-                                                    }
-                                                ],
-                                                "Children": []
-                                            }
-                                        ]
                                     }
                                 ]
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "SaveStation",
+                        "Scripts": [
+                            {
+                                "Name": "SaveStation",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveStation",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "LockOnTargets",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Cube",
+                                "Scripts": [
+                                    {
+                                        "Name": "LockOnTarget",
+                                        "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Sphere",
+                                "Scripts": [
+                                    {
+                                        "Name": "LockOnTarget",
+                                        "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                        "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Pyramid ",
+                                "Scripts": [
+                                    {
+                                        "Name": "LockOnTarget",
+                                        "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                        "Index": 3
+                                    }
+                                ],
+                                "Children": []
                             }
                         ]
                     }

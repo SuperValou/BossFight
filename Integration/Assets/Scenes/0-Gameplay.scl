@@ -90,14 +90,19 @@
                         "Index": 4
                     },
                     {
+                        "Name": "LockOnManager",
+                        "FullName": "Assets.Scripts.Players.LockOns.LockOnManager",
+                        "Index": 5
+                    },
+                    {
                         "Name": "AimAssist",
                         "FullName": "Assets.Scripts.Players.AimAssist",
-                        "Index": 5
+                        "Index": 6
                     },
                     {
                         "Name": "VulnerableCollider",
                         "FullName": "Assets.Scripts.Damages.VulnerableCollider",
-                        "Index": 6
+                        "Index": 7
                     }
                 ],
                 "Children": [
@@ -454,6 +459,40 @@
                                     {
                                         "Name": "Text",
                                         "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "LockOnDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "LockOnDisplay",
+                                "FullName": "Assets.Scripts.Huds.LockOnDisplay",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "LockCircle",
+                                "Scripts": [
+                                    {
+                                        "Name": "Image",
+                                        "FullName": "UnityEngine.UI.Image",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "HintCircle",
+                                "Scripts": [
+                                    {
+                                        "Name": "Image",
+                                        "FullName": "UnityEngine.UI.Image",
                                         "Index": 2
                                     }
                                 ],

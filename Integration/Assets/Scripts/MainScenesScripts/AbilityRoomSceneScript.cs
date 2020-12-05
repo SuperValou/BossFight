@@ -15,9 +15,10 @@ namespace Assets.Scripts.MainScenesScripts
         [Header("Main managers")]
         public SceneLoadingManager sceneLoadingManager;
 
-        [Header("Room managers")]
+        [Header("Room objects")]
         public GameObject roomManagers;
 
+        public GameObject[] roomStart;
 
         // -- Class
 
@@ -27,6 +28,15 @@ namespace Assets.Scripts.MainScenesScripts
             {
                 Debug.LogWarning($"This is a Test Room, but {nameof(roomManagers)} are active in hierarchy. " +
                                  $"This may lead to unmanaged Awake() call order, leading to errors in the console.");
+            }
+
+            foreach (var gameObj in roomStart)
+            {
+                if (gameObj.activeInHierarchy)
+                {
+                    Debug.LogWarning($"This is a Test Room, but {gameObj} is active in hierarchy. " +
+                                     $"This may lead to unmanaged Start() call order, leading to broken feature.");
+                }
             }
         }
 
@@ -39,6 +49,10 @@ namespace Assets.Scripts.MainScenesScripts
 
             // enable room managers to simulate room load
             roomManagers.SetActive(true);
+            foreach (var gameObj in roomStart)
+            {
+                gameObj.SetActive(true);
+            }
         }
     }
 }

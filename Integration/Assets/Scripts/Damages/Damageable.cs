@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Damages
@@ -53,7 +54,14 @@ namespace Assets.Scripts.Damages
 
                 foreach (var damageNotifiable in _damageNotifiables)
                 {
-                    damageNotifiable.OnDamageNotification(this, damageData, damager);
+                    try
+                    {
+                        damageNotifiable.OnDamageNotification(this, damageData, damager);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
                 }
             }
             else
@@ -82,7 +90,14 @@ namespace Assets.Scripts.Damages
             
             foreach (var damageNotifiable in _damageNotifiables)
             {
-                damageNotifiable.OnDeathNotification(this);
+                try
+                {
+                    damageNotifiable.OnDeathNotification(this);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                }
             }
 
             OnDeath();

@@ -20,6 +20,7 @@ namespace Assets.Scripts.Players.Inputs
         private const string MouseHorizontalAxisName = "Mouse X";
         private const string MouseVerticalAxisName = "Mouse Y";
         private const int MouseFireButton = 0;
+        private const int MouseLockOnButton = 1;
 
         // Keyboard
         private const string KeyboardHorizontalAxisName = "Horizontal";
@@ -108,6 +109,11 @@ namespace Assets.Scripts.Players.Inputs
 
             weaponSwitchDirection = WeaponSwitchDirection.None;
             return false;
+        }
+
+        public override bool LockOnButtonDown()
+        {
+            return Input.GetMouseButtonDown(MouseLockOnButton);
         }
     }
 }
