@@ -40,6 +40,7 @@ namespace Assets.Scripts.Players.LockOns
         private readonly ICollection<ILockOnNotifiable> _lockOnNotifiables = new HashSet<ILockOnNotifiable>();
 
         private LockOnTarget _target;
+        private bool _isLocked;
 
         /// <summary>
         /// True if anything is in sight (locked or not)
@@ -49,7 +50,7 @@ namespace Assets.Scripts.Players.LockOns
         /// <summary>
         /// True if a target is locked.
         /// </summary>
-        public bool HasTargetLocked { get; private set; }
+        public bool HasTargetLocked => _isLocked && _target != null;
 
         /// <summary>
         /// Position of the currently locked target in viewport space (Vector3.zero if no target locked).
@@ -66,7 +67,7 @@ namespace Assets.Scripts.Players.LockOns
 
         void Update()
         {
-            if (HasTargetLocked)
+            if (_isLocked)
             {
                 LockedTargetUpdate();
             }
@@ -106,19 +107,20 @@ namespace Assets.Scripts.Players.LockOns
             }
 
             // Notifications
-            if (_target == previousTarget)
+            // ReferenceEquals is used because "_target == null" returns true when its gameObject is getting detroyed
+            if (ReferenceEquals(_target, previousTarget))
             {
                 // no change
                 return;
             }
 
-            if (_target != null && previousTarget != null)
+            if (!ReferenceEquals(_target, null) && !ReferenceEquals(previousTarget, null))
             {
                 // the nearest target is now another target
                 return;
             }
 
-            if (previousTarget == null)
+            if (ReferenceEquals(previousTarget, null))
             {
                 // a new target appeared
                 foreach (var lockOnNotifiable in _lockOnNotifiables)
@@ -136,7 +138,7 @@ namespace Assets.Scripts.Players.LockOns
                 return;
             }
 
-            if (_target == null)
+            if (ReferenceEquals(_target, null))
             {
                 // target disappeared
                 foreach (var lockOnNotifiable in _lockOnNotifiables)
@@ -159,8 +161,8 @@ namespace Assets.Scripts.Players.LockOns
         {
             if (_target == null)
             {
-                // TODO: unlock when target gets destroyed
-                Debug.LogError($"Attempted to run {nameof(LockedTargetUpdate)}, but {nameof(_target)} was null.");
+                // Target got destroyed
+                Unlock();
                 return;
             }
 
@@ -189,7 +191,7 @@ namespace Assets.Scripts.Players.LockOns
                 return false;
             }
 
-            HasTargetLocked = true;
+            _isLocked = true;
 
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {
@@ -225,7 +227,7 @@ namespace Assets.Scripts.Players.LockOns
         /// </summary>
         public void Unlock()
         {
-            HasTargetLocked = false;
+            _isLocked = false;
             
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {
@@ -245,7 +247,7 @@ namespace Assets.Scripts.Players.LockOns
         /// </summary>
         public void BreakLock()
         {
-            HasTargetLocked = false;
+            _isLocked = false;
             
             foreach (var lockOnNotifiable in _lockOnNotifiables)
             {

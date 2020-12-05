@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6a355b2d719a0419a4f0d8a7df6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blinkColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  blinkColor: {r: 0.8490566, g: 0.01691348, b: 0, a: 1}
   blinkColorCritical: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.1
 --- !u!1 &9064788256301990245
