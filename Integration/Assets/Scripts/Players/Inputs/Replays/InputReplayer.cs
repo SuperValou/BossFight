@@ -29,7 +29,7 @@ namespace Assets.Scripts.Players.Inputs.Replays
 
             // read first frame
             _currentFrame = _reader.ReadFrame();
-            Time.captureDeltaTime = _currentFrame.Time;
+            Time.captureDeltaTime = _currentFrame.t;
         }
 
         void LateUpdate()
@@ -42,7 +42,7 @@ namespace Assets.Scripts.Players.Inputs.Replays
             
             var nextFrame = _reader.ReadFrame();
 
-            Time.captureDeltaTime = nextFrame.Time - _currentFrame.Time;
+            Time.captureDeltaTime = nextFrame.t - _currentFrame.t;
             _currentFrame = nextFrame;
         }
 
@@ -55,58 +55,58 @@ namespace Assets.Scripts.Players.Inputs.Replays
 
         public override Vector2 GetLookVector()
         {
-            return _currentFrame.LookVector;
+            return _currentFrame.look;
         }
 
         public override Vector3 GetMoveVector()
         {
-            return _currentFrame.MoveVector;
+            return _currentFrame.move;
         }
 
         public override bool FireButtonDown()
         {
-            return _currentFrame.FireDown;
+            return _currentFrame.fireDw;
         }
 
         public override bool FireButton()
         {
-            return _currentFrame.Fire;
+            return _currentFrame.fire;
         }
 
         public override bool FireButtonUp()
         {
-            return _currentFrame.FireUp;
+            return _currentFrame.fireUp;
         }
 
         public override bool JumpButton()
         {
-            return _currentFrame.Jump;
+            return _currentFrame.jump;
         }
 
         public override bool JumpButtonDown()
         {
-            return _currentFrame.JumpDown;
+            return _currentFrame.jumpDw;
         }
 
         public override bool BoosterButtonDown()
         {
-            return _currentFrame.BoosterDown;
+            return _currentFrame.boostDw;
         }
 
         public override bool DashButtonDown()
         {
-            return _currentFrame.DashDown;
+            return _currentFrame.dashDw;
         }
 
         public override bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection)
         {
-            weaponSwitchDirection = (WeaponSwitchDirection) _currentFrame.WeaponSwitchDirection;
-            return _currentFrame.SwitchWeaponDown;
+            weaponSwitchDirection = (WeaponSwitchDirection) _currentFrame.weapSwtchDir;
+            return _currentFrame.swtchWeapDw;
         }
 
         public override bool LockOnButtonDown()
         {
-            throw new System.NotImplementedException();
+            return _currentFrame.lockonDw;
         }
     }
 }

@@ -48,24 +48,26 @@ namespace Assets.Scripts.Players.Inputs.Replays
         {
             var frame = new InputFrame();
 
-            frame.Time = Time.time;
+            frame.t = Time.time;
 
-            frame.LookVector = inputToRecord.GetLookVector();
-            frame.MoveVector = inputToRecord.GetMoveVector();
+            frame.look = inputToRecord.GetLookVector();
+            frame.move = inputToRecord.GetMoveVector();
 
-            frame.FireDown = inputToRecord.FireButtonDown();
-            frame.Fire = inputToRecord.FireButton();
-            frame.FireUp = inputToRecord.FireButtonUp();
+            frame.lockonDw = inputToRecord.LockOnButtonDown();
+            
+            frame.fireDw = inputToRecord.FireButtonDown();
+            frame.fire = inputToRecord.FireButton();
+            frame.fireUp = inputToRecord.FireButtonUp();
 
-            frame.JumpDown = inputToRecord.JumpButtonDown();
-            frame.Jump = inputToRecord.JumpButton();
+            frame.jumpDw = inputToRecord.JumpButtonDown();
+            frame.jump = inputToRecord.JumpButton();
 
-            frame.BoosterDown = inputToRecord.BoosterButtonDown();
+            frame.boostDw = inputToRecord.BoosterButtonDown();
 
-            frame.DashDown = inputToRecord.DashButtonDown();
+            frame.dashDw = inputToRecord.DashButtonDown();
 
-            frame.SwitchWeaponDown = inputToRecord.SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
-            frame.WeaponSwitchDirection = (int) weaponSwitchDirection;
+            frame.swtchWeapDw = inputToRecord.SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
+            frame.weapSwtchDir = (int) weaponSwitchDirection;
 
             _writer.WriteFrame(frame);
         }
