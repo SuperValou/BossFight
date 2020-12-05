@@ -29839,7 +29839,7 @@ PrefabInstance:
     - target: {fileID: 1579339461741231089, guid: 94373342a5f87ea47b67dbfe9089da88,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30
+      value: -63.66
       objectReference: {fileID: 0}
     - target: {fileID: 1579339461741231089, guid: 94373342a5f87ea47b67dbfe9089da88,
         type: 3}
@@ -29891,6 +29891,31 @@ PrefabInstance:
       propertyPath: onDamageReceived.Array.data[1]
       value: 
       objectReference: {fileID: 3280824315549014515}
+    - target: {fileID: 1579339461741231103, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: blinkColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579339461741231103, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: blinkColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579339461741231103, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: blinkColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456717402676405267, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: lockOnManagerProxy
+      value: 
+      objectReference: {fileID: 1850727527}
+    - target: {fileID: 7452103339345853261, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: lockOnManagerProxy
+      value: 
+      objectReference: {fileID: 1850727527}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94373342a5f87ea47b67dbfe9089da88, type: 3}
 --- !u!1001 &3280824315549014513
