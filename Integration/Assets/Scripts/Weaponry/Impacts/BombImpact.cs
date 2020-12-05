@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Weaponry.Projectiles
+namespace Assets.Scripts.Weaponry.Impacts
 {
     public class BombImpact : ProjectileImpact
     {
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
         {
             bombExplosionEmitter.transform.position = collisionEvent.intersection;
             bombExplosionEmitter.transform.rotation = Quaternion.LookRotation(collisionEvent.normal);
-            bombExplosionEmitter.Emit(30);
+            bombExplosionEmitter.Emit(10);
             
             ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
             emitParams.position = collisionEvent.intersection;

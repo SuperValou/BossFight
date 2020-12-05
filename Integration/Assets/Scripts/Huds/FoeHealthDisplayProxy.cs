@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Assets.Scripts.Huds
 {
-    public class FoeHealthDisplayProxy : MonoBehaviour
+    public class FoeHealthDisplayProxy : MonoBehaviour, IDamageNotifiable
     {
         private FoeHealthDisplay _foeHealthDisplay;
 
-        void Start()
+        void Awake()
         {
             _foeHealthDisplay = Object.FindObjectOfType<FoeHealthDisplay>();
             if (_foeHealthDisplay == null)
@@ -16,8 +16,13 @@ namespace Assets.Scripts.Huds
                                $"Health of foes won't be displayed on screen.");
             }
         }
+        
+        public void OnDamageNotification(Damageable damageable, DamageData damageData, MonoBehaviour damager)
+        {
+            _foeHealthDisplay?.Show(damageable);
+        }
 
-        public void Show(Damageable damageable)
+        public void OnDeathNotification(Damageable damageable)
         {
             _foeHealthDisplay?.Show(damageable);
         }

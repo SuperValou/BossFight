@@ -22,32 +22,59 @@
                 ]
             },
             {
-                "Name": "Environment",
-                "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Doors",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "Door",
-                                "Scripts": [
-                                    {
-                                        "Name": "BasicDoor",
-                                        "FullName": "Assets.Scripts.Environments.BasicDoor",
-                                        "Index": 1
-                                    }
-                                ],
-                                "Children": []
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
                 "Name": "",
                 "Scripts": [],
                 "Children": []
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Door-to-JumpRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Door-to-TurretTestRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Door-to-AmmunitionRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Door-to-SaveStationRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
             },
             {
                 "Name": "",

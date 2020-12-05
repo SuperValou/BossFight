@@ -103,5 +103,10 @@ namespace Assets.Scripts.Players.Inputs.Replays
             weaponSwitchDirection = (WeaponSwitchDirection) _currentFrame.WeaponSwitchDirection;
             return _currentFrame.SwitchWeaponDown;
         }
+
+        public override bool LockOnButtonDown()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

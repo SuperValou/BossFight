@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8379618022384908640}
   - component: {fileID: 8379618022384908639}
+  - component: {fileID: 8406476701647360505}
   - component: {fileID: 8379618022384908638}
   m_Layer: 0
-  m_Name: FoeDeathAnimation
+  m_Name: FoeDeathEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +52,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: be6ba60f7d50239499c189c83d74bc08, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -96,6 +97,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8406476701647360505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379618022384908637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75962ef0fcfdb9e4b955ba66a1113f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &8379618022384908638
 ParticleSystem:
   m_ObjectHideFlags: 0

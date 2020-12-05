@@ -5,15 +5,26 @@
         "ScenePath": "Assets/Scenes/MasterScene.unity",
         "RootGameObjectInfos": [
             {
+                "Name": "MasterSceneScript",
+                "Scripts": [
+                    {
+                        "Name": "MasterSceneScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.MasterSceneScript",
+                        "Index": 1
+                    }
+                ],
+                "Children": []
+            },
+            {
                 "Name": "Managers",
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "PlayerSpawn",
+                        "Name": "SaveManager",
                         "Scripts": [
                             {
-                                "Name": "PlayerSpawn",
-                                "FullName": "Assets.Scripts.Players.PlayerSpawn",
+                                "Name": "SaveManager",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveManager",
                                 "Index": 1
                             }
                         ],

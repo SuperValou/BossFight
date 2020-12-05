@@ -1,82 +1,84 @@
 using System;
 using System.IO;
-using UnityEditor.Media;
 using UnityEngine;
 
-public class ScreenshotCaptureManager : MonoBehaviour
+namespace Assets.Scripts.Players.Inputs.Replays
 {
-	// -- Editor
-
-    public int fps = 25;
-
-    public bool captureRequired = false;
-    public string outputFolder = "<to set>";
-
-	// -- Class
-	
-	private string _outputFolder;
-    private float _frameDuration;
-
-    private bool _isCapturing;
-    private float _elapsedTime;
-
-	void Start()
-	{
-	    if (fps < 1)
-	    {
-	        throw new ArgumentException($"{nameof(fps)} cannot be less than 1.");
-	    }
-
-	    _frameDuration = 1f / fps;
-
-		if (!Directory.Exists(outputFolder))
-		{
-		    throw new DirectoryNotFoundException($"Screenshot folder not found at '{outputFolder}'. Capture won't work.");
-		}
-
-		_outputFolder = outputFolder; // TODO: append build number
-	    _isCapturing = captureRequired;
-	    _elapsedTime = 0;
-	}
-
-    void FixedUpdate()
+    public class ScreenshotCaptureManager : MonoBehaviour
     {
-		if (_outputFolder == null)
-		{
-			return;
-		}
+        // -- Editor
 
-        if (!_isCapturing)
+        public int fps = 25;
+
+        public bool captureRequired = false;
+        public string outputFolder = "<to set>";
+
+        // -- Class
+	
+        private string _outputFolder;
+        private float _frameDuration;
+
+        private bool _isCapturing;
+        private float _elapsedTime;
+
+        void Start()
         {
-            if (captureRequired)
+            if (fps < 1)
             {
-                _isCapturing = true;
-                _elapsedTime = 0;
-				CaptureScreenshot();
+                throw new ArgumentException($"{nameof(fps)} cannot be less than 1.");
             }
 
-            return;
+            _frameDuration = 1f / fps;
+
+            if (!Directory.Exists(outputFolder))
+            {
+                throw new DirectoryNotFoundException($"Screenshot folder not found at '{outputFolder}'. Capture won't work.");
+            }
+
+            _outputFolder = outputFolder; // TODO: append build number
+            _isCapturing = captureRequired;
+            _elapsedTime = 0;
         }
 
-        if (_isCapturing && !captureRequired)
+        void FixedUpdate()
         {
-            _isCapturing = false;
-			return;
-        }
+            if (_outputFolder == null)
+            {
+                return;
+            }
 
-        _elapsedTime += Time.fixedDeltaTime;
-        if (_elapsedTime < _frameDuration)
-        {
-			return;
-        }
+            if (!_isCapturing)
+            {
+                if (captureRequired)
+                {
+                    _isCapturing = true;
+                    _elapsedTime = 0;
+                    CaptureScreenshot();
+                }
 
-		CaptureScreenshot();
-	}
+                return;
+            }
+
+            if (_isCapturing && !captureRequired)
+            {
+                _isCapturing = false;
+                return;
+            }
+
+            _elapsedTime += Time.fixedDeltaTime;
+            if (_elapsedTime < _frameDuration)
+            {
+                return;
+            }
+
+            CaptureScreenshot();
+        }
     
-    private void CaptureScreenshot()
-    {
-        string screenshotFilename = $"frame_{Time.frameCount:D04}.png";
-        string screenshotFullPath = Path.Combine(_outputFolder, screenshotFilename);
-        ScreenCapture.CaptureScreenshot(screenshotFullPath);
+        private void CaptureScreenshot()
+        {
+            string screenshotFilename = $"frame_{Time.frameCount:D04}.png";
+            string screenshotFullPath = Path.Combine(_outputFolder, screenshotFilename);
+            ScreenCapture.CaptureScreenshot(screenshotFullPath);
+        }
     }
 }

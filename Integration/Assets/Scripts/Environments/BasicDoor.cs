@@ -7,6 +7,8 @@ namespace Assets.Scripts.Environments
     public class BasicDoor : Door
     {
         private Animator _animator;
+        private const string OpenAnimTrigger = "Open";
+        private const string CloseAnimTrigger = "Close";
 
         protected override void Start()
         {
@@ -21,12 +23,14 @@ namespace Assets.Scripts.Environments
 
         protected override void OnOpen()
         {
-            _animator.SetTrigger("Open");
+            _animator.SetTrigger(OpenAnimTrigger);
+            _animator.ResetTrigger(CloseAnimTrigger);
         }
 
         protected override void OnClose()
         {
-            _animator.SetTrigger("Close");
+            _animator.SetTrigger(CloseAnimTrigger);
+            _animator.ResetTrigger(OpenAnimTrigger);
         }
     }
 }

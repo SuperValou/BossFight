@@ -53,5 +53,10 @@ namespace Assets.Scripts.Players.Inputs
         /// Returns true during the frame where the Switch Weapon button is pressed.
         /// </summary>
         public abstract bool SwitchWeaponDown(out WeaponSwitchDirection weaponSwitchDirection);
+
+        /// <summary>
+        /// Returns true during the frame where the Lock-on button is pressed.
+        /// </summary>
+        public abstract bool LockOnButtonDown();
     }
 }

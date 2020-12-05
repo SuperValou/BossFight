@@ -9,15 +9,54 @@
                 "Scripts": [],
                 "Children": [
                     {
-                        "Name": "UnityInputManager",
-                        "Scripts": [
+                        "Name": "Inputs",
+                        "Scripts": [],
+                        "Children": [
                             {
                                 "Name": "MouseKeyboardInputManager",
-                                "FullName": "Assets.Scripts.Players.Inputs.MouseKeyboardInputManager",
-                                "Index": 1
+                                "Scripts": [
+                                    {
+                                        "Name": "MouseKeyboardInput",
+                                        "FullName": "Assets.Scripts.Players.Inputs.MouseKeyboardInput",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "InputRecorder",
+                                "Scripts": [
+                                    {
+                                        "Name": "InputRecorder",
+                                        "FullName": "Assets.Scripts.Players.Inputs.Replays.InputRecorder",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "InputReplayer",
+                                "Scripts": [
+                                    {
+                                        "Name": "InputReplayer",
+                                        "FullName": "Assets.Scripts.Players.Inputs.Replays.InputReplayer",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "ScreenshotCaptureManager",
+                                "Scripts": [
+                                    {
+                                        "Name": "ScreenshotCaptureManager",
+                                        "FullName": "Assets.Scripts.Players.Inputs.Replays.ScreenshotCaptureManager",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": []
                             }
-                        ],
-                        "Children": []
+                        ]
                     },
                     {
                         "Name": "SceneLoadingManagerProxy",
@@ -51,9 +90,19 @@
                         "Index": 4
                     },
                     {
+                        "Name": "LockOnManager",
+                        "FullName": "Assets.Scripts.Players.LockOns.LockOnManager",
+                        "Index": 5
+                    },
+                    {
                         "Name": "AimAssist",
                         "FullName": "Assets.Scripts.Players.AimAssist",
-                        "Index": 5
+                        "Index": 6
+                    },
+                    {
+                        "Name": "VulnerableCollider",
+                        "FullName": "Assets.Scripts.Damages.VulnerableCollider",
+                        "Index": 7
                     }
                 ],
                 "Children": [
@@ -165,7 +214,7 @@
                                 "Scripts": [
                                     {
                                         "Name": "BombImpact",
-                                        "FullName": "Assets.Scripts.Weaponry.Projectiles.BombImpact",
+                                        "FullName": "Assets.Scripts.Weaponry.Impacts.BombImpact",
                                         "Index": 1
                                     }
                                 ],
@@ -410,6 +459,40 @@
                                     {
                                         "Name": "Text",
                                         "FullName": "UnityEngine.UI.Text",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "LockOnDisplay",
+                        "Scripts": [
+                            {
+                                "Name": "LockOnDisplay",
+                                "FullName": "Assets.Scripts.Huds.LockOnDisplay",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": [
+                            {
+                                "Name": "LockCircle",
+                                "Scripts": [
+                                    {
+                                        "Name": "Image",
+                                        "FullName": "UnityEngine.UI.Image",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "HintCircle",
+                                "Scripts": [
+                                    {
+                                        "Name": "Image",
+                                        "FullName": "UnityEngine.UI.Image",
                                         "Index": 2
                                     }
                                 ],

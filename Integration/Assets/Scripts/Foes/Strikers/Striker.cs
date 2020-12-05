@@ -3,8 +3,8 @@ using Assets.Scripts.Damages;
 using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
 using Assets.Scripts.Huds;
-using Assets.Scripts.Players;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -23,10 +23,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         [Tooltip("What to do when the " + nameof(Striker) + " dies.")]
         public BossDeath death;
-
-        [Tooltip("System displaying the "+ nameof(Striker) + "'s health on screen. Can be null.")]
-        public FoeHealthDisplayProxy foeHealthDisplayProxy;
-
+        
         // -- Class
 
         private StrikerBehaviour[] _behaviours;
@@ -63,17 +60,12 @@ namespace Assets.Scripts.Foes.Strikers
             stompingAttack.EmitShockWave();
         }
 
-        protected override void OnDamageTaken()
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
-            if (foeHealthDisplayProxy != null)
-            {
-                foeHealthDisplayProxy.Show((Damageable) this);
-            }
-
             this.Animator.SetBool(StrikerAnimatorConstants.TargetIsInSightBool, true);
         }
 
-        protected override void Die()
+        protected override void OnDeath()
         {
             Animator.SetTrigger(StrikerAnimatorConstants.DeathTrigger);
             death?.Activate();

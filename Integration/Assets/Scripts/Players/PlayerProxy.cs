@@ -7,7 +7,7 @@ namespace Assets.Scripts.Players
         private readonly Vector3 _playerCenterOfMassOffset = new Vector3(0, 1.20f, 0);
         private Player _player;
         
-        void Start()
+        void Awake()
         {
             _player = Object.FindObjectOfType<Player>();
             if (_player == null)
