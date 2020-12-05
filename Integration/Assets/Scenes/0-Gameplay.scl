@@ -486,6 +486,17 @@
                                     }
                                 ],
                                 "Children": []
+                            },
+                            {
+                                "Name": "HintCircle",
+                                "Scripts": [
+                                    {
+                                        "Name": "Image",
+                                        "FullName": "UnityEngine.UI.Image",
+                                        "Index": 2
+                                    }
+                                ],
+                                "Children": []
                             }
                         ]
                     }

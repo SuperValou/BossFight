@@ -198,6 +198,17 @@
                                             }
                                         ],
                                         "Children": []
+                                    },
+                                    {
+                                        "Name": "LockOn",
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
                                     }
                                 ]
                             },
@@ -221,6 +232,17 @@
                                     }
                                 ],
                                 "Children": [
+                                    {
+                                        "Name": "LockOn",
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
                                     {
                                         "Name": "Sphere",
                                         "Scripts": [
@@ -345,7 +367,7 @@
                         "Scripts": [],
                         "Children": [
                             {
-                                "Name": "Cube A",
+                                "Name": "Cube",
                                 "Scripts": [
                                     {
                                         "Name": "LockOnTarget",
@@ -356,12 +378,23 @@
                                 "Children": []
                             },
                             {
-                                "Name": "Cube B",
+                                "Name": "Sphere",
                                 "Scripts": [
                                     {
                                         "Name": "LockOnTarget",
                                         "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
                                         "Index": 4
+                                    }
+                                ],
+                                "Children": []
+                            },
+                            {
+                                "Name": "Pyramid ",
+                                "Scripts": [
+                                    {
+                                        "Name": "LockOnTarget",
+                                        "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                        "Index": 3
                                     }
                                 ],
                                 "Children": []
