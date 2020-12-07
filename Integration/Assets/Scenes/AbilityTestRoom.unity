@@ -17975,7 +17975,7 @@ GameObject:
   - component: {fileID: 1350032693}
   - component: {fileID: 1350032694}
   m_Layer: 0
-  m_Name: AbilityRoomSceneScript
+  m_Name: AbilityTestRoomScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
