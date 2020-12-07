@@ -333,6 +333,28 @@
                                                 "Scripts": [],
                                                 "Children": [
                                                     {
+                                                        "Name": "LockOnTarget",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "LockOnTarget",
+                                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
+                                                        "Name": "Weakpoint",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "VulnerableCollider",
+                                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
                                                         "Name": "engine_large_29",
                                                         "Scripts": [
                                                             {
@@ -390,14 +412,20 @@
                             },
                             {
                                 "Name": "Pyramid ",
-                                "Scripts": [
+                                "Scripts": [],
+                                "Children": [
                                     {
                                         "Name": "LockOnTarget",
-                                        "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
-                                        "Index": 3
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
                                     }
-                                ],
-                                "Children": []
+                                ]
                             }
                         ]
                     }
