@@ -75,8 +75,6 @@ namespace Assets.Scripts.Foes
             }
             
             // Aim
-            pivot.LookAt(_target);
-            
             if (_targetLastKnownPosition == Vector3.zero)
             {
                 _targetLastKnownPosition = _target.position;
@@ -99,6 +97,16 @@ namespace Assets.Scripts.Foes
 
             StartCoroutine(FireRoutine());
             _lastVolleyTime = Time.time;
+        }
+
+        void LateUpdate()
+        {
+            if (_target == null)
+            {
+                return;
+            }
+
+            pivot.LookAt(_target);
         }
 
         private IEnumerator FireRoutine()

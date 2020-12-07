@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Huds.Transitions;
+using Assets.Scripts.Huds.Transitions;
 using Assets.Scripts.Players.LockOns;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,7 +54,9 @@ namespace Assets.Scripts.Huds
             _hintCircleTransition.Initialize();
         }
 
-        void Update()
+        // Update Priority: +100
+        // Ensure target position is not a frame behind
+        void LateUpdate()
         {
             if (lockOnManager.HasTargetLocked)
             {

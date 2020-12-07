@@ -64,8 +64,8 @@ namespace Assets.Scripts.Players.LockOns
                 _lockOnNotifiables.Add((ILockOnNotifiable) monoBehaviour);
             }
         }
-
-        void Update()
+        
+        void LateUpdate()
         {
             if (_isLocked)
             {

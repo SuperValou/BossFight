@@ -92,8 +92,12 @@ namespace Assets.Scripts.Players
         void Update()
         {
             UpdateMove();
-            UpdateLookAround();
             UpdateFire();
+        }
+
+        void LateUpdate()
+        {
+            UpdateLookAround();
         }
         
         void OnControllerColliderHit(ControllerColliderHit hit)
