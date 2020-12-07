@@ -1,0 +1,76 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "AnimationTestRoom",
+        "ScenePath": "Assets/Scenes/AnimationTestRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "NavMeshSurface",
+                        "Scripts": [
+                            {
+                                "Name": "NavMeshSurface",
+                                "FullName": "Assets.Scripts.Foes.ArtificialIntelligences.NavMeshComponents.NavMeshSurface",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "PlayerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerProxy",
+                                "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplayProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Foes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Striker",
+                                "Scripts": [
+                                    {
+                                        "Name": "Striker",
+                                        "FullName": "Assets.Scripts.Foes.Strikers.Striker",
+                                        "Index": 3
+                                    }
+                                ],
+                                "Children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -29,7 +29,10 @@
         [SceneInfo("1-BossRoom", SceneType.Room)]
         BossRoomScene,
 
-        [SceneInfo("AbilityRoomScene", SceneType.TestRoom)]
-        AbilityRoomScene
+        [SceneInfo("AbilityTestRoom", SceneType.TestRoom)]
+        AbilityTestRoomScene,
+
+        [SceneInfo("AnimationTestRoom", SceneType.TestRoom)]
+        AnimationTestRoomScene
     }
 }

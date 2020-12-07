@@ -1,8 +1,8 @@
 {
     "SerializationMajorVersion": 2,
     "SceneInfo": {
-        "SceneName": "AbilityRoomScene",
-        "ScenePath": "Assets/Scenes/AbilityRoomScene.unity",
+        "SceneName": "AbilityTestRoom",
+        "ScenePath": "Assets/Scenes/AbilityTestRoom.unity",
         "RootGameObjectInfos": [
             {
                 "Name": "AbilityRoomSceneScript",
