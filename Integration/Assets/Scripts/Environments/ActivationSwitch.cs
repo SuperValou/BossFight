@@ -7,16 +7,16 @@ namespace Assets.Scripts.Environments
     {
         // -- Editor
 
-        public bool turnedOnOnStart = false;
+        public bool initialState = false;
         
         // -- Class
 
         public bool IsTurnedOn { get; private set; }
         public bool IsTurnedOff => !IsTurnedOn;
         
-        void Start()
+        void Awake()
         {
-            IsTurnedOn = turnedOnOnStart;
+            IsTurnedOn = initialState;
         }
 
         public void Flip()

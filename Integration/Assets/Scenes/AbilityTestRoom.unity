@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 287244984}
   - component: {fileID: 287244989}
   m_Layer: 0
-  m_Name: Switch
+  m_Name: ActivationSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1762,12 +1762,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287244982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.533, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 605884910}
-  m_Father: {fileID: 1220221200}
-  m_RootOrder: 2
+  m_Father: {fileID: 746707219}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &287244989
 MonoBehaviour:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e973b1867acf34ab5aeaf27cfc44e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnedOnOnStart: 0
+  initialState: 0
 --- !u!1 &311127742
 GameObject:
   m_ObjectHideFlags: 0
@@ -4439,9 +4439,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605884909}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.165, y: 1.5, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16499999, y: 1.5, z: 0}
+  m_LocalScale: {x: 0.09999999, y: 0.5, z: 0.49999988}
   m_Children: []
   m_Father: {fileID: 287244987}
   m_RootOrder: 0
@@ -4981,6 +4981,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnManagerProxy: {fileID: 1850727527}
+--- !u!1 &746707218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746707219}
+  - component: {fileID: 746707223}
+  - component: {fileID: 746707222}
+  - component: {fileID: 746707220}
+  m_Layer: 0
+  m_Name: BasicSwitch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746707219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746707218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 287244987}
+  - {fileID: 970265122}
+  m_Father: {fileID: 1220221200}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746707220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746707218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad3a5481810c80489c7d43d83c336d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabledText: On
+  disabledText: Off
+  enabledColor: {r: 0, g: 0.6981132, b: 0, a: 1}
+  disabledColor: {r: 0.5849056, g: 0, b: 0, a: 1}
+  activationSwitch: {fileID: 287244989}
+  label: {fileID: 970265123}
+  colorRenderer: {fileID: 605884912}
+--- !u!222 &746707222
+CanvasRenderer:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746707218}
+  m_CullTransparentMesh: 0
+--- !u!33 &746707223
+MeshFilter:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746707218}
+  m_Mesh: {fileID: 0}
 --- !u!1001 &753107463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6324,13 +6394,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970265122}
-  - component: {fileID: 970265127}
   - component: {fileID: 970265125}
   - component: {fileID: 970265124}
   - component: {fileID: 970265123}
   - component: {fileID: 970265126}
   m_Layer: 0
-  m_Name: TurretStateLabel
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6347,7 +6416,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1220221200}
+  m_Father: {fileID: 746707219}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6374,7 +6443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Turret is \n<turret_state>"
+  m_text: <switch state>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6443,12 +6512,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 2.2136092}
   m_textInfo:
     textComponent: {fileID: 970265123}
-    characterCount: 25
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 1
+    wordCount: 3
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -6521,21 +6590,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &970265127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970265121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad3a5481810c80489c7d43d83c336d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationSwitch: {fileID: 287244989}
-  enabledText: Turret is on
-  disabledText: Turret is off
 --- !u!1 &977722501
 GameObject:
   m_ObjectHideFlags: 0
@@ -17220,8 +17274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 463853899}
-  - {fileID: 970265122}
-  - {fileID: 287244987}
+  - {fileID: 746707219}
   m_Father: {fileID: 1323025339}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
