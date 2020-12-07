@@ -55,7 +55,7 @@ namespace Assets.Scripts.Huds
         }
 
         // Update Priority: +100
-        // Ensure target position is not a frame behind
+        // Ensure target viewport position is not a frame behind
         void LateUpdate()
         {
             if (lockOnManager.HasTargetLocked)
@@ -63,11 +63,6 @@ namespace Assets.Scripts.Huds
                 lockCircle.transform.Rotate(lockCircle.transform.forward, lockedAngularSpeed);
 
                 Vector2 viewportPosition = lockOnManager.TargetViewportPosition;
-                if (viewportPosition.x == 0.5f && viewportPosition.y == 0.5f)
-                {
-                    return;
-                }
-
                 Vector2 screenPosition = new Vector2(viewportPosition.x * Screen.width, viewportPosition.y * Screen.height);
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(lockCircle.rectTransform.parent as RectTransform, screenPosition, cam: null, out Vector2 localPosition);
                 lockCircle.transform.localPosition = localPosition;
