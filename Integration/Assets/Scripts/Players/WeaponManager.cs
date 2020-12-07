@@ -12,9 +12,6 @@ namespace Assets.Scripts.Players
         [Header("Parts")]
         public AbstractWeapon[] weapons;
         
-        [Header("References")]
-        public AbstractInput input;
-
         // -- Class
         
         private int _currentWeaponIndex;
@@ -27,31 +24,28 @@ namespace Assets.Scripts.Players
             _currentWeaponIndex = 0;
         }
 
-        void Update()
+        public void InitFire()
         {
-            if (input.FireButtonDown())
-            {
-                CurrentWeapon.InitFire();
-            }
+            CurrentWeapon.InitFire();
+        }
 
-            if (input.FireButtonUp())
-            {
-                CurrentWeapon.ReleaseFire();
-            }
+        public void ReleaseFire()
+        {
+            CurrentWeapon.ReleaseFire();
+        }
 
-            if (!input.FireButton() && input.SwitchWeaponDown(out WeaponSwitchDirection direction))
+        public void SwitchWeapon(WeaponSwitchDirection direction)
+        {
+            if (direction == WeaponSwitchDirection.Next)
             {
-                if (direction == WeaponSwitchDirection.Next)
-                {
-                    _currentWeaponIndex = (_currentWeaponIndex + 1) % weapons.Length;
-                    
-                }
-                else if (direction == WeaponSwitchDirection.Previous)
-                {
-                    _currentWeaponIndex = (_currentWeaponIndex + weapons.Length -1) % weapons.Length;
-                }
-            }
+                _currentWeaponIndex = (_currentWeaponIndex + 1) % weapons.Length;
 
+            }
+            else if (direction == WeaponSwitchDirection.Previous)
+            {
+                _currentWeaponIndex = (_currentWeaponIndex + weapons.Length - 1) % weapons.Length;
+            }
+            
             CurrentWeapon = weapons[_currentWeaponIndex];
         }
     }

@@ -64,6 +64,7 @@ namespace Assets.Scripts.Players
 
         private Transform _transform;
         private CharacterController _controller;
+        private WeaponManager _weaponManager;
         private LockOnManager _lockOnManager;
 
         private bool _isGrounded;
@@ -83,6 +84,7 @@ namespace Assets.Scripts.Players
         {
             _transform = this.GetOrThrow<Transform>();
             _controller = this.GetOrThrow<CharacterController>();
+            _weaponManager = this.GetOrThrow<WeaponManager>();
             _lockOnManager = this.GetOrThrow<LockOnManager>();
         }
 
@@ -91,6 +93,7 @@ namespace Assets.Scripts.Players
         {
             UpdateMove();
             UpdateLookAround();
+            UpdateFire();
         }
         
         void OnControllerColliderHit(ControllerColliderHit hit)
@@ -233,7 +236,25 @@ namespace Assets.Scripts.Players
             _controller.Move(controllerVelocity * Time.deltaTime);
             _isGrounded = _controller.isGrounded;
         }
-        
+
+        private void UpdateFire()
+        {
+            if (input.FireButtonDown())
+            {
+                _weaponManager.InitFire();
+            }
+
+            if (input.FireButtonUp())
+            {
+                _weaponManager.ReleaseFire();
+            }
+
+            if (!input.FireButton() && input.SwitchWeaponDown(out WeaponSwitchDirection direction))
+            {
+                _weaponManager.SwitchWeapon(direction);
+            }
+        }
+
         private void OnFell(float fallDistance)
         {
             // fell and touched the ground

@@ -6,23 +6,25 @@ namespace Assets.Scripts.Players.Inputs.Replays.Serializers.DTOs
     [Serializable]
     public struct InputFrame
     {
-        public float Time;
+        public float t;
 
-        public Vector2 LookVector;
-        public Vector3 MoveVector;
+        public Vector2 look;
+        public Vector3 move;
 
-        public bool FireDown;
-        public bool Fire;
-        public bool FireUp;
+        public bool lockonDw;
 
-        public bool JumpDown;
-        public bool Jump;
+        public bool fireDw;
+        public bool fire;
+        public bool fireUp;
 
-        public bool BoosterDown;
+        public bool jumpDw;
+        public bool jump;
 
-        public bool DashDown;
+        public bool boostDw;
 
-        public bool SwitchWeaponDown;
-        public int WeaponSwitchDirection;
+        public bool dashDw;
+
+        public bool swtchWeapDw;
+        public int weapSwtchDir;
     };
 }
