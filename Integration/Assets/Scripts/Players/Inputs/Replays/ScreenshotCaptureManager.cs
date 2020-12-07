@@ -40,7 +40,7 @@ namespace Assets.Scripts.Players.Inputs.Replays
             _elapsedTime = 0;
         }
 
-        void FixedUpdate()
+        void Update()
         {
             if (_outputFolder == null)
             {
@@ -52,8 +52,8 @@ namespace Assets.Scripts.Players.Inputs.Replays
                 if (captureRequired)
                 {
                     _isCapturing = true;
-                    _elapsedTime = 0;
                     CaptureScreenshot();
+                    _elapsedTime = 0;
                 }
 
                 return;
@@ -65,20 +65,23 @@ namespace Assets.Scripts.Players.Inputs.Replays
                 return;
             }
 
-            _elapsedTime += Time.fixedDeltaTime;
+            _elapsedTime += Time.deltaTime;
             if (_elapsedTime < _frameDuration)
             {
                 return;
             }
 
             CaptureScreenshot();
+            _elapsedTime = 0;
         }
     
         private void CaptureScreenshot()
         {
             string screenshotFilename = $"frame_{Time.frameCount:D04}.png";
             string screenshotFullPath = Path.Combine(_outputFolder, screenshotFilename);
+            
             ScreenCapture.CaptureScreenshot(screenshotFullPath);
+            Debug.Log($"Captured frame {Time.frameCount} after {_elapsedTime:0.###}s (~{(1f / _elapsedTime):0} fps)");
         }
     }
 }
