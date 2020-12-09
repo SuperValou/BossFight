@@ -16078,6 +16078,9 @@ MonoBehaviour:
   leftMargin: 0.1
   rightMargin: 0.9
   maxLockRange: 50
+  blockingLineOfSightLayers:
+    serializedVersion: 2
+    m_Bits: 33792
   eye: {fileID: 963194227}
   onLockOnEvents:
   - {fileID: 383359840}

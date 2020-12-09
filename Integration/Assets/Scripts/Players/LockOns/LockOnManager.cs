@@ -25,6 +25,9 @@ namespace Assets.Scripts.Players.LockOns
         [Tooltip("Maximum distance of the target before breaking lock-on (meters).")]
         public float maxLockRange = 20;
 
+        [Tooltip("Colliders on these layers will block line of sight.")]
+        public LayerMask blockingLineOfSightLayers;
+
         [Header("References")]
         public Camera eye;
 
@@ -89,13 +92,22 @@ namespace Assets.Scripts.Players.LockOns
             {
                 Vector3 targetViewportPosition = eye.WorldToViewportPoint(lockableTarget.transform.position);
                 
-                var targetPosition = lockableTarget.transform.position - this.transform.position;
-                float targetSquaredDistance = Vector3.SqrMagnitude(targetPosition);
+                // Check range
+                var targetRelativePosition = lockableTarget.transform.position - eye.transform.position;
+                float targetSquaredDistance = Vector3.SqrMagnitude(targetRelativePosition);
                 if (IsOutOfRange(targetViewportPosition, targetSquaredDistance))
                 {
                     continue;
                 }
 
+                // Check visibility
+                if (Physics.Linecast(eye.transform.position, lockableTarget.transform.position, blockingLineOfSightLayers, QueryTriggerInteraction.Ignore))
+                {
+                    // target is obscured by something
+                    continue;
+                }
+
+                // Check if this is the nearest target
                 Vector2 positionFromViewPortCenter = ((Vector2) targetViewportPosition) - _viewportCenter;
                 float squaredDistanceToCenter = Vector2.SqrMagnitude(positionFromViewPortCenter);
                 if (squaredDistanceToCenter < minSquaredDistanceToCenter)
