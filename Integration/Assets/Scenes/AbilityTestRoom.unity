@@ -1191,6 +1191,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 981947130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &148938950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6729719880028511216, guid: 64b1b5a73fdd2994d80458c3a5bb6fc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 572724676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &148938951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148938950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &148938954
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148938950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5862300186250907108, guid: c28d70bcb2498d8488cefcf725022831, type: 3}
 --- !u!1001 &150570946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17447,6 +17479,7 @@ GameObject:
   - component: {fileID: 1263473867}
   - component: {fileID: 1263473866}
   - component: {fileID: 1263473870}
+  - component: {fileID: 1263473871}
   m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
@@ -17541,6 +17574,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnManagerProxy: {fileID: 1850727527}
+--- !u!114 &1263473871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263473865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1266809182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6451683941179227234, guid: 8d9f4a198cdad5041b16b19bb385bd1c,
@@ -26536,6 +26581,7 @@ GameObject:
   - component: {fileID: 1731792930}
   - component: {fileID: 1731792929}
   - component: {fileID: 1731792932}
+  - component: {fileID: 1731792933}
   m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
@@ -26630,6 +26676,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnManagerProxy: {fileID: 1850727527}
+--- !u!114 &1731792933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731792927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1732161711
 PrefabInstance:
   m_ObjectHideFlags: 0
