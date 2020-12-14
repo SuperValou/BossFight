@@ -547,6 +547,11 @@
                                         "Name": "DamageFeedback",
                                         "FullName": "Assets.Scripts.Damages.DamageFeedback",
                                         "Index": 2
+                                    },
+                                    {
+                                        "Name": "TurretAi",
+                                        "FullName": "Assets.Scripts.Foes.TurretAi",
+                                        "Index": 3
                                     }
                                 ],
                                 "Children": [
