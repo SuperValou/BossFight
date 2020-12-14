@@ -151,7 +151,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
 
         public virtual void OnGettingAttacked()
         {
-            _animator.SetTrigger(HostileTrigger);
+            _animator.SetTrigger(AlertTrigger);
         }
 
         protected bool TargetIsInLineOfSight()
