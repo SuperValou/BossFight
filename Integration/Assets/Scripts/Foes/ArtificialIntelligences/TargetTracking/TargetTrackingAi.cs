@@ -66,15 +66,8 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
                 return;
             }
 
-            if (targetRelativePosition.sqrMagnitude < maxHostileRange * maxHostileRange)
-            {
-                Animator.SetTrigger(HostileTrigger);
-            }
-            else
-            {
-                Animator.SetTrigger(AlertTrigger);
-                _lastLineOfSightTime = Time.time;
-            }
+            Animator.SetTrigger(AlertTrigger);
+            _lastLineOfSightTime = Time.time;
         }
 
         public virtual void AlertUpdate()
