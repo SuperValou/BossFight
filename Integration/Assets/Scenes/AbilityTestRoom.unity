@@ -30021,6 +30021,11 @@ PrefabInstance:
       propertyPath: blinkColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5750307082645465654, guid: 94373342a5f87ea47b67dbfe9089da88,
+        type: 3}
+      propertyPath: playerProxy
+      value: 
+      objectReference: {fileID: 1951326911}
     - target: {fileID: 6456717402676405267, guid: 94373342a5f87ea47b67dbfe9089da88,
         type: 3}
       propertyPath: lockOnManagerProxy

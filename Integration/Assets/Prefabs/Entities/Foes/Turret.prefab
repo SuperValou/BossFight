@@ -10034,7 +10034,8 @@ GameObject:
   - component: {fileID: 1579339461741231089}
   - component: {fileID: 1579339461741231102}
   - component: {fileID: 1579339461741231103}
-  - component: {fileID: 1579339461741231100}
+  - component: {fileID: 5750307082645465654}
+  - component: {fileID: 4338002228416457097}
   m_Layer: 11
   m_Name: Turret
   m_TagString: Untagged
@@ -10075,13 +10076,6 @@ MonoBehaviour:
   onDamageReceived:
   - {fileID: 0}
   - {fileID: 0}
-  volleyDelay: 2
-  bulletsPerVolley: 3
-  bulletDelay: 0.15
-  imprecisionRadius: 0.5
-  targetMovementAnticipation: 15
-  pivot: {fileID: 1579339461113845265}
-  projectileEmitter: {fileID: 1579339460914622366}
 --- !u!114 &1579339461741231103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10097,19 +10091,52 @@ MonoBehaviour:
   blinkColor: {r: 1, g: 1, b: 1, a: 1}
   blinkColorCritical: {r: 1, g: 0, b: 0, a: 1}
   blinkDuration: 0.1
---- !u!65 &1579339461741231100
-BoxCollider:
+--- !u!114 &5750307082645465654
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579339461741231088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 50, y: 20, z: 50}
-  m_Center: {x: 0, y: 10, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d3e2c3e484a8d41967613a1942d9d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDetectionRange: 50
+  maxHostileRange: 30
+  brokenLineOfSightTimeout: 5
+  blockingLineOfSightLayers:
+    serializedVersion: 2
+    m_Bits: 33792
+  eye: {fileID: 4353962173191311674}
+  volleyDelay: 2
+  bulletsPerVolley: 3
+  bulletDelay: 0.15
+  imprecisionRadius: 0.5
+  targetMovementAnticipation: 15
+  pivot: {fileID: 1579339461113845265}
+  projectileEmitter: {fileID: 1579339460914622366}
+  playerProxy: {fileID: 0}
+--- !u!95 &4338002228416457097
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579339461741231088}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f3f9ce9c679f1247ab319d2664ee468, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1579339462049103923
 GameObject:
   m_ObjectHideFlags: 0
@@ -10847,15 +10874,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b1f268a09bee404097da602e9cb9e08, type: 3}
---- !u!4 &2512383717975474894 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3978709756062067542, guid: 4b1f268a09bee404097da602e9cb9e08,
-    type: 3}
-  m_PrefabInstance: {fileID: 1579339461040449944}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3346561601525340639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4295185913978548295, guid: 4b1f268a09bee404097da602e9cb9e08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1579339461040449944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2512383717975474894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3978709756062067542, guid: 4b1f268a09bee404097da602e9cb9e08,
     type: 3}
   m_PrefabInstance: {fileID: 1579339461040449944}
   m_PrefabAsset: {fileID: 0}
