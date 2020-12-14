@@ -96,9 +96,13 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
                     // target is now close enough to be attacked
                     _animator.SetTrigger(HostileTrigger);
                 }
+
+                return;
             }
-            else if (_lastLineOfSightTime > brokenLineOfSightTimeout &&
-                     targetRelativePosition.sqrMagnitude > maxHostileRange * maxHostileRange)
+
+            float timeSinceLastLineOfSight = Time.time - _lastLineOfSightTime;
+            if (timeSinceLastLineOfSight > brokenLineOfSightTimeout &&
+                targetRelativePosition.sqrMagnitude > maxHostileRange * maxHostileRange)
             {
                 // target was seen a long time ago and is too far away
                 _animator.SetTrigger(QuietTrigger);
@@ -118,7 +122,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
             {
                 Vector3 targetRelativePosition = Target.position - eye.position;
 
-                if (targetRelativePosition.sqrMagnitude > maxHostileRange * maxHostileRange)
+                if (targetRelativePosition.sqrMagnitude < maxHostileRange * maxHostileRange)
                 {
                     // target is in direct line of sight and still close enough
                     return;
