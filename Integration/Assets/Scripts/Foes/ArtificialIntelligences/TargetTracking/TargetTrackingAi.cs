@@ -29,16 +29,16 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         private const string AlertTrigger = "AlertTrigger";
         private const string HostileTrigger = "HostileTrigger";
 
-        private Animator _animator;
-        
         private float _lastLineOfSightTime = 0;
+
+        protected Animator Animator { get; private set; }
 
         protected Transform Target { get; set; }
 
         protected virtual void Start()
         {
-            _animator = this.GetOrThrow<Animator>();
-            var behaviours = _animator.GetBehaviours<TargetTrackingBehaviour>();
+            Animator = this.GetOrThrow<Animator>();
+            var behaviours = Animator.GetBehaviours<TargetTrackingBehaviour>();
             foreach (var behaviour in behaviours)
             {
                 behaviour.Initialize(stateMachine: this);
@@ -68,11 +68,11 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
 
             if (targetRelativePosition.sqrMagnitude < maxHostileRange * maxHostileRange)
             {
-                _animator.SetTrigger(HostileTrigger);
+                Animator.SetTrigger(HostileTrigger);
             }
             else
             {
-                _animator.SetTrigger(AlertTrigger);
+                Animator.SetTrigger(AlertTrigger);
                 _lastLineOfSightTime = Time.time;
             }
         }
@@ -81,7 +81,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         {
             if (Target == null)
             {
-                _animator.SetTrigger(QuietTrigger);
+                Animator.SetTrigger(QuietTrigger);
                 return;
             }
 
@@ -94,7 +94,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
                 if (targetRelativePosition.sqrMagnitude < maxHostileRange * maxHostileRange)
                 {
                     // target is now close enough to be attacked
-                    _animator.SetTrigger(HostileTrigger);
+                    Animator.SetTrigger(HostileTrigger);
                 }
 
                 return;
@@ -105,7 +105,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
                 targetRelativePosition.sqrMagnitude > maxHostileRange * maxHostileRange)
             {
                 // target was seen a long time ago and is too far away
-                _animator.SetTrigger(QuietTrigger);
+                Animator.SetTrigger(QuietTrigger);
             }
         }
 
@@ -114,7 +114,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
             if (Target == null)
             {
                 // target destroyed
-                _animator.SetTrigger(QuietTrigger);
+                Animator.SetTrigger(QuietTrigger);
                 return;
             }
 
@@ -130,7 +130,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
             }
 
             // lost line of sight, or target got too far away
-            _animator.SetTrigger(AlertTrigger);
+            Animator.SetTrigger(AlertTrigger);
             _lastLineOfSightTime = Time.time;
         }
 
@@ -151,7 +151,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
 
         public virtual void OnGettingAttacked()
         {
-            _animator.SetTrigger(AlertTrigger);
+            Animator.SetTrigger(AlertTrigger);
         }
 
         protected bool TargetIsInLineOfSight()
