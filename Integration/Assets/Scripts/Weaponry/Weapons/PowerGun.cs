@@ -8,7 +8,8 @@ namespace Assets.Scripts.Weaponry.Weapons
     public class PowerGun : Gun
     {
         // -- Editor
-        [Header("Self")]
+
+        [Header("Values")]
         [Tooltip("Minimum charge to shoot a charged blast")]
         public float chargeThreshold = 0.2f;
 
@@ -21,13 +22,8 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         [Header("Parts")]
         public ProjectileEmitter chargedProjectileEmitter;
-
-        [Header("Sounds")]
-        public AudioClip _chargedShotSound;
-
-        [Header("Anims")]
         public ParticleSystem chargeEmitter;
-
+        
         // -- Class
 
         private bool _isChargeRafaleShooting = false;

@@ -12,7 +12,8 @@ namespace Assets.Scripts.Weaponry.Projectiles
         // -- Editor
 
         [Header("Values")]
-        public float baseDamage = 1;
+        [Tooltip("Damage dealt per particle.")]
+        public float damagePerParticle = 1;
 
         [Header("Reference")]
         public ProjectileImpact projectileImpact;
@@ -21,7 +22,8 @@ namespace Assets.Scripts.Weaponry.Projectiles
         // -- Class
 
         private ParticleSystem _particleSystem;
-        
+        private int _particlesPerShot;
+
         void Start()
         {
             if (projectileImpact == null)
@@ -30,11 +32,13 @@ namespace Assets.Scripts.Weaponry.Projectiles
             }
 
             _particleSystem = this.GetOrThrow<ParticleSystem>();
+            var burst = _particleSystem.emission.GetBurst(index: 0);
+            _particlesPerShot = (int) burst.count.constant;
         }
 
         public void EmitProjectile()
         {
-            _particleSystem.Emit(1);
+            _particleSystem.Emit(_particlesPerShot);
         }
 
         void OnParticleCollision(GameObject other)
@@ -50,7 +54,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
             var vulnerableCollider = other.GetComponent<VulnerableCollider>();
             if (vulnerableCollider != null)
             {
-                DamageData damageData = new DamageData(baseDamage);
+                DamageData damageData = new DamageData(damagePerParticle);
                 vulnerableCollider.OnHit(damageData, damager: this);
             }
 

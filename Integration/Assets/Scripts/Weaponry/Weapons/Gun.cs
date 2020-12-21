@@ -10,13 +10,14 @@ namespace Assets.Scripts.Weaponry.Weapons
     {
         // -- Editor 
 
+        [Header("Parts")]
         public ProjectileEmitter projectileEmitter;
 
         // -- Class
 
         protected AudioSource AudioSource { get; private set; }
 
-        void Start()
+        protected virtual void Start()
         {
             if (projectileEmitter == null)
             {
