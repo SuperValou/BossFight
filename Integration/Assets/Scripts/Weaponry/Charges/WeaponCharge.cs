@@ -1,29 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assets.Scripts.Weaponry.Charges;
 using UnityEngine;
 
-namespace Assets.Scripts.Weaponry.Weapons
+namespace Assets.Scripts.Weaponry.Charges
 {
     public class WeaponCharge : MonoBehaviour
     {
         // -- Editor
 
-        [Header("Values")]
-        [Tooltip("Time to fully charge (seconds).")]
+        [Header("Values")] [Tooltip("Time to fully charge (seconds).")]
         public float timeToCharge = 1f;
 
-        [Tooltip("Minimum value ")]
+        [Tooltip("Delay before actually beginning to charge after requested (seconds).")]
+        public float beginDelay = 0.1f;
+
+        [Tooltip("Minimum value to reach to be considered a bit charged (between 0 and 1)")] [Range(0, 1)]
         public float minChargeThreshold = 0.1f;
 
-        [Header("References")]
-        public MonoBehaviour[] chargeNotifiables;
+        [Header("References")] public MonoBehaviour[] chargeNotifiables;
 
 
         // -- Class
 
+        private readonly ICollection<IChargeNotifiable> _chargeNotifiables = new HashSet<IChargeNotifiable>();
+
         private float _holdTime;
-        private ICollection<IChargeNotifiable> _chargeNotifiables = new HashSet<IChargeNotifiable>();
 
         /// <summary>
         /// Is it charging?
@@ -61,39 +62,49 @@ namespace Assets.Scripts.Weaponry.Weapons
             }
 
             _holdTime = Time.time;
-            IsCharging = true;
-
-            foreach (var notifiable in _chargeNotifiables)
-            {
-                try
-                {
-                    notifiable.OnChargeBegin();
-                }
-                catch (Exception e)
-                {
-                    Debug.LogException(e);
-                }
-            }
         }
 
         void Update()
         {
             if (timeToCharge <= 0)
             {
-                Debug.LogWarning($"{nameof(WeaponCharge)} ({gameObject}): {nameof(timeToCharge)} was not strictly positive, defaulted to 1.");
+                Debug.LogWarning(
+                    $"{nameof(WeaponCharge)} ({gameObject}): {nameof(timeToCharge)} was not strictly positive, defaulted to 1.");
                 timeToCharge = 1;
                 return;
             }
 
-            if (!IsCharging)
+            if (_holdTime <= 0)
             {
                 return;
             }
+            
+            // Charge-beginning delay
+            if (!IsCharging && Time.time > _holdTime + beginDelay)
+            {
+                IsCharging = true;
 
-            float chargingTime = Time.time - _holdTime;
+                foreach (var notifiable in _chargeNotifiables)
+                {
+                    try
+                    {
+                        notifiable.OnChargeBegin();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogException(e);
+                    }
+                }
+
+                return;
+            }
+            
+            // Update charge value
+            float chargingTime = Time.time - _holdTime - beginDelay;
             float previousCharge = ChargeValue;
             ChargeValue = Mathf.Clamp01(chargingTime / timeToCharge);
 
+            // Min threshold notification
             if (previousCharge < minChargeThreshold && ChargeValue >= minChargeThreshold)
             {
                 foreach (var notifiable in _chargeNotifiables)
@@ -109,6 +120,7 @@ namespace Assets.Scripts.Weaponry.Weapons
                 }
             }
 
+            // Full charge notification
             if (previousCharge < 1 && ChargeValue >= 1)
             {
                 foreach (var notifiable in _chargeNotifiables)
@@ -128,7 +140,8 @@ namespace Assets.Scripts.Weaponry.Weapons
         public void Stop()
         {
             IsCharging = false;
-
+            _holdTime = -1;
+            
             foreach (var notifiable in _chargeNotifiables)
             {
                 try
@@ -142,11 +155,12 @@ namespace Assets.Scripts.Weaponry.Weapons
             }
         }
 
+        // Will begin a new charge cycle if Stop() was not called beforehand
         public void Clear()
         {
-            _holdTime = Time.time;
             ChargeValue = 0;
-
+            IsCharging = false;
+            
             foreach (var notifiable in _chargeNotifiables)
             {
                 try

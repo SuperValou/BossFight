@@ -47375,7 +47375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileEmitter: {fileID: 153203347}
   timeBetweenRafaleShot: 0.2
-  maxRafaleShotCount: 3
+  maxRafaleShotCount: 2
   chargedProjectileEmitter: {fileID: 1034646949}
 --- !u!82 &3994447418975221888
 AudioSource:
@@ -47486,6 +47486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToCharge: 1
+  beginDelay: 0.1
   minChargeThreshold: 0.2
   chargeNotifiables:
   - {fileID: 443834831}
