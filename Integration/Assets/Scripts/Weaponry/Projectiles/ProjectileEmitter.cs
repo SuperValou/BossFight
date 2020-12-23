@@ -49,23 +49,25 @@ namespace Assets.Scripts.Weaponry.Projectiles
             {
                 activableSwitch.Flip();
             }
+            
+            var collisionEvents = _particleSystem.GetCollisionsWith(other);
 
-            // Damageables
+            // Damages
             var vulnerableCollider = other.GetComponent<VulnerableCollider>();
             if (vulnerableCollider != null)
             {
-                DamageData damageData = new DamageData(damagePerParticle);
+                float damageAmount = damagePerParticle * collisionEvents.Count;
+                DamageData damageData = new DamageData(damageAmount);
                 vulnerableCollider.OnHit(damageData, damager: this);
             }
 
-            // Impact
+            // Deflectors and impacts
             var deflector = other.GetComponent<ProjectileDeflector>();
+
             if (deflector == null && projectileImpact == null)
             {
                 return;
             }
-
-            var collisionEvents = _particleSystem.GetCollisionsWith(other);
 
             foreach (var collisionEvent in collisionEvents)
             {

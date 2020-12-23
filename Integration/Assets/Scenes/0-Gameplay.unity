@@ -16844,7 +16844,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10
+    maxNumParticles: 1000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -37378,7 +37378,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 20
+    angle: 15
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -43299,7 +43299,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -47265,6 +47265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileEmitter: {fileID: 1446935691}
+  recoveryTime: 0.85
 --- !u!82 &2139547941
 AudioSource:
   m_ObjectHideFlags: 0

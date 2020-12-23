@@ -1,15 +1,54 @@
-﻿namespace Assets.Scripts.Weaponry.Weapons
+﻿using UnityEngine;
+
+namespace Assets.Scripts.Weaponry.Weapons
 {
     public class SpreadGun : Gun
     {
+        // -- Editor
+
+        [Header("Values")] [Tooltip("Time between shots (seconds).")]
+        public float recoveryTime = 1;
+
+        // -- Class
+
+        private bool _holdingTrigger;
+        private float _lastShotTime;
+
         public override void InitFire()
         {
-            projectileEmitter.EmitProjectile();
+            _holdingTrigger = true;
+            ShootIfPossible();
+        }
+
+        void Update()
+        {
+            if (!_holdingTrigger)
+            {
+                return;
+            }
+
+            ShootIfPossible();
         }
 
         public override void ReleaseFire()
         {
-            // do nothing
+            _holdingTrigger = false;
+        }
+
+        private void ShootIfPossible()
+        {
+            if (Time.time < _lastShotTime + recoveryTime)
+            {
+                return;
+            }
+
+            ShootProjectile();
+            _lastShotTime = Time.time;
+        }
+
+        private void ShootProjectile()
+        {
+            projectileEmitter.EmitProjectile();
         }
     }
 }
