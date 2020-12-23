@@ -6,7 +6,8 @@ namespace Assets.Scripts.Weaponry.Weapons
     {
         // -- Editor
 
-        [Header("Values")] [Tooltip("Time between shots (seconds).")]
+        [Header("Values")]
+        [Tooltip("Time between consecutive shots (seconds).")]
         public float recoveryTime = 1;
 
         // -- Class
@@ -42,11 +43,11 @@ namespace Assets.Scripts.Weaponry.Weapons
                 return;
             }
 
-            ShootProjectile();
+            ShootPellets();
             _lastShotTime = Time.time;
         }
 
-        private void ShootProjectile()
+        private void ShootPellets()
         {
             projectileEmitter.EmitProjectile();
         }
