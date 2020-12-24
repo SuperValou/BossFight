@@ -39,20 +39,18 @@ namespace Assets.Scripts.Weaponry.Weapons
 
         public override void InitFire()
         {
+            _charge.Begin();
+
             if (_isRafaleShooting)
             {
                 return;
             }
 
             projectileEmitter.EmitProjectile();
-
-            // begin charge
-            _charge.Begin();
         }
         
         public override void ReleaseFire()
         {
-            // end charge
             _charge.Stop();
             
             if (_charge.IsFullyCharged)
