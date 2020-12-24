@@ -15,12 +15,12 @@ namespace Assets.Scripts.Weaponry.Charges
 
         public void OnChargeBegin()
         {
-            // do nothing
+            chargingParticleSystem.Play();
         }
 
         public void OnMinChargeThresholdReached()
         {
-            chargingParticleSystem.Play();
+            // do nothing
         }
 
         public void OnFullyCharged()

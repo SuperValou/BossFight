@@ -58,6 +58,7 @@ namespace Assets.Scripts.Weaponry.Weapons
                 ShootMediumBeam();
             }
 
+            _lastShotTime = Time.time;
             _charge.Clear();
         }
 

@@ -68,8 +68,7 @@ namespace Assets.Scripts.Weaponry.Charges
         {
             if (timeToCharge <= 0)
             {
-                Debug.LogWarning(
-                    $"{nameof(WeaponCharge)} ({gameObject}): {nameof(timeToCharge)} was not strictly positive, defaulted to 1.");
+                Debug.LogWarning($"{nameof(WeaponCharge)} ({gameObject}): {nameof(timeToCharge)} was not strictly positive, defaulted to 1.");
                 timeToCharge = 1;
                 return;
             }
