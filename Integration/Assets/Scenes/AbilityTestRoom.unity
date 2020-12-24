@@ -3568,6 +3568,7 @@ MonoBehaviour:
   maxHealth: 999999
   isInvulnerable: 0
   onDamageReceived: []
+  measuringInterval: 3
   dpsLabel: {fileID: 914300230}
   maxDpsLabel: {fileID: 2078218663}
 --- !u!1001 &493684664

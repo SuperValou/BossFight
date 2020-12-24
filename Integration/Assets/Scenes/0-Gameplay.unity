@@ -5575,7 +5575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerParticle: 1
+  damagePerParticle: 16
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &153203343
 GameObject:
@@ -35553,7 +35553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerParticle: 1
+  damagePerParticle: 12
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &658544472
 GameObject:
@@ -45771,7 +45771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerParticle: 1
+  damagePerParticle: 15
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &1050427340
 GameObject:
@@ -51211,7 +51211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerParticle: 1
+  damagePerParticle: 32
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &1428274963
 GameObject:
@@ -71357,7 +71357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c53a3de8847447b14af25a03b0ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerParticle: 1
+  damagePerParticle: 8
   projectileImpact: {fileID: 1538557628}
 --- !u!1 &2139547938
 GameObject:

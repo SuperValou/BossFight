@@ -11,6 +11,11 @@ namespace Assets.Scripts.Environments
     {
         // -- Editor
 
+        [Header("Values")]
+        [Tooltip("Time interval to take damages into account in dps measure (seconds).")]
+        public float measuringInterval = 2;
+
+
         [Header("Parts")]
         public TextMeshPro dpsLabel;
         public TextMeshPro maxDpsLabel;
@@ -39,7 +44,7 @@ namespace Assets.Scripts.Environments
             while (_events.Any())
             {
                 DamageEvent damageEvent = _events.Dequeue();
-                if (damageEvent.Time + 1 < Time.time)
+                if (damageEvent.Time + measuringInterval < Time.time)
                 {
                     // old events
                     continue;
@@ -48,6 +53,8 @@ namespace Assets.Scripts.Environments
                 dps += damageEvent.Amount;
                 eventsToKeep.Enqueue(damageEvent);
             }
+
+            dps = dps / measuringInterval;
 
             while (eventsToKeep.Any())
             {
