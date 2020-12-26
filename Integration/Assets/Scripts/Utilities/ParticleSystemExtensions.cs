@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Utilities
@@ -7,8 +8,9 @@ namespace Assets.Scripts.Utilities
     {
         public static ICollection<ParticleCollisionEvent> GetCollisionsWith(this ParticleSystem particleSystem, GameObject collidingGameObject)
         {
-            List<ParticleCollisionEvent> events = new List<ParticleCollisionEvent>();
-            ParticlePhysicsExtensions.GetCollisionEvents(particleSystem, collidingGameObject, events);
+            List<ParticleCollisionEvent> eventList = new List<ParticleCollisionEvent>();
+            int validItemCount = ParticlePhysicsExtensions.GetCollisionEvents(particleSystem, collidingGameObject, eventList);
+            var events = eventList.Take(validItemCount).ToList();
             return events;
         }
     }

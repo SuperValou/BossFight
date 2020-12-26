@@ -1,0 +1,69 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "MasterScene",
+        "ScenePath": "Assets/Scenes/MasterScene.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "MasterSceneScript",
+                "Scripts": [
+                    {
+                        "Name": "MasterSceneScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.MasterSceneScript",
+                        "Index": 1
+                    }
+                ],
+                "Children": []
+            },
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "SaveManager",
+                        "Scripts": [
+                            {
+                                "Name": "SaveManager",
+                                "FullName": "Assets.Scripts.SaveSystems.SaveManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManager",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

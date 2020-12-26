@@ -1,0 +1,64 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "1-SaveStationRoom",
+        "ScenePath": "Assets/Scenes/1-SaveStationRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManagerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Door-to-FirstRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "Door-to-AmmunitionRoom",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

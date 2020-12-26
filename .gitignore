@@ -59,10 +59,16 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Factory folder
-*.blend1
+
+Factory/_Tools/
 Factory/Models/**/*.fbx
+*.blend1
 
 Factory/PreIntegration/Library/
 Factory/PreIntegration/Temp/
 Factory/PreIntegration/Assets/
+
 Concepts/
+Builds/
+
+*/[Ll]ibrary-*/

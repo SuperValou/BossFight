@@ -1,8 +1,10 @@
-﻿using Assets.Scripts.ArtificialIntelligences;
+﻿using Assets.Scripts.Cutscenes;
 using Assets.Scripts.Damages;
+using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
-using Assets.Scripts.Proxies;
+using Assets.Scripts.Huds;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,15 +15,15 @@ namespace Assets.Scripts.Foes.Strikers
         // -- Editor
 
         [Header("Parts")]
-        public DamagingParticleSystem stompingAttack;
+        public ShockWaveEmitter stompingAttack;
 
         [Header("References")]
         [Tooltip("Target of the " + nameof(Striker) + ". Can be null.")]
         public Transform target;
 
-        [Tooltip("System displaying the "+ nameof(Striker) + "'s health on screen. Can be null.")]
-        public FoeHealthDisplayProxy foeHealthDisplayProxy;
-
+        [Tooltip("What to do when the " + nameof(Striker) + " dies.")]
+        public BossDeath death;
+        
         // -- Class
 
         private StrikerBehaviour[] _behaviours;
@@ -45,7 +47,7 @@ namespace Assets.Scripts.Foes.Strikers
 
         void Update()
         {
-            // Do not put anything in here, use "OnStateUpdate" method in StrikerBehaviours instead.
+            
         }
 
         public void SetCurrentBehaviour(StrikerBehaviour behaviour)
@@ -55,21 +57,18 @@ namespace Assets.Scripts.Foes.Strikers
 
         public void OnStomping()
         {
-            stompingAttack.Execute();
+            stompingAttack.EmitShockWave();
         }
 
-        protected override void OnDamageTaken()
+        protected override void OnDamage(VulnerableCollider hitCollider, DamageData damageData, MonoBehaviour damager)
         {
-            if (foeHealthDisplayProxy != null)
-            {
-                foeHealthDisplayProxy.Show((Damageable) this);
-            }
+            this.Animator.SetBool(StrikerAnimatorConstants.TargetIsInSightBool, true);
         }
 
-        protected override void Die()
+        protected override void OnDeath()
         {
-            // Victory
-            Debug.LogWarning("Victory!");
+            Animator.SetTrigger(StrikerAnimatorConstants.DeathTrigger);
+            death?.Activate();
         }
     }
 }

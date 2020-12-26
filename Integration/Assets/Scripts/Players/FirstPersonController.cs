@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Controllers;
+using Assets.Scripts.Players.Inputs;
+using Assets.Scripts.Players.LockOns;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 
@@ -9,42 +10,62 @@ namespace Assets.Scripts.Players
     {
         // -- Editor
 
-        [Header("Values")]
+        [Header("Values - movement")]
         [Tooltip("Speed of the player when moving (m/s).")]
         public float walkSpeed = 10f;
-		
-		[Tooltip("Speed of the player when dashing (m/s).")]
-        public float dashSpeed = 30f;
 
-        [Tooltip("Vertical speed of the player when hitting the booster button (m/s).")]
-        public float boosterSpeed = 40;
+        [Tooltip("Forward speed of the player when dashing (m/s).")]
+        public float forwardDashSpeed = 15f;
 
+        [Tooltip("Upward speed of the player when dashing (m/s).")]
+        public float upwardDashSpeed = 2f;
+
+        [Tooltip("Forward speed of the player when hitting the booster button (m/s).")]
+        public float forwardBoosterSpeed = 4f;
+
+        [Tooltip("Upward speed of the player when hitting the booster button (m/s).")]
+        public float upwardBoosterSpeed = 28f;
+        
         [Tooltip("Vertical speed of the player when hitting the jump button (m/s).")]
-        public float jumpSpeed = 11f;
+        public float jumpSpeed = 15f;
         
         [Tooltip("Gravity pull applied on the player (m/s²).")]
-        public float gravity = 9.81f;
+        public float gravity = 35f;
         
         [Tooltip("Units that player can fall before a falling function is run.")]
-        [SerializeField]
-        private float fallingThreshold = 10.0f;
+        public float fallingThreshold = 10.0f;
 
-        [Header("Parts")]
-        public Transform headTransform;
 
+        [Header("Values - vision")]
         [Tooltip("How far up can you look? (degrees)")]
+        [Range(0, 90)]
         public float maxUpPitchAngle = 60;
 
         [Tooltip("How far down can you look? (degrees)")]
+        [Range(-90, 0)]
         public float maxDownPitchAngle = -60;
 
+
+        [Header("Parts")]
+        public Transform headTransform;
+        
+
         [Header("References")]
-        public AbstractInputManager inputManager;
+        public AbstractInput input;
+
+
+        [Header("Abilities")]
+        public bool hasJumpAbility;
+        public bool hasDashAbility;
+        public bool hasBoosterAbility;
+
 
         // -- Class
 
         private Transform _transform;
         private CharacterController _controller;
+        private WeaponManager _weaponManager;
+        private LockOnManager _lockOnManager;
 
         private bool _isGrounded;
 
@@ -63,12 +84,19 @@ namespace Assets.Scripts.Players
         {
             _transform = this.GetOrThrow<Transform>();
             _controller = this.GetOrThrow<CharacterController>();
+            _weaponManager = this.GetOrThrow<WeaponManager>();
+            _lockOnManager = this.GetOrThrow<LockOnManager>();
         }
 
 
         void Update()
         {
             UpdateMove();
+            UpdateFire();
+        }
+
+        void LateUpdate()
+        {
             UpdateLookAround();
         }
         
@@ -79,19 +107,54 @@ namespace Assets.Scripts.Players
         
         private void UpdateLookAround()
         {
-            // horizontal look
-            Vector2 lookMovement = inputManager.GetLookVector();
-            _transform.Rotate(Vector3.up, lookMovement.x);
+            if (input.LockOnButtonDown())
+            {
+                if (_lockOnManager.HasTargetLocked)
+                {
+                    _lockOnManager.Unlock();
+                }
+                else
+                {
+                    _lockOnManager.TryLockOnTarget();
+                }
+            }
             
-            // vertical look
-            _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
-            headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            if (_lockOnManager.HasTargetLocked)
+            {
+                Transform lockOnTarget = _lockOnManager.GetLockedTarget().transform;
+
+                // body lock-on
+                var targetDirectionFromBody = lockOnTarget.position - _transform.position;
+                var targetDirectionOnHorizontalPlane = new Vector3(targetDirectionFromBody.x, 0, targetDirectionFromBody.z);
+
+                Quaternion bodyRotation = Quaternion.FromToRotation(_transform.forward, targetDirectionOnHorizontalPlane);
+                _transform.Rotate(_transform.up, bodyRotation.eulerAngles.y);
+
+                // head lock-on
+                var targetDirectionFromHead = lockOnTarget.position - headTransform.position;
+                var targetDirectionOnLocalVerticalZPlane = Vector3.ProjectOnPlane(targetDirectionFromHead, headTransform.right);
+
+                var pitchAngle = Vector3.SignedAngle(headTransform.forward, targetDirectionOnLocalVerticalZPlane, headTransform.right);
+
+                _headPitch = Mathf.Clamp(_headPitch + pitchAngle, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
+            else
+            {
+                // horizontal look
+                Vector2 lookMovement = input.GetLookVector();
+                _transform.Rotate(Vector3.up, lookMovement.x);
+
+                // vertical look
+                _headPitch = Mathf.Clamp(_headPitch - lookMovement.y, maxDownPitchAngle, maxUpPitchAngle);
+                headTransform.localRotation = Quaternion.Euler(_headPitch, 0, 0);
+            }
         }
 
         private void UpdateMove()
         {
 			// Movement
-            Vector3 localInputDirection = inputManager.GetMoveVector();
+            Vector3 localInputDirection = input.GetMoveVector();
             Vector3 globalInputDirection = _transform.TransformDirection(localInputDirection);
             Vector3 inputVelocityVector = globalInputDirection * walkSpeed;
             
@@ -114,7 +177,7 @@ namespace Assets.Scripts.Players
 				_canDash = true;
 				
                 // Jump
-				if (inputManager.JumpButtonDown())
+				if (hasJumpAbility && input.JumpButtonDown())
 				{
 					_externalVelocityVector.y = jumpSpeed;			
 				}
@@ -127,38 +190,41 @@ namespace Assets.Scripts.Players
                     _isFalling = true;
                     _fallStartHeigth = _transform.position.y;
                 }
+
+                // Mid-air dash
+                if (hasDashAbility && _canDash && input.DashButtonDown())
+                {
+                    Vector3 dashVelocity;
+                    if (globalInputDirection == Vector3.zero)
+                    {
+                        // If the player is not willing to move in any specific direction, then dash forward
+                        dashVelocity = this.transform.forward * forwardDashSpeed;
+                    }
+                    else
+                    {
+                        dashVelocity = globalInputDirection.normalized * forwardDashSpeed;
+                    }
+
+                    // Jump a little bit when dashing
+                    dashVelocity.y = upwardDashSpeed;
+
+                    // Apply dash
+                    _externalVelocityVector.x = dashVelocity.x;
+                    _externalVelocityVector.y = dashVelocity.y;
+                    _externalVelocityVector.z = dashVelocity.z;
+
+                    _canDash = false;
+                }
             }
 
-			if (_canUseBooster && inputManager.BoosterButtonDown())
+			if (hasBoosterAbility && _canUseBooster && input.BoosterButtonDown())
 			{
-				_externalVelocityVector.y = boosterSpeed;
-				_externalVelocityVector += this.transform.forward * walkSpeed; // move a bit forward when using booster
+				_externalVelocityVector.y = upwardBoosterSpeed;
+				_externalVelocityVector += this.transform.forward * forwardBoosterSpeed;
 			    _canUseBooster = false;
 			}
 			
-			if (_canDash && inputManager.DashButtonDown())
-			{
-			    Vector3 dashVelocity;
-			    if (globalInputDirection == Vector3.zero)
-			    {
-                    // If the player is not willing to move in any specific direction, then dash forward
-			        dashVelocity = this.transform.forward * dashSpeed; 
-			    }
-			    else
-			    {
-			        dashVelocity = globalInputDirection.normalized * dashSpeed;
-                }
-
-                // Jump a little bit when dashing
-			    dashVelocity.y = jumpSpeed / 2f;							
-				
-			    // Apply dash
-			    _externalVelocityVector.x = dashVelocity.x;
-			    _externalVelocityVector.y = dashVelocity.y;
-			    _externalVelocityVector.z = dashVelocity.z;
-
-			    _canDash = false;
-            }
+			
             
             // Apply gravity
             _externalVelocityVector.y -= gravity * Time.deltaTime;
@@ -174,7 +240,25 @@ namespace Assets.Scripts.Players
             _controller.Move(controllerVelocity * Time.deltaTime);
             _isGrounded = _controller.isGrounded;
         }
-        
+
+        private void UpdateFire()
+        {
+            if (input.FireButtonDown())
+            {
+                _weaponManager.InitFire();
+            }
+
+            if (input.FireButtonUp())
+            {
+                _weaponManager.ReleaseFire();
+            }
+
+            if (!input.FireButton() && input.SwitchWeaponDown(out WeaponSwitchDirection direction))
+            {
+                _weaponManager.SwitchWeapon(direction);
+            }
+        }
+
         private void OnFell(float fallDistance)
         {
             // fell and touched the ground

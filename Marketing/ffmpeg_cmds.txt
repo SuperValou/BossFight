@@ -1,0 +1,13 @@
+=== Rename pictures with correct number sequence
+x=1; for i in *png; do counter=$(printf %04d $x); ln -s "$i" "$counter".png; x=$(($x+1)); done
+
+=== Generate video from image sequence
+ffmpeg -framerate 25 -i %04d.png -c:v libx264 gameplay.mp4
+
+  -framerate 25    <- set the input framerate to 25
+  -i img%04d.png   <- read PNG images with filename img001, img002, img003, etc.
+  -c:v libx264     <- Set the codec to libx264
+  -pix_fmt yuv420p <- Set the pixel format to planar YUV 4:2:0, 12bpp
+  -crf 23          <- set the Constant Rate Factor to 23 (default value)
+  -output.mp4      <- the output filename
+

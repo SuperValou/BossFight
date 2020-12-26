@@ -1,81 +1,66 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets.Scripts.Utilities;
+using Assets.Scripts.Weaponry.Charges;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Weapons
 {
-    public class PowerGun : ProjectileWeapon
+    public class PowerGun : Gun
     {
         // -- Editor
-        [Header("Self")]
-        [Tooltip("Minimum charge to shoot a charged blast")]
-        public float chargeThreshold = 0.5f;
 
-        [Tooltip("How many projectiles in a fully charged shot?")]
-        public int chargedProjectileCount = 10;
+        [Header("Values")]
+        [Tooltip("Time between partially charged shots (seconds).")]
+        public float timeBetweenRafaleShot = 0.2f;
 
-        [Tooltip("Seconds between each projectile in a fully charged shot")]
-        public float timeBetweenChargedShot = 0.1f;
+        [Tooltip("Max number of shots fired by a partial charge.")]
+        public int maxRafaleShotCount = 3;
 
 
         [Header("Parts")]
-        public Projectile chargedProjectilePrefab;
-
-        [Header("Sounds")]
-        public AudioClip _chargedShotSound;
-
-        [Header("Anims")]
-        public GameObject chargeAnimationPrefab;
+        public ProjectileEmitter chargedProjectileEmitter;
+        
 
         // -- Class
 
-        private bool _isChargeRafaleShooting = false;
-
+        private WaitForSeconds _waitBetweenRafaleShot;
         private WeaponCharge _charge;
 
-        private GameObject _chargeAnimationObject;
+        private bool _isRafaleShooting;
 
         protected override void Start()
         {
             base.Start();
             _charge = this.GetOrThrow<WeaponCharge>();
+            _waitBetweenRafaleShot = new WaitForSeconds(timeBetweenRafaleShot);
         }
 
         public override void InitFire()
         {
-            if (_isChargeRafaleShooting)
+            _charge.Begin();
+
+            if (_isRafaleShooting)
             {
                 return;
             }
 
-            ShootProjectile();
-
-            // begin charge
-            _charge.Begin();
-            
-            _chargeAnimationObject = Instantiate(chargeAnimationPrefab, this.transform.position, this.transform.rotation);
-            _chargeAnimationObject.transform.SetParent(this.transform);
+            projectileEmitter.EmitProjectile();
         }
-
+        
         public override void ReleaseFire()
         {
-            if (_isChargeRafaleShooting)
-            {
-                return;
-            }
-
-            // end charge
             _charge.Stop();
-
-            Destroy(_chargeAnimationObject);
-            _chargeAnimationObject = null;
-
-            if (_charge.Value > chargeThreshold)
+            
+            if (_charge.IsFullyCharged)
             {
-                _isChargeRafaleShooting = true;
-                AudioSource.Stop();
-                StartCoroutine(ShootChargedRafale());
+                ShootChargedProjectile();
+                _charge.Clear();
+            }
+            else if (_charge.IsMinimalyCharged)
+            {
+                StartCoroutine(ShootRafale());
             }
             else
             {
@@ -83,38 +68,27 @@ namespace Assets.Scripts.Weaponry.Weapons
             }
         }
 
-        private IEnumerator ShootChargedRafale()
+        private IEnumerator ShootRafale()
         {
-            if (_charge.Value < 1)
+            _isRafaleShooting = true;
+
+            float charge = _charge.ChargeValue + _charge.minChargeThreshold;
+            int projCount = Mathf.Max(1, Mathf.FloorToInt(charge * maxRafaleShotCount));
+            for (int i = 0; i < projCount; i++)
             {
-                var wait = new WaitForSeconds(timeBetweenChargedShot);
-                int projectileCount = (int)(chargedProjectileCount * _charge.Value);
-                for (int i = 0; i < projectileCount; i++)
-                {
-                    ShootProjectile();
-                    yield return wait;
-                }
-            }
-            else
-            {
-                var wait = new WaitForSeconds(timeBetweenChargedShot / 2f);
-                int projectileCout = chargedProjectileCount * 2;
-                for (int j = 0; j < projectileCout; j++)
-                {
-                    ShootChargedProjectile();
-                    yield return wait;
-                }
+                projectileEmitter.EmitProjectile();
+                yield return _waitBetweenRafaleShot;
             }
 
+            _isRafaleShooting = false;
             _charge.Clear();
-            _isChargeRafaleShooting = false;
         }
 
         private void ShootChargedProjectile()
         {
-            Instantiate(chargedProjectilePrefab, this.transform.position, this.transform.rotation);
+            chargedProjectileEmitter.EmitProjectile();
 
-            AudioSource.PlayOneShot(_chargedShotSound);
+            //AudioSource.PlayOneShot(_chargedShotSound);
 
             //Sequence s = DOTween.Sequence();
             //s.Append(cannonModel.DOPunchPosition(new Vector3(0, 0, -punchStrenght), punchDuration, punchVibrato, punchElasticity));

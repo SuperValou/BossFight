@@ -1,0 +1,133 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "1-BossRoom",
+        "ScenePath": "Assets/Scenes/1-BossRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "Managers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "NavMeshSurface",
+                        "Scripts": [
+                            {
+                                "Name": "NavMeshSurface",
+                                "FullName": "Assets.Scripts.Foes.ArtificialIntelligences.NavMeshComponents.NavMeshSurface",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplayProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "PlayerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerProxy",
+                                "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "BossDeath",
+                        "Scripts": [
+                            {
+                                "Name": "BossDeath",
+                                "FullName": "Assets.Scripts.Cutscenes.BossDeath",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "DoorManagerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "DoorManagerProxy",
+                                "FullName": "Assets.Scripts.LoadingSystems.Doors.DoorManagerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "Doors",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "DoorToCorridor",
+                        "Scripts": [
+                            {
+                                "Name": "BasicDoor",
+                                "FullName": "Assets.Scripts.Environments.BasicDoor",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "Entities",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "Foes",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Striker",
+                                "Scripts": [
+                                    {
+                                        "Name": "Striker",
+                                        "FullName": "Assets.Scripts.Foes.Strikers.Striker",
+                                        "Index": 3
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "Attacks",
+                                        "Scripts": [],
+                                        "Children": [
+                                            {
+                                                "Name": "StompingAttack",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "ShockWaveEmitter",
+                                                        "FullName": "Assets.Scripts.Weaponry.Projectiles.ShockWaveEmitter",
+                                                        "Index": 1
+                                                    }
+                                                ],
+                                                "Children": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

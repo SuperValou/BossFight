@@ -1,0 +1,102 @@
+{
+    "SerializationMajorVersion": 2,
+    "SceneInfo": {
+        "SceneName": "ShellTestRoom",
+        "ScenePath": "Assets/Scenes/ShellTestRoom.unity",
+        "RootGameObjectInfos": [
+            {
+                "Name": "ShellTestRoomScript",
+                "Scripts": [
+                    {
+                        "Name": "TestRoomScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.TestRoomScript",
+                        "Index": 1
+                    }
+                ],
+                "Children": []
+            },
+            {
+                "Name": "MasterManagers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "SceneLoadingManager",
+                        "Scripts": [
+                            {
+                                "Name": "SceneLoadingManager",
+                                "FullName": "Assets.Scripts.LoadingSystems.SceneLoadings.SceneLoadingManager",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "RoomManagers",
+                "Scripts": [],
+                "Children": [
+                    {
+                        "Name": "NavMeshSurface",
+                        "Scripts": [
+                            {
+                                "Name": "NavMeshSurface",
+                                "FullName": "Assets.Scripts.Foes.ArtificialIntelligences.NavMeshComponents.NavMeshSurface",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "FoeHealthDisplayProxy",
+                        "Scripts": [
+                            {
+                                "Name": "FoeHealthDisplayProxy",
+                                "FullName": "Assets.Scripts.Huds.FoeHealthDisplayProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "PlayerProxy",
+                        "Scripts": [
+                            {
+                                "Name": "PlayerProxy",
+                                "FullName": "Assets.Scripts.Players.PlayerProxy",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    },
+                    {
+                        "Name": "BossDeath",
+                        "Scripts": [
+                            {
+                                "Name": "BossDeath",
+                                "FullName": "Assets.Scripts.Cutscenes.BossDeath",
+                                "Index": 1
+                            }
+                        ],
+                        "Children": []
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            },
+            {
+                "Name": "",
+                "Scripts": [],
+                "Children": []
+            }
+        ]
+    }
+}

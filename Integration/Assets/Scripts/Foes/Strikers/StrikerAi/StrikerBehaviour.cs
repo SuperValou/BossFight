@@ -1,5 +1,5 @@
 ﻿using System;
-using Assets.Scripts.ArtificialIntelligences;
+using Assets.Scripts.Foes.ArtificialIntelligences;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes.Strikers.StrikerAi
