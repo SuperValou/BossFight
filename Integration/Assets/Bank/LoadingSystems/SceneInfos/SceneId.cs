@@ -32,6 +32,9 @@
         [SceneInfo("AbilityTestRoom", SceneType.TestRoom)]
         AbilityTestRoomScene,
 
+        [SceneInfo("ShellTestRoom", SceneType.TestRoom)]
+        ShellTestRoomScene,
+
         [SceneInfo("AnimationTestRoom", SceneType.TestRoom)]
         AnimationTestRoomScene
     }

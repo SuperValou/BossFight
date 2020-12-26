@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.MainScenesScripts
 {
-    public class AbilityTestRoomScript : MonoBehaviour
+    public class TestRoomScript : MonoBehaviour
     {
         // -- Editor
 
