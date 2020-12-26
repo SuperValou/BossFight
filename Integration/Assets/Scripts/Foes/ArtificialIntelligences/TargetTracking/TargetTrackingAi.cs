@@ -24,7 +24,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         public Transform eye;
 
         // -- Class
-
+        private const string InitializedBool = "IsInitialized";
         private const string QuietTrigger = "QuietTrigger";
         private const string AlertTrigger = "AlertTrigger";
         private const string HostileTrigger = "HostileTrigger";
@@ -43,6 +43,8 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
             {
                 behaviour.Initialize(stateMachine: this);
             }
+
+            Animator.SetBool(InitializedBool, value: true);
         }
 
         public virtual void QuietUpdate()
