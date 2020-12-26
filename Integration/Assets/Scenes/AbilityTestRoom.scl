@@ -8,8 +8,8 @@
                 "Name": "AbilityTestRoomScript",
                 "Scripts": [
                     {
-                        "Name": "AbilityTestRoomScript",
-                        "FullName": "Assets.Scripts.MainScenesScripts.AbilityTestRoomScript",
+                        "Name": "TestRoomScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.TestRoomScript",
                         "Index": 1
                     }
                 ],
@@ -108,6 +108,29 @@
                 "Name": "Environment",
                 "Scripts": [],
                 "Children": [
+                    {
+                        "Name": "Props",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "Console_01_snaps002",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "LockonTarget",
+                                        "Scripts": [
+                                            {
+                                                "Name": "LockOnTarget",
+                                                "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
+                                                "Index": 1
+                                            }
+                                        ],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
                     {
                         "Name": "Labels",
                         "Scripts": [],
@@ -414,6 +437,57 @@
                             }
                         ],
                         "Children": []
+                    },
+                    {
+                        "Name": "DPS-tests",
+                        "Scripts": [],
+                        "Children": [
+                            {
+                                "Name": "DPS-frame",
+                                "Scripts": [
+                                    {
+                                        "Name": "DamageTestField",
+                                        "FullName": "Assets.Scripts.Environments.DamageTestField",
+                                        "Index": 1
+                                    }
+                                ],
+                                "Children": [
+                                    {
+                                        "Name": "DpsLabel",
+                                        "Scripts": [
+                                            {
+                                                "Name": "TextMeshPro",
+                                                "FullName": "TMPro.TextMeshPro",
+                                                "Index": 4
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "MaxDpsLabel",
+                                        "Scripts": [
+                                            {
+                                                "Name": "TextMeshPro",
+                                                "FullName": "TMPro.TextMeshPro",
+                                                "Index": 4
+                                            }
+                                        ],
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "Cube",
+                                        "Scripts": [
+                                            {
+                                                "Name": "VulnerableCollider",
+                                                "FullName": "Assets.Scripts.Damages.VulnerableCollider",
+                                                "Index": 4
+                                            }
+                                        ],
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             },
