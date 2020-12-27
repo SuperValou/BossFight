@@ -3344,7 +3344,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -13056,7 +13056,7 @@ Transform:
   m_Children:
   - {fileID: 1419845129}
   m_Father: {fileID: 1341800279}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340290390
 GameObject:
@@ -13067,6 +13067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340290391}
+  - component: {fileID: 1340290392}
   m_Layer: 11
   m_Name: Shell
   m_TagString: Untagged
@@ -13090,6 +13091,23 @@ Transform:
   m_Father: {fileID: 1869725334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340290392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340290390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d38c93754dda9c449b9031856914a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  isInvulnerable: 0
+  onDamageReceived: []
+  shockwaveEmitter: {fileID: 901711942}
+  laserWallEmitter: {fileID: 1419845132}
 --- !u!1 &1341596870
 GameObject:
   m_ObjectHideFlags: 0
@@ -13160,8 +13178,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1293268572}
   - {fileID: 1567181810}
+  - {fileID: 1293268572}
   m_Father: {fileID: 1340290391}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14277,7 +14295,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -18478,7 +18496,7 @@ Transform:
   m_Children:
   - {fileID: 901711939}
   m_Father: {fileID: 1341800279}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1594496627
 PrefabInstance:
@@ -19993,6 +20011,8 @@ GameObject:
   - component: {fileID: 2139189796}
   - component: {fileID: 2139189799}
   - component: {fileID: 2139189798}
+  - component: {fileID: 2139189797}
+  - component: {fileID: 2139189800}
   m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
@@ -20014,6 +20034,19 @@ Transform:
   m_Father: {fileID: 1722672156}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2139189797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139189795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.8, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2139189798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20061,6 +20094,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139189795}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2139189800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139189795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab00277835e8e274a865b62e9993541e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentDamageable: {fileID: 1340290392}
+  damageMultiplier: 1
 --- !u!1001 &6451683940758578845
 PrefabInstance:
   m_ObjectHideFlags: 0
