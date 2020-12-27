@@ -6,14 +6,6 @@ namespace Assets.Scripts.Foes.Shells
 {
     public class Shell : Damageable
     {
-        // -- Editor
-
-        [Header("Parts")]
-        public ProjectileEmitter shockwaveEmitter;
-        public ProjectileEmitter laserWallEmitter;
-
-        // -- Class
-
         void Start()
         {
             // do nothing
