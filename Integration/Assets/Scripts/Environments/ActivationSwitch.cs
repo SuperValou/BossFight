@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Weaponry.Projectiles;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Environments
 {

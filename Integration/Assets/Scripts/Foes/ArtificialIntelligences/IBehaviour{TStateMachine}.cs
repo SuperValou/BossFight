@@ -1,6 +1,4 @@
-﻿using Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking;
-
-namespace Assets.Scripts.Foes.ArtificialIntelligences
+﻿namespace Assets.Scripts.Foes.ArtificialIntelligences
 {
     /// <inheritdoc />
     /// <summary>

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Players;
-using Assets.Scripts.Weaponry.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 

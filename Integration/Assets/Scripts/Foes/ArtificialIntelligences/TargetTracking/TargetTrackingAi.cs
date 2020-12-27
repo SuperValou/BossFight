@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking

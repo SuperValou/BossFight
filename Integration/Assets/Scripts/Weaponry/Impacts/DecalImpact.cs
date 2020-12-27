@@ -1,5 +1,4 @@
 using Assets.Scripts.Utilities;
-using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
 namespace Assets.Scripts.Weaponry.Impacts

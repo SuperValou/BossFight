@@ -1,5 +1,4 @@
 using Assets.Scripts.Foes.ArtificialIntelligences;
-using Assets.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.AI;
 

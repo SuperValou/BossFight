@@ -1,6 +1,4 @@
-﻿using System;
-using Assets.Scripts.Foes.ArtificialIntelligences;
-using Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking;
+﻿using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 

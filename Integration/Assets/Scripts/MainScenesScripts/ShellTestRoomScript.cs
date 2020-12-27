@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using Assets.Scripts.Damages;
-using Assets.Scripts.Foes.Shells;
 using Assets.Scripts.LoadingSystems.SceneInfos;
 using Assets.Scripts.LoadingSystems.SceneLoadings;
 using UnityEngine;

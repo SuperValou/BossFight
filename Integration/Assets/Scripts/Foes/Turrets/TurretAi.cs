@@ -4,7 +4,7 @@ using Assets.Scripts.Players;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
-namespace Assets.Scripts.Foes
+namespace Assets.Scripts.Foes.Turrets
 {
     public class TurretAi : TargetTrackingAi
     {
