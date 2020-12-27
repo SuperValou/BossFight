@@ -28,7 +28,7 @@ namespace Assets.Scripts.Weaponry.Projectiles
         {
             if (projectileImpact == null)
             {
-                Debug.LogWarning($"{this.GetType().Name} ({name}) has a null '{nameof(projectileImpact)}'.");
+                Debug.LogWarning($"{name} ({this.GetType().Name}) has a null '{nameof(projectileImpact)}'.");
             }
 
             _particleSystem = this.GetOrThrow<ParticleSystem>();
