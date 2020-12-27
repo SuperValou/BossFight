@@ -8,7 +8,7 @@ namespace Assets.Scripts.Menus
     {
         public GameObject saveSlotUiPrefab;
 
-        private ISaveSystem _saveSystem;
+        private ISaveSystem _saveSystem = new SaveSystem();
 
         void Start()
         {
