@@ -528,7 +528,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 240902192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a77c5bd1cd74a4f8751e8056bfe331, type: 3}
+  m_Script: {fileID: 11500000, guid: 5168eae91d47c3b4faffedb66fc8abcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneLoadingManager: {fileID: 291269623}
@@ -13105,7 +13105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   isInvulnerable: 0
-  onDamageReceived: []
+  onDamageReceived:
+  - {fileID: 240902194}
   shockwaveEmitter: {fileID: 901711942}
   laserWallEmitter: {fileID: 1419845132}
 --- !u!1 &1341596870

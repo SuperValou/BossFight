@@ -1,11 +1,13 @@
 ﻿using System.Collections;
+using Assets.Scripts.Damages;
+using Assets.Scripts.Foes.Shells;
 using Assets.Scripts.LoadingSystems.SceneInfos;
 using Assets.Scripts.LoadingSystems.SceneLoadings;
 using UnityEngine;
 
 namespace Assets.Scripts.MainScenesScripts
 {
-    public class TestRoomScript : MonoBehaviour
+    public class ShellTestRoomScript : MonoBehaviour, IDamageNotifiable
     {
         // -- Editor
 
@@ -14,11 +16,10 @@ namespace Assets.Scripts.MainScenesScripts
 
         [Header("Room objects")]
         public GameObject roomManagers;
-
         public GameObject[] roomStart;
-
+        
         // -- Class
-
+        
         void Awake()
         {
             if (roomManagers.activeInHierarchy)
@@ -49,6 +50,19 @@ namespace Assets.Scripts.MainScenesScripts
             foreach (var gameObj in roomStart)
             {
                 gameObj.SetActive(true);
+            }
+        }
+
+        public void OnDamageNotification(Damageable damageable, DamageData damageData, MonoBehaviour damager)
+        {
+            // ignore
+        }
+
+        public void OnDeathNotification(Damageable damageable)
+        {
+            if (damageable.name == "Shell")
+            {
+                Debug.Log($"Defeated in {Time.time:0.0}s.");
             }
         }
     }
