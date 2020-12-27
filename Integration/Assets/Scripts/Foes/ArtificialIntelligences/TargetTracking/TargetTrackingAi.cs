@@ -38,7 +38,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         protected virtual void Start()
         {
             Animator = this.GetOrThrow<Animator>();
-            var behaviours = Animator.GetBehaviours<TargetTrackingBehaviour>();
+            var behaviours = Animator.GetBehaviours<Behaviour<ITargetTrackingStateMachine>>();
             foreach (var behaviour in behaviours)
             {
                 behaviour.Initialize(stateMachine: this);

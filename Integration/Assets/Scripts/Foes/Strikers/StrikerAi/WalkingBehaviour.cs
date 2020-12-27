@@ -1,10 +1,11 @@
+using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Assets.Scripts.Foes.Strikers.StrikerAi
 {
-    public class WalkingBehaviour : StrikerBehaviour
+    public class WalkingBehaviour : Behaviour<Striker>
     {
         // -- Editor
 
@@ -17,17 +18,7 @@ namespace Assets.Scripts.Foes.Strikers.StrikerAi
         private NavMeshAgent _navMeshAgent;
 
         private float _minSquaredDistanceToTarget; // avoid usage of Sqrt
-
-        public override void Initialize(Striker stateMachine)
-        {
-            base.Initialize(stateMachine);
-
-            _target = Striker.Target;
-            _navMeshAgent = Striker.NavMeshAgent;
-
-            _minSquaredDistanceToTarget = minDistanceToTarget * minDistanceToTarget;
-        }
-
+        
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
@@ -38,10 +29,10 @@ namespace Assets.Scripts.Foes.Strikers.StrikerAi
 
             _navMeshAgent.SetDestination(_target.position);
 
-            float squaredDistanceToTarget = (_target.transform.position - Striker.transform.position).sqrMagnitude;
+            float squaredDistanceToTarget = (_target.transform.position - StateMachine.transform.position).sqrMagnitude;
             if (squaredDistanceToTarget < _minSquaredDistanceToTarget)
             {
-                Animator.SetTrigger(StrikerAnimatorConstants.StompTrigger);
+                animator.SetTrigger(StrikerAnimatorConstants.StompTrigger);
             }
         }
     }

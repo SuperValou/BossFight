@@ -12691,7 +12691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1197152157
 Transform:
   m_ObjectHideFlags: 0
@@ -13068,6 +13068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1340290391}
   - component: {fileID: 1340290392}
+  - component: {fileID: 1340290393}
   m_Layer: 11
   m_Name: Shell
   m_TagString: Untagged
@@ -13107,8 +13108,28 @@ MonoBehaviour:
   isInvulnerable: 0
   onDamageReceived:
   - {fileID: 240902194}
+  - {fileID: 1341596872}
   shockwaveEmitter: {fileID: 901711942}
   laserWallEmitter: {fileID: 1419845132}
+--- !u!95 &1340290393
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340290390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36fdb2684d706244b9767a5024dbb521, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1341596870
 GameObject:
   m_ObjectHideFlags: 0
