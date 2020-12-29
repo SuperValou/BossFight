@@ -9,8 +9,16 @@ namespace Assets.Scripts.Foes.Shells
     public class ShellAi : MonoBehaviour, IStateMachine
     {
         // -- Editor
-        
+
+        [Header("Values")]
+        [Tooltip("Speed of movement while rolling (m/s).")]
+        public float rollSpeed = 5;
+
+        [Tooltip("Shell's radius when rolling (meters).")]
+        public float bodyRadius = 2;
+
         [Header("Parts")]
+        public Transform body;
         public ProjectileEmitter shockwaveEmitter;
         public ProjectileEmitter laserWallEmitter;
 
@@ -22,11 +30,13 @@ namespace Assets.Scripts.Foes.Shells
         private const string InitializedBool = "IsInitialized";
         private const string LaserWallAttackTrigger = "LaserWallAttackTrigger";
         private const string ShockwaveTrigger = "ShockwaveTrigger";
-        
-        private Animator _animator;
 
+        private Rigidbody _rigidbody;
+        private Animator _animator;
+        
         void Start()
         {
+            _rigidbody = this.GetOrThrow<Rigidbody>();
             _animator = this.GetOrThrow<Animator>();
             var behaviours = _animator.GetBehaviours<Behaviour<ShellAi>>();
             foreach (var behaviour in behaviours)
@@ -59,5 +69,19 @@ namespace Assets.Scripts.Foes.Shells
         {
             shockwaveEmitter.EmitProjectile();
         }
+
+        public void RollUpdate()
+        {
+            //float accelerationValue = rollSpeed / Time.deltaTime;
+            //Vector3 accelerationVector = this.transform.forward * accelerationValue;
+            //Vector3 force = accelerationVector * _rigidbody.mass; // F = m.a
+            //_rigidbody.AddForce(force);
+            _rigidbody.velocity = rollSpeed * this.transform.forward;
+
+            float distance = rollSpeed * Time.deltaTime;
+            float angle = (distance * 180) / (bodyRadius * Mathf.PI);
+            body.RotateAround(body.position, body.right, angle);
+        }
+
     }
 }
