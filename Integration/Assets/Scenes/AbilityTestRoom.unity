@@ -1260,6 +1260,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 572724676}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &148938951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148938950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &148938954
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4367,11 +4379,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6729719880028511216, guid: 64b1b5a73fdd2994d80458c3a5bb6fc7,
-        type: 3}
-      propertyPath: m_TagString
-      value: ProjectileDeflector
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b1b5a73fdd2994d80458c3a5bb6fc7, type: 3}
@@ -18216,9 +18223,10 @@ GameObject:
   - component: {fileID: 1263473867}
   - component: {fileID: 1263473866}
   - component: {fileID: 1263473870}
+  - component: {fileID: 1263473871}
   m_Layer: 11
   m_Name: Cube
-  m_TagString: ProjectileDeflector
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18310,6 +18318,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnManagerProxy: {fileID: 1850727527}
+--- !u!114 &1263473871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263473865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1266809182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6451683941179227234, guid: 8d9f4a198cdad5041b16b19bb385bd1c,
@@ -27647,9 +27667,10 @@ GameObject:
   - component: {fileID: 1731792930}
   - component: {fileID: 1731792929}
   - component: {fileID: 1731792932}
+  - component: {fileID: 1731792933}
   m_Layer: 11
   m_Name: Sphere
-  m_TagString: ProjectileDeflector
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27741,6 +27762,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnManagerProxy: {fileID: 1850727527}
+--- !u!114 &1731792933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731792927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af04ffd9a56598b4798993ebe9bf4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1732161711
 PrefabInstance:
   m_ObjectHideFlags: 0

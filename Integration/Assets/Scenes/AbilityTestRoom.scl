@@ -8,8 +8,8 @@
                 "Name": "AbilityTestRoomScript",
                 "Scripts": [
                     {
-                        "Name": "AbilityTestRoomScript",
-                        "FullName": "Assets.Scripts.MainScenesScripts.AbilityTestRoomScript",
+                        "Name": "TestRoomScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.TestRoomScript",
                         "Index": 1
                     }
                 ],
@@ -337,6 +337,11 @@
                                         "Name": "LockOnTarget",
                                         "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
                                         "Index": 4
+                                    },
+                                    {
+                                        "Name": "ProjectileDeflector",
+                                        "FullName": "Assets.Scripts.Environments.ProjectileDeflector",
+                                        "Index": 5
                                     }
                                 ],
                                 "Children": []
@@ -348,13 +353,24 @@
                                         "Name": "LockOnTarget",
                                         "FullName": "Assets.Scripts.Players.LockOns.LockOnTarget",
                                         "Index": 4
+                                    },
+                                    {
+                                        "Name": "ProjectileDeflector",
+                                        "FullName": "Assets.Scripts.Environments.ProjectileDeflector",
+                                        "Index": 5
                                     }
                                 ],
                                 "Children": []
                             },
                             {
                                 "Name": "Pyramid ",
-                                "Scripts": [],
+                                "Scripts": [
+                                    {
+                                        "Name": "ProjectileDeflector",
+                                        "FullName": "Assets.Scripts.Environments.ProjectileDeflector",
+                                        "Index": 4
+                                    }
+                                ],
                                 "Children": [
                                     {
                                         "Name": "LockOnTarget",
@@ -598,7 +614,7 @@
                                 "Scripts": [
                                     {
                                         "Name": "Turret",
-                                        "FullName": "Assets.Scripts.Foes.Turrets.Turret",
+                                        "FullName": "Assets.Scripts.Foes.Turret",
                                         "Index": 1
                                     },
                                     {
@@ -608,7 +624,7 @@
                                     },
                                     {
                                         "Name": "TurretAi",
-                                        "FullName": "Assets.Scripts.Foes.Turrets.TurretAi",
+                                        "FullName": "Assets.Scripts.Foes.TurretAi",
                                         "Index": 3
                                     }
                                 ],

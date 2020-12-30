@@ -21,8 +21,6 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         // -- Class
 
-        private const string ProjectileDeflectorTag = "ProjectileDeflector";
-
         private ParticleSystem _particleSystem;
         private int _particlesPerShot;
 
@@ -62,28 +60,31 @@ namespace Assets.Scripts.Weaponry.Projectiles
                 DamageData damageData = new DamageData(damageAmount);
                 vulnerableCollider.OnHit(damageData, damager: this);
             }
-            
+
+            // Deflectors and impacts
+            var deflector = other.GetComponent<ProjectileDeflector>();
+
+            if (deflector == null && projectileImpact == null)
+            {
+                return;
+            }
+
             foreach (var collisionEvent in collisionEvents)
             {
-                // Projectile deflection
-                if (collisionEvent.colliderComponent.tag == ProjectileDeflectorTag)
+                if (deflector == null)
+                {
+                    projectileImpact.OccurAt(collisionEvent);
+                }
+                else
                 {
                     // outVelocity = inVelocity - 2 * (inVelocity dot normalVector) * normalVector
-                    Vector3 bouncingVelocity = collisionEvent.velocity -
-                                               2 * Vector3.Dot(collisionEvent.velocity, collisionEvent.normal) *
-                                               collisionEvent.normal;
+                    Vector3 bouncingVelocity = collisionEvent.velocity - 2 * Vector3.Dot(collisionEvent.velocity, collisionEvent.normal) * collisionEvent.normal;
 
                     ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
                     emitParams.position = collisionEvent.intersection;
                     emitParams.velocity = bouncingVelocity;
-
+                    
                     _particleSystem.Emit(emitParams, count: 1);
-                }
-
-                // Projectile impact
-                else if (projectileImpact != null)
-                {
-                    projectileImpact.OccurAt(collisionEvent);
                 }
             }
         }

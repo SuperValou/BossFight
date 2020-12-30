@@ -8,8 +8,8 @@
                 "Name": "ShellTestRoomScript",
                 "Scripts": [
                     {
-                        "Name": "ShellTestRoomScript",
-                        "FullName": "Assets.Scripts.MainScenesScripts.ShellTestRoomScript",
+                        "Name": "TestRoomScript",
+                        "FullName": "Assets.Scripts.MainScenesScripts.TestRoomScript",
                         "Index": 1
                     }
                 ],
@@ -79,17 +79,6 @@
                             }
                         ],
                         "Children": []
-                    },
-                    {
-                        "Name": "LockOnManagerProxy",
-                        "Scripts": [
-                            {
-                                "Name": "LockOnManagerProxy",
-                                "FullName": "Assets.Scripts.Players.LockOns.LockOnManagerProxy",
-                                "Index": 1
-                            }
-                        ],
-                        "Children": []
                     }
                 ]
             },
@@ -99,81 +88,9 @@
                 "Children": []
             },
             {
-                "Name": "Entities",
+                "Name": "",
                 "Scripts": [],
-                "Children": [
-                    {
-                        "Name": "Foes",
-                        "Scripts": [],
-                        "Children": [
-                            {
-                                "Name": "ShellSpawn",
-                                "Scripts": [],
-                                "Children": [
-                                    {
-                                        "Name": "Shell",
-                                        "Scripts": [
-                                            {
-                                                "Name": "Shell",
-                                                "FullName": "Assets.Scripts.Foes.Shells.Shell",
-                                                "Index": 1
-                                            },
-                                            {
-                                                "Name": "ShellAi",
-                                                "FullName": "Assets.Scripts.Foes.Shells.ShellAi",
-                                                "Index": 2
-                                            }
-                                        ],
-                                        "Children": [
-                                            {
-                                                "Name": "Body",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Weakpoint",
-                                                        "Scripts": [],
-                                                        "Children": [
-                                                            {
-                                                                "Name": "LockonTarget"
-                                                            },
-                                                            {
-                                                                "Name": "Eye"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Name": "Attacks",
-                                                "Scripts": [],
-                                                "Children": [
-                                                    {
-                                                        "Name": "Shockwave",
-                                                        "Scripts": [],
-                                                        "Children": [
-                                                            {
-                                                                "Name": "ShockwaveEmitter"
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        "Name": "LaserWall",
-                                                        "Scripts": [],
-                                                        "Children": [
-                                                            {
-                                                                "Name": "LaserWallEmitter"
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
+                "Children": []
             },
             {
                 "Name": "",
