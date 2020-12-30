@@ -12691,7 +12691,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1197152157
 Transform:
   m_ObjectHideFlags: 0
@@ -13143,7 +13143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollSpeed: 5
+  rollDistance: 10
   bodyRadius: 2
+  environmentLayers:
+    serializedVersion: 2
+    m_Bits: 1024
   body: {fileID: 650618178}
   shockwaveEmitter: {fileID: 901711942}
   laserWallEmitter: {fileID: 1419845132}
