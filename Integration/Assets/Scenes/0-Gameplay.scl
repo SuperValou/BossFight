@@ -111,6 +111,28 @@
                         "Scripts": [],
                         "Children": [
                             {
+                                "Name": "Head",
+                                "Scripts": [],
+                                "Children": [
+                                    {
+                                        "Name": "Camera",
+                                        "Scripts": [
+                                            {
+                                                "Name": "PostProcessLayer",
+                                                "FullName": "UnityEngine.Rendering.PostProcessing.PostProcessLayer",
+                                                "Index": 3
+                                            },
+                                            {
+                                                "Name": "PostProcessVolume",
+                                                "FullName": "UnityEngine.Rendering.PostProcessing.PostProcessVolume",
+                                                "Index": 4
+                                            }
+                                        ],
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
                                 "Name": "Arm",
                                 "Scripts": [],
                                 "Children": [
@@ -128,7 +150,7 @@
                                                     },
                                                     {
                                                         "Name": "WeaponCharge",
-                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.WeaponCharge",
+                                                        "FullName": "Assets.Scripts.Weaponry.Charges.WeaponCharge",
                                                         "Index": 3
                                                     }
                                                 ],
@@ -144,6 +166,17 @@
                                                                 "Name": "ChargedPowerEmitter"
                                                             }
                                                         ]
+                                                    },
+                                                    {
+                                                        "Name": "ChargeEffect",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ChargeEffect",
+                                                                "FullName": "Assets.Scripts.Weaponry.Charges.ChargeEffect",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
                                                     }
                                                 ]
                                             },
@@ -154,15 +187,53 @@
                                                         "Name": "BeamGun",
                                                         "FullName": "Assets.Scripts.Weaponry.Weapons.BeamGun",
                                                         "Index": 1
+                                                    },
+                                                    {
+                                                        "Name": "WeaponCharge",
+                                                        "FullName": "Assets.Scripts.Weaponry.Charges.WeaponCharge",
+                                                        "Index": 2
                                                     }
                                                 ],
                                                 "Children": [
                                                     {
-                                                        "Name": "BeamEmitter",
+                                                        "Name": "SmallBeamEmitter",
                                                         "Scripts": [
                                                             {
                                                                 "Name": "ProjectileEmitter",
                                                                 "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
+                                                        "Name": "MediumBeamEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
+                                                        "Name": "BigBeamEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    },
+                                                    {
+                                                        "Name": "ChargeEffect",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ChargeEffect",
+                                                                "FullName": "Assets.Scripts.Weaponry.Charges.ChargeEffect",
                                                                 "Index": 1
                                                             }
                                                         ],
@@ -182,6 +253,29 @@
                                                 "Children": [
                                                     {
                                                         "Name": "BombEmitter",
+                                                        "Scripts": [
+                                                            {
+                                                                "Name": "ProjectileEmitter",
+                                                                "FullName": "Assets.Scripts.Weaponry.Projectiles.ProjectileEmitter",
+                                                                "Index": 1
+                                                            }
+                                                        ],
+                                                        "Children": []
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Name": "SpreadGun",
+                                                "Scripts": [
+                                                    {
+                                                        "Name": "SpreadGun",
+                                                        "FullName": "Assets.Scripts.Weaponry.Weapons.SpreadGun",
+                                                        "Index": 2
+                                                    }
+                                                ],
+                                                "Children": [
+                                                    {
+                                                        "Name": "SpreadEmitter",
                                                         "Scripts": [
                                                             {
                                                                 "Name": "ProjectileEmitter",
