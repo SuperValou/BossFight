@@ -9,5 +9,10 @@ namespace Assets.Scripts.Foes.Shells.ShellBehaviours
         {
             StateMachine.OnIdle();
         }
+
+        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            StateMachine.IdleUpdate();
+        }
     }
 }
