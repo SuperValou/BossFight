@@ -43,39 +43,30 @@ namespace Assets.Scripts.Weaponry.Projectiles
 
         void OnParticleCollision(GameObject other)
         {
-            // Switches
-            var activableSwitch = other.GetComponent<ActivationSwitch>();
-            if (activableSwitch != null)
-            {
-                activableSwitch.Flip();
-            }
-            
             var collisionEvents = _particleSystem.GetCollisionsWith(other);
-
-            // Damages
-            var vulnerableCollider = other.GetComponent<VulnerableCollider>();
-            if (vulnerableCollider != null)
-            {
-                float damageAmount = damagePerParticle * collisionEvents.Count;
-                DamageData damageData = new DamageData(damageAmount);
-                vulnerableCollider.OnHit(damageData, damager: this);
-            }
-
-            // Deflectors and impacts
-            var deflector = other.GetComponent<ProjectileDeflector>();
-
-            if (deflector == null && projectileImpact == null)
-            {
-                return;
-            }
-
+            
             foreach (var collisionEvent in collisionEvents)
             {
-                if (deflector == null)
+                var otherCollider = collisionEvent.colliderComponent;
+
+                // Switches
+                var activableSwitch = otherCollider.GetComponent<ActivationSwitch>();
+                if (activableSwitch != null)
                 {
-                    projectileImpact.OccurAt(collisionEvent);
+                    activableSwitch.Flip();
                 }
-                else
+                
+                // Damages
+                var vulnerableCollider = otherCollider.GetComponent<VulnerableCollider>();
+                if (vulnerableCollider != null)
+                {
+                    DamageData damageData = new DamageData(damagePerParticle);
+                    vulnerableCollider.OnHit(damageData, damager: this);
+                }
+
+                // Deflectors
+                var deflector = otherCollider.GetComponent<ProjectileDeflector>();
+                if (deflector != null)
                 {
                     // outVelocity = inVelocity - 2 * (inVelocity dot normalVector) * normalVector
                     Vector3 bouncingVelocity = collisionEvent.velocity - 2 * Vector3.Dot(collisionEvent.velocity, collisionEvent.normal) * collisionEvent.normal;
@@ -83,8 +74,14 @@ namespace Assets.Scripts.Weaponry.Projectiles
                     ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
                     emitParams.position = collisionEvent.intersection;
                     emitParams.velocity = bouncingVelocity;
-                    
+
                     _particleSystem.Emit(emitParams, count: 1);
+                }
+
+                // Impacts
+                else if (projectileImpact != null)
+                {
+                    projectileImpact.OccurAt(collisionEvent);
                 }
             }
         }
