@@ -33,7 +33,7 @@ namespace Assets.Scripts.Foes.Shells
         public PlayerProxy playerProxy;
 
         // -- Class
-
+        
         private const string InitializedBool = "IsInitialized";
         private const string LaserWallAttackTrigger = "LaserWallAttackTrigger";
         private const string ShockwaveTrigger = "ShockwaveTrigger";
@@ -41,6 +41,7 @@ namespace Assets.Scripts.Foes.Shells
         private const string RollBeginTrigger = "RollBeginTrigger";
         private const string RollEndTrigger = "RollEndTrigger";
 
+        private const float CollisionCheckSafetyMargin = 0.25f;
 
         private Rigidbody _rigidbody;
         private Animator _animator;
@@ -86,7 +87,7 @@ namespace Assets.Scripts.Foes.Shells
             Vector3 targetDirection = playerProxy.transform.position - this.transform.position;
             Vector3 projectedTargetDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
             Quaternion fullRotation = Quaternion.LookRotation(projectedTargetDirection, Vector3.up);
-
+            
             float maxAngle = rotationSpeed * Time.deltaTime;
             this.transform.rotation = Quaternion.RotateTowards(from: this.transform.rotation, to: fullRotation, maxDegreesDelta: maxAngle);
         }
@@ -104,9 +105,17 @@ namespace Assets.Scripts.Foes.Shells
         public void OnRoll()
         {
             Vector3 direction = this.transform.right;
-            float maxDistance = rollDistance + bodyRadius;
-            var rayOrigin = this.transform.position + Vector3.up; // offset the ray origin to avoid detecting the floor
-            bool directionIsObstructed = Physics.Raycast(rayOrigin, direction, maxDistance, environmentLayers, QueryTriggerInteraction.Ignore);
+
+            float checkRadius = bodyRadius + CollisionCheckSafetyMargin; // avoid getting stuck on tangent wall
+            Vector3 checkOffset = 2 * CollisionCheckSafetyMargin * Vector3.up; // offset a bit up to avoid detecting the floor (take margin on radius into account)
+            Vector3 checkStart = this.transform.position + Vector3.up * bodyRadius + checkOffset;
+            float checkDistance = rollDistance + CollisionCheckSafetyMargin; // avoid attempting to set a destination too close to a wall and not being able to physically reach it
+            Vector3 checkEnd = checkStart + checkDistance * direction;
+            
+            bool directionIsObstructed = Physics.CheckCapsule(checkStart, checkEnd, checkRadius, environmentLayers, QueryTriggerInteraction.Ignore);
+
+            //st = checkStart;
+            //nd = checkEnd;
 
             if (directionIsObstructed)
             {
@@ -115,9 +124,21 @@ namespace Assets.Scripts.Foes.Shells
                 return;
             }
 
-            _rollDestination = this.transform.position + rollDistance * direction;
             _moveDirection = direction;
+            _rollDestination = this.transform.position + rollDistance * _moveDirection;
+            
         }
+
+        //private Vector3 st;
+        //private Vector3 nd;
+
+        //void OnDrawGizmos()
+        //{
+        //    Gizmos.color = Color.blue;
+        //    Gizmos.DrawSphere(st, bodyRadius);
+        //    Gizmos.DrawSphere(nd, bodyRadius);
+        //    Gizmos.DrawLine(st, nd);
+        //}
 
         public void RollUpdate()
         {
@@ -156,7 +177,7 @@ namespace Assets.Scripts.Foes.Shells
             float angle = (distance * 180) / (bodyRadius * Mathf.PI);
 
             Vector3 rollAxis = Vector3.Cross(Vector3.up, _rigidbody.velocity);
-            body.RotateAround(body.position, rollAxis, angle);
+            //body.RotateAround(body.position, rollAxis, angle);
         }
     }
 }
