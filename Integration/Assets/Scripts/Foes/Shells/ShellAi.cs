@@ -94,7 +94,7 @@ namespace Assets.Scripts.Foes.Shells
             Quaternion fullRotation = Quaternion.LookRotation(projectedTargetDirection, Vector3.up);
             
             float maxAngle = rotationSpeed * Time.deltaTime;
-            //this.transform.rotation = Quaternion.RotateTowards(from: this.transform.rotation, to: fullRotation, maxDegreesDelta: maxAngle);
+            this.transform.rotation = Quaternion.RotateTowards(from: this.transform.rotation, to: fullRotation, maxDegreesDelta: maxAngle);
         }
 
         public void DoLaserWallAttack()
@@ -130,8 +130,9 @@ namespace Assets.Scripts.Foes.Shells
             _moveDirection = direction;
             _rollDestination = this.transform.position + _rollDistance * _moveDirection;
 
-            _rollAxis = Vector3.Cross(Vector3.up, _moveDirection);
-            _rollStartRotation = body.rotation;
+            Vector3 worldRollAxis = Vector3.Cross(Vector3.down, _moveDirection);
+            _rollAxis = body.InverseTransformVector(worldRollAxis);
+            _rollStartRotation = body.localRotation;
         }
 
         public void RollUpdate()
@@ -147,7 +148,7 @@ namespace Assets.Scripts.Foes.Shells
             {
                 _moveDirection = Vector3.zero;
                 _animator.SetTrigger(RollEndTrigger);
-                body.rotation = _rollStartRotation;
+                body.localRotation = _rollStartRotation;
                 return;
             }
             
@@ -158,7 +159,8 @@ namespace Assets.Scripts.Foes.Shells
 
             //body.rotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
             Debug.DrawRay(body.position, _rollAxis * 10, Color.blue);
-            body.rotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
+            
+            body.localRotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
             
             // DEBUG
             Debug.DrawLine(this.transform.position, _rollDestination, Color.red);
