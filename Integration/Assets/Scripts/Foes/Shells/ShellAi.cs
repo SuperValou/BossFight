@@ -49,8 +49,8 @@ namespace Assets.Scripts.Foes.Shells
 
         private Vector3 _moveDirection;
         private Vector3 _rollDestination;
-        private Vector3 _rollAxis;
-        private Quaternion _rollStartRotation;
+        private Vector3 _bodyRollAxis;
+        private Quaternion _bodyInitialLocalRotation;
 
         void Start()
         {
@@ -109,30 +109,49 @@ namespace Assets.Scripts.Foes.Shells
 
         public void OnRoll()
         {
-            // TODO: crap
-            Vector3 direction = Vector3.ProjectOnPlane(Vector3.Cross(Vector3.up, playerProxy.transform.position - this.transform.position), Vector3.up).normalized;
+            // choose a direction to roll to
+            Vector3[] directions = {
+                this.transform.forward, // front
+                this.transform.right, // right
+                -1 * this.transform.right, // left
+                -1 * this.transform.forward // back
+            };
 
-            float checkRadius = bodyRadius + CollisionCheckSafetyMargin; // avoid getting stuck on tangent wall
-            Vector3 checkOffset = 2 * CollisionCheckSafetyMargin * Vector3.up; // offset a bit up to avoid detecting the floor (take margin on radius into account)
-            Vector3 checkStart = this.transform.position + Vector3.up * bodyRadius + checkOffset;
-            float checkDistance = _rollDistance + CollisionCheckSafetyMargin; // avoid attempting to set a destination too close to a wall and not being able to physically reach it
-            Vector3 checkEnd = checkStart + checkDistance * direction;
-            
-            bool directionIsObstructed = Physics.CheckCapsule(checkStart, checkEnd, checkRadius, environmentLayers, QueryTriggerInteraction.Ignore);
+            int randomStartIndex = Mathf.FloorToInt((Random.value - float.Epsilon) * directions.Length);
 
-            if (directionIsObstructed)
+            Vector3 selectedDirection = Vector3.zero;
+            for (int i = 0; i < directions.Length; i++)
             {
-                _moveDirection = Vector3.zero;
+                int index = (i + randomStartIndex) % directions.Length;
+                Vector3 currentDirection = directions[index];
+
+                selectedDirection = Vector3.ProjectOnPlane(currentDirection, Vector3.up).normalized;
+                if (DirectionIsObstructed(selectedDirection))
+                {
+                    selectedDirection = Vector3.zero;
+                    continue;
+                }
+
+                // found a direction to roll to
+                break;
+            }
+            
+            if (selectedDirection == Vector3.zero)
+            {
+                // all directions are obstructed
                 _animator.SetTrigger(RollEndTrigger);
                 return;
             }
 
-            _moveDirection = direction;
-            _rollDestination = this.transform.position + _rollDistance * _moveDirection;
+            // Compute destination and roll axis
+            _rollDestination = this.transform.position + _rollDistance * selectedDirection;
 
-            Vector3 worldRollAxis = Vector3.Cross(Vector3.down, _moveDirection);
-            _rollAxis = body.InverseTransformVector(worldRollAxis);
-            _rollStartRotation = body.localRotation;
+            Vector3 worldRollAxis = Vector3.Cross(Vector3.down, selectedDirection);
+            _bodyRollAxis = body.InverseTransformVector(worldRollAxis);
+            _bodyInitialLocalRotation = body.localRotation;
+
+            // initiate movement
+            _moveDirection = selectedDirection;
         }
 
         public void RollUpdate()
@@ -142,25 +161,22 @@ namespace Assets.Scripts.Foes.Shells
                 return;
             }
 
-            var direction = _rollDestination - this.transform.position;
-            var sqrDistanceToDestination = direction.sqrMagnitude;
-            if (sqrDistanceToDestination < 0.05)
+            // check if we're close to destination and update direction
+            var destinationDirection = _rollDestination - this.transform.position;
+            var distanceToDestination = destinationDirection.magnitude;
+            if (distanceToDestination < 0.1)
             {
                 _moveDirection = Vector3.zero;
                 _animator.SetTrigger(RollEndTrigger);
-                body.localRotation = _rollStartRotation;
+                body.localRotation = _bodyInitialLocalRotation;
                 return;
             }
-            
-            _moveDirection = new Vector3(direction.x, 0, direction.z).normalized;
+
+            _moveDirection = destinationDirection.normalized;
 
             // rotate body
-            float coveredDistanceRatio = direction.magnitude / _rollDistance;
-
-            //body.rotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
-            Debug.DrawRay(body.position, _rollAxis * 10, Color.blue);
-            
-            body.localRotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
+            float coveredDistanceRatio = distanceToDestination / _rollDistance;
+            body.localRotation = _bodyInitialLocalRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _bodyRollAxis);
             
             // DEBUG
             Debug.DrawLine(this.transform.position, _rollDestination, Color.red);
@@ -175,6 +191,18 @@ namespace Assets.Scripts.Foes.Shells
             }
 
             _rigidbody.velocity = rollSpeed * _moveDirection;
+        }
+
+        private bool DirectionIsObstructed(Vector3 direction)
+        {
+            float checkRadius = bodyRadius + CollisionCheckSafetyMargin; // avoid getting stuck on tangent wall
+            Vector3 checkOffset = 2 * CollisionCheckSafetyMargin * Vector3.up; // offset a bit up to avoid detecting the floor (take margin on radius into account)
+            Vector3 checkStart = this.transform.position + bodyRadius * Vector3.up + checkOffset; // transform.position is on the ground, so add radius to be at center of mass
+            float checkDistance = _rollDistance + CollisionCheckSafetyMargin; // avoid attempting to set a destination too close to a wall and not being able to physically reach it
+            Vector3 checkEnd = checkStart + checkDistance * direction;
+
+            bool directionIsObstructed = Physics.CheckCapsule(checkStart, checkEnd, checkRadius, environmentLayers, QueryTriggerInteraction.Ignore);
+            return directionIsObstructed;
         }
     }
 }
