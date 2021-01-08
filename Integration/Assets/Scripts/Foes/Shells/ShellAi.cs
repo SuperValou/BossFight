@@ -10,12 +10,10 @@ namespace Assets.Scripts.Foes.Shells
     {
         // -- Editor
 
-        [Header("Values")] [Tooltip("Speed of movement while rolling (m/s).")]
+        [Header("Values")] 
+		[Tooltip("Speed of movement while rolling (m/s).")]
         public float rollSpeed = 5;
-
-        [Tooltip("Distance to travel when rolling (meters).")]
-        public float rollDistance = 10;
-
+        
         [Tooltip("Angular speed of Shell's rotation to face the player (degree per second).")]
         public float rotationSpeed = 90;
 
@@ -25,12 +23,14 @@ namespace Assets.Scripts.Foes.Shells
         [Tooltip("Layers of the environment to let Shell detects where to roll.")]
         public LayerMask environmentLayers;
 
-        [Header("Parts")] public Transform body;
+        [Header("Parts")] 
+		public Transform body;
         public ProjectileEmitter shockwaveEmitter;
         public ProjectileEmitter laserWallEmitter;
 
         [Header("References")]
         public PlayerProxy playerProxy;
+
 
         // -- Class
         
@@ -45,10 +45,13 @@ namespace Assets.Scripts.Foes.Shells
 
         private Rigidbody _rigidbody;
         private Animator _animator;
+        private float _rollDistance;
 
         private Vector3 _moveDirection;
         private Vector3 _rollDestination;
-        
+        private Vector3 _rollAxis;
+        private Quaternion _rollStartRotation;
+
         void Start()
         {
             _rigidbody = this.GetOrThrow<Rigidbody>();
@@ -60,6 +63,8 @@ namespace Assets.Scripts.Foes.Shells
             }
 
             _animator.SetBool(InitializedBool, value: true);
+
+            _rollDistance = 2 * bodyRadius * Mathf.PI;
         }
 
         public void OnIdle()
@@ -89,7 +94,7 @@ namespace Assets.Scripts.Foes.Shells
             Quaternion fullRotation = Quaternion.LookRotation(projectedTargetDirection, Vector3.up);
             
             float maxAngle = rotationSpeed * Time.deltaTime;
-            this.transform.rotation = Quaternion.RotateTowards(from: this.transform.rotation, to: fullRotation, maxDegreesDelta: maxAngle);
+            //this.transform.rotation = Quaternion.RotateTowards(from: this.transform.rotation, to: fullRotation, maxDegreesDelta: maxAngle);
         }
 
         public void DoLaserWallAttack()
@@ -104,18 +109,16 @@ namespace Assets.Scripts.Foes.Shells
 
         public void OnRoll()
         {
-            Vector3 direction = this.transform.right;
+            // TODO: crap
+            Vector3 direction = Vector3.ProjectOnPlane(Vector3.Cross(Vector3.up, playerProxy.transform.position - this.transform.position), Vector3.up).normalized;
 
             float checkRadius = bodyRadius + CollisionCheckSafetyMargin; // avoid getting stuck on tangent wall
             Vector3 checkOffset = 2 * CollisionCheckSafetyMargin * Vector3.up; // offset a bit up to avoid detecting the floor (take margin on radius into account)
             Vector3 checkStart = this.transform.position + Vector3.up * bodyRadius + checkOffset;
-            float checkDistance = rollDistance + CollisionCheckSafetyMargin; // avoid attempting to set a destination too close to a wall and not being able to physically reach it
+            float checkDistance = _rollDistance + CollisionCheckSafetyMargin; // avoid attempting to set a destination too close to a wall and not being able to physically reach it
             Vector3 checkEnd = checkStart + checkDistance * direction;
             
             bool directionIsObstructed = Physics.CheckCapsule(checkStart, checkEnd, checkRadius, environmentLayers, QueryTriggerInteraction.Ignore);
-
-            //st = checkStart;
-            //nd = checkEnd;
 
             if (directionIsObstructed)
             {
@@ -125,26 +128,14 @@ namespace Assets.Scripts.Foes.Shells
             }
 
             _moveDirection = direction;
-            _rollDestination = this.transform.position + rollDistance * _moveDirection;
-            
+            _rollDestination = this.transform.position + _rollDistance * _moveDirection;
+
+            _rollAxis = Vector3.Cross(Vector3.up, _moveDirection);
+            _rollStartRotation = body.rotation;
         }
-
-        //private Vector3 st;
-        //private Vector3 nd;
-
-        //void OnDrawGizmos()
-        //{
-        //    Gizmos.color = Color.blue;
-        //    Gizmos.DrawSphere(st, bodyRadius);
-        //    Gizmos.DrawSphere(nd, bodyRadius);
-        //    Gizmos.DrawLine(st, nd);
-        //}
 
         public void RollUpdate()
         {
-            // DEBUG
-            Debug.DrawLine(this.transform.position, _rollDestination, Color.red);
-
             if (_moveDirection == Vector3.zero)
             {
                 return;
@@ -156,11 +147,21 @@ namespace Assets.Scripts.Foes.Shells
             {
                 _moveDirection = Vector3.zero;
                 _animator.SetTrigger(RollEndTrigger);
+                body.rotation = _rollStartRotation;
+                return;
             }
-            else
-            {
-                _moveDirection = new Vector3(direction.x, 0, direction.z).normalized;
-            }
+            
+            _moveDirection = new Vector3(direction.x, 0, direction.z).normalized;
+
+            // rotate body
+            float coveredDistanceRatio = direction.magnitude / _rollDistance;
+
+            //body.rotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
+            Debug.DrawRay(body.position, _rollAxis * 10, Color.blue);
+            body.rotation = _rollStartRotation * Quaternion.AngleAxis(coveredDistanceRatio * 360, _rollAxis);
+            
+            // DEBUG
+            Debug.DrawLine(this.transform.position, _rollDestination, Color.red);
         }
 
         void FixedUpdate()
@@ -172,12 +173,6 @@ namespace Assets.Scripts.Foes.Shells
             }
 
             _rigidbody.velocity = rollSpeed * _moveDirection;
-
-            float distance = rollSpeed * Time.fixedDeltaTime;
-            float angle = (distance * 180) / (bodyRadius * Mathf.PI);
-
-            Vector3 rollAxis = Vector3.Cross(Vector3.up, _rigidbody.velocity);
-            //body.RotateAround(body.position, rollAxis, angle);
         }
     }
 }
