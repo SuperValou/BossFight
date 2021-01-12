@@ -42,12 +42,13 @@ namespace Assets.Scripts.Foes.Shells
         private const string RollEndTrigger = "RollEndTrigger";
 
         private const float CollisionCheckSafetyMargin = 0.25f;
+        private const float DistanceToDestionTolerance = 0.5f; // avoid getting stuck and 'vibrating' when getting close to the roll destination
 
         private Rigidbody _rigidbody;
         private Animator _animator;
         private float _rollDistance;
 
-        private Vector3 _moveDirection;
+        private Vector3 _velocityVector;
         private Vector3 _rollDestination;
         private Vector3 _bodyRollAxis;
         private Quaternion _bodyInitialLocalRotation;
@@ -149,12 +150,12 @@ namespace Assets.Scripts.Foes.Shells
             _bodyInitialLocalRotation = body.localRotation;
 
             // initiate movement
-            _moveDirection = selectedDirection;
+            _velocityVector = selectedDirection * rollSpeed;
         }
 
         public void RollUpdate()
         {
-            if (_moveDirection == Vector3.zero)
+            if (_velocityVector == Vector3.zero)
             {
                 return;
             }
@@ -162,15 +163,15 @@ namespace Assets.Scripts.Foes.Shells
             // check if we're close to destination and update direction
             var destinationDirection = _rollDestination - this.transform.position;
             var distanceToDestination = destinationDirection.magnitude;
-            if (distanceToDestination < 0.1)
+            if (distanceToDestination < DistanceToDestionTolerance)
             {
-                _moveDirection = Vector3.zero;
+                _velocityVector = Vector3.zero;
                 _animator.SetTrigger(RollEndTrigger);
                 body.localRotation = _bodyInitialLocalRotation;
                 return;
             }
-
-            _moveDirection = destinationDirection.normalized;
+            
+            _velocityVector = destinationDirection.normalized * rollSpeed;
 
             // rotate body
             float coveredDistanceRatio = distanceToDestination / _rollDistance;
@@ -182,13 +183,7 @@ namespace Assets.Scripts.Foes.Shells
 
         void FixedUpdate()
         {
-            if (_moveDirection == Vector3.zero)
-            {
-                _rigidbody.velocity = Vector3.zero;
-                return;
-            }
-
-            _rigidbody.velocity = rollSpeed * _moveDirection;
+            _rigidbody.velocity = _velocityVector;
         }
 
         private bool DirectionIsObstructed(Vector3 direction)

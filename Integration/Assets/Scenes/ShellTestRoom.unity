@@ -13048,7 +13048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9b8da29cf1add4d84c4e545241378a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollSpeed: 10
+  rollSpeed: 20
   rotationSpeed: 70
   bodyRadius: 2
   environmentLayers:
