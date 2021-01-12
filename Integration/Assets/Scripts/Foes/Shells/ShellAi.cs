@@ -69,21 +69,19 @@ namespace Assets.Scripts.Foes.Shells
 
         public void OnIdle()
         {
-            //int rand = ((int) (Random.value * 10)) % 3;
-            //if (rand == 0)
-            //{
-            //    _animator.SetTrigger(LaserWallAttackTrigger);
-            //}
-            //else if (rand == 1)
-            //{
-            //    _animator.SetTrigger(ShockwaveTrigger);
-            //}
-            //else if (rand == 2)
-            //{
-            //    _animator.SetTrigger(RollBeginTrigger);
-            //}
-            
-            _animator.SetTrigger(RollBeginTrigger);
+            int rand = ((int)(Random.value * 10)) % 3;
+            if (rand == 0)
+            {
+                _animator.SetTrigger(LaserWallAttackTrigger);
+            }
+            else if (rand == 1)
+            {
+                _animator.SetTrigger(ShockwaveTrigger);
+            }
+            else if (rand == 2)
+            {
+                _animator.SetTrigger(RollBeginTrigger);
+            }
         }
 
         public void IdleUpdate()
