@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Foes.ArtificialIntelligences;
+﻿using System.Collections;
+using Assets.Scripts.Foes.ArtificialIntelligences;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes.Shells.ShellBehaviours
@@ -7,7 +8,8 @@ namespace Assets.Scripts.Foes.Shells.ShellBehaviours
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            StateMachine.DoLaserWallAttack();
+            // called through animation events
+            // StateMachine.DoShockwaveAttack();
         }
     }
 }
