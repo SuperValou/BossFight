@@ -1,5 +1,4 @@
-﻿using System;
-using Assets.Scripts.Damages;
+﻿using Assets.Scripts.Damages;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +20,8 @@ namespace Assets.Scripts.Huds
         void Start()
         {
             healthBar.minValue = 0;
+            healthBar.maxValue = player.maxHealth;
+            healthBar.value = player.CurrentHealth;
         }
 
         void Update()

@@ -2,7 +2,6 @@
 using Assets.Scripts.Damages;
 using Assets.Scripts.Foes.ArtificialIntelligences;
 using Assets.Scripts.Foes.Strikers.StrikerAi;
-using Assets.Scripts.Huds;
 using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
@@ -10,7 +9,7 @@ using UnityEngine.AI;
 
 namespace Assets.Scripts.Foes.Strikers
 {
-    public class Striker : Damageable, IStateMachine<StrikerBehaviour>
+    public class Striker : Damageable, IStateMachine
     {
         // -- Editor
 
@@ -25,10 +24,7 @@ namespace Assets.Scripts.Foes.Strikers
         public BossDeath death;
         
         // -- Class
-
-        private StrikerBehaviour[] _behaviours;
-
-        internal Transform Target => target;
+        
         internal Animator Animator { get; private set; }
         internal NavMeshAgent NavMeshAgent { get; private set; }
 
@@ -37,9 +33,9 @@ namespace Assets.Scripts.Foes.Strikers
             Animator = this.GetOrThrow<Animator>();
             NavMeshAgent = this.GetOrThrow<NavMeshAgent>();
 
-            _behaviours = Animator.GetBehaviours<StrikerBehaviour>();
+            var behaviours = Animator.GetBehaviours<Behaviour<Striker>>();
 
-            foreach (var strikerBehaviour in _behaviours)
+            foreach (var strikerBehaviour in behaviours)
             {
                 strikerBehaviour.Initialize(stateMachine: this);
             }
@@ -48,11 +44,6 @@ namespace Assets.Scripts.Foes.Strikers
         void Update()
         {
             
-        }
-
-        public void SetCurrentBehaviour(StrikerBehaviour behaviour)
-        {
-            //Debug.Log($"Current behaviour: {behaviour.GetType().Name}");
         }
 
         public void OnStomping()

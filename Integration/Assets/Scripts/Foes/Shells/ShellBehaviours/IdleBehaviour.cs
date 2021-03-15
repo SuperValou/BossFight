@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Foes.ArtificialIntelligences;
+using UnityEngine;
 
-namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
+namespace Assets.Scripts.Foes.Shells.ShellBehaviours
 {
-    public class QuietBehaviour : Behaviour<ITargetTrackingStateMachine>
+    public class IdleBehaviour : Behaviour<ShellAi>
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            StateMachine.OnBecomeQuiet();
+            StateMachine.OnIdle();
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            StateMachine.QuietUpdate();
+            StateMachine.IdleUpdate();
         }
     }
 }

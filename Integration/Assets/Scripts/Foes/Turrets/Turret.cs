@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using Assets.Scripts.Damages;
-using Assets.Scripts.Environments;
-using Assets.Scripts.Players;
+﻿using Assets.Scripts.Damages;
 using Assets.Scripts.Utilities;
-using Assets.Scripts.Weaponry.Projectiles;
 using UnityEngine;
 
-namespace Assets.Scripts.Foes
+namespace Assets.Scripts.Foes.Turrets
 {
     public class Turret : Damageable
     {

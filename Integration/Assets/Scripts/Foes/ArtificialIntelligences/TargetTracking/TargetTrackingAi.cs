@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Damages;
-using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Utilities;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
@@ -24,7 +23,7 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         public Transform eye;
 
         // -- Class
-
+        private const string InitializedBool = "IsInitialized";
         private const string QuietTrigger = "QuietTrigger";
         private const string AlertTrigger = "AlertTrigger";
         private const string HostileTrigger = "HostileTrigger";
@@ -38,11 +37,13 @@ namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
         protected virtual void Start()
         {
             Animator = this.GetOrThrow<Animator>();
-            var behaviours = Animator.GetBehaviours<TargetTrackingBehaviour>();
+            var behaviours = Animator.GetBehaviours<Behaviour<ITargetTrackingStateMachine>>();
             foreach (var behaviour in behaviours)
             {
                 behaviour.Initialize(stateMachine: this);
             }
+
+            Animator.SetBool(InitializedBool, value: true);
         }
 
         public virtual void QuietUpdate()

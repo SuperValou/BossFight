@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.LoadingSystems.SceneInfos;
-using Assets.Scripts.LoadingSystems.SceneLoadings;
-using UnityEngine;
 
 namespace Assets.Scripts.Menus
 {

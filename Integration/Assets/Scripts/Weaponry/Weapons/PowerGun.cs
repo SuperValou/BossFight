@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Assets.Scripts.Utilities;
 using Assets.Scripts.Weaponry.Charges;
 using Assets.Scripts.Weaponry.Projectiles;

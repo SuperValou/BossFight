@@ -15,11 +15,11 @@ namespace Assets.Scripts.Players
 
         // -- Class
 
-        private readonly Vector3 _rayVector = new Vector3(0.5f, 0.5f, 0);
+        private readonly Vector3 _viewportPoint = new Vector3(0.5f, 0.5f, 0);
 
         void Update()
         {
-            Ray ray = eye.ViewportPointToRay(_rayVector);
+            Ray ray = eye.ViewportPointToRay(_viewportPoint);
             
             if (Physics.Raycast(ray, out RaycastHit raycastHit, maxDistance, applicableLayers))
             {

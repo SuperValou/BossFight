@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Foes.ArtificialIntelligences.TargetTracking
 {
-    public class HostileBehaviour : TargetTrackingBehaviour
+    public class HostileBehaviour : Behaviour<ITargetTrackingStateMachine>
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {

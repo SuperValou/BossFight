@@ -1,5 +1,4 @@
-﻿using System;
-using Assets.Scripts.Damages;
+﻿using Assets.Scripts.Damages;
 using UnityEngine;
 
 namespace Assets.Scripts.Foes

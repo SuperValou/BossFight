@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Players.LockOns
 {
